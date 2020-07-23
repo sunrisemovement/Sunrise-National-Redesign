@@ -5,3 +5,23 @@
 - Use `assets/css/bootstrap/_variables.scss` as a reference for all existing variables
 
 --------------------------------------------------------------*/
+
+//Colors
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #8f0d56 !default;
+$pink: #e83e8c !default;
+$red: #ef4c39 !default;
+$orange: #fd9014 !default;
+$yellow: #ffde16 !default;
+$green: #e3eddf !default;
+$teal: #20c997 !default;
+$cyan: #f7f5e8 !default;
+$light-green: #e3eddf !default;
+
+$primary: $yellow !default;
+$secondary: $purple !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;

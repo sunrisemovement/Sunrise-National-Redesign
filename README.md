@@ -1,10 +1,24 @@
-# WordPress Bootstrap Starter Theme
+#Project Management
+Figma Design Files
+https://www.figma.com/file/IfGUJ91VgixZ9wG94PHZZk/Sunrise-National-Hub-Pages-Current?node-id=193%3A47
 
-A blank starter theme for WordPress using [WPGulp](https://github.com/ahmadawais/WPGulp), [Underscores](https://underscores.me/) and [Bootstrap 4](https://getbootstrap.com/).
+Notion Wiki
+https://www.notion.so/evanmceldowney/Sunrise-National-Website-80a2f109ea7d42c181fbb19901efd354
 
-This theme has minimal styling, and serves as a blank slate for developers. The only assumption this themes makes is that you want to use Bootstrap. Use as little or as much of the framework as you see fit.
+Airtable Development Manager (for editability ask Evan)
+https://airtable.com/invite/l?inviteId=invQGxAvQyJOEfNjy&inviteToken=93adf4c5b3e012d6eb3f81dec93d2a7f6261e85f07c082d98ad8a1c160b67a6f
 
-![Screenshot of WordPress Bootstrap Starter Theme](https://raw.githubusercontent.com/stevepolitodesign/wordpress-bootstrap-starter-theme/master/screenshot.png)
+# WordPress Local Setup
+
+Download flywheel, install, and run a local instance
+https://localwp.com/
+
+Import theme in your site in app/public/wp-content/themes/ using
+git clone https://github.com/sunrisemovement/Sunrise-National-Redesign.git
+
+Activate theme in the wordpress admin
+
+Import wordpress content using wordpress importer with file from https://www.notion.so/evanmceldowney/Wordpress-Content-July-23rd-38536a2f5a46498093d623d439256f3f
 
 ## Initial Setup
 
@@ -40,6 +54,9 @@ Once these steps are complete, you only need to run `npm start` moving forward.
 If you wish to override Bootstrap's default variables, do so by redeclaring those variables in `assets/css/base/_bootstrap_overrides.scss`. Use `assets/css/bootstrap/_variables.scss` as a reference for all existing variables, but **DO NOT** update this or any other file located in `assets/css/bootstrap/`.
 
 [More information on variable defaults](https://getbootstrap.com/docs/4.3/getting-started/theming/#variable-defaults)
+
+For more questions
+https://getbootstrap.com/docs/4.0/getting-started/introduction/
 
 ## Automatic Form Styling
 
