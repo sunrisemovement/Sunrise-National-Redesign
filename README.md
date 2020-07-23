@@ -7,7 +7,7 @@ Notion Wiki
 https://www.notion.so/evanmceldowney/Sunrise-National-Website-80a2f109ea7d42c181fbb19901efd354
 
 Airtable Development Manager (for editability ask Evan)
-https://airtable.com/invite/l?inviteId=invQGxAvQyJOEfNjy&inviteToken=93adf4c5b3e012d6eb3f81dec93d2a7f6261e85f07c082d98ad8a1c160b67a6f
+https://airtable.com/shrWWYWcB2LLxr8Le
 
 # WordPress Local Setup
 
