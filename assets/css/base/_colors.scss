@@ -1,0 +1,41 @@
+/*--------------------------------------------------------------
+# Notes
+
+- @extend the `.btn` class instead of manually adding `.btn` classes to all form elements
+
+--------------------------------------------------------------*/
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    @extend .btn;
+    @extend .btn-primary;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	@extend .form-control;
+}
+
+select {
+	@extend .form-control;
+}
+
+textarea {
+	@extend .form-control;
+}
