@@ -26,8 +26,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "./base/type";
 
 // Components
-@import "./components/header-nav";
-@import "./components/footer-nav";
+@import "./template-parts/header-nav";
+@import "./template-parts/footer-nav";
 
 // Templates
 @import "./templates/action-template";

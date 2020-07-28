@@ -1,19 +1,27 @@
 /* Primary Menu ---------------------------- */
 
-.primary-menu-wrapper {
+.header-menu-wrapper {
+	list-style: none;
 }
 
-ul.primary-menu {
-	display: flex;
-	font-size: 1.8rem;
-	font-weight: 500;
-	letter-spacing: -0.0277em;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	margin: -0.8rem 0 0 -1.6rem;
+.top-menu {
+	background-color: $gray-sunrise;
+	float: left;
+	padding: 0 37px;
+	display: block;
+	width: 100%;
 }
 
-.primary-menu .icon {
+.bottom-menu {
+	background-color: $black;
+	width: 100%;
+	display: block;
+	float: left;
+	padding: 15px;
+	padding-bottom: 0;
+}
+
+.header-menu .icon {
 	display: block;
 	height: 0.7rem;
 	position: absolute;
@@ -22,8 +30,26 @@ ul.primary-menu {
 	width: 1.3rem;
 }
 
-.primary-menu .icon::before,
-.primary-menu .icon::after {
+.header-menu {
+	width: 80%;
+	float: right;
+	display: flex;
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: -0.0277em;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
+.site-branding {
+	float: left;
+	width: 20%;
+	img {
+	}
+}
+
+.header-menu .icon::before,
+.header-menu .icon::after {
 	content: "";
 	display: block;
 	background-color: currentColor;
@@ -32,36 +58,37 @@ ul.primary-menu {
 	left: 0;
 }
 
-.primary-menu .icon::before {
+.header-menu .icon::before {
 	height: 0.9rem;
 	width: 0.2rem;
 }
 
-.primary-menu .icon::after {
+.header-menu .icon::after {
 	height: 0.2rem;
 	width: 0.9rem;
 }
 
-.primary-menu li {
+.header-menu li {
 	font-size: inherit;
 	line-height: 1.25;
 	position: relative;
+	list-style: none;
 }
 
-.primary-menu > li {
+.header-menu > li {
 	margin: 0.8rem 0 0 1.6rem;
 }
 
-.primary-menu > li.menu-item-has-children > a {
+.header-menu > li.menu-item-has-children > a {
 	padding-right: 2rem;
 }
 
-.primary-menu > li > .icon {
+.header-menu > li > .icon {
 	right: -0.5rem;
 	top: calc(50% - 0.4rem);
 }
 
-.primary-menu a {
+.header-menu a {
 	color: inherit;
 	display: block;
 	line-height: 1.2;
@@ -70,21 +97,21 @@ ul.primary-menu {
 	word-wrap: normal;
 }
 
-.primary-menu a:hover,
-.primary-menu a:focus,
-.primary-menu .current_page_ancestor {
+.header-menu a:hover,
+.header-menu a:focus,
+.header-menu .current_page_ancestor {
 	text-decoration: underline;
 }
 
-.primary-menu li.current-menu-item > a,
-.primary-menu li.current-menu-item > .link-icon-wrapper > a {
+.header-menu li.current-menu-item > a,
+.header-menu li.current-menu-item > .link-icon-wrapper > a {
 	text-decoration: underline;
 }
 
-.primary-menu li.current-menu-item > a:hover,
-.primary-menu li.current-menu-item > .link-icon-wrapper > a:hover,
-.primary-menu li.current-menu-item > a:focus,
-.primary-menu li.current-menu-item > .link-icon-wrapper > a:focus {
+.header-menu li.current-menu-item > a:hover,
+.header-menu li.current-menu-item > .link-icon-wrapper > a:hover,
+.header-menu li.current-menu-item > a:focus,
+.header-menu li.current-menu-item > .link-icon-wrapper > a:focus {
 	text-decoration: none;
 }
 
@@ -94,7 +121,7 @@ ul.primary-menu {
 	background: #000;
 	border-radius: 0.4rem;
 	color: #fff;
-	font-size: 1.7rem;
+	font-size: 1rem;
 	opacity: 0;
 	padding: 1rem 0;
 	position: absolute;
@@ -490,15 +517,14 @@ button.sub-menu-toggle.active svg {
 
 .site-title a,
 .site-description,
-.primary-menu li:not(.smvmt2020-highlight) a,
-.primary-menu li a,
+.header-menu li a,
 .modal-menu > li > a,
 .modal-menu > li > .ancestor-wrapper > a,
 .toggle-inner .toggle-text {
 	font-family: "Source Sans Pro", sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
-	letter-spacing: 0.125em;
+	letter-spacing: normal;
 	color: $yellow;
 }
 

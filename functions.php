@@ -174,9 +174,6 @@ require get_template_directory() . '/inc/customizer.php';
 // Handle SVG icons.
 require get_template_directory() . '/classes/class-sunrise-svg-icons.php';
 
-// Handle Customizer settings.
-require get_template_directory() . '/classes/class-sunrise-customize.php';
-
 // Custom page walker.
 require get_template_directory() . '/classes/class-sunrise-walker-page.php';
 

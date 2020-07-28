@@ -30,24 +30,11 @@
 
 				<div class="header-titles-wrapper">
 
-					<div class="site-branding">
-						<?php
-							the_custom_logo();
-							if ( is_front_page() && is_home() ) :
-						?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php
-							else :
-						?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php
-							endif;
-				 		?>
-					</div><!-- .site-branding -->
 					<div class="header-navigation-wrapper">
 
-						<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'sunrisenational' ); ?>" role="navigation">
-							<ul class="secondary-menu reset-list-style">
+						<nav class="header-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'sunrisenational' ); ?>" role="navigation">
+							<div class="top-menu">
+							<ul class="header-menu secondary-menu">
 								<?php
 								if ( has_nav_menu( 'secondary' ) ) {
 									wp_nav_menu(
@@ -60,21 +47,38 @@
 									}
 									?>
 							</ul>
-							<ul class="primary-menu reset-list-style">
-								<?php
+						</div>
+							<div class="bottom-menu">
+								<div class="site-branding">
+									<?php
+										the_custom_logo();
+										if ( is_front_page() && is_home() ) :
+									?>
+									<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+									<?php
+										else :
+									?>
+									<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+									<?php
+										endif;
+									?>
+								</div><!-- .site-branding -->
+								<ul class="header-menu primary-menu">
+									<?php
 
-									if (  has_nav_menu( 'primary' ) ) {
-										wp_nav_menu(
-											array(
-												'container'  => '',
-												'items_wrap' => '%3$s',
-												'theme_location' => 'primary',
-											)
-									);
-								}
-								?>
+										if (  has_nav_menu( 'primary' ) ) {
+											wp_nav_menu(
+												array(
+													'container'  => '',
+													'items_wrap' => '%3$s',
+													'theme_location' => 'primary',
+												)
+										);
+									}
+									?>
 
-							</ul>
+								</ul>
+							</div>
 
 						</nav><!-- .primary-menu-wrapper -->
 					</div><!-- .header-navigation-wrapper -->
