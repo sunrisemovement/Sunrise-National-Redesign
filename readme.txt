@@ -1,4 +1,4 @@
-=== WordPress Bootstrap Starter Theme ===
+=== Sunrise National ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -9,11 +9,11 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called WordPress Bootstrap Starter Theme.
+A starter theme called Sunrise National.
 
 == Description ==
 
-Custom theme: WordPress Bootstrap Starter Theme, developed by Me
+Custom theme: Sunrise National, developed by Me
 
 == Installation ==
 
@@ -25,7 +25,7 @@ Custom theme: WordPress Bootstrap Starter Theme, developed by Me
 
 = Does this theme support any plugins? =
 
-WordPress Bootstrap Starter Theme includes support for Infinite Scroll in Jetpack.
+Sunrise National includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

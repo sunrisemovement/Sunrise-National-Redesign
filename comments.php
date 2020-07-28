@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress_Bootstrap_Starter_Theme
+ * @package Sunrise_National
  */
 
 /*
@@ -28,8 +28,8 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
-			$wordpress_bootstrap_starter_theme_comment_count = get_comments_number();
-			if ( '1' === $wordpress_bootstrap_starter_theme_comment_count ) {
+			$surnise_national_comment_count = get_comments_number();
+			if ( '1' === $surnise_national_comment_count ) {
 				printf(
 					/* translators: 1: title. */
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'wordpress-bootstrap-starter-theme' ),
@@ -38,8 +38,8 @@ if ( post_password_required() ) {
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $wordpress_bootstrap_starter_theme_comment_count, 'comments title', 'wordpress-bootstrap-starter-theme' ) ),
-					number_format_i18n( $wordpress_bootstrap_starter_theme_comment_count ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $surnise_national_comment_count, 'comments title', 'wordpress-bootstrap-starter-theme' ) ),
+					number_format_i18n( $surnise_national_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}

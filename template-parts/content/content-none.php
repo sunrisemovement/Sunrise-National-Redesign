@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress_Bootstrap_Starter_Theme
+ * @package Sunrise_National
  */
 
 ?>
