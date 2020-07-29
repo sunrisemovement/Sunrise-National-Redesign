@@ -46,6 +46,7 @@ embed,iframe,object{max-width:100%}
 .gallery-columns-8 .gallery-item{max-width:12.5%}
 .gallery-columns-9 .gallery-item{max-width:11.11%}
 .gallery-caption{display:block}
+.post-thumbnail img{width:100%;height:auto}
 .header-menu-wrapper{list-style:none}
 .top-menu{background-color:#33342e;float:left;padding:0 37px;display:block;width:100%}
 .bottom-menu{background-color:#000;width:100%;display:block;float:left;padding:15px;padding-bottom:0}
