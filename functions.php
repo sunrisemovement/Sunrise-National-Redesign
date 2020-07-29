@@ -183,3 +183,182 @@ require get_template_directory() . '/classes/class-sunrise-walker-page.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+
+//Custom Post Types Temporary Home
+
+function cptui_register_my_cpts() {
+
+	/**
+	 * Post Type: Campaigns.
+	 */
+
+	$labels = [
+		"name" => __( "Campaigns", "twentytwentychild" ),
+		"singular_name" => __( "campaign", "twentytwentychild" ),
+		"menu_name" => __( "Campaigns", "twentytwentychild" ),
+		"all_items" => __( "All Campaigns", "twentytwentychild" ),
+		"add_new" => __( "Add new", "twentytwentychild" ),
+		"add_new_item" => __( "Add new Campaign", "twentytwentychild" ),
+		"edit_item" => __( "Edit Campaign", "twentytwentychild" ),
+		"new_item" => __( "New Campaign", "twentytwentychild" ),
+		"view_item" => __( "View Campaign", "twentytwentychild" ),
+		"view_items" => __( "View Campaigns", "twentytwentychild" ),
+		"search_items" => __( "Search Campaigns", "twentytwentychild" ),
+		"not_found" => __( "No Campaigns found", "twentytwentychild" ),
+		"not_found_in_trash" => __( "No Campaigns found in trash", "twentytwentychild" ),
+		"parent" => __( "Parent Campaign:", "twentytwentychild" ),
+		"featured_image" => __( "Featured image for this Campaign", "twentytwentychild" ),
+		"set_featured_image" => __( "Set featured image for this Campaign", "twentytwentychild" ),
+		"remove_featured_image" => __( "Remove featured image for this Campaign", "twentytwentychild" ),
+		"use_featured_image" => __( "Use as featured image for this Campaign", "twentytwentychild" ),
+		"archives" => __( "Campaign archives", "twentytwentychild" ),
+		"insert_into_item" => __( "Insert into Campaign", "twentytwentychild" ),
+		"uploaded_to_this_item" => __( "Upload to this Campaign", "twentytwentychild" ),
+		"filter_items_list" => __( "Filter Campaigns list", "twentytwentychild" ),
+		"items_list_navigation" => __( "Campaigns list navigation", "twentytwentychild" ),
+		"items_list" => __( "Campaigns list", "twentytwentychild" ),
+		"attributes" => __( "Campaigns attributes", "twentytwentychild" ),
+		"name_admin_bar" => __( "Campaign", "twentytwentychild" ),
+		"item_published" => __( "Campaign published", "twentytwentychild" ),
+		"item_published_privately" => __( "Campaign published privately.", "twentytwentychild" ),
+		"item_reverted_to_draft" => __( "Campaign reverted to draft.", "twentytwentychild" ),
+		"item_scheduled" => __( "Campaign scheduled", "twentytwentychild" ),
+		"item_updated" => __( "Campaign updated.", "twentytwentychild" ),
+		"parent_item_colon" => __( "Parent Campaign:", "twentytwentychild" ),
+	];
+
+	$args = [
+		"label" => __( "Campaigns", "twentytwentychild" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"rewrite" => [ "slug" => "campaign", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-megaphone",
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "page-attributes", "post-formats" ],
+	];
+
+	register_post_type( "campaign", $args );
+
+	/**
+	 * Post Type: Past Wins.
+	 */
+
+	$labels = [
+		"name" => __( "Past Wins", "twentytwentychild" ),
+		"singular_name" => __( "past win", "twentytwentychild" ),
+	];
+
+	$args = [
+		"label" => __( "Past Wins", "twentytwentychild" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "actions", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-location-alt",
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "page-attributes", "post-formats" ],
+	];
+
+	register_post_type( "actions", $args );
+
+	/**
+	 * Post Type: Endorsements.
+	 */
+
+	$labels = [
+		"name" => __( "Endorsements", "twentytwentychild" ),
+		"singular_name" => __( "endorsement", "twentytwentychild" ),
+	];
+
+	$args = [
+		"label" => __( "Endorsements", "twentytwentychild" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "our_endorsements", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-star-filled",
+		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "post-formats" ],
+	];
+
+	register_post_type( "our_endorsements", $args );
+
+	/**
+	 * Post Type: Events/Trainings.
+	 */
+
+	$labels = [
+		"name" => __( "Actions", "twentytwentychild" ),
+		"singular_name" => __( "action", "twentytwentychild" ),
+	];
+
+	$args = [
+		"label" => __( "actions", "twentytwentychild" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"rewrite" => [ "slug" => "events", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "page-attributes", "post-formats" ],
+		"taxonomies" => [ "campaigns" ],
+	];
+
+	register_post_type( "events", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts' );
