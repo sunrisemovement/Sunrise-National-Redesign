@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package WordPress_Bootstrap_Starter_Theme
+ * @package Sunrise_National
  */
 
 get_header();
@@ -34,7 +34,7 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/content/content', 'search' );
 
 			endwhile;
 
@@ -42,7 +42,7 @@ get_header();
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/content/content', 'none' );
 
 		endif;
 		?>

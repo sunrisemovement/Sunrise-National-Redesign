@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress_Bootstrap_Starter_Theme
+ * @package Sunrise_National
  */
 
 ?>
@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php wordpress_bootstrap_starter_theme_post_thumbnail(); ?>
+	<?php surnise_national_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php

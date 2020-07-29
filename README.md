@@ -1,10 +1,10 @@
-# WordPress Bootstrap Starter Theme
+# Sunrise National
 
 A blank starter theme for WordPress using [WPGulp](https://github.com/ahmadawais/WPGulp), [Underscores](https://underscores.me/) and [Bootstrap 4](https://getbootstrap.com/).
 
 This theme has minimal styling, and serves as a blank slate for developers. The only assumption this themes makes is that you want to use Bootstrap. Use as little or as much of the framework as you see fit.
 
-![Screenshot of WordPress Bootstrap Starter Theme](https://raw.githubusercontent.com/stevepolitodesign/wordpress-bootstrap-starter-theme/master/screenshot.png)
+![Screenshot of Sunrise National](https://raw.githubusercontent.com/stevepolitodesign/wordpress-bootstrap-starter-theme/master/screenshot.png)
 
 ## Initial Setup
 
