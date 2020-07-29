@@ -1,6 +1,6 @@
 <?php
 /**
- *
+* Template Name: Home
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Sunrise_National
