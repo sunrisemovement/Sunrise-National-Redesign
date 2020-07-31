@@ -81,10 +81,28 @@
 							</div>
 
 						</nav><!-- .primary-menu-wrapper -->
+						<div class="header-toggles hide-no-js">
+
+							<div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+
+								<button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+									<span class="toggle-inner">
+										<span class="toggle-text"><?php _e( 'Menu', 'sunrisenational' ); ?></span>
+										<span class="toggle-icon">
+											<?php sunrisenational_the_theme_svg( 'ellipsis' ); ?>
+										</span>
+									</span>
+								</button><!-- .nav-toggle -->
+
+							</div><!-- .nav-toggle-wrapper -->
 					</div><!-- .header-navigation-wrapper -->
 				</div><!-- .header-inner -->
 			</div>
 		</header><!-- #masthead -->
+		<?php
+		// Output the menu modal.
+		get_template_part( 'template-parts/modal-menu' );
+		?>
 
 
 		<div id="content" class="site-content">

@@ -173,7 +173,7 @@ require get_template_directory() . '/inc/customizer.php';
 
 // Handle SVG icons.
 require get_template_directory() . '/classes/class-sunrise-svg-icons.php';
-
+require get_template_directory() . '/inc/svg-icons.php';
 // Custom page walker.
 require get_template_directory() . '/classes/class-sunrise-walker-page.php';
 
