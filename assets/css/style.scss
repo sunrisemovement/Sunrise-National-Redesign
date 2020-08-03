@@ -17,9 +17,11 @@ Sunrise National is based on Underscores https://underscores.me/, (C) 2012-2017 
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 
-// Base Styles
 @import "./bootstrap/functions.scss";
 @import "./base/bootstrap_overrides";
+@import "./bootstrap/mixins";
+
+// Base Styles
 @import "./base/wordpress";
 @import "./base/forms";
 @import "./base/colors";

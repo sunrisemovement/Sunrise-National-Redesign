@@ -113,7 +113,6 @@
 			<div class="menu-bottom">
 
 				<?php if ( has_nav_menu( 'social' ) ) { ?>
-
 					<nav aria-label="<?php esc_attr_e( 'Expanded Social links', 'sunrisenational' ); ?>" role="navigation">
 						<ul class="social-menu reset-list-style social-icons fill-children-current-color">
 

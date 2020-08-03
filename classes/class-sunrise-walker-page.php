@@ -4,7 +4,7 @@
  *
  * @package Sunrise_National
  * @subpackage Twenty_Twenty
- * 
+ *
  */
 
 if ( ! class_exists( 'SunriseNational_Walker_Page' ) ) {
@@ -104,7 +104,7 @@ if ( ! class_exists( 'SunriseNational_Walker_Page' ) ) {
 					$toggle_duration      = surnisenational_toggle_duration();
 
 					// Add the sub menu toggle.
-					$args['list_item_after'] .= '<button class="toggle sub-menu-toggle fill-children-current-color" data-toggle-target="' . $toggle_target_string . '" data-toggle-type="slidetoggle" data-toggle-duration="' . absint( $toggle_duration ) . '" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'surnisenational' ) . '</span>' . surnisenational_get_theme_svg( 'chevron-down' ) . '</button>';
+					$args['list_item_after'] .= '<button class="toggle sub-menu-toggle fill-children-current-color" data-toggle-target="' . $toggle_target_string . '" data-toggle-type="slidetoggle" data-toggle-duration="' . absint( $toggle_duration ) . '" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'surnisenational' ) . '</span>' . sunrisenational_get_theme_svg( 'chevron-down' ) . '</button>';
 
 				}
 

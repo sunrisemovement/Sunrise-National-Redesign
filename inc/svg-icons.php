@@ -2,8 +2,7 @@
 /**
  * Twenty Twenty SVG Icon helper functions
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
+ * @package Sunrise_National
  * @since Twenty Twenty 1.0
  */
 

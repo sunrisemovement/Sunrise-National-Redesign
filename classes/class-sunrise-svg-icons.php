@@ -61,7 +61,7 @@ if ( ! class_exists( 'SunriseNational_SVG_Icons' ) ) {
 			}
 			foreach ( $regex_map as $icon => $regex ) {
 				if ( preg_match( $regex, $uri ) ) {
-					return surnisenational_get_theme_svg( $icon, 'social' );
+					return sunrisenational_get_theme_svg( $icon, 'social' );
 				}
 			}
 			return null;

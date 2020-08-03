@@ -172,8 +172,8 @@ require get_template_directory() . '/inc/customizer.php';
  */
 
 // Handle SVG icons.
-require get_template_directory() . '/classes/class-sunrise-svg-icons.php';
 require get_template_directory() . '/inc/svg-icons.php';
+require get_template_directory() . '/classes/class-sunrise-svg-icons.php';
 // Custom page walker.
 require get_template_directory() . '/classes/class-sunrise-walker-page.php';
 
@@ -183,6 +183,10 @@ require get_template_directory() . '/classes/class-sunrise-walker-page.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+
+
 
 
 

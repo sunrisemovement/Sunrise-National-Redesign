@@ -17,7 +17,7 @@
 	width: 100%;
 	display: block;
 	float: left;
-	padding: 15px;
+	padding: 0 15px;
 	padding-bottom: 0;
 }
 
@@ -30,8 +30,8 @@
 	width: 1.3rem;
 }
 
-.header-menu {
-	width: 80%;
+.header-menu.top {
+	width: 50%;
 	float: right;
 	display: flex;
 	font-size: 1rem;
@@ -41,10 +41,29 @@
 	justify-content: flex-end;
 }
 
+.header-menu.bottom {
+	width: 80%;
+	float: right;
+	display: flex;
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: -0.0277em;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	margin-bottom: 0;
+}
+
 .site-branding {
 	float: left;
 	width: 20%;
+	@include media-breakpoint-down(md) {
+    width: 170px;
+	}
 	img {
+		margin-top: 20px;
+			@include media-breakpoint-down(md) {
+				margin-top: 23px;
+			}
 	}
 }
 
@@ -251,6 +270,17 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 
 /*	5. Menu Modal
 /* -------------------------------------------------------------------------- */
+
+.header-toggles {
+	float: right;
+	button{
+		background: $black;
+		svg{
+			fill: $yellow;
+			margin:auto;
+		}
+	}
+}
 
 .menu-modal {
 	background: #fff;
@@ -515,6 +545,49 @@ button.sub-menu-toggle.active svg {
 	justify-content: center;
 }
 
+/* Social Icons ------------------------------ */
+
+.social-menu {
+	float: right;
+}
+
+ul.social-icons {
+	display: flex;
+	flex-wrap: wrap;
+	margin: -0.9rem -0.9rem 0 0;
+	width: calc(100% + 0.9rem);
+	float: right;
+}
+
+ul.social-icons li {
+	list-style-type: none;
+	margin: 1.55rem 0.9rem 0 0;
+}
+
+.social-icons a {
+	align-items: center;
+	background: $yellow;
+	border-radius: 50%;
+	color: $gray-sunrise;
+	display: flex;
+	height: auto;
+	width: auto;
+	padding: 5px;
+	justify-content: center;
+	text-decoration: none;
+	transition: transform 0.15s ease-in-out;
+	svg {
+		height: 15px;
+		width: 15px;
+	}
+}
+
+.social-icons a:focus,
+.social-icons a:hover {
+	transform: scale(1.1);
+	text-decoration: none;
+}
+
 .site-title a,
 .site-description,
 .header-menu li a,
@@ -536,7 +609,7 @@ button.sub-menu-toggle.active svg {
 
 .site-title svg {
 	display: block;
-	height: 30px;
+	height: 12px;
 	margin-right: 12px;
 	margin-top: 4px;
 	float: left;
@@ -567,6 +640,17 @@ button.sub-menu-toggle.active svg {
 	color: $yellow;
 }
 
+.primary-menu li.btn {
+	margin: 10px 20px 10px 0;
+	a {
+		color: $black;
+		margin: auto 0;
+		&:hover {
+			color: $black;
+		}
+	}
+}
+
 .primary-menu .menu-item-has-children:first-child > a {
 	padding-right: 0 !important;
 }
@@ -581,10 +665,24 @@ ul.primary-menu {
 
 .primary-menu > li.menu-item-has-children > a {
 	padding-right: 0;
+	&:after {
+		background-image: url("assets/img/down.svg");
+		width: 14px;
+		height: 8px;
+		margin-left: 6px;
+		margin-top: 6px;
+		display: block;
+		float: right;
+		content: "";
+		background-repeat: no-repeat;
+	}
 }
 
 .primary-menu > li {
 	margin: 0.8rem 1.6rem;
+	&.button {
+		margin: 0.8rem 0.4rem;
+	}
 }
 
 .primary-menu ul {
