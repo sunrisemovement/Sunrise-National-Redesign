@@ -33,7 +33,21 @@
 					<div class="header-navigation-wrapper">
 
 						<nav class="header-menu-wrapper " aria-label="<?php esc_attr_e( 'Horizontal', 'sunrisenational' ); ?>" role="navigation">
-							<div class="top-menu d-none d-md-block">
+							<div class="top-menu d-none d-md-flex">
+								<ul class="secondary-menu header-menu top">
+									<?php
+									if ( has_nav_menu( 'secondary' ) ) {
+										wp_nav_menu(
+											array(
+												'container'  => '',
+												'items_wrap' => '%3$s',
+												'theme_location' => 'secondary',
+											)
+										);
+										}
+										?>
+								</ul>
+
 								<?php if ( has_nav_menu( 'social' ) ) { ?>
 									<nav class="social-menu" aria-label="<?php esc_attr_e( 'Expanded Social links', 'sunrisenational' ); ?>" role="navigation">
 										<ul class="social-menu reset-list-style social-icons fill-children-current-color">
@@ -57,27 +71,14 @@
 
 										</ul>
 									</nav><!-- .social-menu -->
-							<ul class="secondary-menu header-menu top">
-								<?php
-								if ( has_nav_menu( 'secondary' ) ) {
-									wp_nav_menu(
-										array(
-											'container'  => '',
-											'items_wrap' => '%3$s',
-											'theme_location' => 'secondary',
-										)
-									);
-									}
-									?>
-							</ul>
+									<?php } ?>
 
-							<?php } ?>
 						</div>
 							<div class="bottom-menu">
 								<div class="site-branding">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/sunrise-logo.svg" width="" height="" alt="Sunrise Movement Logo" />
 								</div><!-- .site-branding -->
-								<ul class="header-menu bottom primary-menu d-none d-md-block">
+								<ul class="header-menu bottom primary-menu d-none d-md-flex">
 									<?php
 
 										if (  has_nav_menu( 'primary' ) ) {

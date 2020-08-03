@@ -55,7 +55,7 @@ svg,img,embed,object{display:block;height:auto;max-width:100%}
 .button.yellow{background-color:#ffde16}
 .button.yellow a{color:#000}
 .header-menu-wrapper{list-style:none}
-.top-menu{background-color:#33342e;float:left;padding:0 37px;display:block;width:100%}
+.top-menu{background-color:#33342e;float:left;padding:0 37px;display:block;width:100%;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .bottom-menu{background-color:#000;width:100%;display:block;float:left;padding:0 15px;padding-bottom:0}
 .header-menu .icon{display:block;height:.7rem;position:absolute;pointer-events:none;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);width:1.3rem}
 .header-menu.top{width:50%;float:right;display:-webkit-box;display:-ms-flexbox;display:flex;font-size:1rem;font-weight:500;letter-spacing:-0.0277em;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
