@@ -2,3 +2,46 @@
 	width: 100%;
 	height: auto;
 }
+
+svg,
+img,
+embed,
+object {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+}
+
+.button {
+	text-transform: capitalize;
+	padding: 12px 13px;
+	font-size: $font-size-base;
+	font-weight: $font-weight-bold;
+	background-color: $primary;
+	margin: auto 0;
+	&.white {
+		background-color: $background_color;
+		a {
+			color: $black;
+		}
+	}
+	&.yellow {
+		background-color: $yellow;
+		a {
+			color: $black;
+		}
+	}
+}
