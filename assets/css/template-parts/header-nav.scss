@@ -58,13 +58,13 @@
 	float: left;
 	width: 20%;
 	@include media-breakpoint-down(md) {
-    width: 170px;
+		width: 170px;
 	}
 	img {
 		margin-top: 20px;
-			@include media-breakpoint-down(md) {
-				margin-top: 23px;
-			}
+		@include media-breakpoint-down(md) {
+			margin-top: 23px;
+		}
 	}
 }
 
@@ -115,17 +115,14 @@
 	text-decoration: none;
 	word-break: normal;
 	word-wrap: normal;
-}
-
-.header-menu a:hover,
-.header-menu a:focus,
-.header-menu .current_page_ancestor {
 	text-decoration: underline;
-}
-
-.header-menu li.current-menu-item > a,
-.header-menu li.current-menu-item > .link-icon-wrapper > a {
-	text-decoration: underline;
+	@include underliner;
+	&:hover {
+		text-decoration: none;
+	}
+	&:after {
+		background-color: $yellow;
+	}
 }
 
 .header-menu li.current-menu-item > a:hover,
@@ -142,15 +139,31 @@
 	border-radius: 0.4rem;
 	color: #fff;
 	font-size: 1rem;
+	z-index: 10;
 	opacity: 0;
-	padding: 1rem 0;
+	padding: 0.2rem 0;
 	position: absolute;
 	right: 9999rem;
 	top: calc(100% + 2rem);
 	transition: opacity 0.15s linear, transform 0.15s linear, right 0s 0.15s;
 	transform: translateY(0.6rem);
 	width: 20rem;
-	z-index: 1;
+	z-index: 10;
+	li {
+		a {
+			background: transparent;
+			border: none;
+			color: inherit;
+			display: block;
+			padding: 1rem 2rem;
+			text-decoration: none;
+			transition: background-color 0.15s linear;
+			width: 100%;
+			&:hover {
+				background-color: $black;
+			}
+		}
+	}
 }
 
 .primary-menu li.menu-item-has-children:hover > ul,
@@ -180,16 +193,6 @@
 	border: 0.8rem solid transparent;
 	border-bottom-color: #000;
 	right: 1.8rem;
-}
-
-.primary-menu ul a {
-	background: transparent;
-	border: none;
-	color: inherit;
-	display: block;
-	padding: 1rem 2rem;
-	transition: background-color 0.15s linear;
-	width: 100%;
 }
 
 .primary-menu ul li.menu-item-has-children > a {
@@ -274,11 +277,11 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 
 .header-toggles {
 	float: right;
-	button{
+	button {
 		background: $black;
-		svg{
+		svg {
 			fill: $yellow;
-			margin:auto;
+			margin: auto;
 		}
 	}
 }
@@ -666,7 +669,7 @@ ul.primary-menu {
 
 .primary-menu > li.menu-item-has-children > a {
 	padding-right: 0;
-	&:after {
+	&:before {
 		background-image: url("assets/img/down.svg");
 		width: 14px;
 		height: 8px;

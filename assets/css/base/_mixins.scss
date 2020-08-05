@@ -1,0 +1,35 @@
+@mixin button {
+	text-transform: uppercase;
+	padding: 12px 13px;
+	font-size: $font-size-base;
+	font-weight: $font-weight-bold;
+	background-color: $primary;
+	margin: auto 0;
+	display: inline-flex;
+	margin-right: 1rem;
+}
+
+@mixin underliner {
+	position: relative;
+	text-decoration: none;
+	transition: 0.25s all ease-out;
+	&:hover,
+	&:focus,
+	&:active {
+		cursor: pointer;
+		&:after {
+			width: 100%;
+		}
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -7px;
+		height: 4px;
+		background-color: $primary;
+		width: 0;
+		transition: 0.25s all ease-out;
+		display: block;
+	}
+}
