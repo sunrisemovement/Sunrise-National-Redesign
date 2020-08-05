@@ -1,0 +1,92 @@
+footer {
+	background-color: $black;
+	padding: 60px;
+	@include media-breakpoint-down(md) {
+	}
+	.footer-top {
+		margin-bottom: 1rem;
+		li {
+			@include button;
+			background-color: $yellow;
+			a {
+				color: $black;
+			}
+			&:nth-child(1) {
+				background-color: $white;
+			}
+			&:nth-child(2) {
+				background-color: $yellow;
+			}
+		}
+	}
+	.footer-left {
+		li {
+			list-style: none;
+			font-family: $font-family-sans-serif;
+			font-weight: $font-weight-bold;
+			text-transform: uppercase;
+			line-height: 2;
+			a {
+				@include underliner;
+				&:hover {
+					color: $yellow;
+				}
+				&::after {
+					background-color: $yellow;
+				}
+			}
+		}
+	}
+	.footer-right {
+		.footer-social-wrapper {
+			justify-content: end;
+			float: right;
+			margin-bottom: 1rem;
+		}
+		.footer-pac {
+			color: $white;
+			padding: 1rem;
+			border: 1px solid $white;
+			justify-content: end;
+			font-size: 12px;
+			float: right;
+			margin-bottom: 1rem;
+		}
+		.footer-copyright {
+			color: $yellow;
+			justify-content: end;
+			font-size: 1.4rem;
+			text-transform: uppercase;
+			font-weight: $font-weight-bold;
+			font-family: $font-family-sans-serif;
+			float: right;
+			margin-bottom: 1rem;
+		}
+		.to-the-top {
+			float: right;
+			margin-bottom: 0.4rem;
+			font-weight: $font-weight-bold;
+			color: $yellow;
+			width: 100%;
+			text-align: right;
+			width: 100%;
+			@include media-breakpoint-down(md) {
+				text-align: center;
+				margin: 2rem 0;
+			}
+		}
+		.social-menu {
+			margin-top: 0.5rem;
+			li {
+				margin-top: 0;
+				a svg {
+					height: 28px;
+					width: 28px;
+				}
+			}
+			@include media-breakpoint-down(md) {
+				margin: auto;
+			}
+		}
+	}
+}

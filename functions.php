@@ -49,7 +49,9 @@ if ( ! function_exists( 'surnise_national_setup' ) ) :
 				'primary'  => __( 'Lower Desktop Horizontal Menu', 'sunrise_national' ),
 				'secondary' => __( 'Top Secondary Desktop Horizontal Menu', 'sunrise_national' ),
 				'mobile'   => __( 'Mobile Menu', 'sunrise_national' ),
-				'footer'   => __( 'Footer Menu', 'sunrise_national' ),
+				'footer-top'   => __( 'Footer Top Button Menu', 'sunrise_national' ),
+				'footer-left'   => __( 'Footer Left Menu', 'sunrise_national' ),
+				'footer-right'   => __( 'Footer Right Menu', 'sunrise_national' ),
 				'social'   => __( 'Social Menu', 'sunrise_national' ),
 			);
 
@@ -187,6 +189,67 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 
+function sunrisenational_sidebar_registration() {
+
+	// Arguments used in all register_sidebar() calls.
+	$shared_args = array(
+		'before_title'  => '<h2 class="widget-title subheading heading-size-3">',
+		'after_title'   => '</h2>',
+		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+		'after_widget'  => '</div></div>',
+	);
+
+	// Sidebar #1.
+	register_sidebar(
+		array_merge(
+			$shared_args,
+			array(
+				'name'        => __( 'Sidebar #1', 'sunrisenational' ),
+				'id'          => 'Sidebar-1',
+				'description' => __( 'Widgets in this area will be displayed in the right column.', 'sunrisenational' ),
+			)
+		)
+	);
+
+	// Footer #1.
+	register_sidebar(
+		array_merge(
+			$shared_args,
+			array(
+				'name'        => __( 'Footer top buttons', 'sunrisenational' ),
+				'id'          => 'footer-button',
+				'description' => __( 'Widgets in this area will be displayed in the top bar of the menu.', 'sunrisenational' ),
+			)
+		)
+	);
+
+	// Footer #1.
+	register_sidebar(
+		array_merge(
+			$shared_args,
+			array(
+				'name'        => __( 'Footer #1', 'sunrisenational' ),
+				'id'          => 'footer-1',
+				'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'sunrisenational' ),
+			)
+		)
+	);
+
+	// Footer #2.
+	register_sidebar(
+		array_merge(
+			$shared_args,
+			array(
+				'name'        => __( 'Footer #2', 'sunrisenational' ),
+				'id'          => 'footer-2',
+				'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'sunrisenational' ),
+			)
+		)
+	);
+
+}
+
+add_action( 'widgets_init', 'sunrisenational_sidebar_registration' );
 
 
 
@@ -199,42 +262,42 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => __( "Campaigns", "twentytwentychild" ),
-		"singular_name" => __( "campaign", "twentytwentychild" ),
-		"menu_name" => __( "Campaigns", "twentytwentychild" ),
-		"all_items" => __( "All Campaigns", "twentytwentychild" ),
-		"add_new" => __( "Add new", "twentytwentychild" ),
-		"add_new_item" => __( "Add new Campaign", "twentytwentychild" ),
-		"edit_item" => __( "Edit Campaign", "twentytwentychild" ),
-		"new_item" => __( "New Campaign", "twentytwentychild" ),
-		"view_item" => __( "View Campaign", "twentytwentychild" ),
-		"view_items" => __( "View Campaigns", "twentytwentychild" ),
-		"search_items" => __( "Search Campaigns", "twentytwentychild" ),
-		"not_found" => __( "No Campaigns found", "twentytwentychild" ),
-		"not_found_in_trash" => __( "No Campaigns found in trash", "twentytwentychild" ),
-		"parent" => __( "Parent Campaign:", "twentytwentychild" ),
-		"featured_image" => __( "Featured image for this Campaign", "twentytwentychild" ),
-		"set_featured_image" => __( "Set featured image for this Campaign", "twentytwentychild" ),
-		"remove_featured_image" => __( "Remove featured image for this Campaign", "twentytwentychild" ),
-		"use_featured_image" => __( "Use as featured image for this Campaign", "twentytwentychild" ),
-		"archives" => __( "Campaign archives", "twentytwentychild" ),
-		"insert_into_item" => __( "Insert into Campaign", "twentytwentychild" ),
-		"uploaded_to_this_item" => __( "Upload to this Campaign", "twentytwentychild" ),
-		"filter_items_list" => __( "Filter Campaigns list", "twentytwentychild" ),
-		"items_list_navigation" => __( "Campaigns list navigation", "twentytwentychild" ),
-		"items_list" => __( "Campaigns list", "twentytwentychild" ),
-		"attributes" => __( "Campaigns attributes", "twentytwentychild" ),
-		"name_admin_bar" => __( "Campaign", "twentytwentychild" ),
-		"item_published" => __( "Campaign published", "twentytwentychild" ),
-		"item_published_privately" => __( "Campaign published privately.", "twentytwentychild" ),
-		"item_reverted_to_draft" => __( "Campaign reverted to draft.", "twentytwentychild" ),
-		"item_scheduled" => __( "Campaign scheduled", "twentytwentychild" ),
-		"item_updated" => __( "Campaign updated.", "twentytwentychild" ),
-		"parent_item_colon" => __( "Parent Campaign:", "twentytwentychild" ),
+		"name" => __( "Campaigns", "sunrisenationalchild" ),
+		"singular_name" => __( "campaign", "sunrisenationalchild" ),
+		"menu_name" => __( "Campaigns", "sunrisenationalchild" ),
+		"all_items" => __( "All Campaigns", "sunrisenationalchild" ),
+		"add_new" => __( "Add new", "sunrisenationalchild" ),
+		"add_new_item" => __( "Add new Campaign", "sunrisenationalchild" ),
+		"edit_item" => __( "Edit Campaign", "sunrisenationalchild" ),
+		"new_item" => __( "New Campaign", "sunrisenationalchild" ),
+		"view_item" => __( "View Campaign", "sunrisenationalchild" ),
+		"view_items" => __( "View Campaigns", "sunrisenationalchild" ),
+		"search_items" => __( "Search Campaigns", "sunrisenationalchild" ),
+		"not_found" => __( "No Campaigns found", "sunrisenationalchild" ),
+		"not_found_in_trash" => __( "No Campaigns found in trash", "sunrisenationalchild" ),
+		"parent" => __( "Parent Campaign:", "sunrisenationalchild" ),
+		"featured_image" => __( "Featured image for this Campaign", "sunrisenationalchild" ),
+		"set_featured_image" => __( "Set featured image for this Campaign", "sunrisenationalchild" ),
+		"remove_featured_image" => __( "Remove featured image for this Campaign", "sunrisenationalchild" ),
+		"use_featured_image" => __( "Use as featured image for this Campaign", "sunrisenationalchild" ),
+		"archives" => __( "Campaign archives", "sunrisenationalchild" ),
+		"insert_into_item" => __( "Insert into Campaign", "sunrisenationalchild" ),
+		"uploaded_to_this_item" => __( "Upload to this Campaign", "sunrisenationalchild" ),
+		"filter_items_list" => __( "Filter Campaigns list", "sunrisenationalchild" ),
+		"items_list_navigation" => __( "Campaigns list navigation", "sunrisenationalchild" ),
+		"items_list" => __( "Campaigns list", "sunrisenationalchild" ),
+		"attributes" => __( "Campaigns attributes", "sunrisenationalchild" ),
+		"name_admin_bar" => __( "Campaign", "sunrisenationalchild" ),
+		"item_published" => __( "Campaign published", "sunrisenationalchild" ),
+		"item_published_privately" => __( "Campaign published privately.", "sunrisenationalchild" ),
+		"item_reverted_to_draft" => __( "Campaign reverted to draft.", "sunrisenationalchild" ),
+		"item_scheduled" => __( "Campaign scheduled", "sunrisenationalchild" ),
+		"item_updated" => __( "Campaign updated.", "sunrisenationalchild" ),
+		"parent_item_colon" => __( "Parent Campaign:", "sunrisenationalchild" ),
 	];
 
 	$args = [
-		"label" => __( "Campaigns", "twentytwentychild" ),
+		"label" => __( "Campaigns", "sunrisenationalchild" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -264,12 +327,12 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => __( "Past Wins", "twentytwentychild" ),
-		"singular_name" => __( "past win", "twentytwentychild" ),
+		"name" => __( "Past Wins", "sunrisenationalchild" ),
+		"singular_name" => __( "past win", "sunrisenationalchild" ),
 	];
 
 	$args = [
-		"label" => __( "Past Wins", "twentytwentychild" ),
+		"label" => __( "Past Wins", "sunrisenationalchild" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -299,12 +362,12 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => __( "Endorsements", "twentytwentychild" ),
-		"singular_name" => __( "endorsement", "twentytwentychild" ),
+		"name" => __( "Endorsements", "sunrisenationalchild" ),
+		"singular_name" => __( "endorsement", "sunrisenationalchild" ),
 	];
 
 	$args = [
-		"label" => __( "Endorsements", "twentytwentychild" ),
+		"label" => __( "Endorsements", "sunrisenationalchild" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -334,12 +397,12 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => __( "Actions", "twentytwentychild" ),
-		"singular_name" => __( "action", "twentytwentychild" ),
+		"name" => __( "Actions", "sunrisenationalchild" ),
+		"singular_name" => __( "action", "sunrisenationalchild" ),
 	];
 
 	$args = [
-		"label" => __( "actions", "twentytwentychild" ),
+		"label" => __( "actions", "sunrisenationalchild" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,

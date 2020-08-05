@@ -26,12 +26,7 @@ object {
 }
 
 .button {
-	text-transform: capitalize;
-	padding: 12px 13px;
-	font-size: $font-size-base;
-	font-weight: $font-weight-bold;
-	background-color: $primary;
-	margin: auto 0;
+	@include button;
 	&.white {
 		background-color: $background_color;
 		a {
