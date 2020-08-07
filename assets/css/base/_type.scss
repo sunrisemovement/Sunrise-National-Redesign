@@ -41,8 +41,11 @@ textarea {
 }
 
 h1,
-h2 {
+h2,
+h3 {
 	font-weight: $font-weight-bolder;
+	text-transform: uppercase;
+	line-height: 1;
 }
 
 p {
@@ -50,6 +53,10 @@ p {
 		font-size: 1.2rem;
 		line-height: 1.6;
 	}
+}
+
+.type-page h1.entry-title {
+	line-height: 0.9;
 }
 
 .h1-subhead {

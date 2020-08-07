@@ -46,17 +46,18 @@ embed,iframe,object{max-width:100%}
 .gallery-columns-8 .gallery-item{max-width:12.5%}
 .gallery-columns-9 .gallery-item{max-width:11.11%}
 .gallery-caption{display:block}
-h1,h2{font-weight:900}
+h1,h2,h3{font-weight:900;text-transform:uppercase;line-height:1}
+.type-page h1.entry-title{line-height:.9}
 .h1-subhead{font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-style:italic;font-size:1.167rem}
 .cat-links a{font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:700;font-size:16px;margin-right:.7rem}
 .post-thumbnail img{width:100%;height:auto}
 svg,img,embed,object{display:block;height:auto;max-width:100%}
 .screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute !important;width:1px}
-.button{text-transform:uppercase;padding:12px 13px;font-size:1.125rem;font-weight:700;background-color:#8f0d56;margin:auto 0;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-right:1rem}
-.button.white{background-color:#fffffb}
-.button.white a{color:#000}
-.button.yellow{background-color:#ffde16}
-.button.yellow a{color:#000}
+.button,button{text-transform:uppercase;padding:12px 13px;font-size:1.125rem;font-weight:700;background-color:#8f0d56;margin:auto 0;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-right:1rem;text-transform:uppercase !important}
+.button.white,button.white{background-color:#fffffb}
+.button.white a,button.white a{color:#000}
+.button.yellow,button.yellow{background-color:#ffde16}
+.button.yellow a,button.yellow a{color:#000}
 .border-gradient-sunrise{border-image-source:linear-gradient(to bottom,#8f0d56,#ef4c39,#ffde16);border-style:solid;border-image-slice:1;border-width:5px}
 .twitter{max-height:500px}
 .twitter #ctf.ctf-super-narrow .ctf-tweet-content{width:100%}
@@ -175,7 +176,7 @@ ul.primary-menu{-webkit-box-align:center;-ms-flex-align:center;align-items:cente
 .footer-menu .smvmt2020-highlight>a,.footer-menu .smvmt2020-highlight>a:hover{color:#33342e !important;padding:12px 18px;background:#ffde16}
 body footer{background-color:#000;padding:60px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}
 body footer .footer-top{margin-bottom:1rem}
-body footer .footer-top li{text-transform:uppercase;padding:12px 13px;font-size:1.125rem;font-weight:700;background-color:#8f0d56;margin:auto 0;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-right:1rem;background-color:#ffde16}
+body footer .footer-top li{text-transform:uppercase;padding:12px 13px;font-size:1.125rem;font-weight:700;background-color:#8f0d56;margin:auto 0;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-right:1rem;text-transform:uppercase !important;background-color:#ffde16}
 body footer .footer-top li a{color:#000}
 body footer .footer-top li:nth-child(1){background-color:#fff}
 body footer .footer-top li:nth-child(2){background-color:#ffde16}
@@ -204,7 +205,7 @@ body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .blog-header .blog-menu li a:after{content:"";position:absolute;left:0;bottom:-0.15rem;height:.15rem;background-color:#8f0d56;width:0;-webkit-transition:.25s all ease-out;transition:.25s all ease-out;display:block}
 .blog-single article .post-thumbnail{max-height:350px;overflow:hidden}
 .blog-single article header:after{width:100%;content:"";height:5px;background-image:url("assets/img/gradient-border-bottom.svg");background-size:cover;background-size:contain;background-repeat:no-repeat;display:block}
-.blog-single article h1{font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:400;font-size:3.3rem}
+.blog-single article h1{font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:400;font-size:3.3rem;text-transform:none !important}
 .blog-single article h3{font-style:italic;padding:.2rem 0 1rem;font-size:20px}
 .blog-single article .entry-meta{font-size:1.2rem;padding-bottom:1.6rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .blog-single article .entry-share{margin-top:-14px}
@@ -214,6 +215,8 @@ body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .post-footer{margin:3rem 0}
 .post-footer .border-gradient-sunrise{padding:60px;text-align:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex}
 .post-footer .border-gradient-sunrise .post-footer-text{margin-bottom:1rem}
+.post-footer .post-next{-ms-flex-wrap:wrap;flex-wrap:wrap}
+.post-footer .post-next article{width:100%;-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%}
 .blog-list article{float:left;width:100%;text-align:left;-webkit-transition:.3s all;transition:.3s all}
 .blog-list article:hover{opacity:.8;-webkit-transition:.3s all;transition:.3s all;cursor:pointer}
 .blog-list article .post-thumbnail img{float:left}
@@ -228,7 +231,7 @@ body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .content-sidebar article .post-thumbnail img,.blog-vertical-thumbnail-section article .post-thumbnail img,.post-footer article .post-thumbnail img{width:75px;height:75px;float:left}
 .content-sidebar article .entry-header,.blog-vertical-thumbnail-section article .entry-header,.post-footer article .entry-header{width:100%;float:left;width:calc(100% - 75px);padding-left:10px}
 .content-sidebar article .cat-links,.blog-vertical-thumbnail-section article .cat-links,.post-footer article .cat-links{font-size:12px;width:100%}
-.content-sidebar article .entry-title,.blog-vertical-thumbnail-section article .entry-title,.post-footer article .entry-title{font-size:18px;line-height:1.2}
+.content-sidebar article .entry-title,.blog-vertical-thumbnail-section article .entry-title,.post-footer article .entry-title{font-size:18px;color:#000;line-height:1.2}
 .content-sidebar article .entry-meta,.blog-vertical-thumbnail-section article .entry-meta,.post-footer article .entry-meta{font-size:12px;margin-top:5px}
 .blog-featured-section{padding-bottom:40px;border-bottom:1px solid #8f0d56;margin-bottom:40px}
 .blog-featured-single{width:100%;border-left:1px solid #8f0d56;border-right:1px solid #8f0d56}
@@ -247,6 +250,19 @@ body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .instagram-section h3{width:100%;text-align:center;margin-bottom:2rem}
 .instagram-section h3 svg{display:inline-block;margin-top:-5px}
 .blog-vertical-medium-section{padding:60px 0}
+html,body,.site{height:100%;min-height:100%}
+.campaign-single{height:100%;min-height:100%;display:contents}
+.campaign-single .entry-header{position:relative;overflow:hidden;width:100%;height:calc(100% - 150px)}
+.campaign-single .entry-header .container{background-image:url("assets/img/gradientborderbroken.svg");background-repeat:no-repeat;background-size:100% 91%;height:100%;width:100%;margin-top:25px;margin-bottom:10%}
+.campaign-single .entry-header .container .header-row{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;position:absolute;bottom:40px}
+.campaign-single .entry-header .container .header-row .header-blocks{margin-bottom:70px;margin-left:-21px;position:relative}
+.campaign-single .entry-header .container .header-row .header-blocks.iframe{-webkit-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%}
+.campaign-single .entry-header .container .h1-subhead{color:#ffde16}
+.campaign-single .entry-header .container .entry-title{color:#fff;margin-bottom:60px;line-height:.9}
+.campaign-single .entry-header .container .header-button{position:absolute;bottom:-30px;left:60px}
+.campaign-single .entry-header .post-thumbnail{left:0;top:0;position:absolute;z-index:-10;width:100%}
+.campaign-single .entry-header .post-thumbnail::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.7;z-index:1;mix-blend-mode:unset}
+.campaign-single .entry-header .post-thumbnail img{width:100%;-o-object-fit:fill;object-fit:fill}
 /*! Bootstrap v4.3.1 (https://getbootstrap.com/) Copyright 2011-2019 The Bootstrap Authors Copyright 2011-2019 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */:root{--blue:#007bff;--indigo:#6610f2;--purple:#8f0d56;--pink:#e83e8c;--red:#ef4c39;--orange:#fd9014;--yellow:#ffde16;--green:#e3eddf;--teal:#20c997;--cyan:#f7f5e8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#8f0d56;--secondary:#ffde16;--success:#e3eddf;--info:#f7f5e8;--warning:#ffde16;--danger:#ef4c39;--light:#f8f9fa;--dark:#33342e;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
 *,*::before,*::after{-webkit-box-sizing:border-box;box-sizing:border-box}
 html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}

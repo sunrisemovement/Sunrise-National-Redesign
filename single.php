@@ -7,9 +7,11 @@
  * @package Sunrise_National
  */
 
-get_header();
-get_template_part( 'template-parts/blog-navigation' );
-?>
+ get_header();?>
+ 		<div id="content" class="site-content">
+ 			<?php
+ get_template_part( 'template-parts/blog-navigation' );
+ ?>
 
 <div class="container">
 	<div class="row">
