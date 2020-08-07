@@ -8,13 +8,13 @@
  */
 
 ?>
-<div class="container blog-featured-section">
+<div class="container blog-featured-section blog-list">
 		<div class="row">
 
-				<div class="col-md-6 blog-featured-single order-md-2">
+				<div class="col-lg-6 col-md-12 blog-featured-single order-lg-2">
 				<?php
 					$the_query = new WP_Query( array (
-					'orderby' => 'date',
+					'post_type' => 'post',
 					'posts_per_page' => '1',
 					'category_name' => 'featured',
 				 ) );
@@ -32,10 +32,11 @@
 				<?php endif; ?>
 				</div>
 
-				<div class="col-md-3 blog-vertical-thumbnail-section order-md-1">
+				<div class="col-lg-3 col-md-6 blog-vertical-thumbnail-section order-lg-1">
 				<?php
 					$the_query = new WP_Query( array (
-						'orderby' => 'rand', 'posts_per_page' => '5'
+						'orderby' => 'rand', 'posts_per_page' => '5',
+						'post_type' => 'post',
 					) );
 					// output the random post
 					 if ( $the_query->have_posts() ) : ?>
@@ -52,7 +53,7 @@
 				</div>
 
 
-				<div class="col-md-3 order-md-3 ">
+				<div class="col-lg-3 col-md-6 order-lg-3 ">
 					<h4> Twitter Updates </h4>
 					<?php
 				 echo do_shortcode( '[custom-twitter-feeds]' );

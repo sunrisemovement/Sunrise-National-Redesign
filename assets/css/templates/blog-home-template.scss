@@ -115,35 +115,36 @@
 		}
 	}
 }
-
-article {
-	float: left;
-	width: 100%;
-	text-align: left;
-	transition: 0.3s all;
-	&:hover {
-		opacity: 0.8;
-		transition: 0.3s all;
-		cursor: pointer;
-	}
-	.post-thumbnail img {
+.blog-list {
+	article {
 		float: left;
-	}
-	.entry-header {
-		float: left;
-		color: $black;
-	}
-	.cat-links {
 		width: 100%;
-		color: $purple;
-		font-family: $font-family-sans-serif;
-		font-weight: $font-weight-bold;
-	}
-	.entry-title {
-	}
-	.entry-meta {
-		font-weight: $font-weight-bold;
-		color: $gray-sunrise;
+		text-align: left;
+		transition: 0.3s all;
+		&:hover {
+			opacity: 0.8;
+			transition: 0.3s all;
+			cursor: pointer;
+		}
+		.post-thumbnail img {
+			float: left;
+		}
+		.entry-header {
+			float: left;
+			color: $black;
+		}
+		.cat-links {
+			width: 100%;
+			color: $purple;
+			font-family: $font-family-sans-serif;
+			font-weight: $font-weight-bold;
+		}
+		.entry-title {
+		}
+		.entry-meta {
+			font-weight: $font-weight-bold;
+			color: $gray-sunrise;
+		}
 	}
 }
 

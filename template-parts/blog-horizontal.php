@@ -8,11 +8,11 @@
  */
 
 ?>
-<div class="container blog-horizontal-section">
+<div class="container blog-horizontal-section blog-list">
 		<div class="row">
 
 			<?php
-				$the_query = new WP_Query( array ( 'orderby' => 'rand', 'posts_per_page' => '4' ) );
+				$the_query = new WP_Query( array ( 'orderby' => 'rand', 'posts_per_page' => '4', 'post_type' => 'post' ) );
 				// output the random post
 				 if ( $the_query->have_posts() ) : ?>
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>

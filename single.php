@@ -20,7 +20,7 @@ get_template_part( 'template-parts/blog-navigation' );
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content/content', get_post_type() );
+			get_template_part( 'template-parts/content/content-blog', get_post_type() );
 
 		endwhile; // End of the loop.
 		?>

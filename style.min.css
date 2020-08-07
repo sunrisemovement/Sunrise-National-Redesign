@@ -173,26 +173,26 @@ ul.primary-menu{-webkit-box-align:center;-ms-flex-align:center;align-items:cente
 .footer-menu{font-family:"Source Sans Pro",sans-serif !important;text-transform:uppercase;letter-spacing:.125em;font-weight:700;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:16px}
 .footer-menu a,.footer-menu a:hover{text-decoration:none;color:#ffde16 !important}
 .footer-menu .smvmt2020-highlight>a,.footer-menu .smvmt2020-highlight>a:hover{color:#33342e !important;padding:12px 18px;background:#ffde16}
-footer{background-color:#000;padding:60px}
-footer .footer-top{margin-bottom:1rem}
-footer .footer-top li{text-transform:uppercase;padding:12px 13px;font-size:1.125rem;font-weight:700;background-color:#8f0d56;margin:auto 0;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-right:1rem;background-color:#ffde16}
-footer .footer-top li a{color:#000}
-footer .footer-top li:nth-child(1){background-color:#fff}
-footer .footer-top li:nth-child(2){background-color:#ffde16}
-footer .footer-left li{list-style:none;font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:700;text-transform:uppercase;line-height:2}
-footer .footer-left li a{position:relative;text-decoration:none;-webkit-transition:.25s all ease-out;transition:.25s all ease-out;text-decoration:none}
-footer .footer-left li a:hover,footer .footer-left li a:focus,footer .footer-left li a:active{cursor:pointer}
-footer .footer-left li a:hover:after,footer .footer-left li a:focus:after,footer .footer-left li a:active:after{width:100%}
-footer .footer-left li a:after{content:"";position:absolute;left:0;bottom:-0.15rem;height:.15rem;background-color:#8f0d56;width:0;-webkit-transition:.25s all ease-out;transition:.25s all ease-out;display:block}
-footer .footer-left li a:hover{color:#ffde16}
-footer .footer-left li a::after{background-color:#ffde16}
-footer .footer-right .footer-social-wrapper{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:end;float:right;margin-bottom:1rem}
-footer .footer-right .footer-pac{color:#fff;padding:1rem;border:1px solid #fff;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:end;font-size:12px;float:right;margin-bottom:1rem}
-footer .footer-right .footer-copyright{color:#ffde16;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:end;font-size:1.4rem;text-transform:uppercase;font-weight:700;font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";float:right;margin-bottom:1rem}
-footer .footer-right .to-the-top{float:right;margin-bottom:.4rem;font-weight:700;color:#ffde16;width:100%;text-align:right;width:100%}
-footer .footer-right .social-menu{margin-top:.5rem}
-footer .footer-right .social-menu li{margin-top:0}
-footer .footer-right .social-menu li a svg{height:28px;width:28px}
+body footer{background-color:#000;padding:60px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}
+body footer .footer-top{margin-bottom:1rem}
+body footer .footer-top li{text-transform:uppercase;padding:12px 13px;font-size:1.125rem;font-weight:700;background-color:#8f0d56;margin:auto 0;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-right:1rem;background-color:#ffde16}
+body footer .footer-top li a{color:#000}
+body footer .footer-top li:nth-child(1){background-color:#fff}
+body footer .footer-top li:nth-child(2){background-color:#ffde16}
+body footer .footer-left li{list-style:none;font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:700;text-transform:uppercase;line-height:2}
+body footer .footer-left li a{position:relative;text-decoration:none;-webkit-transition:.25s all ease-out;transition:.25s all ease-out;text-decoration:none}
+body footer .footer-left li a:hover,body footer .footer-left li a:focus,body footer .footer-left li a:active{cursor:pointer}
+body footer .footer-left li a:hover:after,body footer .footer-left li a:focus:after,body footer .footer-left li a:active:after{width:100%}
+body footer .footer-left li a:after{content:"";position:absolute;left:0;bottom:-0.15rem;height:.15rem;background-color:#8f0d56;width:0;-webkit-transition:.25s all ease-out;transition:.25s all ease-out;display:block}
+body footer .footer-left li a:hover{color:#ffde16}
+body footer .footer-left li a::after{background-color:#ffde16}
+body footer .footer-right .footer-social-wrapper{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:end;float:right;margin-bottom:1rem}
+body footer .footer-right .footer-pac{color:#fff;padding:1rem;border:1px solid #fff;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:end;font-size:12px;float:right;margin-bottom:1rem}
+body footer .footer-right .footer-copyright{color:#ffde16;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:end;font-size:1.4rem;text-transform:uppercase;font-weight:700;font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";float:right;margin-bottom:1rem}
+body footer .footer-right .to-the-top{float:right;margin-bottom:.4rem;font-weight:700;color:#ffde16;width:100%;text-align:right;width:100%}
+body footer .footer-right .social-menu{margin-top:.5rem}
+body footer .footer-right .social-menu li{margin-top:0}
+body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .blog-header .blog-bar{padding:inherit;padding-top:20px;padding-bottom:20px;display:-webkit-box;display:-ms-flexbox;display:flex}
 .blog-header .blog-title{display:inline-block}
 .blog-header .blog-title a{color:#000}
@@ -214,12 +214,12 @@ footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .post-footer{margin:3rem 0}
 .post-footer .border-gradient-sunrise{padding:60px;text-align:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex}
 .post-footer .border-gradient-sunrise .post-footer-text{margin-bottom:1rem}
-article{float:left;width:100%;text-align:left;-webkit-transition:.3s all;transition:.3s all}
-article:hover{opacity:.8;-webkit-transition:.3s all;transition:.3s all;cursor:pointer}
-article .post-thumbnail img{float:left}
-article .entry-header{float:left;color:#000}
-article .cat-links{width:100%;color:#8f0d56;font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:700}
-article .entry-meta{font-weight:700;color:#33342e}
+.blog-list article{float:left;width:100%;text-align:left;-webkit-transition:.3s all;transition:.3s all}
+.blog-list article:hover{opacity:.8;-webkit-transition:.3s all;transition:.3s all;cursor:pointer}
+.blog-list article .post-thumbnail img{float:left}
+.blog-list article .entry-header{float:left;color:#000}
+.blog-list article .cat-links{width:100%;color:#8f0d56;font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:700}
+.blog-list article .entry-meta{font-weight:700;color:#33342e}
 .content-vertical article .post-thumbnail img{width:30%;float:left}
 .content-vertical article .entry-header{width:70%;float:left;padding-left:10px}
 .content-vertical article .cat-links{font-size:16px;width:100%}
@@ -2210,9 +2210,9 @@ a.text-dark:hover,a.text-dark:focus{color:#0b0b0a !important}
 }@media(max-width:991.98px){p{font-size:1.2rem;line-height:1.6}
 .site-branding{width:170px}
 .site-branding img{margin-top:23px}
-footer{padding:40px}
-footer .footer-right .to-the-top{text-align:center;margin:2rem 0}
-footer .footer-right .social-menu{margin:auto}
+body footer{padding:40px}
+body footer .footer-right .to-the-top{text-align:center;margin:2rem 0}
+body footer .footer-right .social-menu{margin:auto}
 .blog-single article h1{font-size:2.2rem}
 .blog-single article .entry-meta{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
 .blog-single article .entry-meta .entry-details{text-align:left;margin-bottom:1rem}
