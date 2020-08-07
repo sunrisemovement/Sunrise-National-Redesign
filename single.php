@@ -13,7 +13,7 @@ get_template_part( 'template-parts/blog-navigation' );
 
 <div class="container">
 	<div class="row">
-	<div id="primary" class="content-area  col-lg-8">
+	<div id="primary" class="content-area blog-single col-lg-8">
 		<main id="main" class="site-main">
 
 		<?php

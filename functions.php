@@ -20,9 +20,9 @@ if ( ! function_exists( 'sunrise_national_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Sunrise National, use a find and replace
-		 * to change 'wordpress-bootstrap-starter-theme' to the name of your theme in all the template files.
+		 * to change 'sunrise-national' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'wordpress-bootstrap-starter-theme', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'sunrise-national', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -119,9 +119,9 @@ add_action( 'after_setup_theme', 'sunrise_national_content_width', 0 );
  */
 function sunrise_national_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'wordpress-bootstrap-starter-theme' ),
+		'name'          => esc_html__( 'Sidebar', 'sunrise-national' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'wordpress-bootstrap-starter-theme' ),
+		'description'   => esc_html__( 'Add widgets here.', 'sunrise-national' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -134,13 +134,13 @@ add_action( 'widgets_init', 'sunrise_national_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sunrise_national_scripts() {
-	wp_enqueue_style( 'wordpress-bootstrap-starter-theme-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'sunrise-national-style', get_stylesheet_uri() );
 
 	// https://getbootstrap.com/docs/4.3/getting-started/download/#bootstrapcdn
-	wp_enqueue_script( 'wordpress-bootstrap-starter-theme-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'sunrise-national-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array('jquery'), '20151215', true );
 
-	wp_enqueue_script( 'wordpress-bootstrap-starter-theme-vendor-scripts', get_template_directory_uri() . '/assets/js/vendor.min.js', array('jquery'), '20151215', true );
-	wp_enqueue_script( 'wordpress-bootstrap-starter-theme-custom-scripts', get_template_directory_uri() . '/assets/js/custom.min.js', array('customize-preview'), '20151215', true );
+	wp_enqueue_script( 'sunrise-national-vendor-scripts', get_template_directory_uri() . '/assets/js/vendor.min.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'sunrise-national-custom-scripts', get_template_directory_uri() . '/assets/js/custom.min.js', array('customize-preview'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -391,7 +391,7 @@ function cptui_register_my_cpts() {
 		"taxonomies" => [ "campaigns" ],
 	];
 
-	register_post_type( "actions", $args );
+	register_post_type( "events", $args );
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
