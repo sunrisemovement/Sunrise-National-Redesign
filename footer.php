@@ -113,7 +113,7 @@
 			$has_social_menu = has_nav_menu( 'social' );
 			if ( $has_social_menu ) { ?>
 
-				<nav aria-label="<?php esc_attr_e( 'Social links', 'surnisenational' ); ?>" class="footer-social-wrapper">
+				<nav aria-label="<?php esc_attr_e( 'Social links', 'sunrisenational' ); ?>" class="footer-social-wrapper">
 
 					<ul class="social-menu footer-social reset-list-style social-icons fill-children-current-color">
 

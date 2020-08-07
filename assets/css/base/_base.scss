@@ -40,3 +40,10 @@ object {
 		}
 	}
 }
+
+.border-gradient-sunrise {
+	border-image-source: linear-gradient(to bottom, #8f0d56, #ef4c39, #ffde16);
+	border-style: solid;
+	border-image-slice: 1;
+	border-width: 5px;
+}
