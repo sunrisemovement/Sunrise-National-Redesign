@@ -135,6 +135,32 @@ function wordpress_bootstrap_starter_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'wordpress_bootstrap_starter_theme_scripts' );
 
 /**
+ * Enqueue block JavaScript and CSS for the editor
+ */
+function sunrise_theme_block_editor_scripts() {
+	
+    // Enqueue block editor JS
+    wp_enqueue_script(
+        'sunrise-block-editor-js',
+        get_template_directory_uri() . '/assets/js/editor.js',
+        [ 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor' ],
+        //filemtime( get_template_directory() . '/assets/js/editor.min.js' )	
+    );
+
+    // Enqueue block editor styles
+    // wp_enqueue_style(
+    //     'my-block-editor-css',
+    //     plugins_url( '/blocks/custom-block/editor-styles.css', __FILE__ ),
+    //     [ 'wp-edit-blocks' ],
+    //     filemtime( plugin_dir_path( __FILE__ ) . 'blocks/custom-block/editor-styles.css' )	
+    // );
+
+}
+
+// Hook the enqueue functions into the editor
+add_action( 'enqueue_block_editor_assets', 'sunrise_theme_block_editor_scripts' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

@@ -278,6 +278,49 @@ gulp.task( 'customJS', () => {
 });
 
 /**
+ * Task: `editorJS`.
+ *
+ * Concatenate and uglify custom JS scripts.
+ *
+ * This task does the following:
+ *     1. Gets the source folder for JS editor files
+ *     2. Concatenates all the files and generates editor.js
+ *     3. Renames the JS file with suffix .min.js
+ *     4. Uglifes/Minifies the JS file and generates editor.min.js
+ */
+gulp.task( 'editorJS', () => {
+	return gulp
+		.src( config.jsEditorSRC, { since: gulp.lastRun( 'editorJS' ) }) // Only run on changed files.
+		.pipe( plumber( errorHandler ) )
+		.pipe(
+			babel({
+				presets: [
+					[
+						'@babel/preset-react', // Preset to compile your modern JS to ES5.
+						{
+							targets: { browsers: config.BROWSERS_LIST } // Target browser list to support.
+						}
+					]
+				]
+			})
+		)
+		.pipe( remember( config.jsEditorSRC ) ) // Bring all files back to stream.
+		.pipe( concat( config.jsEditorFile + '.js' ) )
+		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+		.pipe( gulp.dest( config.jsEditorDestination ) )
+		.pipe(
+			rename({
+				basename: config.jsEditorFile,
+				suffix: '.min'
+			})
+		)
+		.pipe( uglify() )
+		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+		.pipe( gulp.dest( config.jsEditorDestination ) )
+		.pipe( notify({ message: '\n\n✅  ===> EDITOR JS — completed!\n', onLast: true }) );
+});
+
+/**
  * Task: `images`.
  *
  * Minifies PNG, JPEG, GIF and SVG images.
@@ -355,11 +398,12 @@ gulp.task( 'translate', () => {
  */
 gulp.task(
 	'default',
-	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'images', browsersync, () => {
+	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'editorJS', 'images', browsersync, () => {
 		gulp.watch( config.watchPhp, reload ); // Reload on PHP file changes.
 		gulp.watch( config.watchStyles, gulp.parallel( 'styles' ) ); // Reload on SCSS file changes.
 		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS', reload ) ); // Reload on vendorsJS file changes.
 		gulp.watch( config.watchJsCustom, gulp.series( 'customJS', reload ) ); // Reload on customJS file changes.
+		gulp.watch( config.watchJsEditor, gulp.series( 'editorJS', reload ) ); // Reload on editorJS file changes.
 		gulp.watch( config.imgSRC, gulp.series( 'images', reload ) ); // Reload on customJS file changes.
 	})
 );

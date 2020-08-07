@@ -46,5 +46,8 @@
     "images": "gulp images",
     "clearCache": "gulp clearCache",
     "translate": "gulp translate"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.10.4"
   }
 }
