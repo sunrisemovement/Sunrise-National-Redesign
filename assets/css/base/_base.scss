@@ -29,22 +29,11 @@ object {
 button {
 	@include button;
 	&.white {
-		background-color: $background_color;
-		a {
-			color: $black;
-		}
+		background: $background_color;
+		color: $black;
 	}
 	&.yellow {
-		background-color: $yellow;
-		a {
-			color: $black;
-		}
+		background: $yellow;
+		color: $black;
 	}
-}
-
-.border-gradient-sunrise {
-	border-image-source: linear-gradient(to bottom, #8f0d56, #ef4c39, #ffde16);
-	border-style: solid;
-	border-image-slice: 1;
-	border-width: 5px;
 }

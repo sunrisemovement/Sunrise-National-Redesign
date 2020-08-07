@@ -9,17 +9,17 @@
 
 ?>
 
-<header class="entry-header">
+<header class="entry-header campaign-header">
 		<div class="container">
 			<div class="row header-row">
 				<div class="col-md-6 header-blocks">
 			<h4 class="h1-subhead">
 				<?php echo get_secondary_title(); ?>
 			</h4>
-			<button class="header-button">
-				This is a button
-			</button>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<a href=""><button class="header-button yellow">
+			This is a button
+		</button></a>
 	</div>
 	<div class="col-md-6 header-blocks iframe ">
 		<iframe class="video" width="560" height="315" align="bottom" src="https://www.youtube.com/embed/rJiiMz0CC5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
