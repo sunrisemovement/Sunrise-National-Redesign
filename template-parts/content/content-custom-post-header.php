@@ -26,7 +26,7 @@
 		<?php the_title( '<h1 class="entry-title h2">', '</h1>' ); ?>
 		<?php if(get_field('dates')): ?>
 			<h3 class="dates">
-				<?php echo get_field('dates'); ?>
+				<?php echo get_field('dates'); ?> @ <?php echo get_field('time'); ?>
 			</h3>
 		<?php endif?>
 		<?php if(get_field('button_url')): ?>

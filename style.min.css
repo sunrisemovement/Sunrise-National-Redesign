@@ -22,7 +22,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 .sticky{display:block}
 .post,.page{margin:0 0 1.5em}
 .updated:not(.published){display:none}
-.page-content,.entry-content,.entry-summary{margin:1.5em 0 0}
 .page-links{clear:both;margin:0 0 1.5em}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
@@ -83,6 +82,7 @@ svg,img,embed,object{display:block;height:auto;max-width:100%}
 .header-menu a:hover{text-decoration:none}
 .header-menu a:after{background-color:#ffde16}
 .header-menu li.current-menu-item>a:hover,.header-menu li.current-menu-item>.link-icon-wrapper>a:hover,.header-menu li.current-menu-item>a:focus,.header-menu li.current-menu-item>.link-icon-wrapper>a:focus{text-decoration:none}
+.site-header{float:left;width:100%}
 .primary-menu ul{background:#000;border-radius:.4rem;color:#fff;font-size:1rem;z-index:10;opacity:0;padding:.2rem 0;position:absolute;right:9999rem;top:calc(100% + 2rem);-webkit-transition:opacity .15s linear,right 0s .15s,-webkit-transform .15s linear;transition:opacity .15s linear,right 0s .15s,-webkit-transform .15s linear;transition:opacity .15s linear,transform .15s linear,right 0s .15s;transition:opacity .15s linear,transform .15s linear,right 0s .15s,-webkit-transform .15s linear;-webkit-transform:translateY(0.6rem);transform:translateY(0.6rem);width:20rem;z-index:10}
 .primary-menu ul li a{background:transparent;border:0;color:inherit;display:block;padding:1rem 2rem;text-decoration:none;-webkit-transition:background-color .15s linear;transition:background-color .15s linear;width:100%}
 .primary-menu ul li a:hover{background-color:#000}

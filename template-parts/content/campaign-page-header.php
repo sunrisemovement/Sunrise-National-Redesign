@@ -28,7 +28,6 @@
 	<div class="col-md-6 header-blocks header-media">
 		<?php if(get_field('header_embed')): ?>
 			<iframe class="video" width="560" height="315" align="bottom" src="<?php echo get_field('header_embed'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<?php endif?>
 		<?php elseif(get_field('header_image')): ?>
 		<img src="<?php echo get_field('header_image'); ?>" />
 	<?php endif?>
