@@ -136,10 +136,22 @@
 	@include media-breakpoint-down(md) {
 		display: block;
 		position: relative;
-		top: -53px;
+		top: 0;
 		right: 0;
 		left: 0;
 		z-index: 100;
+	}
+}
+
+.menu-modal-close-button {
+	padding: 24px 32px;
+	font-weight: $font-weight-bold;
+	font-size: $font-size-base;
+	&, &:hover, &:active, &:focus {
+		color: $yellow;
+		fill: $yellow;
+		background: 0;
+		box-shadow: none;
 	}
 }
 
@@ -298,7 +310,6 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 }
 
 .menu-modal {
-	background: #fff;
 	display: none;
 	opacity: 0;
 	overflow-y: auto;
@@ -309,7 +320,7 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 	right: 99999rem;
 	top: 0;
 	transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
-	z-index: 99;
+	z-index: 101;
 }
 
 .admin-bar .menu-modal {
@@ -323,7 +334,7 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 }
 
 .menu-modal.show-modal {
-	display: flex;
+	display: block;
 }
 
 .menu-modal.active {
@@ -334,7 +345,7 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 }
 
 .menu-modal-inner {
-	background: #fff;
+	background: rgba(0,0,0,0.9);
 	display: flex;
 	justify-content: stretch;
 	overflow: auto;
@@ -352,16 +363,13 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 button.close-nav-toggle {
 	align-items: center;
 	display: flex;
-	font-size: 1.6rem;
-	font-weight: 500;
 	justify-content: flex-end;
-	padding: 3.1rem 0;
 	width: 100%;
 }
 
 button.close-nav-toggle svg {
-	height: 1.6rem;
-	width: 1.6rem;
+	height: 12px;
+	width: 12px;
 }
 
 button.close-nav-toggle .toggle-text {
@@ -376,30 +384,25 @@ button.close-nav-toggle .toggle-text {
 
 .modal-menu {
 	position: relative;
-	left: calc(50% - 50vw);
 	width: 100vw;
+	padding-left: 0;
+	margin-bottom: 0;
 }
 
 .modal-menu li {
-	border-color: #dedfdf;
-	border-style: solid;
-	border-width: 0.1rem 0 0 0;
 	display: flex;
 	flex-wrap: wrap;
 	line-height: 1;
 	justify-content: flex-start;
 	margin: 0;
+	&:hover {
+		background-color: rgba(255,255,255,0.04);
+	}
 }
 
 .modal-menu > li > a,
 .modal-menu > li > .ancestor-wrapper > a {
-	font-size: 2rem;
-	font-weight: 700;
-	letter-spacing: -0.0375em;
-}
-
-.modal-menu > li:last-child {
-	border-bottom-width: 0.1rem;
+	font-weight: $font-weight-bold;
 }
 
 .modal-menu .ancestor-wrapper {
@@ -410,7 +413,8 @@ button.close-nav-toggle .toggle-text {
 
 .modal-menu a {
 	display: block;
-	padding: 2rem 2.5rem;
+	padding: 20px;
+	padding-left: 28px;
 	text-decoration: none;
 	width: 100%;
 }
