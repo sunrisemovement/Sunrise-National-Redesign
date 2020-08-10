@@ -41,15 +41,25 @@ body,
 				@include media-breakpoint-down(md) {
 					position: relative;
 					bottom: unset;
+					h1 {
+						font-size: 2.5rem;
+					}
 				}
 				.header-blocks {
 					position: relative;
+					margin: 2rem 0;
 					@include media-breakpoint-up(md) {
 						margin-bottom: 70px;
 						margin-left: -21px;
 					}
-
-					&.iframe {
+					&.header-media {
+						@include media-breakpoint-up(md) {
+							margin-bottom: 42px;
+						}
+					}
+					&.header-media iframe,
+					&.header-media img {
+						@include drop-shadow;
 						@include media-breakpoint-down(md) {
 							margin-top: 30px;
 						}
@@ -62,7 +72,7 @@ body,
 
 			.entry-title {
 				color: $white;
-				margin-bottom: 60px;
+				margin-bottom: 50px;
 				line-height: 0.9;
 				@include media-breakpoint-down(md) {
 					margin-bottom: 20px;
@@ -82,6 +92,9 @@ body,
 			position: absolute;
 			z-index: -10;
 			width: 100%;
+			bottom: 0;
+			background-color: $black;
+			overflow: hidden;
 			@include media-breakpoint-down(md) {
 				height: 100%;
 			}
@@ -112,6 +125,24 @@ body,
 		}
 	}
 	.site-content {
-		margin-top: 9rem;
+		&::before {
+			position: absolute;
+			left: calc(50% - 50px);
+			bottom: -36px;
+			content: "";
+			display: block;
+			background-image: url(assets/img/affordance.svg);
+			@include media-breakpoint-down(md) {
+				display: none;
+			}
+			width: 40px;
+			height: 56px;
+			background-repeat: no-repeat;
+		}
+	}
+	.site-content {
+		@include media-breakpoint-down(md) {
+			margin-top: 9rem;
+		}
 	}
 }

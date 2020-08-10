@@ -133,10 +133,12 @@
 }
 
 .site-header {
+	float: left;
+	width: 100%;
 	@include media-breakpoint-down(md) {
 		display: block;
 		position: relative;
-		top: -53px;
+		//top: -53px;
 		right: 0;
 		left: 0;
 		z-index: 100;

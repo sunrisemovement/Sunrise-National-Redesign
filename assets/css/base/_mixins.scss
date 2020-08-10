@@ -69,6 +69,12 @@
 	-moz-box-shadow: inset 0px 2px 24px rgba(0, 0, 0, 0.25);
 }
 
+@mixin drop-shadow {
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
 @mixin border-gradient-sunrise {
 	border-image-source: linear-gradient(to bottom, #8f0d56, #ef4c39, #ffde16);
 	border-style: solid;
