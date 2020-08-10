@@ -1,0 +1,16 @@
+.wp-block-getwid-section
+	.wp-block-getwid-section__wrapper
+	.wp-block-getwid-section__inner-wrapper {
+	@include media-breakpoint-down(xl) {
+		max-width: map-get($grid-breakpoints, "xl");
+	}
+	@include media-breakpoint-down(lg) {
+		max-width: map-get($grid-breakpoints, "lg");
+	}
+	@include media-breakpoint-down(md) {
+		max-width: map-get($grid-breakpoints, "md");
+	}
+	@include media-breakpoint-down(sm) {
+		max-width: map-get($grid-breakpoints, "sm");
+	}
+}

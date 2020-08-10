@@ -141,6 +141,8 @@ body,
 		}
 	}
 	.site-content {
-		margin-top: 9rem;
+		@include media-breakpoint-down(md) {
+			margin-top: 9rem;
+		}
 	}
 }

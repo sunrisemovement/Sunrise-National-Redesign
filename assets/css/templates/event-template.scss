@@ -137,6 +137,9 @@
 			@include make-container();
 			max-width: 1200px;
 			.at-inner {
+				@include media-breakpoint-up(md) {
+					margin-top: 3rem;
+				}
 				@include make-row();
 				.at-markup {
 					@include media-breakpoint-down(md) {
