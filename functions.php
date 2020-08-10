@@ -385,12 +385,12 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => __( "Actions", "sunrisenationalchild" ),
-		"singular_name" => __( "action", "sunrisenationalchild" ),
+		"name" => __( "Events", "sunrisenationalchild" ),
+		"singular_name" => __( "event", "sunrisenationalchild" ),
 	];
 
 	$args = [
-		"label" => __( "actions", "sunrisenationalchild" ),
+		"label" => __( "events", "sunrisenationalchild" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,

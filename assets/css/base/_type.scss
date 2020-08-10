@@ -48,6 +48,22 @@ h3 {
 	line-height: 1;
 }
 
+.h1 {
+}
+
+.h2 {
+}
+
+#breadcrumbs {
+	font-size: $font-size-base;
+	color: $yellow;
+	font-style: italic;
+	font-family: $font-family-serif;
+	a {
+		color: $yellow;
+	}
+}
+
 p {
 	@include media-breakpoint-down(md) {
 		font-size: 1.2rem;
