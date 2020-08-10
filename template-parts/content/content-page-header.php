@@ -13,16 +13,24 @@
 		<div class="container">
 			<div class="row header-row">
 				<div class="col-md-6 header-blocks">
+		<?php if(get_field('secondary_header')): ?>
 			<h4 class="h1-subhead">
-				<?php echo get_secondary_title(); ?>
+				<?php echo get_field('secondary_header'); ?>
 			</h4>
+		<?php endif?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<a href=""><button class="header-button yellow">
-			This is a button
+		<?php if(get_field('button_url')): ?>
+			<a href="<?php echo get_field('button_url'); ?>"><button class="header-button yellow">
+			<?php echo get_field('button_text'); ?>
 		</button></a>
+			<?php endif?>
 	</div>
-	<div class="col-md-6 header-blocks iframe ">
-		<iframe class="video" width="560" height="315" align="bottom" src="https://www.youtube.com/embed/rJiiMz0CC5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div class="col-md-6 header-blocks header-media">
+		<?php if(get_field('header_embed')): ?>
+			<iframe class="video" width="560" height="315" align="bottom" src="<?php echo get_field('header_embed'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<?php elseif(get_field('header_image')): ?>
+		<img src="<?php echo get_field('header_image'); ?>" />
+	<?php endif?>
 	</div>
 
 	</div>
