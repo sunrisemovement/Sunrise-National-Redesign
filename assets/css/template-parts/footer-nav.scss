@@ -1,7 +1,8 @@
 body footer {
 	background-color: $black;
 	padding: 60px;
-	display: inline-flex;
+	display: block;
+	float: left;
 	@include media-breakpoint-down(md) {
 		padding: 40px;
 	}

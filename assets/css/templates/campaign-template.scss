@@ -1,0 +1,117 @@
+html,
+body,
+.site {
+	height: 100%;
+	min-height: 100%;
+}
+
+.campaign-single {
+	height: 100%;
+	min-height: 100%;
+	display: contents;
+	.campaign-header {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: calc(100% - 150px);
+		@include media-breakpoint-down(md) {
+			background-image: none;
+			overflow: initial;
+			margin-top: 53px;
+			@include border-gradient-sunrise;
+		}
+
+		.container {
+			background-image: url("assets/img/gradientborderbroken.svg");
+			background-repeat: no-repeat;
+			background-size: 100% 91%;
+			height: 100%;
+			width: 100%;
+			margin-top: 25px;
+			margin-bottom: 10%;
+			@include media-breakpoint-down(md) {
+				background-image: none;
+				margin-top: 130px;
+			}
+
+			.header-row {
+				align-items: flex-end;
+				position: absolute;
+				bottom: 40px;
+				@include media-breakpoint-down(md) {
+					position: relative;
+					bottom: unset;
+				}
+				.header-blocks {
+					position: relative;
+					@include media-breakpoint-up(md) {
+						margin-bottom: 70px;
+						margin-left: -21px;
+					}
+
+					&.iframe {
+						@include media-breakpoint-down(md) {
+							margin-top: 30px;
+						}
+					}
+				}
+			}
+			.h1-subhead {
+				color: $yellow;
+			}
+
+			.entry-title {
+				color: $white;
+				margin-bottom: 60px;
+				line-height: 0.9;
+				@include media-breakpoint-down(md) {
+					margin-bottom: 20px;
+				}
+			}
+			.header-button {
+				@include media-breakpoint-up(md) {
+					position: absolute;
+					bottom: -30px;
+					left: 60px;
+				}
+			}
+		}
+		.post-thumbnail {
+			left: 0;
+			top: 0;
+			position: absolute;
+			z-index: -10;
+			width: 100%;
+			@include media-breakpoint-down(md) {
+				height: 100%;
+			}
+			&::before {
+				content: ""; // ::before and ::after both require content
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $black;
+				opacity: 0.7;
+				z-index: 1;
+				mix-blend-mode: unset;
+				@include media-breakpoint-down(md) {
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			img {
+				width: 100%;
+				object-fit: fill;
+				@include media-breakpoint-down(md) {
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+	.site-content {
+		margin-top: 9rem;
+	}
+}

@@ -7,6 +7,8 @@
 	margin: auto 0;
 	display: inline-flex;
 	margin-right: 1rem;
+	text-transform: uppercase !important;
+	border: 0 solid;
 }
 
 @mixin underliner {
@@ -61,8 +63,15 @@
 	}
 }
 
-@mixin interior-shadow{
+@mixin interior-shadow {
 	box-shadow: inset 0px 2px 24px rgba(0, 0, 0, 0.25);
 	-webkit-box-shadow: inset 0px 2px 24px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: inset 0px 2px 24px rgba(0, 0, 0, 0.25);
+}
+
+@mixin border-gradient-sunrise {
+	border-image-source: linear-gradient(to bottom, #8f0d56, #ef4c39, #ffde16);
+	border-style: solid;
+	border-image-slice: 1;
+	border-width: 5px;
 }
