@@ -7,11 +7,30 @@
  * @package Sunrise_National
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<aside id="secondary" class="widget-area content-sidebar">
+
+	<?php
+// the query
+$the_query = new WP_Query( array(
+	'posts_per_page' => 3,
+	'category_name' => 'featured'
+));
+?>
+
+<?php if ( $the_query->have_posts() ) : ?>
+<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+<?php 			get_template_part( 'template-parts/content/content-sidebar', 'sidebar' ); ?>
+
+<?php endwhile; ?>
+<?php wp_reset_postdata(); ?>
+
+<?php else : ?>
+<p><?php __('No News'); ?></p>
+<?php endif; ?>
+
+			<?php //echo do_shortcode( '[display-posts image_size="thumbnail"]' ); ?>
+			<?php //dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

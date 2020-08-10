@@ -1,7 +1,9 @@
-footer {
+body footer {
 	background-color: $black;
 	padding: 60px;
+	display: inline-flex;
 	@include media-breakpoint-down(md) {
+		padding: 40px;
 	}
 	.footer-top {
 		margin-bottom: 1rem;

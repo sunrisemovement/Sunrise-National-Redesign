@@ -7,7 +7,7 @@ Description: A blank starter theme for WordPress using WPGulp, Underscores and B
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: wordpress-bootstrap-starter-theme
+Text Domain: sunrise-national
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, bootstrap
 
 This theme, like WordPress, is licensed under the GPL.
@@ -28,6 +28,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "./base/colors";
 @import "./base/type";
 @import "./base/base";
+@import "./base/plugin";
 
 // Components
 @import "./template-parts/header-nav";

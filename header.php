@@ -23,7 +23,7 @@
 
 <body <?php body_class(); ?>>
 	<div id="page" class="site">
-		<a class="sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'wordpress-bootstrap-starter-theme' ); ?></a>
+		<a class="sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'sunrise-national' ); ?></a>
 
 		<header id="masthead" class="site-header">
 			<div class="header-inner section-inner">
@@ -75,9 +75,9 @@
 
 						</div>
 							<div class="bottom-menu">
-								<div class="site-branding">
+								<a href="/" class="site-branding">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/sunrise-logo.svg" width="" height="" alt="Sunrise Movement Logo" />
-								</div><!-- .site-branding -->
+								</a><!-- .site-branding -->
 								<ul class="header-menu bottom primary-menu d-none d-md-flex">
 									<?php
 

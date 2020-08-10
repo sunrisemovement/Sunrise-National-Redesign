@@ -39,3 +39,29 @@ select {
 textarea {
 	@extend .form-control;
 }
+
+h1,
+h2 {
+	font-weight: $font-weight-bolder;
+}
+
+p {
+	@include media-breakpoint-down(md) {
+		font-size: 1.2rem;
+		line-height: 1.6;
+	}
+}
+
+.h1-subhead {
+	font-family: $font-family-base;
+	font-style: italic;
+	font-size: 1.167rem;
+}
+
+.cat-links a {
+	font-family: $font-family-sans-serif;
+	font-weight: $font-weight-bold;
+	//@include reverse-underliner;
+	font-size: 16px;
+	margin-right: 0.7rem;
+}

@@ -161,8 +161,8 @@ $grid-breakpoints: (
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 960px,
-  xl: 1140px
+  lg: 1020px,
+  xl: 1200px
 ) !default;
 
 
@@ -171,7 +171,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           65px !default;
+$grid-gutter-width:           35px !default;
 
 
 // Components
@@ -236,17 +236,16 @@ $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
 $font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
+$font-weight-bolder:          900 !default;
 
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.4 !default;
 
 $h1-font-size:                $font-size-base * 3.3 !default;
-$h2-font-size:                $font-size-base * 2.67 !default;
-$h3-font-size:                $font-size-base * 2 !default;
-$h4-font-size:                $font-size-base * 1.67 !default;
-$h5-font-size:                $font-size-base * 1.167 !default;
-$h6-font-size:                $font-size-base !default;
+$h2-font-size:                $font-size-base * 2.2 !default;
+$h3-font-size:                $font-size-base * 1.67 !default;
+$h4-font-size:                $font-size-base * 1.167 !default;
+
 
 $headings-margin-bottom:      $spacer / 2 !default;
 $headings-font-family:        $font-family-sans-serif !default;
@@ -254,16 +253,9 @@ $headings-font-weight:        $font-weight-bold !default;
 $headings-line-height:        1.1 !default;
 $headings-color:              null !default;
 
-$display1-size:               6rem !default;
-$display2-size:               5.5rem !default;
-$display3-size:               4.5rem !default;
-$display4-size:               3.5rem !default;
+$display1-size:               3rem !default;
 
-$display1-weight:             300 !default;
-$display2-weight:             300 !default;
-$display3-weight:             300 !default;
-$display4-weight:             300 !default;
-$display-line-height:         $headings-line-height !default;
+$display1-weight:             $font-weight-bolder !default;
 
 $lead-font-size:              $font-size-base * 1.25 !default;
 $lead-font-weight:            300 !default;

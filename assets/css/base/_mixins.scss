@@ -13,6 +13,7 @@
 	position: relative;
 	text-decoration: none;
 	transition: 0.25s all ease-out;
+	text-decoration: none;
 	&:hover,
 	&:focus,
 	&:active {
@@ -25,11 +26,43 @@
 		content: "";
 		position: absolute;
 		left: 0;
-		bottom: -7px;
-		height: 4px;
+		bottom: -0.15rem;
+		height: 0.15rem;
 		background-color: $primary;
 		width: 0;
 		transition: 0.25s all ease-out;
 		display: block;
 	}
+}
+
+@mixin reverse-underliner {
+	position: relative;
+	text-decoration: none;
+	transition: 0.25s all ease-out;
+	&:hover,
+	&:focus,
+	&:active {
+		cursor: pointer;
+		text-decoration: none;
+		&:after {
+			width: 0;
+		}
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -0.15rem;
+		height: 0.15rem;
+		background-color: $primary;
+		transition: 0.25s all ease-out;
+		display: block;
+		width: 100%;
+	}
+}
+
+@mixin interior-shadow{
+	box-shadow: inset 0px 2px 24px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: inset 0px 2px 24px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: inset 0px 2px 24px rgba(0, 0, 0, 0.25);
 }

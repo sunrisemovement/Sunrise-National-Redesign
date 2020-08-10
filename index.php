@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Sunrise_National
+ * @package WordPress_Bootstrap_Starter_Theme
  */
 
 get_header();
@@ -38,21 +38,20 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content/content', get_post_type() );
+				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
 
-			the_posts_navigation();
-
 		else :
 
-			get_template_part( 'template-parts/content/content', 'none' );
+			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
 		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
 <?php
-get_sidebar();
+
 get_footer();
