@@ -848,3 +848,16 @@ function sunrisenationalFindParents(target, query) {
     }, false);
   }
 })();
+"use strict";
+
+jQuery(window).on("scroll", function (event) {
+  var scrollValue = jQuery(window).scrollTop();
+
+  if (scrollValue > 50) {
+    jQuery(".bottom-menu").addClass("fixed-top");
+    jQuery(".site-header").addClass("fixed-menu");
+  } else {
+    jQuery(".bottom-menu").removeClass("fixed-top");
+    jQuery(".site-header").removeClass("fixed-menu");
+  }
+});

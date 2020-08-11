@@ -15,13 +15,13 @@ get_template_part( 'template-parts/blog-navigation' );
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php get_template_part( 'template-parts/blog-featured', '' ); ?>
+			<?php get_template_part( 'template-parts/blog/blog-featured', '' ); ?>
 
-			<?php get_template_part( 'template-parts/blog-horizontal', '' ); ?>
+			<?php get_template_part( 'template-parts/blog/blog-horizontal', '' ); ?>
 
 			<?php get_template_part( 'template-parts/instagram', '' ); ?>
 
-			<?php get_template_part( 'template-parts/blog-vertical', '' ); ?>
+			<?php get_template_part( 'template-parts/blog/blog-vertical', '' ); ?>
 			<?php
 			while ( have_posts() ) :
 				the_post();

@@ -8,7 +8,7 @@
  */
 
 get_header();
-get_template_part( 'template-parts/blog-navigation' );
+get_template_part( 'template-parts/blog/blog-navigation' );
 ?>
 
 <div class="container">

@@ -19,11 +19,16 @@
 			</h4>
 		<?php endif?>
 		<?php the_title( '<h1 class="entry-title h2">', '</h1>' ); ?>
-		<?php if(get_field('button_url')): ?>
-			<a href="<?php echo get_field('button_url'); ?>"><button class="header-button yellow">
-			<?php echo get_field('button_text'); ?>
+		<?php if(get_field('button_1_url')): ?>
+			<a href="<?php echo get_field('button_1_url'); ?>"><button class="header-button yellow">
+			<?php echo get_field('button_1_text'); ?>
 		</button></a>
 			<?php endif?>
+			<?php if(get_field('button_2_url')): ?>
+				<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button yellow">
+				<?php echo get_field('button_2_text'); ?>
+			</button></a>
+				<?php endif?>
 	</div>
 	<div class="col-md-6 header-blocks header-media">
 		<?php if(get_field('header_embed')): ?>

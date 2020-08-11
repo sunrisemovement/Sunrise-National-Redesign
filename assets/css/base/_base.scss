@@ -41,3 +41,15 @@ button {
 .acf-hidden {
 	display: none;
 }
+.admin-bar {
+	.site-header.fixed-menu {
+		margin-bottom: 64px;
+	}
+	.fixed-top {
+		top: 32px !important;
+	}
+}
+
+.site-header.fixed-menu {
+	margin-bottom: 64px;
+}

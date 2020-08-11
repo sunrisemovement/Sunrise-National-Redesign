@@ -45,11 +45,12 @@ embed,iframe,object{max-width:100%}
 .gallery-columns-8 .gallery-item{max-width:12.5%}
 .gallery-columns-9 .gallery-item{max-width:11.11%}
 .gallery-caption{display:block}
-h1,h2,h3{font-weight:900;text-transform:uppercase;line-height:1}
+body .site h1,body .site h2,body .site h3{font-weight:900;text-transform:uppercase;line-height:1}
+body .entry-content h1,body .entry-content h2,body .entry-content h3,body .entry-content h4{line-height:1.6}
 #breadcrumbs{font-size:1.125rem;color:#ffde16;font-style:italic;font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}
 #breadcrumbs a{color:#ffde16}
 .type-page h1.entry-title{line-height:.9}
-.h1-subhead{font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-style:italic;font-size:1.167rem}
+.h1-subhead{font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-style:italic;font-size:1.167rem;font-weight:700;text-transform:none}
 .cat-links a{font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:700;font-size:16px;margin-right:.7rem}
 .post-thumbnail img{width:100%;height:auto}
 svg,img,embed,object{display:block;height:auto;max-width:100%}
@@ -58,10 +59,14 @@ svg,img,embed,object{display:block;height:auto;max-width:100%}
 .button.white,button.white{background:#fffffb;color:#000}
 .button.yellow,button.yellow{background:#ffde16;color:#000}
 .acf-hidden{display:none}
+.admin-bar .site-header.fixed-menu{margin-bottom:64px}
+.admin-bar .fixed-top{top:32px !important}
+.site-header.fixed-menu{margin-bottom:64px}
 .twitter{max-height:500px}
 .twitter #ctf.ctf-super-narrow .ctf-tweet-content{width:100%}
 .wp-block-getwid-section .wp-block-getwid-section__wrapper .wp-block-getwid-section__inner-wrapper{max-width:1200px}
 .header-menu-wrapper{list-style:none}
+.fixed-top{position:fixed}
 .top-menu{background-color:#33342e;float:left;padding:0 37px;display:block;width:100%;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .bottom-menu{background-color:#000;width:100%;display:block;float:left;padding:0 15px;padding-bottom:0}
 .header-menu .icon{display:block;height:.7rem;position:absolute;pointer-events:none;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);width:1.3rem}
@@ -195,6 +200,25 @@ body footer .footer-right .to-the-top{float:right;margin-bottom:.4rem;font-weigh
 body footer .footer-right .social-menu{margin-top:.5rem}
 body footer .footer-right .social-menu li{margin-top:0}
 body footer .footer-right .social-menu li a svg{height:28px;width:28px}
+.base-page .post-header{position:relative;width:100%;padding:80px;float:left;border-image-source:linear-gradient(to bottom,#8f0d56,#ef4c39,#ffde16);border-style:solid;border-image-slice:1;border-width:5px}
+.base-page .post-header::before{position:absolute;left:calc(50% - 50px);bottom:-36px;content:"";display:block;background-image:url(assets/img/affordance.svg);width:40px;height:56px;background-repeat:no-repeat}
+.base-page .post-header .container{background-repeat:no-repeat;background-size:100% 91%;height:100%;width:100%}
+.base-page .post-header .container .no-photo .header-content{-webkit-box-flex:0;-ms-flex:0 0 66.6666666667%;flex:0 0 66.6666666667%;max-width:66.6666666667%}
+.base-page .post-header .container .no-photo .h1-subhead{text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.base-page .post-header .container .no-photo .entry-title{text-align:center}
+.base-page .post-header .container .no-photo .button-row{text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.base-page .post-header .container .header-row{-webkit-box-align:center;-ms-flex-align:center;align-items:center;bottom:40px}
+.base-page .post-header .container .header-row .header-blocks{position:relative}
+.base-page .post-header .container .header-row .header-blocks.header-media iframe,.base-page .post-header .container .header-row .header-blocks.header-media img{box-shadow:0 5px 10px rgba(0,0,0,0.15);-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.15);-moz-box-shadow:0 5px 10px rgba(0,0,0,0.15)}
+.base-page .post-header .container .header-row .header-blocks.header-content .h1-subhead{color:#000;height:100%;width:100%;padding:.01rem;-webkit-box-sizing:content-box;box-sizing:content-box;display:inline;-webkit-box-shadow:10px 0 0 #ffde16,-10px 0 0 #ffde16;box-shadow:10px 0 0 #ffde16,-10px 0 0 #ffde16;-webkit-box-shadow:4px 0 0 #000,-4px 0 0 #000;box-shadow:4px 0 0 #000,-4px 0 0 #000;color:#fff;left:4px;background-color:#000;padding:4px 0}
+.base-page .post-header .container .header-row .header-blocks.header-content .entry-title p{color:#000;height:100%;width:100%;padding:.01rem;-webkit-box-sizing:content-box;box-sizing:content-box;display:inline;-webkit-box-shadow:10px 0 0 #ffde16,-10px 0 0 #ffde16;box-shadow:10px 0 0 #ffde16,-10px 0 0 #ffde16;color:#000;margin-bottom:1rem;line-height:1.42;left:-8px;background-color:#ffde16}
+.base-page .post-header .container .header-row .header-blocks.header-content .button-row{margin-top:1rem}
+.base-page .post-header .container .header-row .header-blocks.header-content .button-row button{margin-right:1rem}
+.base-page .post-header .container .header-row .header-blocks.header-content .button-row button:nth-of-type(2){background-color:#ffde16}
+.base-page .post-header .header-background-image{left:0;top:0;position:absolute;z-index:-10;width:100%;bottom:0;background-color:#000;overflow:hidden}
+.base-page .post-header .header-background-image::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.7;z-index:1;mix-blend-mode:unset}
+.base-page .post-header .header-background-image img{width:100%;-o-object-fit:fill;object-fit:fill}
+.base-page article{float:left;width:100%;margin:4rem auto}
 .post-single .post-header{position:relative;width:100%;height:350px;float:left;border-image-source:linear-gradient(to bottom,#8f0d56,#ef4c39,#ffde16);border-style:solid;border-image-slice:1;border-width:5px}
 .post-single .post-header .container{background-repeat:no-repeat;background-size:100% 91%;height:100%;width:100%;margin-top:25px;margin-bottom:10%}
 .post-single .post-header .container .header-row{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;bottom:40px}
@@ -556,7 +580,7 @@ textarea.form-control,textarea{height:auto}
 .was-validated .custom-file-input:invalid:focus ~ .custom-file-label,.custom-file-input.is-invalid:focus ~ .custom-file-label{border-color:#ef4c39;-webkit-box-shadow:0 0 0 .2rem rgba(239,76,57,0.25);box-shadow:0 0 0 .2rem rgba(239,76,57,0.25)}
 .form-inline{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .form-inline .form-check{width:100%}
-.btn,button,input[type="button"],input[type="reset"],input[type="submit"]{display:inline-block;font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:700;color:#33342e;text-align:center;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:0 solid transparent;padding:.67rem .67rem;font-size:1.125rem;line-height:1.4;border-radius:0;-webkit-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out}
+.btn,button,input[type="button"],input[type="reset"],input[type="submit"]{display:inline-block;font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:700;color:#33342e;text-align:center;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:0 solid transparent;padding:.67rem .67rem;font-size:1.125rem;line-height:1.4;border-radius:0;-webkit-transition:opacity .15s ease-in-out;transition:opacity .15s ease-in-out}
 .btn:hover,button:hover,input:hover[type="button"],input:hover[type="reset"],input:hover[type="submit"]{color:#33342e;text-decoration:none}
 .btn:focus,button:focus,input:focus[type="button"],input:focus[type="reset"],input:focus[type="submit"],.btn.focus,button.focus,input.focus[type="button"],input.focus[type="reset"],input.focus[type="submit"]{outline:0;-webkit-box-shadow:0 0 0 .2rem rgba(143,13,86,0.25);box-shadow:0 0 0 .2rem rgba(143,13,86,0.25)}
 .btn.disabled,button.disabled,input.disabled[type="button"],input.disabled[type="reset"],input.disabled[type="submit"],.btn:disabled,button:disabled,input:disabled[type="button"],input:disabled[type="reset"],input:disabled[type="submit"]{opacity:.65}
@@ -921,7 +945,7 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 .pagination-sm .page-link{padding:.25rem .5rem;font-size:.984375rem;line-height:1.5}
 .pagination-sm .page-item:first-child .page-link{border-top-left-radius:.2rem;border-bottom-left-radius:.2rem}
 .pagination-sm .page-item:last-child .page-link{border-top-right-radius:.2rem;border-bottom-right-radius:.2rem}
-.badge{display:inline-block;padding:.25em .4em;font-size:75%;font-weight:700;line-height:1;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25rem;-webkit-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out}
+.badge{display:inline-block;padding:.25em .4em;font-size:75%;font-weight:700;line-height:1;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25rem;-webkit-transition:opacity .15s ease-in-out;transition:opacity .15s ease-in-out}
 a.badge:hover,a.badge:focus{text-decoration:none}
 .badge:empty{display:none}
 .btn .badge,button .badge,input[type="button"] .badge,input[type="reset"] .badge,input[type="submit"] .badge{position:relative;top:-1px}
@@ -2266,6 +2290,15 @@ a.text-dark:hover,a.text-dark:focus{color:#0b0b0a !important}
 body footer{padding:40px}
 body footer .footer-right .to-the-top{text-align:center;margin:2rem 0}
 body footer .footer-right .social-menu{margin:auto}
+.base-page .post-header::before{display:none}
+.base-page .post-header{background-image:none;overflow:initial}
+.base-page .post-header .container{background-image:none}
+.base-page .post-header .container .header-row{position:relative;bottom:unset}
+.base-page .post-header .container .header-row h1{font-size:2.5rem}
+.base-page .post-header .container .header-row .header-blocks.header-content .entry-title p{margin-bottom:20px}
+.base-page .post-header .header-background-image{height:100%}
+.base-page .post-header .header-background-image::before{height:100%;-o-object-fit:cover;object-fit:cover}
+.base-page .post-header .header-background-image img{height:100%;-o-object-fit:cover;object-fit:cover}
 .post-single .post-header{background-image:none;overflow:initial}
 .post-single .post-header .container{background-image:none}
 .post-single .post-header .container .header-row{position:relative;bottom:unset}

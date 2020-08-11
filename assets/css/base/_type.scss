@@ -40,18 +40,23 @@ textarea {
 	@extend .form-control;
 }
 
-h1,
-h2,
-h3 {
-	font-weight: $font-weight-bolder;
-	text-transform: uppercase;
-	line-height: 1;
+body .site {
+	h1,
+	h2,
+	h3 {
+		font-weight: $font-weight-bolder;
+		text-transform: uppercase;
+		line-height: 1;
+	}
 }
 
-.h1 {
-}
-
-.h2 {
+body .entry-content {
+	h1,
+	h2,
+	h3,
+	h4 {
+		line-height: 1.6;
+	}
 }
 
 #breadcrumbs {
@@ -79,6 +84,8 @@ p {
 	font-family: $font-family-base;
 	font-style: italic;
 	font-size: 1.167rem;
+	font-weight: $font-weight-bold;
+	text-transform: none;
 }
 
 .cat-links a {

@@ -1,0 +1,108 @@
+.base-page {
+	.post-header {
+		position: relative;
+		width: 100%;
+		padding: 80px;
+		float: left;
+		@include affordance;
+		@include border-gradient-sunrise;
+		@include media-breakpoint-down(md) {
+			background-image: none;
+			overflow: initial;
+		}
+
+		.container {
+			background-repeat: no-repeat;
+			background-size: 100% 91%;
+			height: 100%;
+			width: 100%;
+			@include media-breakpoint-down(md) {
+				background-image: none;
+				//margin-top: 130px;
+			}
+			.no-photo {
+				.header-content {
+					@include make-col(8);
+				}
+				.h1-subhead {
+					text-align: center;
+					justify-content: center;
+				}
+				.entry-title {
+					text-align: center;
+				}
+				.button-row {
+					text-align: center;
+					justify-content: center;
+				}
+			}
+
+			.header-row {
+				align-items: center;
+				bottom: 40px;
+				@include media-breakpoint-down(md) {
+					position: relative;
+					bottom: unset;
+					h1 {
+						font-size: 2.5rem;
+					}
+				}
+
+				.header-blocks {
+					position: relative;
+					@include media-breakpoint-up(md) {
+					}
+					&.header-media {
+					}
+					&.header-media iframe,
+					&.header-media img {
+						@include drop-shadow;
+						@include media-breakpoint-up(md) {
+						}
+					}
+					&.header-content {
+						.h1-subhead {
+							@include highlighter;
+							box-shadow: 4px 0 0 $black, -4px 0 0 $black;
+							color: $white;
+							left: 4px;
+							background-color: $black;
+							padding: 4px 0px;
+						}
+
+						.entry-title p {
+							@include highlighter;
+							color: $black;
+							margin-bottom: 1rem;
+							line-height: 1.42;
+							left: -8px;
+							background-color: $yellow;
+							@include media-breakpoint-down(md) {
+								margin-bottom: 20px;
+							}
+						}
+						.button-row {
+							margin-top: 1rem;
+							button {
+								margin-right: 1rem;
+								&:nth-of-type(2) {
+									background-color: $secondary;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.header-background-image {
+			@include dark-full-overlay;
+		}
+	}
+	article {
+		float: left;
+		width: 100%;
+		margin: 4rem auto;
+		.entry-content {
+		}
+	}
+}
