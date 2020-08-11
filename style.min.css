@@ -61,6 +61,7 @@ svg,img,embed,object{display:block;height:auto;max-width:100%}
 .acf-hidden{display:none}
 .admin-bar .site-header.fixed-menu{margin-bottom:64px}
 .site-header.fixed-menu{margin-bottom:64px}
+.entry-content{min-height:300px}
 .twitter{max-height:500px}
 .twitter #ctf.ctf-super-narrow .ctf-tweet-content{width:100%}
 .wp-block-getwid-section .wp-block-getwid-section__wrapper .wp-block-getwid-section__inner-wrapper{max-width:1200px}
@@ -200,12 +201,13 @@ body footer .footer-right .social-menu{margin-top:.5rem}
 body footer .footer-right .social-menu li{margin-top:0}
 body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .base-page .post-header{position:relative;width:100%;padding:80px;float:left;border-image-source:linear-gradient(to bottom,#8f0d56,#ef4c39,#ffde16);border-style:solid;border-image-slice:1;border-width:5px}
-.base-page .post-header::before{position:absolute;left:calc(50% - 50px);bottom:-36px;content:"";display:block;background-image:url(assets/img/affordance.svg);width:40px;height:56px;background-repeat:no-repeat}
+.base-page .post-header::before{position:absolute;left:calc(50% - 50px);bottom:-36px;content:"";display:block;background-image:url(assets/img/affordance.svg);z-index:200;width:40px;height:56px;background-repeat:no-repeat}
 .base-page .post-header .container{background-repeat:no-repeat;height:100%;width:100%}
 .base-page .post-header .container .header-row{-webkit-box-align:center;-ms-flex-align:center;align-items:center;bottom:40px}
 .base-page .post-header .container .header-row .header-blocks{position:relative}
 .base-page .post-header .container .header-row .header-blocks.header-media iframe,.base-page .post-header .container .header-row .header-blocks.header-media img{box-shadow:0 5px 10px rgba(0,0,0,0.15);-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.15);-moz-box-shadow:0 5px 10px rgba(0,0,0,0.15)}
-.base-page .post-header .container .header-row .header-blocks.header-content .h1-subhead{color:#000;height:100%;width:100%;padding:.01rem;-webkit-box-sizing:content-box;box-sizing:content-box;display:inline;-webkit-box-shadow:10px 0 0 #ffde16,-10px 0 0 #ffde16;box-shadow:10px 0 0 #ffde16,-10px 0 0 #ffde16;-webkit-box-shadow:4px 0 0 #000,-4px 0 0 #000;box-shadow:4px 0 0 #000,-4px 0 0 #000;color:#fff;margin-left:4px;background-color:#000;padding:4px 0}
+.base-page .post-header .container .header-row .header-blocks.header-content .h1-subhead b{color:#000;height:100%;width:100%;padding:.01rem;-webkit-box-sizing:content-box;box-sizing:content-box;display:inline;-webkit-box-shadow:10px 0 0 #ffde16,-10px 0 0 #ffde16;box-shadow:10px 0 0 #ffde16,-10px 0 0 #ffde16;-webkit-box-shadow:10px 0 0 #000,-10px 0 0 #000;box-shadow:10px 0 0 #000,-10px 0 0 #000;color:#fff;margin-left:4px;background-color:#000;padding:4px 0}
+.base-page .post-header .container .header-row .header-blocks.header-content .entry-title{margin-left:-12px}
 .base-page .post-header .container .header-row .header-blocks.header-content .entry-title b{color:#000;height:100%;width:100%;padding:.01rem;-webkit-box-sizing:content-box;box-sizing:content-box;display:inline;-webkit-box-shadow:10px 0 0 #ffde16,-10px 0 0 #ffde16;box-shadow:10px 0 0 #ffde16,-10px 0 0 #ffde16;color:#000;margin-bottom:1rem;line-height:1.42;background-color:#ffde16}
 .base-page .post-header .container .header-row .header-blocks.header-content .button-row{margin-top:1rem}
 .base-page .post-header .container .header-row .header-blocks.header-content .button-row button{margin-bottom:1rem;margin-right:1rem}
@@ -222,16 +224,16 @@ body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .post-single .post-header .container .header-row .header-blocks.header-content .h1-subhead{color:#ffde16}
 .post-single .post-header .container .header-row .header-blocks.header-content .dates{color:#fff}
 .post-single .post-header .container .header-row .header-blocks.header-content .entry-title{color:#fff;margin-bottom:1rem;line-height:.9}
-.post-single .post-header .post-thumbnail{left:0;top:0;position:absolute;z-index:-10;width:100%;bottom:0;background-color:#000;overflow:hidden}
-.post-single .post-header .post-thumbnail::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.7;z-index:1;mix-blend-mode:unset}
-.post-single .post-header .post-thumbnail img{width:100%;-o-object-fit:fill;object-fit:fill}
+.post-single .post-header .header-background-image{left:0;top:0;position:absolute;z-index:-10;width:100%;bottom:0;background-color:#000;overflow:hidden}
+.post-single .post-header .header-background-image::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.7;z-index:1;mix-blend-mode:unset}
+.post-single .post-header .header-background-image img{width:100%;-o-object-fit:fill;object-fit:fill}
 .post-single article{width:100%;float:left}
 .post-single article .ngp-form{max-width:100%}
 .post-single article .at-title{display:none}
 .post-single article .at-form{width:100%;padding-right:17.5px;padding-left:17.5px;margin-right:auto;margin-left:auto;max-width:1200px}
 .post-single article .at-form .at-inner{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-17.5px;margin-left:-17.5px}
 .post-single article .at-form .at-inner .at-markup{-webkit-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%;padding-right:17.5px;padding-left:17.5px}
-.post-single article .at-form .at-inner form{-webkit-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%;padding-right:17.5px;padding-left:17.5px;position:relative}
+.post-single article .at-form .at-inner form{-webkit-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%;margin-top:20px;padding-left:17.5px;position:relative}
 .post-single article .at-form .at-inner form legend{color:#fff;z-index:5}
 .post-single article .at-form .at-inner form .at-fieldset{background-color:#000;padding:2rem}
 .post-single article .at-form .at-inner form .at-fieldset:nth-of-type(1){padding:5rem 2rem 2rem 2rem}
@@ -247,17 +249,8 @@ body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .blog-header .blog-menu li a:hover,.blog-header .blog-menu li a:focus,.blog-header .blog-menu li a:active{cursor:pointer}
 .blog-header .blog-menu li a:hover:after,.blog-header .blog-menu li a:focus:after,.blog-header .blog-menu li a:active:after{width:100%}
 .blog-header .blog-menu li a:after{content:"";position:absolute;left:0;bottom:-0.15rem;height:.15rem;background-color:#8f0d56;width:0;-webkit-transition:.25s all ease-out;transition:.25s all ease-out;display:block}
-.blog-single article .post-thumbnail{max-height:350px;overflow:hidden}
-.blog-single article header:after{width:100%;content:"";height:5px;background-image:url("assets/img/gradient-border-bottom.svg");background-size:cover;background-size:contain;background-repeat:no-repeat;display:block}
-.blog-single article h1{font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:400;font-size:3.3rem;text-transform:none !important}
-.blog-single article h3{font-style:italic;padding:.2rem 0 1rem;font-size:20px}
-.blog-single article .entry-meta{font-size:1.2rem;padding-bottom:1.6rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
-.blog-single article .entry-share{margin-top:-14px}
-.blog-single article .entry-share li a{background-color:#33342e}
-.blog-single article .entry-share li svg{height:20px;width:20px;fill:#fff}
-.blog-single article .cat-links{margin:2rem 0 .5rem 0;display:block}
 .post-footer{margin:3rem 0}
-.post-footer .border-gradient-sunrise{padding:60px;text-align:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex}
+.post-footer .border-gradient-sunrise{padding:60px;text-align:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;border-image-source:linear-gradient(to bottom,#8f0d56,#ef4c39,#ffde16);border-style:solid;border-image-slice:1;border-width:5px}
 .post-footer .border-gradient-sunrise .post-footer-text{margin-bottom:1rem}
 .post-footer .post-next{-ms-flex-wrap:wrap;flex-wrap:wrap}
 .post-footer .post-next article{width:100%;-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%}
@@ -294,7 +287,19 @@ body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .instagram-section h3{width:100%;text-align:center;margin-bottom:2rem}
 .instagram-section h3 svg{display:inline-block;margin-top:-5px}
 .blog-vertical-medium-section{padding:60px 0}
-html,body,.site{height:100%;min-height:100%}
+.blog-single article .post-thumbnail{max-height:350px;overflow:hidden}
+.blog-single article header:after{width:100%;content:"";height:5px;background-image:url("assets/img/gradient-border-bottom.svg");background-size:cover;background-size:contain;background-repeat:no-repeat;display:block}
+.blog-single article h1{font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:400;font-size:3.3rem;text-transform:none !important}
+.blog-single article h3{font-style:italic;padding:.2rem 0 1rem;font-size:20px}
+.blog-single article .entry-content{margin-top:2rem}
+.blog-single article .entry-meta{font-size:1.2rem;padding-bottom:1.6rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.blog-single article .entry-share{margin-top:-14px}
+.blog-single article .entry-share li a{background-color:#33342e}
+.blog-single article .entry-share li svg{height:20px;width:20px;fill:#fff}
+.blog-single article .cat-links{margin:2rem 0 .5rem 0;display:block}
+html{height:100%;min-height:100%}
+.single-campaign{height:100%;min-height:100%}
+.single-campaign .site{height:100%;min-height:100%}
 .campaign-single{height:100%;min-height:100%;display:contents}
 .campaign-single .campaign-header{position:relative;overflow:hidden;width:100%;height:calc(100% - 150px)}
 .campaign-single .campaign-header .container{background-image:url("assets/img/gradientborderbroken.svg");background-repeat:no-repeat;background-size:100% 91%;height:100%;width:100%;margin-top:25px;margin-bottom:10%}
@@ -306,7 +311,7 @@ html,body,.site{height:100%;min-height:100%}
 .campaign-single .campaign-header .post-thumbnail{left:0;top:0;position:absolute;z-index:-10;width:100%;bottom:0;background-color:#000;overflow:hidden}
 .campaign-single .campaign-header .post-thumbnail::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.7;z-index:1;mix-blend-mode:unset}
 .campaign-single .campaign-header .post-thumbnail img{width:100%;-o-object-fit:fill;object-fit:fill}
-.campaign-single .site-content::before{position:absolute;left:calc(50% - 50px);bottom:-36px;content:"";display:block;background-image:url(assets/img/affordance.svg);width:40px;height:56px;background-repeat:no-repeat}
+.campaign-single .site-content::before{position:absolute;left:calc(50% - 50px);bottom:-36px;content:"";display:block;background-image:url(assets/img/affordance.svg);z-index:200;width:40px;height:56px;background-repeat:no-repeat}
 /*! Bootstrap v4.3.1 (https://getbootstrap.com/) Copyright 2011-2019 The Bootstrap Authors Copyright 2011-2019 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */:root{--blue:#007bff;--indigo:#6610f2;--purple:#8f0d56;--pink:#e83e8c;--red:#ef4c39;--orange:#fd9014;--yellow:#ffde16;--green:#e3eddf;--teal:#20c997;--cyan:#f7f5e8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#8f0d56;--secondary:#ffde16;--success:#e3eddf;--info:#f7f5e8;--warning:#ffde16;--danger:#ef4c39;--light:#f8f9fa;--dark:#33342e;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
 *,*::before,*::after{-webkit-box-sizing:border-box;box-sizing:border-box}
 html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}
@@ -1886,9 +1891,9 @@ a.text-dark:hover,a.text-dark:focus{color:#0b0b0a !important}
 .text-md-left{text-align:left !important}
 .text-md-right{text-align:right !important}
 .text-md-center{text-align:center !important}
-}@media(min-width:768px) and (min-width:768px){.base-page .post-header .container .h1-subhead{text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-.base-page .post-header .container .entry-title{text-align:center}
-.base-page .post-header .container .button-row{text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+}@media(min-width:768px) and (min-width:768px){.base-page .post-header .container .no-photo .h1-subhead{text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.base-page .post-header .container .no-photo .entry-title{text-align:center}
+.base-page .post-header .container .no-photo .button-row{text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 }@media(min-width:992px){.container{max-width:1020px}
 .col-lg{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
 .col-lg-auto{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}
@@ -2307,16 +2312,12 @@ body footer .footer-right .social-menu{margin:auto}
 .post-single .post-header .container .header-row{position:relative;bottom:unset}
 .post-single .post-header .container .header-row h1{font-size:2.5rem}
 .post-single .post-header .container .header-row .header-blocks.header-content .entry-title{margin-bottom:20px}
-.post-single .post-header .post-thumbnail{height:100%}
-.post-single .post-header .post-thumbnail::before{height:100%;-o-object-fit:cover;object-fit:cover}
-.post-single .post-header .post-thumbnail img{height:100%;-o-object-fit:cover;object-fit:cover}
+.post-single .post-header .header-background-image{height:100%}
+.post-single .post-header .header-background-image::before{height:100%;-o-object-fit:cover;object-fit:cover}
+.post-single .post-header .header-background-image img{height:100%;-o-object-fit:cover;object-fit:cover}
 .post-single article .entry-content{margin-top:6rem}
 .post-single article .at-form .at-inner .at-markup{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}
-.post-single article .at-form .at-inner form{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}
-.blog-single article h1{font-size:2.2rem}
-.blog-single article .entry-meta{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
-.blog-single article .entry-meta .entry-details{text-align:left;margin-bottom:1rem}
-.blog-single article .entry-share .social-menu{padding:0}
+.post-single article .at-form .at-inner form{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;margin:auto}
 .content-sidebar article .post-thumbnail img,.blog-vertical-thumbnail-section article .post-thumbnail img,.post-footer article .post-thumbnail img{width:100px;height:100px;float:left}
 .content-sidebar article .entry-header,.blog-vertical-thumbnail-section article .entry-header,.post-footer article .entry-header{width:calc(100% - 100px);float:left;padding-left:10px}
 .content-sidebar article .cat-links,.blog-vertical-thumbnail-section article .cat-links,.post-footer article .cat-links{font-size:16px;width:100%}
@@ -2327,6 +2328,10 @@ body footer .footer-right .social-menu{margin:auto}
 .blog-horizontal-section article .cat-links{font-size:16px;width:100%}
 .blog-horizontal-section article .entry-title{font-size:24px;line-height:1.2}
 .blog-horizontal-section article .entry-meta{font-size:16px;margin-top:5px}
+.blog-single article h1{font-size:2.2rem}
+.blog-single article .entry-meta{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
+.blog-single article .entry-meta .entry-details{text-align:left;margin-bottom:1rem}
+.blog-single article .entry-share .social-menu{padding:0}
 .campaign-single .campaign-header{background-image:none;overflow:initial;margin-top:53px;border-image-source:linear-gradient(to bottom,#8f0d56,#ef4c39,#ffde16);border-style:solid;border-image-slice:1;border-width:5px}
 .campaign-single .campaign-header .container{background-image:none;margin-top:130px}
 .campaign-single .campaign-header .container .header-row{position:relative;bottom:unset}

@@ -25,22 +25,21 @@
 					.header-content {
 						@include make-col(8);
 					}
-				}
-				@include media-breakpoint-up(md) {
-					.h1-subhead {
-						text-align: center;
-						justify-content: center;
-					}
-					.entry-title {
-						text-align: center;
-					}
-					.button-row {
-						text-align: center;
-						justify-content: center;
+					@include media-breakpoint-up(md) {
+						.h1-subhead {
+							text-align: center;
+							justify-content: center;
+						}
+						.entry-title {
+							text-align: center;
+						}
+						.button-row {
+							text-align: center;
+							justify-content: center;
+						}
 					}
 				}
 			}
-
 			.header-row {
 				align-items: center;
 				bottom: 40px;
@@ -77,15 +76,18 @@
 						}
 
 						.h1-subhead {
-							@include highlighter;
-							box-shadow: 4px 0 0 $black, -4px 0 0 $black;
-							color: $white;
-							margin-left: 4px;
-							background-color: $black;
-							padding: 4px 0px;
+							b {
+								@include highlighter;
+								box-shadow: 10px 0 0 $black, -10px 0 0 $black;
+								color: $white;
+								margin-left: 4px;
+								background-color: $black;
+								padding: 4px 0px;
+							}
 						}
 
 						.entry-title {
+							margin-left: -12px;
 							@include media-breakpoint-down(md) {
 								margin-left: 8px;
 							}

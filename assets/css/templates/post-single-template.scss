@@ -81,7 +81,7 @@
 				}
 			}
 		}
-		.post-thumbnail {
+		.header-background-image {
 			left: 0;
 			top: 0;
 			position: absolute;
@@ -153,8 +153,9 @@
 					@include make-col(6);
 					@include media-breakpoint-down(md) {
 						@include make-col(12);
+						margin: auto;
 					}
-					padding-right: 17.5px;
+					margin-top: 20px;
 					padding-left: 17.5px;
 					position: relative;
 					legend {

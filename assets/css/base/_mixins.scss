@@ -90,6 +90,7 @@
 		content: "";
 		display: block;
 		background-image: url(assets/img/affordance.svg);
+		z-index: 200;
 		@include media-breakpoint-down(md) {
 			display: none;
 		}
