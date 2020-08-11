@@ -30,15 +30,26 @@
 			</button></a>
 				<?php endif?>
 	</div>
-	<div class="col-md-6 header-blocks header-media">
-		<?php if(get_field('header_embed')): ?>
-			<iframe class="video" width="560" height="315" align="bottom" src="<?php echo get_field('header_embed'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<?php elseif(get_field('header_image')): ?>
-		<img src="<?php echo get_field('header_image'); ?>" />
-	<?php endif?>
-	</div>
 
-	</div>
-	</div>
-	<?php sunrise_national_post_thumbnail(); ?>
+	<?php if(get_field('header_embed')): ?>
+		<div class="col-md-6 header-blocks header-media">
+			<iframe class="video" width="560" height="315" align="bottom" src="<?php echo get_field('header_embed'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+	<?php elseif(get_the_post_thumbnail()): ?>
+		<div class="col-md-6 header-blocks header-media">
+			<div class="post-thumbnail">
+				<?php the_post_thumbnail('medium'); ?>
+			</div><!-- .post-thumbnail -->
+		</div>
+	<?php endif?>
+</div>
+</div>
+<div class="header-background-image">
+<?php if(get_field('header_image')): ?>
+<div class="header-background-image">
+<img src="<?php echo get_field('header_image'); ?>" />
+<?php endif?>
+</div>
+</div>
+
 </header><!-- .entry-header -->

@@ -72,6 +72,7 @@
 							.h1-subhead-row,
 							.button-row {
 								@include make-row();
+								justify-content: center;
 							}
 						}
 

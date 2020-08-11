@@ -8,14 +8,13 @@
  */
 
 get_header();
-get_template_part( 'template-parts/blog/blog-navigation' );
+get_template_part( 'template-parts/blog-parts/blog-navigation' );
 ?>
 
 <div class="container">
 	<div class="row">
 	<div id="primary" class="content-area blog-single col-lg-8">
 		<main id="main" class="site-main">
-			Posts
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -30,7 +29,7 @@ get_template_part( 'template-parts/blog/blog-navigation' );
 	<?php
 	get_sidebar();
 	?>
-	</div>
+</div>
 	</div>
 </div>
 <div class="container post-footer">
