@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Campaign Single
+ * Template Name: Post Single
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Sunrise_National
@@ -16,7 +16,7 @@ get_header();
 			<?php
 			while ( have_posts() ) :
 				the_post();
-			get_template_part( 'template-parts/content/content-custom-post-header', '' );
+			get_template_part( 'template-parts/headers/custom-post-header', '' );
 			get_template_part( 'template-parts/content/content', 'page' );
 
 		endwhile; // End of the loop.

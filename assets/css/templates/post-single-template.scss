@@ -1,0 +1,186 @@
+.post-single {
+	.post-header {
+		position: relative;
+		width: 100%;
+		height: 350px;
+		float: left;
+		@include border-gradient-sunrise;
+		@include media-breakpoint-down(md) {
+			background-image: none;
+			overflow: initial;
+		}
+
+		.container {
+			background-repeat: no-repeat;
+			background-size: 100% 91%;
+			height: 100%;
+			width: 100%;
+			margin-top: 25px;
+			margin-bottom: 10%;
+			@include media-breakpoint-down(md) {
+				background-image: none;
+				//margin-top: 130px;
+			}
+
+			.header-row {
+				align-items: flex-start;
+				bottom: 40px;
+				@include media-breakpoint-down(md) {
+					position: relative;
+					bottom: unset;
+					h1 {
+						font-size: 2.5rem;
+					}
+				}
+				.header-blocks {
+					position: relative;
+					margin: 1rem 0;
+					@include media-breakpoint-up(md) {
+						margin: 2rem 0;
+					}
+					&.header-media {
+						@include media-breakpoint-up(md) {
+							margin-bottom: 42px;
+						}
+					}
+					&.header-media iframe,
+					&.header-media img {
+						@include drop-shadow;
+						@include media-breakpoint-up(md) {
+							margin-top: 30px;
+						}
+					}
+					&.header-content {
+						@include media-breakpoint-up(md) {
+							margin-top: 80px;
+						}
+						.h1-subhead {
+							color: $yellow;
+						}
+
+						.dates {
+							color: $white;
+						}
+
+						.entry-title {
+							color: $white;
+							margin-bottom: 1rem;
+							line-height: 0.9;
+							@include media-breakpoint-down(md) {
+								margin-bottom: 20px;
+							}
+						}
+						.header-button {
+							@include media-breakpoint-up(md) {
+								position: absolute;
+								bottom: -30px;
+								left: 60px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.header-background-image {
+			left: 0;
+			top: 0;
+			position: absolute;
+			z-index: -10;
+			width: 100%;
+			bottom: 0;
+			background-color: $black;
+			overflow: hidden;
+			@include media-breakpoint-down(md) {
+				height: 100%;
+			}
+			&::before {
+				content: ""; // ::before and ::after both require content
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $black;
+				opacity: 0.7;
+				z-index: 1;
+				mix-blend-mode: unset;
+				@include media-breakpoint-down(md) {
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			img {
+				width: 100%;
+				object-fit: fill;
+				@include media-breakpoint-down(md) {
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+	article {
+		width: 100%;
+		float: left;
+		.entry-content {
+			@include media-breakpoint-down(md) {
+				margin-top: 6rem;
+			}
+		}
+		.ngp-form {
+			max-width: 100%;
+		}
+		.at-title {
+			display: none;
+		}
+		.at-form {
+			@include make-container();
+			max-width: 1200px;
+			.at-inner {
+				@include media-breakpoint-up(md) {
+					margin-top: 3rem;
+				}
+				@include make-row();
+				.at-markup {
+					@include media-breakpoint-down(md) {
+						@include make-col(12);
+					}
+					@include make-col(6);
+					padding-right: 17.5px;
+					padding-left: 17.5px;
+				}
+				form {
+					@include make-col(6);
+					@include media-breakpoint-down(md) {
+						@include make-col(12);
+						margin: auto;
+					}
+					margin-top: 20px;
+					padding-left: 17.5px;
+					position: relative;
+					legend {
+						color: $white;
+						z-index: 5;
+					}
+					.at-fieldset {
+						background-color: $black;
+						padding: 2rem;
+						&:nth-of-type(1) {
+							padding: 5rem 2rem 2rem 2rem;
+							legend {
+								top: 1rem;
+								position: absolute;
+							}
+						}
+						label {
+							color: $white;
+						}
+					}
+					.AdditionalInformation {
+						margin-top: -90px;
+					}
+				}
+			}
+		}
+	}
+}

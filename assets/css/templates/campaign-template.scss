@@ -1,10 +1,15 @@
-html,
-body,
-.site {
+html {
 	height: 100%;
 	min-height: 100%;
 }
-
+.single-campaign {
+	height: 100%;
+	min-height: 100%;
+	.site {
+		height: 100%;
+		min-height: 100%;
+	}
+}
 .campaign-single {
 	height: 100%;
 	min-height: 100%;
@@ -125,20 +130,7 @@ body,
 		}
 	}
 	.site-content {
-		&::before {
-			position: absolute;
-			left: calc(50% - 50px);
-			bottom: -36px;
-			content: "";
-			display: block;
-			background-image: url(assets/img/affordance.svg);
-			@include media-breakpoint-down(md) {
-				display: none;
-			}
-			width: 40px;
-			height: 56px;
-			background-repeat: no-repeat;
-		}
+		@include affordance;
 	}
 	.site-content {
 		@include media-breakpoint-down(md) {
