@@ -18,14 +18,14 @@
 			}?>">
 				<div class="header-blocks header-content col-md-6">
 		<?php if(get_field('secondary_header')): ?>
-			<div class="row">
+			<div class="h1-subhead-row">
 			<h4 class="h1-subhead">
 				<?php echo get_field('secondary_header'); ?>
 			</h4>
 		</div>
 		<?php endif?>
-		<?php the_title( '<h1 class="entry-title"><p>', '</p></h1>' ); ?>
-		<div class="row button-row">
+		<?php the_title( '<h1 class="entry-title"><b>', '</b></h1>' ); ?>
+		<div class="button-row">
 		<?php if(get_field('button_1_url')): ?>
 			<a href="<?php echo get_field('button_1_url'); ?>"><button class="header-button btn btn-primary">
 			<?php echo get_field('button_1_text'); ?>

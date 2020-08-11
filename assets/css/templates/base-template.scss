@@ -9,31 +9,35 @@
 		@include media-breakpoint-down(md) {
 			background-image: none;
 			overflow: initial;
+			padding: 150px 0;
+			margin-bottom: 75px;
 		}
 
 		.container {
 			background-repeat: no-repeat;
-			background-size: 100% 91%;
 			height: 100%;
 			width: 100%;
 			@include media-breakpoint-down(md) {
 				background-image: none;
-				//margin-top: 130px;
 			}
-			.no-photo {
-				.header-content {
-					@include make-col(8);
+			@include media-breakpoint-up(md) {
+				.no-photo {
+					.header-content {
+						@include make-col(8);
+					}
 				}
-				.h1-subhead {
-					text-align: center;
-					justify-content: center;
-				}
-				.entry-title {
-					text-align: center;
-				}
-				.button-row {
-					text-align: center;
-					justify-content: center;
+				@include media-breakpoint-up(md) {
+					.h1-subhead {
+						text-align: center;
+						justify-content: center;
+					}
+					.entry-title {
+						text-align: center;
+					}
+					.button-row {
+						text-align: center;
+						justify-content: center;
+					}
 				}
 			}
 
@@ -53,6 +57,10 @@
 					@include media-breakpoint-up(md) {
 					}
 					&.header-media {
+						@include media-breakpoint-down(md) {
+							position: absolute;
+							bottom: -270px;
+						}
 					}
 					&.header-media iframe,
 					&.header-media img {
@@ -61,29 +69,42 @@
 						}
 					}
 					&.header-content {
+						@include media-breakpoint-up(md) {
+							.h1-subhead-row,
+							.button-row {
+								@include make-row();
+							}
+						}
+
 						.h1-subhead {
 							@include highlighter;
 							box-shadow: 4px 0 0 $black, -4px 0 0 $black;
 							color: $white;
-							left: 4px;
+							margin-left: 4px;
 							background-color: $black;
 							padding: 4px 0px;
 						}
 
-						.entry-title p {
-							@include highlighter;
-							color: $black;
-							margin-bottom: 1rem;
-							line-height: 1.42;
-							left: -8px;
-							background-color: $yellow;
+						.entry-title {
 							@include media-breakpoint-down(md) {
-								margin-bottom: 20px;
+								margin-left: 8px;
+							}
+							b {
+								@include highlighter;
+								color: $black;
+								margin-bottom: 1rem;
+								line-height: 1.42;
+								background-color: $yellow;
+								@include media-breakpoint-down(md) {
+									margin-bottom: 20px;
+								}
 							}
 						}
 						.button-row {
 							margin-top: 1rem;
+
 							button {
+								margin-bottom: 1rem;
 								margin-right: 1rem;
 								&:nth-of-type(2) {
 									background-color: $secondary;

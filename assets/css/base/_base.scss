@@ -41,12 +41,15 @@ button {
 .acf-hidden {
 	display: none;
 }
+
 .admin-bar {
 	.site-header.fixed-menu {
 		margin-bottom: 64px;
 	}
 	.fixed-top {
-		top: 32px !important;
+		@include media-breakpoint-up(md) {
+			top: 32px !important;
+		}
 	}
 }
 
