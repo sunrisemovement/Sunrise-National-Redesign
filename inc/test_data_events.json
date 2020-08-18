@@ -1,0 +1,150 @@
+{
+  "eventId": 1370,
+  "name": "Neighbors Calling Neighbors",
+  "shortName": "NeighborCall",
+  "description": "Come help get the word out about our great campaign.",
+  "startDate": "2015-06-01T15:00:00-04:00",
+  "endDate": "2015-06-01T20:00:00-04:00",
+  "eventType": {
+    "eventTypeId": 143856,
+    "name": "Phone Bank"
+  },
+  "isOnlyEditableByCreatingUser": false,
+  "isPubliclyViewable": null,
+  "locations": [
+    {
+      "locationId": 272,
+      "name": "Campaign HQ",
+      "displayName": "Campaign HQ, 48 Grove St Somerville, MA 02144-2500 ",
+      "address": {
+        "addressId": null,
+        "addressLine1": "48 Grove St",
+        "addressLine2": null,
+        "addressLine3": null,
+        "city": "Somerville",
+        "stateOrProvince": "MA",
+        "zipOrPostalCode": "02144",
+        "geoLocation": {
+          "lon": -71.120121,
+          "lat": 42.396363
+        },
+        "countryCode": "US",
+        "preview": "48 Grove St \r\nSomerville, MA 02144-2500 ",
+        "type": null,
+        "isPreferred": null
+      },
+      "id": 272,
+      "notes": null,
+      "codes": null
+    },
+    {
+      "locationId": 273,
+      "name": "Northwest Regional Field Office",
+      "displayName": "Northwest Regional Field Office, 800 Oak St Salem, MA 02111 ",
+      "address": {
+        "addressId": null,
+        "addressLine1": "800 Oak St",
+        "addressLine2": null,
+        "addressLine3": null,
+        "city": "Salem",
+        "stateOrProvince": "MA",
+        "zipOrPostalCode": "02111",
+        "geoLocation": null,
+        "countryCode": "US",
+        "preview": "800 Oak St \r\nSalem, MA 02111 ",
+        "type": null,
+        "isPreferred": null
+      },
+      "id": 273,
+      "notes": null,
+      "codes": null
+    }
+  ],
+  "codes": [
+    {
+      "codeId": 20516,
+      "parentCodeId": 20513,
+      "name": "Seniors",
+      "codeType": "Tag",
+      "dateCreated": "2015-04-05T13:00:00Z",
+      "supportedEntities": null
+    },
+    {
+      "codeId": 20518,
+      "parentCodeId": 20513,
+      "name": "Youth",
+      "codeType": "Tag",
+      "dateCreated": "2015-04-05T13:02:00Z",
+      "supportedEntities": null
+    },
+    {
+      "codeId": 20615,
+      "parentCodeId": null,
+      "name": "Digital Ads",
+      "codeType": "Sourcecode",
+      "dateCreated": "2017-10-01T13:02:00Z",
+      "supportedEntities": null
+    }
+  ],
+  "notes": [
+    {
+      "noteId": 6,
+      "text": "Sed ut perspiciatis unde omnis iste natus error sit ... qui dolorem eum fugiat quo voluptas nulla pariatur?",
+      "isViewRestricted": true,
+      "category": null,
+      "createdDate": "2015-04-05T13:21:00Z"
+    },
+    {
+      "noteId": 5,
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ... deserunt mollit anim id est laborum.",
+      "isViewRestricted": false,
+      "category": null,
+      "createdDate": "2015-04-05T13:20:00Z"
+    }
+  ],
+  "shifts": [
+    {
+      "eventShiftId": 2162,
+      "name": "Setup",
+      "startTime": "2015-06-01T15:00:00-04:00",
+      "endTime": "2015-06-01T16:00:00-04:00"
+    },
+    {
+      "eventShiftId": 2163,
+      "name": "Early Shift",
+      "startTime": "2015-06-01T16:00:00-04:00",
+      "endTime": "2015-06-01T18:00:00-04:00"
+    },
+    {
+      "eventShiftId": 2164,
+      "name": "Late Shift",
+      "startTime": "2015-06-01T18:00:00-04:00",
+      "endTime": "2015-06-01T20:00:00-04:00"
+    }
+  ],
+  "roles": [
+    {
+      "roleId": 111687,
+      "name": "Host",
+      "isEventLead": true,
+      "min": null,
+      "max": null,
+      "goal": null
+    },
+    {
+      "roleId": 111689,
+      "name": "Phone Banker",
+      "isEventLead": false,
+      "min": 5,
+      "max": null,
+      "goal": 20
+    }
+  ],
+  "districtFieldValue": "003",
+  "voterRegistrationBatches": [
+    {
+      "voterRegistrationBatchId": 123456
+    }
+  ],
+  "createdDate": "2015-04-05T13:18:00Z"
+}

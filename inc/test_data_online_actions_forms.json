@@ -1,0 +1,79 @@
+{
+  "items": [
+    {
+        "formTrackingId": "j_STKe8rYxkEVvg2",
+        "formName": "My Event Form",
+        "formType": "EventSignupForm",
+        "formTypeId": 11,
+        "dateCreated": "2019-12-09T00:09:00Z",
+        "createdByEmail": "invalid@fake.ngpvan.com",
+        "dateModified": "2019-12-11T03:47:00Z",
+        "modifiedByEmail": "invalid@fake.ngpvan.com",
+        "isActive": true,
+        "designation": {
+            "designationId": 123456789,
+            "name": "Jane for Congress Committee"
+        },
+        "confirmationEmailData": {
+            "fromEmail": "jim@gotham.ci.us",
+            "fromName": "Jim",
+            "fromSubject": "Thank you for signing up",
+            "replyToEmail": "jim@gotham.ci.us",
+            "copyToEmails": [
+                "jim@gotham.ci.us",
+                "jim.gordon@batmail.com",
+                "knope@citycouncil.pawnee.in.example.org"
+            ],
+            "isConfirmationEmailEnabled": true,
+            "isRecurringEmailEnabled": true
+        },
+        "activistCodes": [
+            1234567,
+            4567890,
+            1230789,
+            1472583
+        ],
+        "eventId": 1370,
+        "codeId": null,
+        "campaignId": 7777,
+        "isConfirmedOptInEnabled": false
+    },
+    {
+        "formTrackingId": "oVy1gfQW4MusasRhZojv8A2",
+        "formName": "Fundraiser 2",
+        "formType": "EventSignupForm",
+        "formTypeId": 11,
+        "dateCreated": "2019-12-09T00:09:00Z",
+        "createdByEmail": "invalid@fake.ngpvan.com",
+        "dateModified": "2019-12-11T03:47:00Z",
+        "modifiedByEmail": "invalid@fake.ngpvan.com",
+        "isActive": true,
+        "designation": {
+            "designationId": 123456789,
+            "name": "Jane for Congress Committee"
+        },
+        "confirmationEmailData": {
+            "fromEmail": "jim@gotham.ci.us",
+            "fromName": "Jim",
+            "fromSubject": "Thank you for signing up",
+            "replyToEmail": "jim@gotham.ci.us",
+            "copyToEmails": [
+                "jim@gotham.ci.us",
+                "jim.gordon@batmail.com",
+                "knope@citycouncil.pawnee.in.example.org"
+            ],
+            "isConfirmationEmailEnabled": true,
+            "isRecurringEmailEnabled": true
+        },
+        "activistCodes": [
+            1234567
+        ],
+        "eventId": 1370,
+        "codeId": null,
+        "campaignId": 7777,
+        "isConfirmedOptInEnabled": false
+    }
+  ],
+  "nextPageLink": null,
+  "count": 2
+}
