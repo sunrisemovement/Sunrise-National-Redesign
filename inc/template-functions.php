@@ -58,11 +58,17 @@ add_action( 'after_setup_theme', 'fetchNewOnlineActions' );
 // ================ Fetching / Storage ==================
 /**
 * Creates a wordpress post of the "event" post type from the json array passed in representing a single OnlineAction json object.
+<<<<<<< HEAD
 * Done By: Andrew Wilson
 */
-function createEventPost($onlineAction) {
+function createEventPost($onlineActionForms) {
 
 	try {
+=======
+*/
+function createEventPost($onlineActionForms) {
+	foreach ($onlineActionForms as $onlineAction) {
+>>>>>>> Functions stubs and comments for EveryAction API
 		// insert the post and set the category
 		echo "Creating '".$onlineAction['formName']."' Form post";
 		$post_id = wp_insert_post(array (
