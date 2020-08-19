@@ -48,11 +48,8 @@ const ACTION_TAG_STR = "<script type=\"text/javascript\" src=\"https://d1aqhv4sn
 // deleteExistingOnlineActionsForms();
 
 // Fetch All Online Actions
-$onlineActionsForms = fetchNewOnlineActionsForm();
+add_action( 'after_setup_theme', 'fetchNewOnlineActionsForm' );
 
-// Remove already existing Actions
-// TODO Add ability to update in case form name is changed
-$onlineActionsForms = cleanExistingOnlineActionsForms($onlineActionsForms);
 
 //Create custom posts for actions that didn't exist.
 // createActionPosts($onlineActionsForms);
@@ -60,9 +57,9 @@ $onlineActionsForms = cleanExistingOnlineActionsForms($onlineActionsForms);
 // =========== Custom Post Type Manipulation ================
 // ================ Fetching / Storage ==================
 /**
-* Set up actions posts based on actions that exist in our file/api call/ db
+* Creates a wordpress post of the "event" post type from the json array passed in representing a single OnlineAction json object.
 */
-function createActionPosts($onlineActionForms) {
+function createEventPost($onlineActionForms) {
 	foreach ($onlineActionForms as $onlineAction) {
 		// insert the post and set the category
 		$post_id = wp_insert_post(array (
@@ -78,8 +75,10 @@ function createActionPosts($onlineActionForms) {
 		update_field('actionTag', sprintf(ACTION_TAG_STR, $onlineAction['formTrackingId']), $post_id);
 	}
 }
-// TODO Using test files for now until EA8 fixes API isseus for us.
 
+// Takes API response json objects and creates a new post of the "events" post type for each OnlineAction that hasn't been created yet
+// When a post is created for an OnlineAction the json object used to create it will be stored in a file with the name matching the
+// form tracking id. Existence of a post for a given OnlineAction can be determined by checking for the json file existence.
 function fetchNewOnlineActionsForm() {
 	$json = json_decode(file_get_contents(
 		"test_data_online_actions_forms.json", true), true);
@@ -99,39 +98,10 @@ function fetchNewOnlineActionsForm() {
 	//echo '<pre>'; print_r($onlineActionsForms); echo '</pre>';
 }
 
-//TODO put this into one SQL query / This is only get 5-10 posts
-//Might need a better way to do this since we can't really index on
-//formTrackingId so we have to load all posts from db each time.
-function cleanExistingOnlineActionsForms($onlineActionForms) {
-	$posts = get_posts([
-		'post_type' => 'events',
-		'post_status' => 'publish'
-	]);
-
-	// echo '<pre> posts:'; print_r($posts); echo '</pre>';
-
-	$setOfOnlineActionFormsFormTrackingIds = array();
-
-	foreach($posts as $post) {
-		$postId = get_post_field('ID', $post);
-		$setOfOnlineActionFormsFormTrackingIds[get_field('formTrackingId', $postId)] = 1;
-
-		// FIXME Post id get not working
-		echo $postId ."=====<br />";
-		echo get_field('title', $postId)."|| <br />";
-		echo get_field('formTrackingId', $postId)."|||<br />";
-	}
-
-	echo '<pre> $setOfOnlineActionFormsFormTrackingIds:'; print_r($setOfOnlineActionFormsFormTrackingIds); echo '</pre>';
-
-	$cleanedOnlineActionsForms = [];
-	foreach ($onlineActionForms as $onlineAction) {
-		if (!array_key_exists($onlineAction['formTrackingId'], $setOfOnlineActionFormsFormTrackingIds)) {
-			array_push($cleanedOnlineActionsForms, $onlineAction);
-			echo "not  found <br />";
-		}
-	}
-	return $cleanedOnlineActionsForms;
+// Call EveryAction API and return a json object with an array called "items" that contains all of the OnlineAction json objects returned
+// Called by fetchNewOnlineActionForms
+function getOnlineActionsFromApi() {
+	
 }
 
 function deleteExistingOnlineActionsForms() {
