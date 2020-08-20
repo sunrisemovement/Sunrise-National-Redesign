@@ -59,12 +59,16 @@ add_action( 'after_setup_theme', 'fetchNewOnlineActions' );
 /**
 * Creates a wordpress post of the "event" post type from the json array passed in representing a single OnlineAction json object.
 <<<<<<< HEAD
+<<<<<<< HEAD
 * Done By: Andrew Wilson
 */
 function createEventPost($onlineActionForms) {
 
 	try {
 =======
+=======
+* Done By: Andrew Jones
+>>>>>>> Add ea8 api
 */
 function createEventPost($onlineActionForms) {
 	foreach ($onlineActionForms as $onlineAction) {
@@ -99,6 +103,7 @@ const LAST_EA_API_CALL_TIME = "./EA8/lastApiCallTime.json";
 // Takes API response json objects and creates a new post of the "events" post type for each OnlineAction that hasn't been created yet
 // When a post is created for an OnlineAction the json object used to create it will be stored in a file with the name matching the
 // form tracking id. Existence of a post for a given OnlineAction can be determined by checking for the json file existence.
+<<<<<<< HEAD
 // Done By: Andrew Wilson
 // fetchNewOnlineActions();
 function fetchNewOnlineActions() {
@@ -153,11 +158,31 @@ function checkApiCallTimer() {
 function setLastCallDate() {
 	$now = new DateTime("now");
 	file_put_contents(LAST_EA_API_CALL_TIME, json_encode($now));
+=======
+// Done By: Andrew Jones
+function fetchNewOnlineActionsForm() {
+	$json = getOnlineActionsFromApi();
+
+	$onlineActionsForms = [];
+	foreach ($json['items'] as $onlineActionJson) {
+		$onlineAction = array(
+			'formTrackingId' => $onlineActionJson['formTrackingId'],
+			'formName' => $onlineActionJson['formName'],
+			'isActive' => $onlineActionJson['isActive'],
+			'campaignId' => $onlineActionJson['campaignId'],
+			'eventId' => $onlineActionJson['eventId']);
+		array_push($onlineActionsForms, $onlineAction);
+	}
+	return $onlineActionsForms;
+	// echo '<pre> $onlineActionsForms ===== '; print_r($onlineActionsForms); echo '</pre>';
+
+>>>>>>> Add ea8 api
 }
 
 // Call EveryAction API and return a json object with an array called "items" that contains all of the OnlineAction json objects returned
 // Called by fetchNewOnlineActionForms
 function getOnlineActionsFromApi() {
+<<<<<<< HEAD
 	// $json = json_decode(file_get_contents(
 	//  	"test_data_online_actions_forms.json", true), true);
 	$ea8Api = new Ea8Api();
@@ -169,6 +194,13 @@ function getOnlineActionsFromApi() {
 
 function echoVar($var) {
 	echo '<pre>'; print_r($var); echo '</pre>';
+=======
+
+	// $json = json_decode(file_get_contents(
+	// 	"test_data_online_actions_forms.json", true), true);
+	$ea8Api = new Ea8Api();
+	return json_decode($ea8Api->fetchOnlineActions(), true);
+>>>>>>> Add ea8 api
 }
 
 function deleteExistingOnlineActionsForms() {
