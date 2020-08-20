@@ -163,7 +163,9 @@ function getOnlineActionsFromApi() {
 function echoVar($var) {
 	echo '<pre>'; print_r($var); echo '</pre>';
 }
-
+function echoVar($var) {
+	echo '<pre>'; print_r($var); echo '</pre>';
+}
 function deleteExistingOnlineActionsForms() {
 	$posts = get_posts([
 		'numberposts' => '-1', // -1 for all posts
