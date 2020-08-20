@@ -1,4 +1,5 @@
 <?php
+require_once( 'ea8_api.php' );
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
@@ -40,6 +41,8 @@ add_action( 'wp_head', 'surnise_national_pingback_header' );
 // ======================================================
 // EveryAction8 - Specific Code
 // ======================================================
+
+
 //TODO this should be on some trigger, e.g. daily / time-based trigger
 //since it seems unlikely EA8 offers a webhook of some sort.
 //Read in test files
@@ -58,6 +61,7 @@ add_action( 'after_setup_theme', 'fetchNewOnlineActionsForm' );
 // ================ Fetching / Storage ==================
 /**
 * Creates a wordpress post of the "event" post type from the json array passed in representing a single OnlineAction json object.
+* Done By: Andrew Jones
 */
 function createEventPost($onlineActionForms) {
 	foreach ($onlineActionForms as $onlineAction) {
@@ -79,9 +83,9 @@ function createEventPost($onlineActionForms) {
 // Takes API response json objects and creates a new post of the "events" post type for each OnlineAction that hasn't been created yet
 // When a post is created for an OnlineAction the json object used to create it will be stored in a file with the name matching the
 // form tracking id. Existence of a post for a given OnlineAction can be determined by checking for the json file existence.
+// Done By: Andrew Jones
 function fetchNewOnlineActionsForm() {
-	$json = json_decode(file_get_contents(
-		"test_data_online_actions_forms.json", true), true);
+	$json = getOnlineActionsFromApi();
 
 	$onlineActionsForms = [];
 	foreach ($json['items'] as $onlineActionJson) {
@@ -95,13 +99,17 @@ function fetchNewOnlineActionsForm() {
 	}
 	return $onlineActionsForms;
 	// echo '<pre> $onlineActionsForms ===== '; print_r($onlineActionsForms); echo '</pre>';
-	//echo '<pre>'; print_r($onlineActionsForms); echo '</pre>';
+
 }
 
 // Call EveryAction API and return a json object with an array called "items" that contains all of the OnlineAction json objects returned
 // Called by fetchNewOnlineActionForms
 function getOnlineActionsFromApi() {
-	
+
+	// $json = json_decode(file_get_contents(
+	// 	"test_data_online_actions_forms.json", true), true);
+	$ea8Api = new Ea8Api();
+	return json_decode($ea8Api->fetchOnlineActions(), true);
 }
 
 function deleteExistingOnlineActionsForms() {
@@ -118,49 +126,3 @@ function deleteExistingOnlineActionsForms() {
 }
 
 // ==================== API Calls =======================
-
-
-
-
-function fetchOnlineActions() {
-	$response = callAPI("GET",  EA8_ONLNE_ACTIONS_URL, EA8_AUTH_KEY);
-	return $response;
-}
-
-//$response  = json_encode(fetchOnlineActions());
-
-function callAPI($method, $url, $authKey, $data = false)
-{
-    $curl = curl_init();
-
-    switch ($method)
-    {
-        case "POST":
-            curl_setopt($curl, CURLOPT_POST, 1);
-
-            if ($data)
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            break;
-        case "PUT":
-            curl_setopt($curl, CURLOPT_PUT, 1);
-            break;
-        default:
-            if ($data)
-                $url = sprintf("%s?%s", $url, http_build_query($data));
-    }
-
-
-    // Optional Authentication:
-    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_setopt($curl, CURLOPT_USERPWD, $authKey);
-
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-    $result = curl_exec($curl);
-		echo($result);
-
-    curl_close($curl);
-
-    return $result;
-}
