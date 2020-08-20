@@ -87,21 +87,27 @@ function createEventPost($onlineAction) {
 	return true;
 }
 const ONLINE_ACTION_DIR = "./EA8/Action/";
+const LAST_EA_API_CALL_TIME = "./EA8/lastApiCallTime.json";
+
 // Takes API response json objects and creates a new post of the "events" post type for each OnlineAction that hasn't been created yet
 // When a post is created for an OnlineAction the json object used to create it will be stored in a file with the name matching the
 // form tracking id. Existence of a post for a given OnlineAction can be determined by checking for the json file existence.
 // Done By: Andrew Wilson
 function fetchNewOnlineActions() {
+	// make directory if it doesn't exist
+	if (!file_exists(ONLINE_ACTION_DIR) && !is_dir(ONLINE_ACTION_DIR)) {
+		mkdir(ONLINE_ACTION_DIR, 0777, true);
+	}
+	if (!checkApiCallTimer()) {
+		return;
+	}
 	$json = getOnlineActionsFromApi();
 
 	//echo '<pre>'; print_r($json); echo '</pre>';
 	foreach ($json['items'] as $onlineActionJson) {
 		$actionJsonFilepath = ONLINE_ACTION_DIR.$onlineActionJson['formTrackingId'].".json";
 		
-		// make directory if it doesn't exist
-		if (!file_exists(ONLINE_ACTION_DIR) && !is_dir(ONLINE_ACTION_DIR)) {
-			mkdir(ONLINE_ACTION_DIR, 0777, true);
-		}
+
 
 		// if a file exists for a given formTrackingId, update the contents, but do not create a post and then move on
 		if (file_exists($actionJsonFilepath)) {
@@ -123,16 +129,47 @@ function fetchNewOnlineActions() {
 	}
 }
 
+/* function that checks if it is time to call the API again.  $apiRefreshPeriod stores the time period that must elapse before refreshing
+ * The time of the last API call is persisted in a file stored in LAST_EA_API_CALL_TIME to persist between requests.
+ * Returns true if enough time has past since the last call, false if not.
+*/
+function checkApiCallTimer() {
+	$runNow = false;
+	if (!file_exists(LAST_EA_API_CALL_TIME)) {
+		return true;
+	}
+	$lastCallDate = json_decode(file_get_contents(LAST_EA_API_CALL_TIME));
+	$lastCallDate = new DateTime($lastCallDate->date);
+	// time in seconds between EveryAction API calls.  The format starts with P and then 10H specifies 10 hours as the refresh period
+	// https://www.php.net/manual/en/dateinterval.construct.php
+	$apiRefreshPeriod = new DateInterval('PT10H');
+
+	$now = new DateTime("now");
+	$nextCallDate = $lastCallDate->add($apiRefreshPeriod);
+	$runNow = $now > $nextCallDate;
+	return $runNow;
+}
+
+// This function sets the last time that the API was called and stores it in a persisted file for quick reference
+function setLastCallDate() {
+	$now = new DateTime("now");
+	file_put_contents(LAST_EA_API_CALL_TIME, json_encode($now));
+}
+
 // Call EveryAction API and return a json object with an array called "items" that contains all of the OnlineAction json objects returned
 // Called by fetchNewOnlineActionForms
 function getOnlineActionsFromApi() {
 	$json = json_decode(file_get_contents(
 	 	"test_data_online_actions_forms.json", true), true);
-	//$ea8Api = new Ea8Api();
-	//$json = json_decode($ea8Api->fetchOnlineActions(), true); 
+	// $ea8Api = new Ea8Api();
+	// $json = json_decode($ea8Api->fetchOnlineActions(), true);
+	// echo '<pre>'; print_r($json); echo '</pre>';
+	setLastCallDate();
 	return $json;
 }
-
+function echoVar($var) {
+	echo '<pre>'; print_r($var); echo '</pre>';
+}
 function deleteExistingOnlineActionsForms() {
 	//TODO only getting 5 posts
 	$posts = get_posts([
