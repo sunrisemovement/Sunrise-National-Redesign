@@ -18,7 +18,7 @@
 				<?php echo get_field('secondary_header'); ?>
 			</h4>
 		<?php endif?>
-		<?php the_title( '<h1 class="entry-title h2">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php if(get_field('button_1_url')): ?>
 			<a href="<?php echo get_field('button_1_url'); ?>"><button class="header-button yellow">
 			<?php echo get_field('button_1_text'); ?>

@@ -7,15 +7,15 @@
  */
 
 get_header();?>
-		<div id="content" class="site-content">
+		<div id="content" class="site-content blog-home">
 			<?php
 get_template_part( 'template-parts/blog-parts/blog-navigation' );
 ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<?php get_template_part( 'template-parts/blog-parts/blog-featured', '' ); ?>
-			<?php get_template_part( 'template-parts/blog-parts/blog-horizontal', '' ); ?>
+				<?php get_template_part( 'template-parts/blog-parts/blog-featured', '' ); ?>
+				<?php get_template_part( 'template-parts/blog-parts/blog-horizontal', '' ); ?>
 			<?php get_template_part( 'template-parts/instagram', '' ); ?>
 			<?php get_template_part( 'template-parts/blog-parts/blog-vertical', '' ); ?>
 			<?php

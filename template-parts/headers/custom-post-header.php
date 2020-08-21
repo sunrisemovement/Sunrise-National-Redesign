@@ -22,9 +22,13 @@
 					<?php the_title( '<h1 class="entry-title h2">', '</h1>' ); ?>
 					<?php if(get_field('dates')): ?>
 						<h3 class="dates">
-							<?php echo get_field('dates'); ?> @ <?php echo get_field('time'); ?>
-					</h3>
-				<?php endif?>
+							<?php echo get_field('dates'); ?>
+							<?php if(get_field('times')): ?>
+								 @ <?php echo get_field('times'); ?>
+							<?php endif?>
+						</h3>
+					<?php endif?>
+
 				<?php if(get_field('button_url')): ?>
 					<a href="<?php echo get_field('button_url'); ?>"><button class="header-button yellow">
 						<?php echo get_field('button_text'); ?>

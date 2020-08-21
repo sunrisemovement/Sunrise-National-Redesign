@@ -27,7 +27,7 @@ if ( ! function_exists( 'sunrise_national_setup' ) ) :
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-
+		add_theme_support( 'align-wide' );
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -239,6 +239,67 @@ add_filter('acf/settings/show_admin', 'my_acf_settings_show_admin');
 function my_acf_settings_show_admin( $show_admin ) {
     return true;
 }
+
+function sunrise_color_palette() {
+		// Editor color palette.
+		add_theme_support(
+				'editor-color-palette',
+				array(
+						array(
+								'name' => esc_html__( 'Gold', 'sunrise-national' ),
+								'slug' => 'sunrise-gold',
+								'color' => '#ffde16'
+						),
+						array(
+								'name' => esc_html__( 'Magenta', 'sunrise-national' ),
+								'slug' => 'sunrise-magenta',
+								'color' => '#8F0D56'
+						),
+						array(
+								'name' => esc_html__( 'Grey', 'sunrise-national' ),
+								'slug' => 'sunrise-grey',
+								'color' => '#33342E'
+						),
+						array(
+								'name' => esc_html__( 'Black', 'sunrise-national' ),
+								'slug' => 'sunrise-black',
+								'color' => '#000000'
+						),
+						array(
+								'name' => esc_html__( 'Orange', 'sunrise-national' ),
+								'slug' => 'sunrise-orange',
+								'color' => '#fd9014'
+						),
+						array(
+								'name' => esc_html__( 'Red', 'sunrise-national' ),
+								'slug' => 'sunrise-red',
+								'color' => '#EF4C39'
+						),
+						array(
+								'name' => esc_html__( 'White', 'sunrise-national' ),
+								'slug' => 'sunrise-white',
+								'color' => '#fff'
+						),
+						array(
+								'name' => esc_html__( 'Background Light', 'sunrise-national' ),
+								'slug' => 'sunrise-background-light',
+								'color' => '#FFFFFB'
+						),
+						array(
+								'name' => esc_html__( 'Background Dark', 'sunrise-national' ),
+								'slug' => 'sunrise-background-dark',
+								'color' => '#F7F5E8'
+						),
+						array(
+								'name' => esc_html__( 'Green', 'sunrise-national' ),
+								'slug' => 'sunrise-green',
+								'color' => '#E3EDDF'
+						)
+				)
+		);
+}
+
+add_action( 'after_setup_theme', 'sunrise_color_palette' );
 
 
 //Custom Post Types Temporary Home

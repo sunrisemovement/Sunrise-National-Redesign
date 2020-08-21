@@ -24,6 +24,10 @@
 	float: left;
 	padding: 0 15px;
 	padding-bottom: 0;
+	@include media-breakpoint-down(md) {
+		position: fixed;
+		top: 0;
+	}
 }
 
 .header-menu .icon {
@@ -69,7 +73,7 @@
 		margin-top: 20px;
 		width: 260px;
 		@include media-breakpoint-down(md) {
-			margin-top: 26px;
+			margin-top: 16px;
 		}
 	}
 }

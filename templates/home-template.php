@@ -10,7 +10,10 @@ get_header();
 ?>
 <div id="content" class="site-content">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main home-page">
+		<?php
+			get_template_part( 'template-parts/headers/home-header', '' );
+		?>
 
 		<?php
 		while ( have_posts() ) :
@@ -18,17 +21,26 @@ get_header();
 
 			get_template_part( 'template-parts/content/content', 'page' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
 		endwhile; // End of the loop.
 		?>
+		<div class="after-content">
+				<div class="section-padding">
+			<?php
+				get_template_part( 'template-parts/blog-parts/blog-navigation', '' );
+				get_template_part( 'template-parts/blog-parts/blog-featured', '' );
+			?>
+			</div>
+			<?php
+				get_template_part( 'template-parts/instagram', '' );
+			?>
+			<?php
+				get_template_part( 'template-parts/footer/nav-blocks', '' );
+			?>
+		</div>
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
