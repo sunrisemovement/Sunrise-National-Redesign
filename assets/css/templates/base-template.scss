@@ -51,6 +51,16 @@
 					}
 				}
 
+				&.no-photo {
+					@include media-breakpoint-up(md) {
+						.h1-subhead-row,
+						.button-row {
+							@include make-row();
+							justify-content: center;
+						}
+					}
+				}
+
 				.header-blocks {
 					position: relative;
 					@include media-breakpoint-up(md) {
@@ -68,14 +78,6 @@
 						}
 					}
 					&.header-content {
-						@include media-breakpoint-up(md) {
-							.h1-subhead-row,
-							.button-row {
-								@include make-row();
-								justify-content: center;
-							}
-						}
-
 						.h1-subhead {
 							b {
 								@include highlighter;

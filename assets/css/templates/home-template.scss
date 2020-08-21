@@ -1,0 +1,218 @@
+.home-page {
+	.post-header {
+		position: relative;
+		width: 100%;
+		padding: 120px;
+		float: left;
+		@include affordance;
+		//@include border-gradient-sunrise;
+		@include media-breakpoint-down(md) {
+			background-image: none;
+			overflow: initial;
+			padding: 150px 0;
+		}
+
+		.container {
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+			@include media-breakpoint-down(md) {
+				background-image: none;
+			}
+			@include media-breakpoint-up(md) {
+				.no-photo {
+					.header-content {
+						@include make-col(8);
+					}
+					@include media-breakpoint-up(md) {
+						.h1-subhead {
+							text-align: center;
+							justify-content: center;
+						}
+						.entry-title {
+							text-align: center;
+						}
+						.button-row {
+							text-align: center;
+							justify-content: center;
+						}
+					}
+				}
+			}
+			.header-row {
+				align-items: flex-start;
+				bottom: 40px;
+				@include media-breakpoint-down(md) {
+					position: relative;
+					bottom: unset;
+					h1 {
+						font-size: 2.5rem;
+					}
+				}
+
+				.header-blocks {
+					position: relative;
+					@include media-breakpoint-up(md) {
+					}
+					&.header-content {
+						.h1-subhead {
+							b {
+								color: $yellow;
+							}
+						}
+
+						.entry-title {
+							color: $white;
+							@include media-breakpoint-down(md) {
+								margin-left: 8px;
+							}
+							b {
+								color: $white;
+								margin-bottom: 1rem;
+								line-height: 1.2;
+								font-size: 4.11rem;
+								@include media-breakpoint-down(md) {
+									margin-bottom: 20px;
+								}
+							}
+						}
+						.entry-description {
+							color: $white;
+						}
+						.button-row {
+							margin-top: 1rem;
+
+							button {
+								margin-bottom: 1rem;
+								margin-right: 1rem;
+								&:nth-of-type(2) {
+									background-color: $secondary;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.header-background-image {
+			@include dark-full-overlay;
+			&.video {
+				&::before {
+					opacity: 0.2;
+				}
+			}
+			&::before {
+				opacity: 0.4;
+			}
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+			}
+		}
+	}
+	.page {
+		float: left;
+		width: 100%;
+		@include media-breakpoint-up(md) {
+			margin: 60px auto 0 0;
+		}
+	}
+
+	.entry-content > .wp-block-columns:first-of-type {
+		@include media-breakpoint-down(md) {
+			flex-flow: column-reverse;
+			.wp-block-column:nth-of-type(2) {
+				padding: 0;
+				margin-bottom: 60px;
+			}
+			.wp-block-columns {
+				margin-bottom: 0;
+				.wp-block-column:nth-of-type(2) {
+					padding: 0;
+					margin-bottom: 0px;
+				}
+			}
+		}
+	}
+
+	.entry-content > .wp-block-getwid-section {
+		@include media-breakpoint-down(md) {
+			.wp-block-column:nth-of-type(1) {
+				padding: 0;
+				margin-bottom: 0px;
+			}
+			.wp-block-column:nth-of-type(2) {
+				display: none;
+			}
+		}
+	}
+
+	.wp-block-every-action-every-action-embed {
+		@include media-breakpoint-up(md) {
+			margin-top: -120px;
+		}
+		z-index: 8;
+		position: relative;
+		@include media-breakpoint-up(md) {
+			@include offset-gradient-border;
+		}
+	}
+	.ngp-form {
+		overflow: visible;
+	}
+	.at-form {
+		.at-inner {
+			padding: 35px 0;
+			background-color: $yellow;
+			@include media-breakpoint-up(md) {
+				margin-top: -13rem;
+			}
+			header {
+				text-align: left;
+				font-family: $font-family-serif;
+				padding: 0px 45px;
+				padding-bottom: 0;
+				font-size: 2rem;
+				font-style: italic;
+			}
+			.at-row > [class^="at-"] {
+				flex: 1 400px;
+			}
+			.at-markup {
+			}
+			form {
+				position: relative;
+				legend {
+					color: $black;
+					z-index: 5;
+				}
+				.at-legend {
+					display: none;
+				}
+				.at-fieldset {
+					padding: 0 35px;
+					label {
+						color: $black;
+					}
+				}
+				.AdditionalInformation {
+					margin-top: -90px;
+				}
+			}
+			.at-form-submit {
+				padding: 1rem 37px;
+				.at-submit {
+					float: left;
+				}
+			}
+		}
+	}
+	.after-content {
+		float: left;
+		width: 100%;
+	}
+}

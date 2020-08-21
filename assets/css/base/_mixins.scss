@@ -9,6 +9,10 @@
 	margin-right: 1rem;
 	text-transform: uppercase !important;
 	border: 0 solid;
+	border-radius: 0px;
+	font-family: $font-family-sans-serif;
+	text-transform: uppercase;
+	color: $white;
 }
 
 @mixin underliner {
@@ -97,6 +101,22 @@
 		width: 40px;
 		height: 56px;
 		background-repeat: no-repeat;
+	}
+}
+
+@mixin offset-gradient-border {
+	&:after {
+		@include border-gradient-sunrise;
+		content: "";
+		display: block;
+		top: 7%;
+		right: 30px;
+		left: -20px;
+		padding: 2rem;
+		position: absolute;
+		width: 110%;
+		z-index: -1;
+		height: 100%;
 	}
 }
 

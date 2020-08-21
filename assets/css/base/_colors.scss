@@ -5,45 +5,97 @@
 
 --------------------------------------------------------------*/
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    @extend .btn;
-    @extend .btn-primary;
+.has-sunrise-magenta-color {
+	color: $purple;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	@extend .form-control;
+.has-sunrise-magenta-background-color {
+	background-color: $purple;
 }
 
-select {
-	@extend .form-control;
+.has-sunrise-gold-color {
+	color: $yellow;
 }
 
-textarea {
-	@extend .form-control;
+.has-sunrise-gold-background-color {
+	background-color: $yellow;
+}
+
+.has-sunrise-red-color {
+	color: $red;
+}
+
+.has-sunrise-red-background-color {
+	background-color: $red;
+}
+
+.has-sunrise-grey-color {
+	color: $gray-sunrise;
+}
+
+.has-sunrise-grey-background-color {
+	background-color: $gray-sunrise;
+}
+
+.has-sunrise-white-color {
+	color: $white;
+}
+
+.has-sunrise-white-background-color {
+	background-color: $white;
+}
+
+.has-sunrise-orange-color {
+	color: $orange;
+}
+
+.has-sunrise-orange-background-color {
+	background-color: $orange;
+}
+
+.has-sunrise-green-color {
+	color: $green;
+}
+
+.has-sunrise-green-background-color {
+	background-color: $green;
+}
+
+.has-sunrise-background-dark-color {
+	color: $sunrise-background-dark;
+}
+
+.has-sunrise-background-dark-background-color {
+	background-color: $sunrise-background-dark;
+}
+
+.has-sunrise-background-light-color {
+	color: $sunrise-background-light;
+}
+
+.has-sunrise-background-light-background-color {
+	background-color: $sunrise-background-light;
 }
 
 @mixin background-graident {
-  background: rgb(143,13,86);
-  background: -moz-linear-gradient(180deg, rgba(143,13,86,1) 0%, rgba(239,76,57,1) 35%, rgba(255,222,22,1) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(143,13,86,1) 0%, rgba(239,76,57,1) 35%, rgba(255,222,22,1) 100%);
-  background: linear-gradient(180deg, rgba(143,13,86,1) 0%, rgba(239,76,57,1) 35%, rgba(255,222,22,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8f0d56",endColorstr="#ffde16",GradientType=1);
+	background: rgb(143, 13, 86);
+	background: -moz-linear-gradient(
+		180deg,
+		rgba(143, 13, 86, 1) 0%,
+		rgba(239, 76, 57, 1) 35%,
+		rgba(255, 222, 22, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		180deg,
+		rgba(143, 13, 86, 1) 0%,
+		rgba(239, 76, 57, 1) 35%,
+		rgba(255, 222, 22, 1) 100%
+	);
+	background: linear-gradient(
+		180deg,
+		rgba(143, 13, 86, 1) 0%,
+		rgba(239, 76, 57, 1) 35%,
+		rgba(255, 222, 22, 1) 100%
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8f0d56",endColorstr="#ffde16",GradientType=1);
 }
