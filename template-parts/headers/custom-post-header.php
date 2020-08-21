@@ -9,12 +9,16 @@
 
 ?>
 
-<header class="entry-header post-header">
+<header class="entry-header post-header<?php if( get_field('square_image')): ?> square 	<?php endif?>">
 		<div class="container">
 			<div class="row header-row">
-				<div class="col-md-6 header-blocks header-content">
+			  <?php if( get_field('square_image')): ?>
+				<div class="col-md-8 header-blocks square header-content">
+				<?php else: ?>
+					<div class="col-md-6 header-blocks header-content">
+				<?php endif?>
 					<?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );}?>
-					<?php if(get_field('secondary_header')): ?>
+					<?php if( get_field('secondary_header')): ?>
 						<h4 class="h1-subhead">
 							<?php echo get_field('secondary_header'); ?>
 						</h4>
@@ -35,7 +39,12 @@
 					</button></a>
 					<?php endif?>
 					</div>
-					<div class="col-md-6 header-blocks header-media">
+					<?php if( get_field('square_image')): ?>
+					<div class="col-md-4 header-blocks square  header-media">
+					<?php else: ?>
+						<div class="col-md-6 header-blocks header-media">
+					<?php endif?>
+
 						<?php if(get_field('header_embed')): ?>
 							<iframe class="video" width="560" height="315" align="bottom" src="<?php echo get_field('header_embed'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						<?php elseif(get_the_post_thumbnail()): ?>
