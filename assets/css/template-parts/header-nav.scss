@@ -315,6 +315,7 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 	bottom: 0;
 	left: -99999rem;
 	right: 99999rem;
+	background: $black;
 	top: 0;
 	transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
 	z-index: 101;
@@ -372,7 +373,7 @@ button.close-nav-toggle svg {
 }
 
 button.close-nav-toggle .toggle-text {
-	margin-right: 1.6rem;
+	margin-right: 8px;
 }
 
 .menu-modal .menu-top {
@@ -394,14 +395,19 @@ button.close-nav-toggle .toggle-text {
 	line-height: 1;
 	justify-content: flex-start;
 	margin: 0;
+	border-top: 1px solid $gray-sunrise;
 	&:hover {
 		background-color: rgba(255,255,255,0.04);
+	}
+	&:last-of-type {
+		border-bottom: 1px solid $gray-sunrise;
 	}
 }
 
 .modal-menu > li.smvmt2020-highlight--white,
 .modal-menu > li.smvmt2020-highlight--yellow {
 	padding: 8px 29px;
+	border: none !important;
 	a {
 		padding: 14px;
 		color: $gray-sunrise !important;
@@ -443,13 +449,24 @@ button.close-nav-toggle .toggle-text {
 	text-decoration: underline;
 }
 
+.modal-menu ul.sub-menu {
+	background: $yellow;
+	padding: 0;
+	> .menu-item a {
+		color: $gray-sunrise !important;
+		font-family: "Source Sans Pro", sans-serif;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+}
+
 button.sub-menu-toggle {
-	border-left: 0.1rem solid #dedfdf;
+	border-left: 1px solid $gray-sunrise !important;
 	flex-shrink: 0;
-	margin: 1rem 0;
-	padding: 0 2.5rem;
+	padding: 0 26px;
 	background: none !important;
 	color: $white;
+
 }
 
 button.sub-menu-toggle svg {
