@@ -114,8 +114,8 @@ button.close-nav-toggle .toggle-text{margin-right:8px}
 .modal-menu li{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;line-height:1;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;margin:0;border-top:1px solid #33342e}
 .modal-menu li:hover{background-color:rgba(255,255,255,0.04)}
 .modal-menu li:last-of-type{border-bottom:1px solid #33342e}
-.modal-menu>li.smvmt2020-highlight--white,.modal-menu>li.smvmt2020-highlight--yellow{padding:8px 29px;border:none !important}
-.modal-menu>li.smvmt2020-highlight--white a,.modal-menu>li.smvmt2020-highlight--yellow a{padding:14px;color:#33342e !important;text-align:center}
+.modal-menu>li.smvmt2020-highlight,.modal-menu>li.smvmt2020-highlight--white,.modal-menu>li.smvmt2020-highlight--yellow{padding:8px 29px;border:none !important}
+.modal-menu>li.smvmt2020-highlight a,.modal-menu>li.smvmt2020-highlight--white a,.modal-menu>li.smvmt2020-highlight--yellow a{padding:14px;color:#33342e !important;text-align:center}
 .modal-menu>li.smvmt2020-highlight--white a{background:#fff}
 .modal-menu>li.smvmt2020-highlight--yellow a{background:#ffde16}
 .modal-menu>li>a,.modal-menu>li>.ancestor-wrapper>a{font-weight:700}
@@ -124,7 +124,8 @@ button.close-nav-toggle .toggle-text{margin-right:8px}
 .modal-menu a:focus,.modal-menu a:hover,.modal-menu li.current-menu-item>.ancestor-wrapper>a,.modal-menu li.current_page_ancestor>.ancestor-wrapper>a{text-decoration:underline}
 .modal-menu ul.sub-menu{background:#ffde16;padding:0}
 .modal-menu ul.sub-menu>.menu-item a{color:#33342e !important;font-family:"Source Sans Pro",sans-serif;text-transform:uppercase;font-weight:700}
-button.sub-menu-toggle{border-left:1px solid #33342e !important;-ms-flex-negative:0;flex-shrink:0;padding:0 26px;background:none !important;color:#fff}
+button.sub-menu-toggle{border-left:1px solid #33342e !important;-ms-flex-negative:0;flex-shrink:0;padding:0 26px;background:none !important}
+button.sub-menu-toggle svg{fill:#ffde16}
 button.sub-menu-toggle svg{height:.9rem;-webkit-transition:-webkit-transform .15s linear;transition:-webkit-transform .15s linear;transition:transform .15s linear;transition:transform .15s linear,-webkit-transform .15s linear;width:1.5rem}
 button.sub-menu-toggle.active svg{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
 .modal-menu ul{display:none;margin:0;width:100%}

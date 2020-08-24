@@ -404,6 +404,7 @@ button.close-nav-toggle .toggle-text {
 	}
 }
 
+.modal-menu > li.smvmt2020-highlight,
 .modal-menu > li.smvmt2020-highlight--white,
 .modal-menu > li.smvmt2020-highlight--yellow {
 	padding: 8px 29px;
@@ -465,8 +466,9 @@ button.sub-menu-toggle {
 	flex-shrink: 0;
 	padding: 0 26px;
 	background: none !important;
-	color: $white;
-
+	svg {
+		fill: $yellow;
+	}
 }
 
 button.sub-menu-toggle svg {
