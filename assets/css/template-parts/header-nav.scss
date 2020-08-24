@@ -16,10 +16,13 @@
 .bottom-menu {
 	background-color: $black;
 	width: 100%;
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	float: left;
 	padding: 0 15px;
 	padding-bottom: 0;
+	min-height: 60px;
 }
 
 .header-menu .icon {
@@ -59,12 +62,6 @@
 	width: 20%;
 	@include media-breakpoint-down(md) {
 		width: 170px;
-	}
-	img {
-		margin-top: 20px;
-		@include media-breakpoint-down(md) {
-			margin-top: 15px;
-		}
 	}
 }
 
@@ -366,6 +363,7 @@ button.close-nav-toggle {
 	display: flex;
 	justify-content: flex-end;
 	width: 100%;
+	height: 60px;
 }
 
 button.close-nav-toggle svg {
@@ -401,6 +399,24 @@ button.close-nav-toggle .toggle-text {
 	}
 }
 
+.modal-menu > li.smvmt2020-highlight--white,
+.modal-menu > li.smvmt2020-highlight--yellow {
+	padding: 8px 29px;
+	a {
+		padding: 14px;
+		color: $gray-sunrise !important;
+		text-align: center;
+	}
+}
+
+.modal-menu > li.smvmt2020-highlight--white a {
+	background: $white;
+}
+
+.modal-menu > li.smvmt2020-highlight--yellow a {
+	background: $yellow;
+}
+
 .modal-menu > li > a,
 .modal-menu > li > .ancestor-wrapper > a {
 	font-weight: $font-weight-bold;
@@ -432,6 +448,8 @@ button.sub-menu-toggle {
 	flex-shrink: 0;
 	margin: 1rem 0;
 	padding: 0 2.5rem;
+	background: none !important;
+	color: $white;
 }
 
 button.sub-menu-toggle svg {
@@ -619,6 +637,10 @@ ul.social-icons li {
 	font-weight: 700;
 	letter-spacing: normal;
 	color: $yellow;
+}
+
+.toggle-inner .toggle-text {
+	font-size: 13px;
 }
 
 .site-title a {
