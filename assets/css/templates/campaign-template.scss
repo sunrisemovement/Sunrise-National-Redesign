@@ -63,6 +63,11 @@ html {
 					@include media-breakpoint-up(md) {
 						margin-bottom: 70px;
 						margin-left: -21px;
+						_::-webkit-full-page-media,
+						_:future,
+						:root .safari_only {
+							margin-bottom: 100px;
+						}
 					}
 					&.header-media {
 						@include media-breakpoint-up(md) {

@@ -10,19 +10,37 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area archive">
 		<main id="main" class="site-main">
+			<header class="entry-header post-header">
+				<div class="container">
+					<div class="row header-row <?php if(get_field('header_embed') || get_the_post_thumbnail()){
+							echo ""; }
+							else {
+							echo "justify-content-center no-photo";
+						}?>">
+							<div class="header-blocks header-content col-md-8">
+									<div class="h1-subhead-row">
+										<h4 class="h1-subhead">
+											<b>
+											Sunrise Movement's
+											</b>
+										</h4>
+									</div>
+								<?php the_archive_title( '<h1 class="entry-title"><b>', '</b></h1>' ); ?>
+					</div>
+				</div>
+				<div class="header-background-image">
+					<?php if(get_field('header_image')): ?>
+						<div class="header-background-image">
+						<img src="<?php echo get_field('header_image'); ?>" />
+					<?php endif?>
+				</div>
 
-		<?php if ( have_posts() ) : ?>
+			</header><!-- .entry-header -->
+			<div class="list-container">
+		<?php if ( have_posts() ) :
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -44,10 +62,10 @@ get_header();
 
 		endif;
 		?>
+	</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -33,9 +33,6 @@ get_header();
 			<?php
 				get_template_part( 'template-parts/instagram', '' );
 			?>
-			<?php
-				get_template_part( 'template-parts/footer/nav-blocks', '' );
-			?>
 		</div>
 
 

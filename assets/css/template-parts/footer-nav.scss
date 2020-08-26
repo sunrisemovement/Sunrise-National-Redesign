@@ -45,6 +45,7 @@ body footer {
 			justify-content: end;
 			float: right;
 			margin-bottom: 1rem;
+			width: 100%;
 		}
 		.footer-pac {
 			color: $white;
@@ -80,6 +81,7 @@ body footer {
 		}
 		.social-menu {
 			margin-top: 0.5rem;
+			justify-content: flex-end;
 			li {
 				margin-top: 0;
 				a svg {
@@ -94,6 +96,7 @@ body footer {
 	}
 }
 .footer-nav-block {
+	float: left;
 	@include media-breakpoint-down(md) {
 		flex-direction: column;
 	}

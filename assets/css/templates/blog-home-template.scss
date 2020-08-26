@@ -195,6 +195,14 @@
 		border-right: 0px solid $purple;
 		padding-bottom: 1rem;
 	}
+	.post-thumbnail {
+		height: 360px;
+		img {
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
 	.entry-header {
 		width: 100%;
 		text-align: center;

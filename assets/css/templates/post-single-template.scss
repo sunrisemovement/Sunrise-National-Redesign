@@ -10,6 +10,9 @@
 			background-image: none;
 			overflow: initial;
 		}
+		.header-background-image {
+			@include dark-full-overlay;
+		}
 
 		.container {
 			background-repeat: no-repeat;
@@ -20,7 +23,6 @@
 			margin-bottom: 10%;
 			@include media-breakpoint-down(md) {
 				background-image: none;
-				//margin-top: 130px;
 			}
 
 			.header-row {
@@ -36,7 +38,7 @@
 				.header-blocks {
 					position: relative;
 					@include media-breakpoint-up(md) {
-						margin: 2rem 0;
+						margin-top: 2.2rem;
 						min-height: 350px;
 						display: flex;
 						flex-flow: column;
@@ -50,9 +52,6 @@
 					&.header-media iframe,
 					&.header-media img {
 						@include drop-shadow;
-						@include media-breakpoint-up(md) {
-							margin-top: 30px;
-						}
 					}
 					&.header-content {
 						@include media-breakpoint-up(md) {
@@ -85,49 +84,13 @@
 				}
 			}
 		}
-		.header-background-image {
-			left: 0;
-			top: 0;
-			position: absolute;
-			z-index: -10;
-			width: 100%;
-			bottom: 0;
-			background-color: $black;
-			overflow: hidden;
-			@include media-breakpoint-down(md) {
-				height: 100%;
-			}
-			&::before {
-				content: ""; // ::before and ::after both require content
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: $black;
-				opacity: 0.7;
-				z-index: 1;
-				mix-blend-mode: unset;
-				@include media-breakpoint-down(md) {
-					height: 100%;
-					object-fit: cover;
-				}
-			}
-			img {
-				width: 100%;
-				object-fit: fill;
-				@include media-breakpoint-down(md) {
-					height: 100%;
-					object-fit: cover;
-				}
-			}
-		}
 	}
+
 	article {
 		width: 100%;
 		float: left;
 		.entry-content {
-			margin-top: 4rem;
+			margin-top: 100px;
 			@include media-breakpoint-down(md) {
 				margin-top: 2rem;
 			}
@@ -187,5 +150,13 @@
 				}
 			}
 		}
+	}
+}
+.single-past-win {
+	.entry-content
+		> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width) {
+		margin: 0 auto;
+		max-width: map-get($container-max-widths, lg);
+		width: map-get($container-max-widths, lg);
 	}
 }

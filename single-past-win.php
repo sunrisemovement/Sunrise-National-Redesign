@@ -8,7 +8,7 @@
 
 get_header();
 ?>
-<div class="post-single endorsement">
+<div class="post-single single-past-win">
 		<div id="content" class="site-content">
 
 	<div id="primary" class="content-area">

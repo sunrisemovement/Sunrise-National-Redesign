@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <div class="row footer-nav-block">
+<div class="footer-nav-block container-fluid">
+  <div class="row ">
    <a href="" class="col block-1">
      <span>Who We Are</span>
    </a>

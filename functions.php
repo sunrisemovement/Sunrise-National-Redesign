@@ -240,6 +240,21 @@ function my_acf_settings_show_admin( $show_admin ) {
     return true;
 }
 
+add_filter( 'get_the_archive_title', function ($title) {
+        if ( is_category() ) {
+                $title = single_cat_title( '', false );
+            } elseif ( is_tag() ) {
+                $title = single_tag_title( '', false );
+            } elseif ( is_author() ) {
+                $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+            } elseif ( is_tax() ) { //for custom post types
+                $title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+            } elseif (is_post_type_archive()) {
+                $title = post_type_archive_title( '', false );
+            }
+        return $title;
+    });
+
 function sunrise_color_palette() {
 		// Editor color palette.
 		add_theme_support(
@@ -301,6 +316,11 @@ function sunrise_color_palette() {
 
 add_action( 'after_setup_theme', 'sunrise_color_palette' );
 
+
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 //Custom Post Types Temporary Home
 
@@ -425,7 +445,7 @@ function cptui_register_my_cpts() {
 		"show_in_rest" => true,
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
+		"has_archive" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"delete_with_user" => false,
@@ -433,7 +453,6 @@ function cptui_register_my_cpts() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => [ "slug" => "our_endorsements", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => "dashicons-star-filled",
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "post-formats" ],

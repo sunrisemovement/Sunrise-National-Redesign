@@ -89,7 +89,7 @@
 @mixin affordance {
 	&::before {
 		position: absolute;
-		left: calc(50% - 50px);
+		left: calc(50% - 21px);
 		bottom: -36px;
 		content: "";
 		display: block;
@@ -159,10 +159,7 @@
 	}
 	img {
 		width: 100%;
-		object-fit: fill;
-		@include media-breakpoint-down(md) {
-			height: 100%;
-			object-fit: cover;
-		}
+		object-fit: cover;
+		height: 100%;
 	}
 }
