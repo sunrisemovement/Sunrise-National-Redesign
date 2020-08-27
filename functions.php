@@ -7,6 +7,7 @@
  * @package Sunrise_National
  */
 
+
 if ( ! function_exists( 'sunrise_national_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -26,7 +27,7 @@ if ( ! function_exists( 'sunrise_national_setup' ) ) :
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-
+		add_theme_support( 'align-wide' );
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -202,7 +203,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 
-
 function sunrisenational_sidebar_registration() {
 
 	// Arguments used in all register_sidebar() calls.
@@ -231,6 +231,109 @@ add_action( 'widgets_init', 'sunrisenational_sidebar_registration' );
 //Post Thumbnails
 add_theme_support('post-thumbnails');
 
+
+//acf
+
+// Define path and URL to the ACF plugin.
+define( 'MY_ACF_PATH', get_stylesheet_directory() . '/inc/acf/' );
+define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/inc/acf/' );
+
+// Include the ACF plugin.
+include_once( MY_ACF_PATH . 'acf.php' );
+
+// Customize the url setting to fix incorrect asset URLs.
+add_filter('acf/settings/url', 'my_acf_settings_url');
+function my_acf_settings_url( $url ) {
+    return MY_ACF_URL;
+}
+
+// (Optional) Hide the ACF admin menu item.
+add_filter('acf/settings/show_admin', 'my_acf_settings_show_admin');
+function my_acf_settings_show_admin( $show_admin ) {
+    return true;
+}
+
+add_filter( 'get_the_archive_title', function ($title) {
+        if ( is_category() ) {
+                $title = single_cat_title( '', false );
+            } elseif ( is_tag() ) {
+                $title = single_tag_title( '', false );
+            } elseif ( is_author() ) {
+                $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+            } elseif ( is_tax() ) { //for custom post types
+                $title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+            } elseif (is_post_type_archive()) {
+                $title = post_type_archive_title( '', false );
+            }
+        return $title;
+    });
+
+function sunrise_color_palette() {
+		// Editor color palette.
+		add_theme_support(
+				'editor-color-palette',
+				array(
+						array(
+								'name' => esc_html__( 'Gold', 'sunrise-national' ),
+								'slug' => 'sunrise-gold',
+								'color' => '#ffde16'
+						),
+						array(
+								'name' => esc_html__( 'Magenta', 'sunrise-national' ),
+								'slug' => 'sunrise-magenta',
+								'color' => '#8F0D56'
+						),
+						array(
+								'name' => esc_html__( 'Grey', 'sunrise-national' ),
+								'slug' => 'sunrise-grey',
+								'color' => '#33342E'
+						),
+						array(
+								'name' => esc_html__( 'Black', 'sunrise-national' ),
+								'slug' => 'sunrise-black',
+								'color' => '#000000'
+						),
+						array(
+								'name' => esc_html__( 'Orange', 'sunrise-national' ),
+								'slug' => 'sunrise-orange',
+								'color' => '#fd9014'
+						),
+						array(
+								'name' => esc_html__( 'Red', 'sunrise-national' ),
+								'slug' => 'sunrise-red',
+								'color' => '#EF4C39'
+						),
+						array(
+								'name' => esc_html__( 'White', 'sunrise-national' ),
+								'slug' => 'sunrise-white',
+								'color' => '#fff'
+						),
+						array(
+								'name' => esc_html__( 'Background Light', 'sunrise-national' ),
+								'slug' => 'sunrise-background-light',
+								'color' => '#FFFFFB'
+						),
+						array(
+								'name' => esc_html__( 'Background Dark', 'sunrise-national' ),
+								'slug' => 'sunrise-background-dark',
+								'color' => '#F7F5E8'
+						),
+						array(
+								'name' => esc_html__( 'Green', 'sunrise-national' ),
+								'slug' => 'sunrise-green',
+								'color' => '#E3EDDF'
+						)
+				)
+		);
+}
+
+add_action( 'after_setup_theme', 'sunrise_color_palette' );
+
+
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 //Custom Post Types Temporary Home
 
@@ -307,7 +410,7 @@ function cptui_register_my_cpts() {
 
 	$labels = [
 		"name" => __( "Past Wins", "sunrisenationalchild" ),
-		"singular_name" => __( "past win", "sunrisenationalchild" ),
+		"singular_name" => __( "Past Win", "sunrisenationalchild" ),
 	];
 
 	$args = [
@@ -342,7 +445,7 @@ function cptui_register_my_cpts() {
 
 	$labels = [
 		"name" => __( "Endorsements", "sunrisenationalchild" ),
-		"singular_name" => __( "endorsement", "sunrisenationalchild" ),
+		"singular_name" => __( "Endorsement", "sunrisenationalchild" ),
 	];
 
 	$args = [
@@ -355,7 +458,7 @@ function cptui_register_my_cpts() {
 		"show_in_rest" => true,
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
+		"has_archive" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"delete_with_user" => false,
@@ -363,7 +466,6 @@ function cptui_register_my_cpts() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => [ "slug" => "our_endorsements", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => "dashicons-star-filled",
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "post-formats" ],
@@ -376,12 +478,12 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => __( "Actions", "sunrisenationalchild" ),
-		"singular_name" => __( "action", "sunrisenationalchild" ),
+		"name" => __( "Events", "sunrisenationalchild" ),
+		"singular_name" => __( "Event", "sunrisenationalchild" ),
 	];
 
 	$args = [
-		"label" => __( "actions", "sunrisenationalchild" ),
+		"label" => __( "Events", "sunrisenationalchild" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,

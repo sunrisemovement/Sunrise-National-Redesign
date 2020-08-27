@@ -13,7 +13,9 @@
 
 	</div><!-- #content -->
 
-
+	<?php
+		get_template_part( 'template-parts/footer/nav-blocks', '' );
+	?>
 <footer id="site-footer" role="contentinfo" class="header-footer-group">
 
 	<div class="section-inner row">

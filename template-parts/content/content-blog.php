@@ -21,7 +21,7 @@
 		endif;
 		?>
 		<h3>
-			<?php echo get_secondary_title(); ?>
+			<?php echo get_field('secondary_header'); ?>
 		</h3>
 		<?php
 		if ( 'post' === get_post_type() ) :

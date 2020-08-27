@@ -4,6 +4,10 @@
 	list-style: none;
 }
 
+.fixed-top {
+	position: fixed;
+}
+
 .top-menu {
 	background-color: $gray-sunrise;
 	float: left;
@@ -23,6 +27,10 @@
 	padding: 0 15px;
 	padding-bottom: 0;
 	min-height: 60px;
+	@include media-breakpoint-down(md) {
+		position: fixed;
+		top: 0;
+	}
 }
 
 .header-menu .icon {
@@ -44,9 +52,12 @@
 	flex-wrap: wrap;
 	justify-content: flex-end;
 }
+.social-menu {
+	width: 223px;
+}
 
 .header-menu.bottom {
-	width: 80%;
+	width: 70%;
 	float: right;
 	display: flex;
 	font-size: 1rem;
@@ -59,7 +70,8 @@
 
 .site-branding {
 	float: left;
-	width: 20%;
+	width: 260px;
+
 	@include media-breakpoint-down(md) {
 		width: 170px;
 	}
@@ -130,10 +142,12 @@
 }
 
 .site-header {
+	float: left;
+	width: 100%;
 	@include media-breakpoint-down(md) {
 		display: block;
 		position: relative;
-		top: 0;
+		//top: -53px;
 		right: 0;
 		left: 0;
 		z-index: 100;

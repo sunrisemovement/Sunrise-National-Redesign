@@ -1,10 +1,20 @@
-html,
-body,
-.site {
+html {
 	height: 100%;
 	min-height: 100%;
 }
-
+.single-campaign {
+	height: 100%;
+	min-height: 100%;
+	.site {
+		height: 100%;
+		min-height: 100%;
+	}
+	.site-content {
+		float: left;
+		margin: 0 auto;
+		width: 100%;
+	}
+}
 .campaign-single {
 	height: 100%;
 	min-height: 100%;
@@ -38,18 +48,35 @@ body,
 				align-items: flex-end;
 				position: absolute;
 				bottom: 40px;
+				width: 90%;
 				@include media-breakpoint-down(md) {
+					width: unset;
 					position: relative;
 					bottom: unset;
+					h1 {
+						font-size: 2.5rem;
+					}
 				}
 				.header-blocks {
 					position: relative;
+					margin: 2rem 0;
 					@include media-breakpoint-up(md) {
 						margin-bottom: 70px;
 						margin-left: -21px;
+						_::-webkit-full-page-media,
+						_:future,
+						:root .safari_only {
+							margin-bottom: 100px;
+						}
 					}
-
-					&.iframe {
+					&.header-media {
+						@include media-breakpoint-up(md) {
+							margin-bottom: 42px;
+						}
+					}
+					&.header-media iframe,
+					&.header-media img {
+						@include drop-shadow;
 						@include media-breakpoint-down(md) {
 							margin-top: 30px;
 						}
@@ -62,7 +89,7 @@ body,
 
 			.entry-title {
 				color: $white;
-				margin-bottom: 60px;
+				margin-bottom: 50px;
 				line-height: 0.9;
 				@include media-breakpoint-down(md) {
 					margin-bottom: 20px;
@@ -76,42 +103,16 @@ body,
 				}
 			}
 		}
-		.post-thumbnail {
-			left: 0;
-			top: 0;
-			position: absolute;
-			z-index: -10;
-			width: 100%;
+		.header-background-image {
+			@include dark-full-overlay;
+		}
+		.site-content {
+			@include affordance;
+		}
+		.site-content {
 			@include media-breakpoint-down(md) {
-				height: 100%;
-			}
-			&::before {
-				content: ""; // ::before and ::after both require content
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: $black;
-				opacity: 0.7;
-				z-index: 1;
-				mix-blend-mode: unset;
-				@include media-breakpoint-down(md) {
-					height: 100%;
-					object-fit: cover;
-				}
-			}
-			img {
-				width: 100%;
-				object-fit: fill;
-				@include media-breakpoint-down(md) {
-					height: 100%;
-					object-fit: cover;
-				}
+				margin-top: 9rem;
 			}
 		}
-	}
-	.site-content {
-		margin-top: 9rem;
 	}
 }

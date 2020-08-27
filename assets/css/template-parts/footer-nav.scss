@@ -45,6 +45,7 @@ body footer {
 			justify-content: end;
 			float: right;
 			margin-bottom: 1rem;
+			width: 100%;
 		}
 		.footer-pac {
 			color: $white;
@@ -80,6 +81,7 @@ body footer {
 		}
 		.social-menu {
 			margin-top: 0.5rem;
+			justify-content: flex-end;
 			li {
 				margin-top: 0;
 				a svg {
@@ -89,6 +91,75 @@ body footer {
 			}
 			@include media-breakpoint-down(md) {
 				margin: auto;
+			}
+		}
+	}
+}
+.footer-nav-block {
+	float: left;
+	@include media-breakpoint-down(md) {
+		flex-direction: column;
+	}
+	.col {
+		padding: 120px 0;
+		@include media-breakpoint-down(md) {
+			padding: 40px 0;
+			span {
+				transition: 0.4s all;
+				&:after {
+					transition: 0.4s all;
+					width: 100% !important;
+				}
+			}
+		}
+		justify-content: center;
+		align-items: center;
+		color: $white;
+		font-family: $font-family-serif;
+		font-style: italic;
+		text-align: center;
+		font-size: 1.67rem;
+		transition: 0.4s all;
+		span {
+			@include underliner;
+		}
+		&:hover {
+			cursor: pointer;
+			text-decoration: none;
+			@include interior-shadow;
+			transition: 0.4s all;
+			span {
+				transition: 0.4s all;
+				&:after {
+					transition: 0.4s all;
+					width: 100%;
+				}
+			}
+		}
+	}
+	.block-1 {
+		background-color: $purple;
+		span {
+			&:after {
+				background-color: $white;
+			}
+		}
+	}
+	.block-2 {
+		background-color: $yellow;
+		color: $black;
+		span {
+			&:after {
+				background-color: $black;
+			}
+		}
+	}
+	.block-3 {
+		background-color: $black;
+		color: $white;
+		span {
+			&:after {
+				background-color: $white;
 			}
 		}
 	}

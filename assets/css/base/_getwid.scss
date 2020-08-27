@@ -1,0 +1,156 @@
+.wp-block-getwid-section
+	.wp-block-getwid-section__wrapper
+	.wp-block-getwid-section__inner-wrapper {
+	@include media-breakpoint-down(xl) {
+		max-width: map-get($grid-breakpoints, "xl");
+	}
+	@include media-breakpoint-down(lg) {
+		max-width: map-get($grid-breakpoints, "lg");
+	}
+	@include media-breakpoint-down(md) {
+		max-width: map-get($grid-breakpoints, "md");
+	}
+	@include media-breakpoint-down(sm) {
+		max-width: map-get($grid-breakpoints, "sm");
+	}
+}
+
+.custom-post-type-campaign {
+	@include media-breakpoint-up(md) {
+		@include offset-gradient-border;
+	}
+	&:after {
+		top: 180px;
+		left: -50px;
+		right: 0;
+		height: 60%;
+	}
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.wp-block-getwid-custom-post-type__post {
+		@include media-breakpoint-up(md) {
+			height: 260px;
+			&:nth-child(even) {
+				margin-top: 60px;
+			}
+		}
+	}
+	.card {
+		border: 0 solid;
+		height: 100%;
+
+		.wp-block-getwid-custom-post-type__post-wrapper {
+			display: flex;
+			flex-direction: row;
+			align-items: unset;
+			height: 100%;
+			@include media-breakpoint-down(md) {
+				flex-direction: column;
+			}
+		}
+		.card-img {
+			float: left;
+			width: 100%;
+			@include media-breakpoint-up(md) {
+				width: 40%;
+			}
+		}
+		.card-block {
+			width: 100%;
+			@include media-breakpoint-up(md) {
+				width: 60%;
+			}
+			float: left;
+			padding: 20px;
+		}
+
+		img {
+			object-fit: cover;
+			width: 100%;
+			@include media-breakpoint-up(md) {
+				height: 100%;
+				width: 220px;
+				position: absolute;
+			}
+		}
+		.excerpt {
+			font-size: $font-size-base;
+			color: $black;
+		}
+		button {
+			margin-top: 1rem;
+		}
+	}
+}
+
+.custom-post-type-events {
+	.slick-next {
+		right: -35px;
+		@include media-breakpoint-down(md) {
+			right: 15px;
+		}
+	}
+	.slick-prev {
+		left: -45px;
+		@include media-breakpoint-down(md) {
+			left: 0;
+		}
+	}
+	.slick-next,
+	.slick-prev {
+		top: 40%;
+		width: 150px;
+		height: 70px;
+	}
+	.slick-next:before,
+	.slick-prev:before {
+		color: $white;
+		font-size: 36px;
+		opacity: 1;
+	}
+	.slick-list {
+		overflow: visible;
+	}
+	.card {
+		&:hover {
+			text-decoration: none;
+		}
+		border-radius: 0;
+		border: 0px solid;
+		font-family: $font-family-sans-serif;
+		@include drop-shadow;
+		&:hover {
+			box-shadow: none;
+			transition: 0.4s all;
+		}
+		.card-body {
+			width: 100%;
+			padding: 1rem;
+			background-color: $sunrise-background-dark;
+		}
+		.card-img-top {
+			height: 170px;
+			object-fit: cover;
+		}
+		.event-timing {
+			width: 30%;
+			float: left;
+			color: $black;
+			font-weight: $font-weight-bold;
+			text-transform: uppercase;
+		}
+		.event-title {
+			width: 64%;
+			margin-top: 8px;
+			margin-left: 10px;
+			color: $black;
+			float: left;
+		}
+		.dates {
+			font-size: 2.4rem;
+		}
+	}
+}

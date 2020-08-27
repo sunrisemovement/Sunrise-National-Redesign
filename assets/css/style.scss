@@ -29,14 +29,15 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "./base/type";
 @import "./base/base";
 @import "./base/plugin";
+@import "./base/getwid";
 
 // Components
 @import "./template-parts/header-nav";
 @import "./template-parts/footer-nav";
 
 // Templates
-@import "./templates/action-template";
 @import "./templates/base-template";
+@import "./templates/post-single-template";
 @import "./templates/blog-home-template";
 @import "./templates/blog-individual-template";
 @import "./templates/campaign-template";
