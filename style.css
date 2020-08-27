@@ -542,7 +542,7 @@ ul.social-icons li { list-style-type: none; margin: 1.55rem 0.9rem 0 0; }
 
 .social-icons a svg { height: 15px; width: 15px; }
 
-.modal-menu .social-icons a svg { height: 22px; width: 22px; }
+.menu-modal .social-icons a svg { height: 22px; width: 22px; }
 
 .social-icons a:focus, .social-icons a:hover { -webkit-transform: scale(1.1); transform: scale(1.1); text-decoration: none; }
 

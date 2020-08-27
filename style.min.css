@@ -213,7 +213,7 @@ ul.social-icons{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wr
 ul.social-icons li{list-style-type:none;margin:1.55rem .9rem 0 0}
 .social-icons a{-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:#ffde16;border-radius:50%;color:#33342e;display:-webkit-box;display:-ms-flexbox;display:flex;height:auto;width:auto;padding:5px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-decoration:none;-webkit-transition:-webkit-transform .15s ease-in-out;transition:-webkit-transform .15s ease-in-out;transition:transform .15s ease-in-out;transition:transform .15s ease-in-out,-webkit-transform .15s ease-in-out}
 .social-icons a svg{height:15px;width:15px}
-.modal-menu .social-icons a svg{height:22px;width:22px}
+.menu-modal .social-icons a svg{height:22px;width:22px}
 .social-icons a:focus,.social-icons a:hover{-webkit-transform:scale(1.1);transform:scale(1.1);text-decoration:none}
 .site-title a,.site-description,.header-menu li a,.modal-menu>li>a,.modal-menu>li>.ancestor-wrapper>a,.toggle-inner .toggle-text{font-family:"Source Sans Pro",sans-serif;text-transform:uppercase;font-weight:700;letter-spacing:normal;color:#ffde16}
 .toggle-inner .toggle-text{font-size:13px}
