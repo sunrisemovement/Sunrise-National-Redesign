@@ -648,9 +648,14 @@ ul.social-icons li {
 	text-decoration: none;
 	transition: transform 0.15s ease-in-out;
 	svg {
-		height: 22px;
-		width: 22px;
+		height: 15px;
+		width: 15px;
 	}
+}
+
+.modal-menu .social-icons a svg {
+	height: 22px;
+	width: 22px;
 }
 
 .social-icons a:focus,
