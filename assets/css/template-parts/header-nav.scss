@@ -145,10 +145,10 @@
 	font-weight: $font-weight-bold;
 	font-size: $font-size-base;
 	&, &:hover, &:active, &:focus {
-		color: $yellow;
+		color: $yellow !important;
 		fill: $yellow;
-		background: 0;
-		box-shadow: none;
+		background: none !important;
+		box-shadow: none !important;
 	}
 }
 
