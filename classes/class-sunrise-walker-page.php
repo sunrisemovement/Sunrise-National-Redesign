@@ -27,7 +27,7 @@ if ( ! class_exists( 'SunriseNational_Walker_Page' ) ) {
 		 * @param int     $current_page Optional. Page ID. Default 0.
 		 */
 		public function start_el( &$output, $page, $depth = 0, $args = array(), $current_page = 0 ) {
-
+			
 			if ( isset( $args['item_spacing'] ) && 'preserve' === $args['item_spacing'] ) {
 				$t = "\t";
 				$n = "\n";
@@ -101,7 +101,7 @@ if ( ! class_exists( 'SunriseNational_Walker_Page' ) ) {
 				if ( isset( $args['pages_with_children'][ $page->ID ] ) ) {
 
 					$toggle_target_string = '.menu-modal .page-item-' . $page->ID . ' > ul';
-					$toggle_duration      = sunrisenational_toggle_duration();
+					$toggle_duration      = 300;
 
 					// Add the sub menu toggle.
 					$args['list_item_after'] .= '<button class="toggle sub-menu-toggle fill-children-current-color" data-toggle-target="' . $toggle_target_string . '" data-toggle-type="slidetoggle" data-toggle-duration="' . absint( $toggle_duration ) . '" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'sunrisenational' ) . '</span>' . sunrisenational_get_theme_svg( 'chevron-down' ) . '</button>';

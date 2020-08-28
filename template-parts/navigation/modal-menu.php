@@ -17,7 +17,7 @@
 
 			<div class="menu-top">
 
-				<button class="toggle close-nav-toggle fill-children-current-color" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".menu-modal">
+				<button class="menu-modal-close-button toggle close-nav-toggle fill-children-current-color" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".menu-modal">
 					<span class="toggle-text"><?php _e( 'Close Menu', 'sunrisenational' ); ?></span>
 					<?php sunrisenational_the_theme_svg( 'cross' ); ?>
 				</button><!-- .nav-toggle -->
@@ -93,7 +93,7 @@
 									'match_menu_classes' => true,
 									'show_toggles'       => true,
 									'title_li'           => false,
-									'walker'             => new TwentyTwenty_Walker_Page(),
+									'walker'             => new SunriseNational_Walker_Page(),
 								)
 							);
 
