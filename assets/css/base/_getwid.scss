@@ -15,7 +15,19 @@
 	}
 }
 
-.custom-post-type-campaign {
+.card-type {
+	color: $gray-700;
+	font-size: 14px;
+	font-family: $font-family-serif;
+	font-style: italic;
+}
+
+.wp-block-button__link {
+}
+
+.custom-post-type-campaign,
+.wp-block-getwid-custom-post-type.has-layout-list {
+	overflow: visible;
 	@include media-breakpoint-up(md) {
 		@include offset-gradient-border;
 	}
@@ -32,7 +44,6 @@
 	}
 	.wp-block-getwid-custom-post-type__post {
 		@include media-breakpoint-up(md) {
-			height: 260px;
 			&:nth-child(even) {
 				margin-top: 60px;
 			}
@@ -40,7 +51,7 @@
 	}
 	.card {
 		border: 0 solid;
-		height: 100%;
+		@include drop-shadow;
 
 		.wp-block-getwid-custom-post-type__post-wrapper {
 			display: flex;
@@ -51,29 +62,30 @@
 				flex-direction: column;
 			}
 		}
+		.post-thumbnail {
+			height: 100%;
+		}
 		.card-img {
 			float: left;
 			width: 100%;
 			@include media-breakpoint-up(md) {
-				width: 40%;
+				width: 260px;
 			}
 		}
-		.card-block {
+		.card-body.wp-block-getwid-custom-post-type__content-wrapper {
 			width: 100%;
 			@include media-breakpoint-up(md) {
 				width: 60%;
 			}
 			float: left;
-			padding: 20px;
+			padding: 2rem !important;
 		}
 
 		img {
-			object-fit: cover;
-			width: 100%;
 			@include media-breakpoint-up(md) {
+				object-fit: cover;
 				height: 100%;
-				width: 220px;
-				position: absolute;
+				width: 100%;
 			}
 		}
 		.excerpt {
@@ -86,7 +98,9 @@
 	}
 }
 
-.custom-post-type-events {
+.wp-block-getwid-post-carousel,
+.wp-block-getwid-custom-post-type.has-layout-grid {
+	overflow: visible;
 	.slick-next {
 		right: -35px;
 		@include media-breakpoint-down(md) {
@@ -115,6 +129,7 @@
 		overflow: visible;
 	}
 	.card {
+		background-color: $sunrise-background-dark;
 		&:hover {
 			text-decoration: none;
 		}
@@ -129,7 +144,6 @@
 		.card-body {
 			width: 100%;
 			padding: 1rem;
-			background-color: $sunrise-background-dark;
 		}
 		.card-img-top {
 			height: 170px;
@@ -142,6 +156,10 @@
 			font-weight: $font-weight-bold;
 			text-transform: uppercase;
 		}
+		.excerpt {
+			padding: 0 0 20px 0;
+			color: $black;
+		}
 		.event-title {
 			width: 64%;
 			margin-top: 8px;
@@ -150,7 +168,13 @@
 			float: left;
 		}
 		.dates {
-			font-size: 2.4rem;
+			font-size: 1.9rem;
 		}
+	}
+}
+
+.wp-block-getwid-custom-post-type {
+	.card {
+		border: 0px;
 	}
 }

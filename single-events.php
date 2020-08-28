@@ -1,7 +1,8 @@
 <?php
 /**
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-* Template Name: Custom Post Type
+ * Template Post Type: events
+ * Template Name: Event
  * @package Sunrise_National
  */
 
@@ -11,7 +12,8 @@ get_header();
 		<div id="content" class="site-content">
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main <?php if( get_field('square_image')): ?> square-image 	<?php endif?>">
+		<main id="main" class="site-main event-template <?php if( get_field('square_image')): ?> square-image <?php endif?>
+			">
 			<?php
 			while ( have_posts() ) :
 				the_post();

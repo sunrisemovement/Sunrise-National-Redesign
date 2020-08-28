@@ -1,8 +1,7 @@
 <?php
 /**
- * Template Name: Post Single
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * Template Post Type: action
  * @package Sunrise_National
  */
 

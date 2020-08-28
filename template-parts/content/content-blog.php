@@ -10,7 +10,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php sunrise_national_post_thumbnail(); ?>
+		<?php if(get_the_post_thumbnail()): ?>
+			<div class="post-thumbnail">
+				<?php the_post_thumbnail('large'); ?>
+			</div><!-- .post-thumbnail -->
+		<?php else:?>
+			<div class="post-thumbnail">
+					<img  src="<?php echo get_template_directory_uri(); ?>/assets/img/blog-card.jpg" />
+			</div>
+		<?php endif?>
 	<header class="entry-header">
 		<?php sunrise_national_entry_category(); ?>
 		<?php
@@ -29,7 +37,7 @@
 			<div class="entry-meta">
 				<div class="entry-details">
 				<?php
-				sunrise_national_posted_by();
+				echo get_field('post_author');
 				sunrise_national_posted_on();
 
 				?>

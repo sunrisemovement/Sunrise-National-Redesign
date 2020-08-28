@@ -29,8 +29,7 @@ object {
 button,
 .wp-block-button a,
 .at-submit,
-.btn-at,
-.btn-at-primary {
+.btn-at .btn-at-primary {
 	@include button;
 	&.white {
 		background: $background_color;
@@ -118,8 +117,7 @@ $section-padding: 100px 0;
 	}
 }
 
-.narrow-container,
-.list-container {
+.narrow-container {
 	margin: 0 auto;
 
 	@include media-breakpoint-down(xl) {

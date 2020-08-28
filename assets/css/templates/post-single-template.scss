@@ -4,6 +4,7 @@
 		width: 100%;
 		float: left;
 		height: 420px;
+		z-index: 10;
 		@include border-gradient-sunrise;
 		@include media-breakpoint-down(md) {
 			height: unset;
@@ -54,9 +55,6 @@
 						@include drop-shadow;
 					}
 					&.header-content {
-						@include media-breakpoint-up(md) {
-							margin-top: 80px;
-						}
 						.h1-subhead {
 							color: $yellow;
 						}
@@ -85,78 +83,29 @@
 			}
 		}
 	}
+}
 
+.single .post-single article .entry-content {
+	margin-top: 0;
+}
+
+.single-actions,
+.single-our_endorsements {
 	article {
-		width: 100%;
 		float: left;
-		.entry-content {
-			margin-top: 100px;
-			@include media-breakpoint-down(md) {
-				margin-top: 2rem;
-			}
-		}
-		.ngp-form {
-			max-width: 100%;
-		}
-		.at-title {
-			display: none;
-		}
-		.at-form {
-			@include make-container();
-			max-width: 1200px;
-			.at-inner {
-				@include media-breakpoint-up(md) {
-					margin-top: 3rem;
-				}
-				@include make-row();
-				.at-markup {
-					@include media-breakpoint-down(md) {
-						@include make-col(12);
-					}
-					@include make-col(6);
-					padding-right: 17.5px;
-					padding-left: 17.5px;
-				}
-				form {
-					@include make-col(6);
-					@include media-breakpoint-down(md) {
-						@include make-col(12);
-						margin: auto;
-					}
-					margin-top: 20px;
-					padding-left: 17.5px;
-					position: relative;
-					legend {
-						color: $white;
-						z-index: 5;
-					}
-					.at-fieldset {
-						background-color: $black;
-						padding: 2rem;
-						&:nth-of-type(1) {
-							padding: 5rem 2rem 2rem 2rem;
-							legend {
-								top: 1rem;
-								position: absolute;
-							}
-						}
-						label {
-							color: $white;
-						}
-					}
-					.AdditionalInformation {
-						margin-top: -90px;
-					}
-				}
-			}
-		}
+		width: 100%;
+		margin-top: 6rem;
+	}
+	.entry-content {
+		margin: 0 auto;
 	}
 }
-.single-past-win {
+
+.single-actions {
 	.entry-content
 		> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width) {
 		margin: 0 auto;
-		max-width: map-get($container-max-widths, lg);
-		width: map-get($container-max-widths, lg);
+		max-width: map-get($container-max-widths, md);
+		width: map-get($container-max-widths, md);
 	}
 }

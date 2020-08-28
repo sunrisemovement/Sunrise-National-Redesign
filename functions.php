@@ -345,7 +345,7 @@ function cptui_register_my_cpts() {
 
 	$labels = [
 		"name" => __( "Campaigns", "sunrisenationalchild" ),
-		"singular_name" => __( "campaign", "sunrisenationalchild" ),
+		"singular_name" => __( "Campaign", "sunrisenationalchild" ),
 		"menu_name" => __( "Campaigns", "sunrisenationalchild" ),
 		"all_items" => __( "All Campaigns", "sunrisenationalchild" ),
 		"add_new" => __( "Add new", "sunrisenationalchild" ),
@@ -409,12 +409,12 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => __( "Past Wins", "sunrisenationalchild" ),
-		"singular_name" => __( "Past Win", "sunrisenationalchild" ),
+		"name" => __( "Past Actions", "sunrisenationalchild" ),
+		"singular_name" => __( "Past Action", "sunrisenationalchild" ),
 	];
 
 	$args = [
-		"label" => __( "Past Wins", "sunrisenationalchild" ),
+		"label" => __( "Past Actions", "sunrisenationalchild" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,

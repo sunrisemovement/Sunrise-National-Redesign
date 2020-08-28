@@ -3,7 +3,7 @@
 	padding: 12px 13px;
 	font-size: $font-size-base;
 	font-weight: $font-weight-bold;
-	background-color: $primary;
+	background: $primary;
 	margin: auto 0;
 	display: inline-flex;
 	margin-right: 1rem;
@@ -13,6 +13,11 @@
 	font-family: $font-family-sans-serif;
 	text-transform: uppercase;
 	color: $white;
+	transition: 0.4s opacity ease;
+	&:hover {
+		opacity: 0.8;
+		transition: 0.4s opacity ease;
+	}
 }
 
 @mixin underliner {
