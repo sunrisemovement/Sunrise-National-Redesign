@@ -10,11 +10,11 @@
 ?>
 
 <aside id="secondary" class="widget-area content-sidebar">
-
+<h4> Featured Posts</h4>
 	<?php
 // the query
 $the_query = new WP_Query( array(
-	'posts_per_page' => 3,
+	'posts_per_page' => 5,
 	'category_name' => 'featured'
 ));
 ?>

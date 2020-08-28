@@ -117,8 +117,7 @@ $section-padding: 100px 0;
 	}
 }
 
-.narrow-container,
-.list-container {
+.narrow-container {
 	margin: 0 auto;
 
 	@include media-breakpoint-down(xl) {

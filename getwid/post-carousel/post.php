@@ -13,7 +13,7 @@ $base_class = esc_attr($extra_attr['block_name']);
         <?php the_post_thumbnail('medium'); ?>
       </div><!-- .post-thumbnail -->
   <?php else:?>
-    <img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/assets/img/event-card.jpg" />
+    <img class="card-img-top card-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/event-card.jpg" />
   <?php endif?>
       <div class="card-body <?php echo $base_class; ?>__post-content-wrapper">
           <div class="event-timing">

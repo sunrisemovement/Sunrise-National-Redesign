@@ -89,11 +89,23 @@
 	margin-top: 0;
 }
 
-.single-past-win {
+.single-actions,
+.single-our_endorsements {
+	article {
+		float: left;
+		width: 100%;
+		margin-top: 6rem;
+	}
+	.entry-content {
+		margin: 0 auto;
+	}
+}
+
+.single-actions {
 	.entry-content
 		> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width) {
 		margin: 0 auto;
-		max-width: map-get($container-max-widths, lg);
-		width: map-get($container-max-widths, lg);
+		max-width: map-get($container-max-widths, md);
+		width: map-get($container-max-widths, md);
 	}
 }

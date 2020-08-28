@@ -83,6 +83,7 @@
 		}
 		.post-thumbnail img {
 			float: left;
+			object-fit: cover;
 		}
 		.entry-header {
 			float: left;
@@ -108,6 +109,7 @@
 		.post-thumbnail img {
 			width: 30%;
 			float: left;
+			object-fit: cover;
 		}
 		.entry-header {
 			width: 70%;
@@ -133,10 +135,13 @@
 .blog-vertical-thumbnail-section,
 .post-footer {
 	article {
+		float: left;
+		width: 100%;
 		.post-thumbnail img {
 			width: 75px;
 			height: 75px;
 			float: left;
+			object-fit: cover;
 		}
 		.entry-header {
 			width: 100%;
@@ -164,6 +169,7 @@
 				width: 100px;
 				height: 100px;
 				float: left;
+				object-fit: cover;
 			}
 			.entry-header {
 				width: calc(100% - 100px);
@@ -228,6 +234,7 @@
 		.post-thumbnail img {
 			width: 100%;
 			float: left;
+			object-fit: cover;
 		}
 		.entry-header {
 			width: 100%;

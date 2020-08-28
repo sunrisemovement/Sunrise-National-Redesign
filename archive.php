@@ -39,6 +39,7 @@ get_header();
 
 			</header><!-- .entry-header -->
 			<div class="list-container">
+				<div class="narrow-container">
 		<?php if ( have_posts() ) :
 
 			/* Start the Loop */
@@ -62,6 +63,7 @@ get_header();
 
 		endif;
 		?>
+	</div>
 	</div>
 
 		</main><!-- #main -->
