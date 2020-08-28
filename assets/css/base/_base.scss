@@ -41,10 +41,6 @@ button,
 	}
 }
 
-a:not([href]):not([tabindex]) {
-	color: unset;
-}
-
 .acf-hidden {
 	display: none;
 }
@@ -88,9 +84,17 @@ $section-padding: 100px 0;
 	overflow: hidden;
 }
 
-@include media-breakpoint-up(md) {
-	&.alignwide {
-		margin: 0 auto;
+.alignwide {
+	width: 100%;
+	padding-right: 17.5px;
+	padding-left: 17.5px;
+	margin: 0 auto;
+	@include media-breakpoint-up(md) {
+		max-width: 1020px;
+		width: 1020px;
+	}
+
+	@include media-breakpoint-up(lg) {
 		max-width: 1320px;
 		width: 1320px;
 	}

@@ -6,95 +6,95 @@
 --------------------------------------------------------------*/
 
 .has-sunrise-magenta-color {
-	color: $purple;
+	color: $purple !important;
 }
 
 .has-sunrise-magenta-background-color {
-	background-color: $purple;
+	background-color: $purple !important;
 }
 
 .has-sunrise-gold-color {
-	color: $yellow;
+	color: $yellow !important;
 }
 
 .has-sunrise-gold-background-color {
-	background-color: $yellow;
+	background-color: $yellow !important;
 }
 
 .has-sunrise-red-color {
-	color: $red;
+	color: $red !important;
 }
 
 .has-sunrise-red-background-color {
-	background-color: $red;
+	background-color: $red !important;
 }
 
 .has-sunrise-grey-color {
-	color: $gray-sunrise;
+	color: $gray-sunrise !important;
 }
 
 .has-sunrise-grey-background-color {
-	background-color: $gray-sunrise;
+	background-color: $gray-sunrise !important;
 }
 
 .has-sunrise-white-color {
-	color: $white;
+	color: $white !important;
 }
 
 .has-sunrise-white-background-color {
-	background-color: $white;
+	background-color: $white !important;
 }
 
 .has-sunrise-orange-color {
-	color: $orange;
+	color: $orange !important;
 }
 
 .has-sunrise-orange-background-color {
-	background-color: $orange;
+	background-color: $orange !important;
 }
 
 .has-sunrise-green-color {
-	color: $green;
+	color: $green !important;
 }
 
 .has-sunrise-green-background-color {
-	background-color: $green;
+	background-color: $green !important;
 }
 
 .has-sunrise-background-dark-color {
-	color: $sunrise-background-dark;
+	color: $sunrise-background-dark !important;
 }
 
 .has-sunrise-background-dark-background-color {
-	background-color: $sunrise-background-dark;
+	background-color: $sunrise-background-dark !important;
 }
 
 .has-sunrise-background-light-color {
-	color: $sunrise-background-light;
+	color: $sunrise-background-light !important;
 }
 
 .has-sunrise-background-light-background-color {
-	background-color: $sunrise-background-light;
+	background-color: $sunrise-background-light !important;
 }
 
-.has-sunrise-background-black-color {
-	color: $black;
+.has-sunrise-black-color {
+	color: $black !important;
 }
 
-.has-sunrise-background-black-background-color {
-	background-color: $black;
+.has-sunrise-black-background-color {
+	background-color: $black !important;
 }
 
-.has-sunrise-background-white-color {
-	color: $white;
+.has-sunrise-white-color {
+	color: $white !important;
 }
 
-.has-sunrise-background-white-background-color {
-	background-color: $white;
+.has-sunrise-white-background-color {
+	background-color: $white !important;
 }
 
 @mixin background-graident {
-	background: rgb(143, 13, 86);
+	background: rgb(143, 13, 86) !important;
 	background: -moz-linear-gradient(
 		180deg,
 		rgba(143, 13, 86, 1) 0%,
@@ -113,5 +113,5 @@
 		rgba(239, 76, 57, 1) 35%,
 		rgba(255, 222, 22, 1) 100%
 	);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8f0d56",endColorstr="#ffde16",GradientType=1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8f0d56",endColorstr="#ffde16",GradientType=1) !important;
 }
