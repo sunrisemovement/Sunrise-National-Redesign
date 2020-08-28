@@ -396,12 +396,12 @@ function cptui_register_my_cpts() {
 	 */
 
 	$labels = [
-		"name" => __( "Past Wins", "sunrisenationalchild" ),
-		"singular_name" => __( "Past Win", "sunrisenationalchild" ),
+		"name" => __( "Past Actions", "sunrisenationalchild" ),
+		"singular_name" => __( "Past Action", "sunrisenationalchild" ),
 	];
 
 	$args = [
-		"label" => __( "Past Wins", "sunrisenationalchild" ),
+		"label" => __( "Past Actions", "sunrisenationalchild" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -458,7 +458,7 @@ function cptui_register_my_cpts() {
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "post-formats" ],
 	];
 
-	register_post_type( "our_endorsements", $args );
+	register_post_type( "endorsement", $args );
 
 	/**
 	 * Post Type: Events/Trainings.

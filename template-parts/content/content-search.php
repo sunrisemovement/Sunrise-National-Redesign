@@ -25,6 +25,14 @@
 			<h3>
 				<?php echo the_title(); ?>
 			</h3>
+			<?php if(get_field('dates')): ?>
+				<h3 class="dates">
+					<?php echo get_field('dates'); ?>
+					<?php if(get_field('times')): ?>
+						 @ <?php echo get_field('times'); ?>
+					<?php endif?>
+				</h3>
+			<?php endif?>
 
 			<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">

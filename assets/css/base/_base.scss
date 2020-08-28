@@ -29,8 +29,7 @@ object {
 button,
 .wp-block-button a,
 .at-submit,
-.btn-at,
-.btn-at-primary {
+.btn-at .btn-at-primary {
 	@include button;
 	&.white {
 		background: $background_color;

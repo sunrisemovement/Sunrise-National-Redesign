@@ -77,6 +77,22 @@
 	background-color: $sunrise-background-light;
 }
 
+.has-sunrise-background-black-color {
+	color: $black;
+}
+
+.has-sunrise-background-black-background-color {
+	background-color: $black;
+}
+
+.has-sunrise-background-white-color {
+	color: $white;
+}
+
+.has-sunrise-background-white-background-color {
+	background-color: $white;
+}
+
 @mixin background-graident {
 	background: rgb(143, 13, 86);
 	background: -moz-linear-gradient(

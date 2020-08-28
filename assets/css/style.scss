@@ -25,11 +25,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "./base/mixins";
 @import "./base/wordpress";
 @import "./base/forms";
-@import "./base/colors";
-@import "./base/type";
-@import "./base/base";
 @import "./base/plugin";
 @import "./base/getwid";
+@import "./base/components";
+@import "./base/type";
+@import "./base/base";
+@import "./base/colors";
 
 // Components
 @import "./template-parts/header-nav";

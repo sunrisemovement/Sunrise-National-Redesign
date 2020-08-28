@@ -9,8 +9,8 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    @extend .btn;
-    @extend .btn-primary;
+	@extend .btn;
+	@extend .btn-primary;
 }
 
 input[type="text"],
@@ -38,4 +38,262 @@ select {
 
 textarea {
 	@extend .form-control;
+}
+
+.single-events {
+	// event styling
+
+	article {
+		width: 100%;
+		float: left;
+		.entry-content {
+			margin-top: 100px;
+			@include media-breakpoint-down(md) {
+				margin-top: 2rem;
+			}
+		}
+		.ngp-form {
+			max-width: 100% !important;
+			background-color: $sunrise-background-light !important;
+			box-shadow: none;
+			padding: 0;
+			@include media-breakpoint-down(md) {
+				margin-top: 2rem;
+			}
+		}
+		.at-title {
+			display: none;
+		}
+		.at-form {
+			@include make-container();
+			max-width: 1200px;
+			.at-inner {
+				background-color: $white !important;
+				@include media-breakpoint-up(md) {
+					margin-top: 3rem;
+				}
+				@include make-row();
+				.at-markup {
+					@include make-col(5);
+					padding-right: 17.5px;
+					padding-left: 17.5px;
+					@include media-breakpoint-down(md) {
+						@include make-col(12);
+					}
+				}
+				form {
+					position: relative;
+					padding-left: 17.5px;
+					padding-right: 17.5px;
+					margin: 0;
+					@include make-col(6);
+					@include make-col-offset(1);
+					@include media-breakpoint-down(md) {
+						padding-left: 0;
+						padding-right: 0;
+						@include make-col(12);
+						margin: auto;
+					}
+					legend {
+						color: $white;
+						z-index: 5;
+					}
+
+					.ContactInformation {
+						@include drop-shadow;
+						&:before {
+							content: "Sign Up to Attend";
+							color: $white;
+							font-size: 32px;
+							font-style: italic;
+							font-family: $font-family-serif;
+							display: block;
+							position: relative;
+							margin-bottom: 10px;
+						}
+					}
+
+					.at-form-submit {
+						@include drop-shadow;
+						padding: 0 2rem 2rem 2rem;
+						background-color: black;
+						margin-top: 0;
+					}
+
+					.at-row > [class^="at-"] {
+						min-width: 100%;
+					}
+					.at-fieldset {
+						background-color: $black;
+						padding: 2rem;
+						label {
+							color: $white;
+							padding: 0;
+						}
+					}
+					.AdditionalInformation {
+						margin-top: -90px;
+					}
+				}
+			}
+		}
+	}
+	.square-image article .entry-content .at-form .at-inner {
+		form {
+			position: relative;
+			padding-left: 17.5px;
+			padding-right: 17.5px;
+			margin: 0;
+			@include make-col(4);
+			@include make-col-offset(2);
+		}
+		.at-markup {
+			@include make-col(6);
+		}
+	}
+}
+
+.ngp-form,
+.ngp-form .at-inner {
+	background-color: $black;
+}
+.yellow .ngp-form,
+.yellow .ngp-form .at-inner {
+	background-color: $yellow;
+	header {
+		color: $black;
+	}
+	legend {
+		color: $black;
+	}
+	.at-fieldset {
+		label {
+			color: $black;
+		}
+	}
+	.at-submit {
+		background-color: $yellow;
+		color: $black;
+	}
+}
+
+.purple .ngp-form,
+.purple .ngp-form .at-inner {
+	background-color: $purple;
+	.at-submit {
+		background-color: $black !important;
+	}
+}
+
+.white .ngp-form,
+.white .ngp-form .at-inner {
+	background-color: $white;
+	header {
+		color: $black;
+	}
+	legend {
+		color: $black;
+	}
+	.at-fieldset {
+		label {
+			color: $black;
+		}
+	}
+	.at input[type="checkbox"] + span:before {
+		border-color: black;
+	}
+}
+
+.light .ngp-form,
+.light .ngp-form .at-inner {
+	background-color: $sunrise-background-dark;
+	header {
+		color: $black;
+	}
+	legend {
+		color: $black;
+	}
+	.at-fieldset {
+		label {
+			color: $black;
+		}
+	}
+	.at input[type="checkbox"] + span:before {
+		border-color: black;
+	}
+}
+
+.no-title .at-title {
+	display: none;
+}
+
+.no-description .at-markup {
+	display: none;
+}
+// event styling
+.ngp-form {
+	max-width: map-get($container-max-widths, "md") !important;
+	margin: 0 auto;
+	padding: 2rem;
+	@include drop-shadow;
+
+	.at input[type="checkbox"] + span:before {
+		border-color: white;
+	}
+
+	header {
+		color: $white;
+		&.at-title {
+			font-family: $font-family-serif;
+			text-align: left;
+			font-style: italic;
+			font-size: 32px;
+			padding: 10px 0 10px 20px;
+		}
+	}
+	.UpdateMyProfile {
+		margin: 0;
+		padding: 0 !important;
+	}
+
+	.at-form {
+		.at-markup {
+			padding-right: 17.5px;
+			padding-left: 17.5px;
+		}
+		form {
+			margin-top: 20px;
+			padding-left: 17.5px;
+			position: relative;
+			.at-fieldset {
+				padding: 0;
+			}
+			legend {
+				color: $white;
+				z-index: 5;
+				margin: 0;
+				display: none;
+			}
+			.at-fieldset {
+				label {
+					color: $white;
+					margin: 0;
+					padding-right: 1rem;
+				}
+			}
+			.AdditionalInformation {
+				margin-top: -90px;
+			}
+		}
+		.at-form-submit {
+			padding: 0;
+			margin-top: 0.625rem;
+			.at-submit {
+				float: left;
+				padding: 0;
+				margin: 0;
+				@include button;
+			}
+		}
+	}
 }

@@ -100,7 +100,7 @@ body footer {
 	@include media-breakpoint-down(md) {
 		flex-direction: column;
 	}
-	.col {
+	.block {
 		padding: 120px 0;
 		@include media-breakpoint-down(md) {
 			padding: 40px 0;
