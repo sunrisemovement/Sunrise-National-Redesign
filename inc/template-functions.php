@@ -52,8 +52,6 @@ const ACTION_TAG_STR = "<script type=\"text/javascript\" src=\"https://d1aqhv4sn
 
 // Fetch All Online Actions
 add_action( 'after_setup_theme', 'fetchNewOnlineActions' );
-
-
 //Create custom posts for actions that didn't exist.
 // createActionPosts($onlineActionsForms);
 
@@ -64,7 +62,7 @@ add_action( 'after_setup_theme', 'fetchNewOnlineActions' );
 * Done By: Andrew Wilson
 */
 function createEventPost($onlineAction) {
-	
+
 	try {
 		// insert the post and set the category
 		echo "Creating '".$onlineAction['formName']."' Form post";
@@ -77,8 +75,11 @@ function createEventPost($onlineAction) {
 			'ping_status' => 'closed'
 		));
 		// Using Advanced Custom Fields Plugin
-		update_field('formTrackingId', $onlineAction['formTrackingId'], $post_id);
-		update_field('actionTag', sprintf(ACTION_TAG_STR, $onlineAction['formTrackingId']), $post_id);
+		update_field('form_tracking_id', $onlineAction['formTrackingId'], $post_id);
+		update_field('action_tag', sprintf(ACTION_TAG_STR, $onlineAction['formTrackingId']), $post_id);
+		update_field('event_start_date', $onlineAction['startDate'], $post_id);
+		update_field('event_type_name', $onlineAction['eventType']['name'], $post_id);
+		update_field('event_type_id', $onlineAction['eventType']['eventTypeId'], $post_id);
 	}
 	catch (exception $e) {
 		echo '<pre>'; print_r($e); echo '</pre>';
@@ -86,6 +87,7 @@ function createEventPost($onlineAction) {
 	}
 	return true;
 }
+
 const ONLINE_ACTION_DIR = "./EA8/Action/";
 const LAST_EA_API_CALL_TIME = "./EA8/lastApiCallTime.json";
 
@@ -93,6 +95,7 @@ const LAST_EA_API_CALL_TIME = "./EA8/lastApiCallTime.json";
 // When a post is created for an OnlineAction the json object used to create it will be stored in a file with the name matching the
 // form tracking id. Existence of a post for a given OnlineAction can be determined by checking for the json file existence.
 // Done By: Andrew Wilson
+// fetchNewOnlineActions();
 function fetchNewOnlineActions() {
 	// make directory if it doesn't exist
 	if (!file_exists(ONLINE_ACTION_DIR) && !is_dir(ONLINE_ACTION_DIR)) {
@@ -101,30 +104,21 @@ function fetchNewOnlineActions() {
 	if (!checkApiCallTimer()) {
 		return;
 	}
-	$json = getOnlineActionsFromApi();
+	$filteredOnlineActions = getOnlineActionsFromApi();
 
-	//echo '<pre>'; print_r($json); echo '</pre>';
-	foreach ($json['items'] as $onlineActionJson) {
-		$actionJsonFilepath = ONLINE_ACTION_DIR.$onlineActionJson['formTrackingId'].".json";
-		
-
+	// echo '<pre>'; print_r($filteredOnlineActions); echo '</pre>';
+	foreach ($filteredOnlineActions as $onlineAction) {
+		$actionJsonFilepath = ONLINE_ACTION_DIR.$onlineAction['formTrackingId'].".json";
 
 		// if a file exists for a given formTrackingId, update the contents, but do not create a post and then move on
 		if (file_exists($actionJsonFilepath)) {
-			file_put_contents($actionJsonFilepath, json_encode($onlineActionJson));
+			file_put_contents($actionJsonFilepath, json_encode($onlineAction));
 			continue;
 		}
 
-		// pull out fields that are being used from the json response to pass to createEventPost method
-		$onlineAction = array(
-			'formTrackingId' => $onlineActionJson['formTrackingId'],
-			'formName' => $onlineActionJson['formName'],
-			'isActive' => $onlineActionJson['isActive'],
-			'campaignId' => $onlineActionJson['campaignId'],
-			'eventId' => $onlineActionJson['eventId']);
 		// if the post is successfully created, store the response json in the file for it to mark that a post has been created for the formTrackingId
 		if (createEventPost($onlineAction)) {
-			file_put_contents($actionJsonFilepath, json_encode($onlineActionJson));
+			file_put_contents($actionJsonFilepath, json_encode($onlineAction));
 		}
 	}
 }
@@ -159,20 +153,22 @@ function setLastCallDate() {
 // Call EveryAction API and return a json object with an array called "items" that contains all of the OnlineAction json objects returned
 // Called by fetchNewOnlineActionForms
 function getOnlineActionsFromApi() {
-	$json = json_decode(file_get_contents(
-	 	"test_data_online_actions_forms.json", true), true);
-	// $ea8Api = new Ea8Api();
-	// $json = json_decode($ea8Api->fetchOnlineActions(), true);
-	// echo '<pre>'; print_r($json); echo '</pre>';
+	// $json = json_decode(file_get_contents(
+	//  	"test_data_online_actions_forms.json", true), true);
+	$ea8Api = new Ea8Api();
+	$onlineActions = $ea8Api->fetchOnlineActions();
+	//echo '<pre> hello'; print_r($json); echo '</pre>';
 	setLastCallDate();
-	return $json;
+	return $onlineActions;
 }
+
 function echoVar($var) {
 	echo '<pre>'; print_r($var); echo '</pre>';
 }
+
 function deleteExistingOnlineActionsForms() {
-	//TODO only getting 5 posts
 	$posts = get_posts([
+		'numberposts' => '-1', // -1 for all posts
 	  'post_type' => 'events',
 	  'post_status' => 'publish',
 		'fields' => 'ids'
@@ -182,5 +178,7 @@ function deleteExistingOnlineActionsForms() {
 	}
 	// echo '<pre> after ===== '; print_r($posts); echo '</pre>';
 }
+// fetchNewOnlineActions();
+// deleteExistingOnlineActionsForms();
 
 // ==================== API Calls =======================
