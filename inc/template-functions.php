@@ -95,18 +95,23 @@ const LAST_EA_API_CALL_TIME = "./EA8/lastApiCallTime.json";
 // form tracking id. Existence of a post for a given OnlineAction can be determined by checking for the json file existence.
 // Done By: Andrew Wilson
 // fetchNewOnlineActions();
-function fetchNewOnlineActions() {
+function fetchNewOnlineActions($bypassTimer = null) {
 	// make directory if it doesn't exist
 	if (!file_exists(ONLINE_ACTION_DIR) && !is_dir(ONLINE_ACTION_DIR)) {
 		mkdir(ONLINE_ACTION_DIR, 0777, true);
 	}
-	if (!checkApiCallTimer()) {
+	if (is_null($bypassTimer) || empty($bypassTimer)){
 		return;
+		if (!checkApiCallTimer()) {
+			return;
+		}
 	}
 	$filteredOnlineActions = getOnlineActionsFromApi();
 
 	// echo '<pre>'; print_r($filteredOnlineActions); echo '</pre>';
+	echovar($filteredOnlineActions);
 	foreach ($filteredOnlineActions as $onlineAction) {
+
 		$actionJsonFilepath = ONLINE_ACTION_DIR.$onlineAction['formTrackingId'].".json";
 
 		// if a file exists for a given formTrackingId, update the contents, but do not create a post and then move on
@@ -176,6 +181,41 @@ function deleteExistingOnlineActionsForms() {
 		wp_delete_post($postId);
 	}
 	// echo '<pre> after ===== '; print_r($posts); echo '</pre>';
+}
+
+function addDashboardWidgets() {
+	wp_add_dashboard_widget('everyaction_fetch_data_widget', 'Fetch Everyaction Data', 'renderFetchOnlineActionsButton');
+}
+add_action('wp_dashboard_setup', 'addDashboardWidgets');
+add_action('wp_ajax_ea_action', 'onEveryactionAdminButtonClick');
+/**
+ * Add javascript file
+ */
+function addAjaxScript($hook) {
+	// add JS-File only on the dashboard page
+	if ('index.php' !== $hook) {
+		return;
+	}
+	wp_enqueue_script('ea8_widget_ajax_script', get_template_directory_uri()."/ea8/ea8_widget_ajax_script.js", array(), NULL, true);
+}
+add_action('admin_enqueue_scripts', 'addAjaxScript');
+
+
+function renderFetchOnlineActionsButton() {
+	?>
+	<form id="ea_form" action="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" method="post">
+		<input type="hidden" name="ea_action" id="ea_action" value="ea_action">
+		<p class="submit">
+			<?php submit_button( __( 'Update Everyaction Data' ), 'primary', 'save', false ); ?>
+		</p>
+	</form>
+	<?php
+	return;
+}
+
+function onEveryactionAdminButtonClick() {
+	fetchNewOnlineActions(true);
+	echo "Everyaction Data Updated Successfully";
 }
 // fetchNewOnlineActions();
 // deleteExistingOnlineActionsForms();
