@@ -84,40 +84,117 @@ $section-padding: 100px 0;
 	overflow: hidden;
 }
 
-.alignwide {
+.alignfull {
 	width: 100%;
+	max-width: 100%;
 	padding-right: 17.5px;
 	padding-left: 17.5px;
-	margin: 0 auto;
-	@include media-breakpoint-up(md) {
-		max-width: 1020px;
-		width: 1020px;
-	}
-
-	@include media-breakpoint-up(lg) {
-		max-width: 1320px;
-		width: 1320px;
-	}
 }
 
-.entry-content
-	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width) {
-	margin: 0 auto 1rem auto;
-
+.alignwide {
+	margin: 0 auto;
 	@include media-breakpoint-down(xl) {
 		max-width: map-get($container-max-widths, "xl");
 		width: map-get($container-max-widths, "xl");
 	}
 
-	@include media-breakpoint-down(lg) {
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+}
+
+//Grid
+
+.entry-content
+	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns) {
+	margin: 0 auto 1rem auto;
+
+	@include media-breakpoint-down(xl) {
+		max-width: map-get($container-max-widths, "md");
+		width: map-get($container-max-widths, "md");
+	}
+
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+}
+
+main article .entry-content .wp-block-columns {
+	margin: 0 auto 2rem auto;
+	@include media-breakpoint-down(xl) {
 		max-width: map-get($container-max-widths, "lg");
 		width: map-get($container-max-widths, "lg");
 	}
 
 	@include media-breakpoint-down(md) {
 		width: 100%;
+		max-width: 100%;
 		padding-right: 17.5px;
 		padding-left: 17.5px;
+	}
+	&.alignwide {
+		@include media-breakpoint-down(xl) {
+			max-width: map-get($container-max-widths, "xl");
+			width: map-get($container-max-widths, "xl");
+		}
+	}
+	&.alignfull {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+}
+
+.wp-block-getwid-section
+	.wp-block-getwid-section__wrapper
+	.wp-block-getwid-section__inner-wrapper {
+	margin: 0 auto;
+
+	.wp-block-columns.alignwide {
+		@include media-breakpoint-down(xl) {
+			max-width: map-get($container-max-widths, "xl");
+			width: map-get($container-max-widths, "xl");
+		}
+	}
+	.wp-block-columns {
+		@include media-breakpoint-down(xl) {
+			max-width: map-get($container-max-widths, "md");
+			width: map-get($container-max-widths, "md");
+		}
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+			padding-right: 17.5px;
+			padding-left: 17.5px;
+		}
+	}
+	.wp-block-getwid-section__inner-wrapper {
+		@include media-breakpoint-down(xl) {
+			max-width: map-get($container-max-widths, "md");
+			width: map-get($container-max-widths, "md");
+		}
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+			padding-right: 17.5px;
+			padding-left: 17.5px;
+		}
+	}
+}
+
+.wp-block-getwid-section.alignwide
+	.wp-block-getwid-section__wrapper
+	.wp-block-getwid-section__inner-wrapper {
+	@include media-breakpoint-down(xl) {
+		max-width: map-get($container-max-widths, "xl");
+		width: map-get($container-max-widths, "xl");
 	}
 }
 

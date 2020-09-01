@@ -151,7 +151,9 @@
 		}
 	}
 
-	.wp-block-every-action-every-action-embed {
+	.ngp-form {
+		overflow: visible;
+		padding: 0;
 		@include media-breakpoint-up(md) {
 			margin-top: -120px;
 		}
@@ -160,9 +162,6 @@
 		@include media-breakpoint-up(md) {
 			@include offset-gradient-border;
 		}
-	}
-	.ngp-form {
-		overflow: visible;
 	}
 	.at-form {
 		.at-inner {
