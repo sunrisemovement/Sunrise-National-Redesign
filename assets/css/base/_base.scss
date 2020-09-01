@@ -110,7 +110,7 @@ $section-padding: 100px 0;
 //Grid
 
 .entry-content
-	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns):not(h3.has-text-align-center) {
+	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns) {
 	margin: 0 auto 1rem auto;
 
 	@include media-breakpoint-down(xl) {
@@ -131,6 +131,15 @@ main article .entry-content .wp-block-columns {
 	@include media-breakpoint-down(xl) {
 		max-width: map-get($container-max-widths, "lg");
 		width: map-get($container-max-widths, "lg");
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	p {
+		margin: 0 0 1rem 0;
 	}
 
 	@include media-breakpoint-down(md) {
@@ -177,6 +186,13 @@ main article .entry-content .wp-block-columns {
 			width: map-get($container-max-widths, "xl");
 		}
 	}
+	.wp-block-columns.alignfull {
+		@include media-breakpoint-down(xl) {
+			width: 100%;
+			padding-right: 17.5px;
+			padding-left: 17.5px;
+		}
+	}
 	.wp-block-columns {
 		@include media-breakpoint-down(xl) {
 			max-width: map-get($container-max-widths, "md");
@@ -204,6 +220,15 @@ main article .entry-content .wp-block-columns {
 }
 
 .wp-block-getwid-section.alignwide
+	.wp-block-getwid-section__wrapper
+	.wp-block-getwid-section__inner-wrapper {
+	@include media-breakpoint-down(xl) {
+		max-width: map-get($container-max-widths, "xl");
+		width: map-get($container-max-widths, "xl");
+	}
+}
+
+.wp-block-getwid-section.alignfull
 	.wp-block-getwid-section__wrapper
 	.wp-block-getwid-section__inner-wrapper {
 	@include media-breakpoint-down(xl) {

@@ -40,7 +40,7 @@
 							</button></a>
 						<?php endif?>
 						<?php if(get_field('button_2_url')): ?>
-							<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button btn ">
+							<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button btn has-sunrise-white-background-color">
 								<?php echo get_field('button_2_text'); ?>
 							</button></a>
 						<?php endif?>

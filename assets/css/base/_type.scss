@@ -45,8 +45,11 @@ body .site .entry-content {
 	h2,
 	h3,
 	h4,
-	h5 {
+	h5,
+	p {
 		line-height: 1.2;
+		max-width: map-get($container-max-widths, "md");
+		margin: 0 auto 1rem auto;
 	}
 
 	h1,
@@ -79,10 +82,6 @@ body .site .entry-content {
 	}
 
 	p {
-		max-width: map-get($container-max-widths, "md");
-		&.has-text-align-center {
-			margin: 0 auto 1rem auto;
-		}
 		@include media-breakpoint-down(md) {
 			font-size: 1.2rem;
 			line-height: 1.6;
@@ -92,9 +91,10 @@ body .site .entry-content {
 
 .display-type {
 	margin-bottom: 1rem;
-	line-height: 1.2;
+	line-height: 0.9;
 	font-size: 6.5rem;
 	letter-spacing: 3.2px;
+	text-transform: uppercase;
 }
 
 #breadcrumbs {
@@ -112,7 +112,9 @@ body .site .entry-content {
 	h1,
 	h2,
 	h3,
-	h4 {
+	h4,
+	h5 {
+		margin: 0 0 1rem 0;
 		@include media-breakpoint-up(md) {
 			width: 90%;
 		}
