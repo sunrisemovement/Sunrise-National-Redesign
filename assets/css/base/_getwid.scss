@@ -8,17 +8,20 @@
 .wp-block-button__link {
 }
 
-.custom-post-type-campaign,
-.wp-block-getwid-custom-post-type.has-layout-list {
+.custom-post-type-campaign {
 	overflow: visible;
 	@include media-breakpoint-up(md) {
 		@include offset-gradient-border;
+		&:after {
+			display: none;
+		}
 	}
-	&:after {
+	&.after-outline:after {
 		top: 180px;
 		left: -50px;
 		right: 0;
 		height: 60%;
+		display: block;
 	}
 	a {
 		&:hover {

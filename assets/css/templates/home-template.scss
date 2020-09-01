@@ -98,7 +98,9 @@
 			@include dark-full-overlay;
 			&.video {
 				&::before {
-					opacity: 0.2;
+					opacity: 0.8;
+					mix-blend-mode: multiply;
+					background-color: #753559;
 				}
 			}
 			&::before {
@@ -121,7 +123,7 @@
 			margin: 60px auto 0 0;
 		}
 	}
-
+	/*
 	.entry-content > .wp-block-columns:first-of-type {
 		@include media-breakpoint-down(md) {
 			flex-flow: column-reverse;
@@ -213,5 +215,5 @@
 	.after-content {
 		float: left;
 		width: 100%;
-	}
+	}*/
 }

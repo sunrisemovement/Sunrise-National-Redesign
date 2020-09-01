@@ -40,39 +40,61 @@ textarea {
 	@extend .form-control;
 }
 
-body .site {
+body .site .entry-content {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		line-height: 1.2;
+	}
+
 	h1,
 	h2 {
 		font-weight: $font-weight-bolder;
 		text-transform: uppercase;
 		line-height: 1;
 	}
-}
 
-h2 {
-	@include media-breakpoint-down(md) {
-		text-align: center;
-		font-size: 2rem;
+	h2 {
+		@include media-breakpoint-down(md) {
+			text-align: center;
+			font-size: 2rem;
+		}
 	}
-}
 
-body .entry-content {
-	h1,
-	h2,
-	h3,
-	h4 {
-		line-height: 1.1;
+	h3.has-text-align-center {
+		@include media-breakpoint-down(up) {
+			max-width: map-get($container-max-widths, "lg");
+			width: map-get($container-max-widths, "lg");
+			line-height: 1.3;
+			margin: auto;
+		}
 	}
-}
 
-.getwid-section-content-full-width h3.has-text-align-center {
-	line-height: 1.4;
+	h5 {
+		font-family: $font-family-serif;
+		font-size: 2em;
+		font-weight: $font-weight-base;
+	}
+
+	p {
+		max-width: map-get($container-max-widths, "md");
+		&.has-text-align-center {
+			margin: 0 auto 1rem auto;
+		}
+		@include media-breakpoint-down(md) {
+			font-size: 1.2rem;
+			line-height: 1.6;
+		}
+	}
 }
 
 .display-type {
 	margin-bottom: 1rem;
 	line-height: 1.2;
-	font-size: 4.11rem;
+	font-size: 6.5rem;
+	letter-spacing: 3.2px;
 }
 
 #breadcrumbs {
@@ -85,10 +107,15 @@ body .entry-content {
 	}
 }
 
-p {
-	@include media-breakpoint-down(md) {
-		font-size: 1.2rem;
-		line-height: 1.6;
+.wp-block-columns {
+	p,
+	h1,
+	h2,
+	h3,
+	h4 {
+		@include media-breakpoint-up(md) {
+			width: 90%;
+		}
 	}
 }
 
