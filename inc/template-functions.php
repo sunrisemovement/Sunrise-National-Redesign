@@ -48,7 +48,6 @@ add_action( 'wp_head', 'surnise_national_pingback_header' );
 //Read in test files
 
 const ACTION_TAG_STR = "<script type=\"text/javascript\" src=\"https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js\"></script><div class=\"ngp-form\" data-form-url=\"https://actions.everyaction.com/v1/Forms/%s\"></div>";
-// deleteExistingOnlineActionsForms();
 
 // Fetch All Online Actions
 add_action( 'after_setup_theme', 'fetchNewOnlineActions' );
