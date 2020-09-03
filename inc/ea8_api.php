@@ -3,17 +3,20 @@
 class Ea8Api {
 
   const EA8_BASE_URL = "https://api.securevan.com/v4/";
-  const DEV_STAGING_EA8_API_KEY  = "***REMOVED***";
-  const PROD_EA8_API_KEY = "***REMOVED***";
+  const PROD_KEYTYPE = "PROD";
+  const DEV_KEYTYPE = "DEV";
+  const PROD_KEY_NAME = "prod_key.txt";
+  const DEV_KEY_NAME = "dev_key.txt";
 
   private $ea8AuthKey;
 
   public function __construct() {
     // Staging or Dev
-    if (true) { //defined('ACF_DEV_API') && (ACF_DEV_API === 'STAGE' || ACF_DEV_API)) {
-    	$this->ea8AuthKey = $this::DEV_STAGING_EA8_API_KEY;
+    $Dev_Mode = false;
+    if ($Dev_Mode) { //defined('ACF_DEV_API') && (ACF_DEV_API === 'STAGE' || ACF_DEV_API)) {
+    	$this->ea8AuthKey = $this->readKey(self::DEV_KEYTYPE);
     } else {
-    	$this->ea8AuthKey = $this::PROD_EA8_API_KEY;
+    	$this->ea8AuthKey = $this->readKey(self::PROD_KEYTYPE);
     }
   }
 
@@ -24,7 +27,6 @@ class Ea8Api {
   */
   public function fetchOnlineActions() {
     $filteredOnlineActions = [];
-
   	$response = self::callAPI("GET", self::EA8_BASE_URL."onlineActionsForms", $this->ea8AuthKey);
     $json = json_decode($response, true)['items'];
   	foreach ($json as $onlineActionJson) {
@@ -70,6 +72,19 @@ class Ea8Api {
   //TODO Add response validation to all API calls
   function validateResponse($response) {
     return true;
+  }
+
+  function readKey($keyType) {
+    $keyPath = get_template_directory_uri().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR;
+    if(strcmp($keyType, self::PROD_KEYTYPE) == 0) {
+      return file_get_contents($keyPath.self::PROD_KEY_NAME);
+    }
+    else if (strcmp($keyType, self::DEV_KEYTYPE) == 0) {
+      return file_get_contents($keyPath.self::DEV_KEY_NAME);
+    }
+    else {
+      return "";
+    }
   }
 
   static function callAPI($method, $url, $authKey, $data = false) {

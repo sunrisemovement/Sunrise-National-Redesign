@@ -1,5 +1,5 @@
 curl -H "Content-type: application/json" \
-			--user "***REMOVED***" \
+			--user "eademo.ajones.api:0f4b9e59-06ce-4752-559b-3c3bc84c4c54|1" \
 			-X POST \
 			--data '{ "message": "Hello, world" }' \
 			"https://api.securevan.com/v4/echoes"
@@ -7,6 +7,6 @@ curl -H "Content-type: application/json" \
 
 
 			curl -H "Content-type: application/json" \
-						--user "***REMOVED***" \
+						--user "eademo.ajones.api:0f4b9e59-06ce-4752-559b-3c3bc84c4c54|1" \
 						-X GET \
 						"https://api.securevan.com/v4/onlineActionsForms"
