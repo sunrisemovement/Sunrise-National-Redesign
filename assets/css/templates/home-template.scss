@@ -12,7 +12,7 @@
 			padding: 150px 0;
 		}
 
-		.container {
+		.alignwide {
 			background-repeat: no-repeat;
 			height: 100%;
 			width: 100%;
@@ -42,11 +42,16 @@
 			.header-row {
 				align-items: flex-start;
 				bottom: 40px;
-				@include media-breakpoint-down(md) {
+				@include media-breakpoint-down(lg) {
 					position: relative;
 					bottom: unset;
 					h1 {
-						font-size: 2.5rem;
+						font-size: 4rem;
+					}
+					@include media-breakpoint-down(xs) {
+						h1 {
+							font-size: 2.5rem;
+						}
 					}
 				}
 
@@ -63,9 +68,6 @@
 
 						.entry-title {
 							color: $white;
-							@include media-breakpoint-down(md) {
-								margin-left: 8px;
-							}
 							b {
 								color: $white;
 								margin-bottom: 1rem;
@@ -123,22 +125,6 @@
 			margin: 60px auto 0 0;
 		}
 	}
-	.entry-content > .wp-block-columns:first-of-type {
-		@include media-breakpoint-down(md) {
-			flex-flow: column-reverse;
-			.wp-block-column:nth-of-type(2) {
-				padding: 0;
-				margin-bottom: 60px;
-			}
-			.wp-block-columns {
-				margin-bottom: 0;
-				.wp-block-column:nth-of-type(2) {
-					padding: 0;
-					margin-bottom: 0px;
-				}
-			}
-		}
-	}
 
 	.entry-content > .wp-block-getwid-section {
 		@include media-breakpoint-down(md) {
@@ -155,12 +141,12 @@
 	.ngp-form {
 		overflow: visible;
 		padding: 0;
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			margin-top: -300px;
 		}
 		z-index: 8;
 		position: relative;
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			@include offset-gradient-border;
 		}
 	}

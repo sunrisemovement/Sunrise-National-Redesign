@@ -17,7 +17,6 @@ get_template_part( 'template-parts/blog-parts/blog-navigation' );
 				<?php get_template_part( 'template-parts/blog-parts/blog-featured', '' ); ?>
 				<?php get_template_part( 'template-parts/blog-parts/blog-horizontal', '' ); ?>
 			<?php get_template_part( 'template-parts/instagram', '' ); ?>
-			<?php get_template_part( 'template-parts/blog-parts/blog-vertical', '' ); ?>
 			<?php
 			while ( have_posts() ) :
 				the_post();

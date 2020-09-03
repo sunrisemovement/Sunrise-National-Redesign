@@ -11,9 +11,7 @@ $postType = get_post_type_object(get_post_type());
 <div class=" <?php echo $base_class; ?>__post-wrapper">
   <div class="card-img">
     <?php if(get_the_post_thumbnail()): ?>
-      <div class="post-thumbnail">
         <?php the_post_thumbnail('medium'); ?>
-      </div><!-- .post-thumbnail -->
     <?php else:?>
       <img class="" src="<?php echo get_template_directory_uri(); ?>/assets/img/event-card.jpg" />
     <?php endif?>

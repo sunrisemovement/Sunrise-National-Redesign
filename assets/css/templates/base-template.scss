@@ -69,6 +69,10 @@
 					position: relative;
 					@include media-breakpoint-up(md) {
 					}
+					.post-thumbnail {
+						max-height: 380px;
+						overflow: hidden;
+					}
 					&.header-media {
 						@include media-breakpoint-down(md) {
 							position: absolute;

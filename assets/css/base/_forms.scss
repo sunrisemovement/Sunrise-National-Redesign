@@ -247,7 +247,9 @@ textarea {
 }
 // event styling
 .ngp-form {
-	max-width: map-get($container-max-widths, "md") !important;
+	@include media-breakpoint-up(md) {
+		max-width: map-get($container-max-widths, "lg") !important;
+	}
 	margin: 0 auto;
 	padding: 2rem;
 	@include drop-shadow;

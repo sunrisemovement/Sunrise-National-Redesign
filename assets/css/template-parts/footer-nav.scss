@@ -65,6 +65,10 @@ body footer {
 			font-family: $font-family-sans-serif;
 			float: right;
 			margin-bottom: 1rem;
+			@include media-breakpoint-down(md) {
+				text-align: center;
+				width: 100%;
+			}
 		}
 		.to-the-top {
 			float: right;
@@ -87,10 +91,15 @@ body footer {
 				a svg {
 					height: 28px;
 					width: 28px;
+					@include media-breakpoint-down(md) {
+						height: 24px;
+						width: 24px;
+					}
 				}
 			}
 			@include media-breakpoint-down(md) {
 				margin: auto;
+				justify-content: center;
 			}
 		}
 	}

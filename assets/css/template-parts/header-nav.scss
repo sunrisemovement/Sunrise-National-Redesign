@@ -158,7 +158,10 @@
 	padding: 24px 32px;
 	font-weight: $font-weight-bold;
 	font-size: $font-size-base;
-	&, &:hover, &:active, &:focus {
+	&,
+	&:hover,
+	&:active,
+	&:focus {
 		color: $yellow !important;
 		fill: $yellow;
 		background: none !important;
@@ -334,6 +337,9 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 	transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
 	z-index: 101;
 }
+.btn.nav-toggle {
+	margin-right: 0;
+}
 
 .admin-bar .menu-modal {
 	top: 32px;
@@ -357,7 +363,7 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 }
 
 .menu-modal-inner {
-	background: rgba(0,0,0,0.9);
+	background: rgba(0, 0, 0, 0.9);
 	display: flex;
 	justify-content: stretch;
 	overflow: auto;
@@ -411,7 +417,7 @@ button.close-nav-toggle .toggle-text {
 	margin: 0;
 	border-top: 1px solid $gray-sunrise;
 	&:hover {
-		background-color: rgba(255,255,255,0.04);
+		background-color: rgba(255, 255, 255, 0.04);
 	}
 	&:last-of-type {
 		border-bottom: 1px solid $gray-sunrise;

@@ -10,7 +10,7 @@
 ?>
 
 <header class="entry-header post-header">
-	<div class="container">
+	<div class="alignwide">
 		<div class="row header-row <?php if(get_field('header_embed') || get_the_post_thumbnail()){
 				echo ""; }
 				else {
