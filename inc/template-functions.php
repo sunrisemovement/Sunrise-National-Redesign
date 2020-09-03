@@ -100,6 +100,7 @@ function fetchNewOnlineActions($bypassTimer = null) {
 	if (!file_exists(ONLINE_ACTION_DIR) && !is_dir(ONLINE_ACTION_DIR)) {
 		mkdir(ONLINE_ACTION_DIR, 0777, true);
 	}
+
 	if (is_null($bypassTimer) || empty($bypassTimer)){
 		return;
 		if (!checkApiCallTimer()) {
@@ -170,19 +171,6 @@ function echoVar($var) {
 	echo '<pre>'; print_r($var); echo '</pre>';
 }
 
-function deleteExistingOnlineActionsForms() {
-	$posts = get_posts([
-		'numberposts' => '-1', // -1 for all posts
-	  'post_type' => 'events',
-	  'post_status' => 'publish',
-		'fields' => 'ids'
-	]);
-	foreach($posts as $postId) {
-		wp_delete_post($postId);
-	}
-	// echo '<pre> after ===== '; print_r($posts); echo '</pre>';
-}
-
 function addDashboardWidgets() {
 	wp_add_dashboard_widget('everyaction_fetch_data_widget', 'Fetch Everyaction Data', 'renderFetchOnlineActionsButton');
 }
@@ -217,7 +205,39 @@ function onEveryactionAdminButtonClick() {
 	fetchNewOnlineActions(true);
 	echo "Everyaction Data Updated Successfully";
 }
+
+function ea_scheduleCronJobs() {
+	if ( !wp_next_scheduled( 'ea_delete_old_events' ) ) {
+		wp_schedule_event(time(), 'daily', 'ea_delete_old_events');
+	}
+}
+function ea_deleteOldEvents() {
+	$posts = get_posts([
+		'numberposts' => '-1', // -1 for all posts
+	  	'post_type' => 'events',
+	  	'post_status' => 'publish',
+		'fields' => 'ids'
+	]);
+	foreach($posts as $postId) {
+		$deletePost = false;
+		if( !get_field('event_start_date', $postId) ) {
+			$deletePost = true;
+		}
+		$eventDateTime = new DateTime(get_field('event_start_date', $postId));
+		$now = new DateTime("now");
+		// if the post is already marked for deleted or if the event's start date is in the past, delete the post.
+		$deletePost = $deletePost || ( $now > $eventDateTime )
+
+		if($deletePost) {
+			wp_delete_post($postId);
+		}
+	}
+}
+add_action('ea_cron_hook', 'ea_scheduleCronJobs');
+
+
+
+
 // fetchNewOnlineActions();
-// deleteExistingOnlineActionsForms();
 
 // ==================== API Calls =======================
