@@ -1,0 +1,83 @@
+:root {
+	--color-primary-brand: #FFDE16;
+
+	--color-text: #33342e;
+	​
+	--color-secondaryText: #657287;
+	​
+	--color-error: #DB0A5B;
+	​
+	--color-background: #FFF;
+	​
+	--color-subtle-background: #F7F8FA;
+	​
+	--color-success: #00AB4C;
+	​
+	--color-link: #0078AB;
+	​
+	/* Form options */
+	​
+	--form-padding: 1.5rem;
+	​
+	--border-radius: 4px;
+	​
+	/* Border around entire form */
+	​
+	--form-border: 1px solid #E6E9ED;
+	​
+	/* Form header and footer areas */
+	​
+	--form-header-footer-background: #FFF;
+	​
+	--form-header-footer-border-color: #E6E9ED;
+	​
+	/* Advance button: continue, donate, etc. */
+	​
+	--advance-button-background-color: var(--color-primary-brand);
+	​
+	--advance-button-color: #FFF;
+	​
+	--advance-button-border: 0;
+	​
+	--advance-button-font-weight: bold;
+	​
+	--advance-button-text-transform: none;
+	​
+	--advance-button-font-size: 1rem;
+	​
+	/* Selectable buttons: amounts, recurring, etc. */
+	​
+	--select-button-color-text: var(color-text);
+	​
+	--select-button-color-background: #E6E9ED;
+	​
+	--select-button-border: 0;
+	​
+	--select-button-font-weight: bold;
+	​
+	--select-button-text-transform: none;
+	​
+	--select-button-font-size: 1rem;
+	​
+	--select-button-selected-color-text: var(--color-text);
+	​
+	--select-button-selected-color-background: var(--color-primary-brand);
+	​
+	--select-button-selected-border: 0;
+	​
+	/* Input fields */
+	​
+	--input-background-color: #FFF;
+	​
+	--input-border-size: 1px;
+	​
+	--input-border-color: #657287;
+	​
+	--input-border-focus-color: var(--color-primary-brand);
+	​
+	--input-color: var(--color-text);
+	​
+	--input-label-color: var(--color-primary-brand);
+	​
+	--input-color-placeholders: #657287;
+}

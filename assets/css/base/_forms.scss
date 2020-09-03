@@ -162,6 +162,9 @@ textarea {
 	background-color: $yellow;
 	header {
 		color: $black;
+		&.at-title {
+			color: black;
+		}
 	}
 	legend {
 		color: $black;
@@ -185,6 +188,9 @@ textarea {
 	}
 	header {
 		color: $white;
+		&.at-title {
+			color: $white;
+		}
 	}
 }
 
@@ -193,6 +199,9 @@ textarea {
 	background-color: $white;
 	header {
 		color: $black;
+		&.at-title {
+			color: $black;
+		}
 	}
 	legend {
 		color: $black;
@@ -212,6 +221,9 @@ textarea {
 	background-color: $sunrise-background-dark;
 	header {
 		color: $black;
+		&.at-title {
+			color: $black;
+		}
 	}
 	legend {
 		color: $black;
@@ -247,6 +259,7 @@ textarea {
 	header {
 		color: $white;
 		&.at-title {
+			color: $white;
 			font-family: $font-family-serif;
 			text-align: left;
 			font-style: italic;

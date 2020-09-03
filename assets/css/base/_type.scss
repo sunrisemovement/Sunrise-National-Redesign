@@ -45,8 +45,7 @@ body .site .entry-content {
 	h2,
 	h3,
 	h4,
-	h5,
-	p {
+	h5 {
 		line-height: 1.2;
 		max-width: map-get($container-max-widths, "md");
 		margin: 0 auto 1rem auto;
@@ -57,6 +56,9 @@ body .site .entry-content {
 		font-weight: $font-weight-bolder;
 		text-transform: uppercase;
 		line-height: 1;
+		b {
+			text-transform: uppercase;
+		}
 	}
 
 	h2 {
@@ -82,10 +84,16 @@ body .site .entry-content {
 	}
 
 	p {
+		line-height: 1.4;
+		max-width: map-get($container-max-widths, "md");
+		margin: 0 auto 1rem auto;
 		@include media-breakpoint-down(md) {
 			font-size: 1.2rem;
 			line-height: 1.6;
 		}
+	}
+	ul {
+		padding-inline-start: 22px;
 	}
 }
 
@@ -114,7 +122,6 @@ body .site .entry-content {
 	h3,
 	h4,
 	h5 {
-		margin: 0 0 1rem 0;
 		@include media-breakpoint-up(md) {
 			width: 90%;
 		}
