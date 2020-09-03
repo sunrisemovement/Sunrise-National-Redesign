@@ -12,7 +12,7 @@ class Ea8Api {
 
   public function __construct() {
     // Staging or Dev
-    $Dev_Mode = false;
+    $Dev_Mode = true;
     if ($Dev_Mode) { //defined('ACF_DEV_API') && (ACF_DEV_API === 'STAGE' || ACF_DEV_API)) {
     	$this->ea8AuthKey = $this->readKey(self::DEV_KEYTYPE);
     } else {
@@ -27,7 +27,7 @@ class Ea8Api {
   */
   public function fetchOnlineActions() {
     $filteredOnlineActions = [];
-  	$response = self::callAPI("GET", self::EA8_BASE_URL."onlineActionsForms", $this->ea8AuthKey);
+    $response = self::callAPI("GET", self::EA8_BASE_URL."onlineActionsForms", $this->ea8AuthKey);
     $json = json_decode($response, true)['items'];
   	foreach ($json as $onlineActionJson) {
     	//echo '<pre>'; print_r($onlineActionJson); echo '</pre>';
@@ -105,6 +105,9 @@ class Ea8Api {
               if ($data)
                   $url = sprintf("%s?%s", $url, http_build_query($data));
       }
+
+      // windows testing
+      //curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
 
       // Optional Authentication:
       curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
