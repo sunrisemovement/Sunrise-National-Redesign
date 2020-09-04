@@ -89,19 +89,23 @@ function createEventPost($onlineAction) {
 	return true;
 }
 
-const ONLINE_ACTION_DIR = "./EA8/Action/";
-const LAST_EA_API_CALL_TIME = "./EA8/lastApiCallTime.json";
-
 // Takes API response json objects and creates a new post of the "events" post type for each OnlineAction that hasn't been created yet
 // When a post is created for an OnlineAction the json object used to create it will be stored in a file with the name matching the
 // form tracking id. Existence of a post for a given OnlineAction can be determined by checking for the json file existence.
 // Done By: Andrew Wilson
 // fetchNewOnlineActions();
 function fetchNewOnlineActions($bypassTimer = null) {
-	// make directory if it doesn't exist
-	if (!file_exists(ONLINE_ACTION_DIR) && !is_dir(ONLINE_ACTION_DIR)) {
-		mkdir(ONLINE_ACTION_DIR, 0777, true);
+	$ONLINE_ACTION_DIR = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."Action".DIRECTORY_SEPARATOR;
+	$LAST_EA_API_CALL_TIME = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."lastApiCallTime.json";
+	
+	// make directory if it doesn't exist	
+	$fileExist = file_exists($ONLINE_ACTION_DIR);
+	$isDir = is_dir($ONLINE_ACTION_DIR);
+	if (!file_exists($ONLINE_ACTION_DIR) && !is_dir($ONLINE_ACTION_DIR)) {
+		echo "Need to make the directory";
+		mkdir($ONLINE_ACTION_DIR, 0777, true);
 	}
+
 	if (is_null($bypassTimer) || empty($bypassTimer)){
 		return;
 		if (!checkApiCallTimer()) {
@@ -114,7 +118,7 @@ function fetchNewOnlineActions($bypassTimer = null) {
 	echovar($filteredOnlineActions);
 	foreach ($filteredOnlineActions as $onlineAction) {
 
-		$actionJsonFilepath = ONLINE_ACTION_DIR.$onlineAction['formTrackingId'].".json";
+		$actionJsonFilepath = $ONLINE_ACTION_DIR.$onlineAction['formTrackingId'].".json";
 
 		// if a file exists for a given formTrackingId, update the contents, but do not create a post and then move on
 		if (file_exists($actionJsonFilepath)) {
@@ -130,15 +134,15 @@ function fetchNewOnlineActions($bypassTimer = null) {
 }
 
 /* function that checks if it is time to call the API again.  $apiRefreshPeriod stores the time period that must elapse before refreshing
- * The time of the last API call is persisted in a file stored in LAST_EA_API_CALL_TIME to persist between requests.
+ * The time of the last API call is persisted in a file stored in $LAST_EA_API_CALL_TIME to persist between requests.
  * Returns true if enough time has past since the last call, false if not.
 */
 function checkApiCallTimer() {
 	$runNow = false;
-	if (!file_exists(LAST_EA_API_CALL_TIME)) {
+	if (!file_exists($LAST_EA_API_CALL_TIME)) {
 		return true;
 	}
-	$lastCallDate = json_decode(file_get_contents(LAST_EA_API_CALL_TIME));
+	$lastCallDate = json_decode(file_get_contents($LAST_EA_API_CALL_TIME));
 	$lastCallDate = new DateTime($lastCallDate->date);
 	// time in seconds between EveryAction API calls.  The format starts with P and then 10H specifies 10 hours as the refresh period
 	// https://www.php.net/manual/en/dateinterval.construct.php
@@ -153,7 +157,7 @@ function checkApiCallTimer() {
 // This function sets the last time that the API was called and stores it in a persisted file for quick reference
 function setLastCallDate() {
 	$now = new DateTime("now");
-	file_put_contents(LAST_EA_API_CALL_TIME, json_encode($now));
+	file_put_contents($LAST_EA_API_CALL_TIME, json_encode($now));
 }
 
 // echo '<pre>'; print_r($filteredOnlineActions); echo '</pre>';
@@ -170,19 +174,6 @@ function echoVar($var) {
 	echo '<pre>'; print_r($var); echo '</pre>';
 }
 
-function deleteExistingOnlineActionsForms() {
-	$posts = get_posts([
-		'numberposts' => '-1', // -1 for all posts
-	  'post_type' => 'events',
-	  'post_status' => 'publish',
-		'fields' => 'ids'
-	]);
-	foreach($posts as $postId) {
-		wp_delete_post($postId);
-	}
-	// echo '<pre> after ===== '; print_r($posts); echo '</pre>';
-}
-
 function addDashboardWidgets() {
 	wp_add_dashboard_widget('everyaction_fetch_data_widget', 'Fetch Everyaction Data', 'renderFetchOnlineActionsButton');
 }
@@ -196,7 +187,8 @@ function addAjaxScript($hook) {
 	if ('index.php' !== $hook) {
 		return;
 	}
-	wp_enqueue_script('ea8_widget_ajax_script', get_template_directory_uri()."/ea8/ea8_widget_ajax_script.js", array(), NULL, true);
+	$scriptLocation = get_template_directory_uri()."/ea8/ea8_widget_ajax_script.js";
+	wp_enqueue_script('ea8_widget_ajax_script', $scriptLocation, array(), NULL, true);
 }
 add_action('admin_enqueue_scripts', 'addAjaxScript');
 
@@ -217,7 +209,39 @@ function onEveryactionAdminButtonClick() {
 	fetchNewOnlineActions(true);
 	echo "Everyaction Data Updated Successfully";
 }
+
+function ea_scheduleCronJobs() {
+	if ( !wp_next_scheduled( 'ea_delete_old_events' ) ) {
+		wp_schedule_event(time(), 'daily', 'ea_delete_old_events');
+	}
+}
+function ea_deleteOldEvents() {
+	$posts = get_posts([
+		'numberposts' => '-1', // -1 for all posts
+	  	'post_type' => 'events',
+	  	'post_status' => 'publish',
+		'fields' => 'ids'
+	]);
+	foreach($posts as $postId) {
+		$deletePost = false;
+		if( !get_field('event_start_date', $postId) ) {
+			$deletePost = true;
+		}
+		$eventDateTime = new DateTime(get_field('event_start_date', $postId));
+		$now = new DateTime("now");
+		// if the post is already marked for deleted or if the event's start date is in the past, delete the post.
+		$deletePost = $deletePost || ( $now > $eventDateTime );
+
+		if($deletePost) {
+			wp_delete_post($postId);
+		}
+	}
+}
+add_action('ea_cron_hook', 'ea_scheduleCronJobs');
+
+
+
+
 // fetchNewOnlineActions();
-// deleteExistingOnlineActionsForms();
 
 // ==================== API Calls =======================
