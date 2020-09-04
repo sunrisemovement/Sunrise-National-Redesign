@@ -228,8 +228,8 @@ article .entry-content .wp-block-columns.alignfull,article .entry-content .wp-bl
 .top-menu{background-color:#33342e;float:left;padding:0 37px;display:block;width:100%;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .bottom-menu{background-color:#000;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;float:left;padding:0 15px;padding-bottom:0;min-height:60px}
 .header-menu .icon{display:block;height:.7rem;position:absolute;pointer-events:none;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);width:1.3rem}
-.header-menu.top{width:50%;float:right;display:-webkit-box;display:-ms-flexbox;display:flex;font-size:1rem;font-weight:500;letter-spacing:-0.0277em;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
-.social-menu{width:223px}
+.header-menu.top{-webkit-box-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-ms-flexbox;display:flex;font-size:1rem;font-weight:500;letter-spacing:-0.0277em;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.social-menu{width:auto}
 .header-menu.bottom{width:70%;float:right;display:-webkit-box;display:-ms-flexbox;display:flex;font-size:1rem;font-weight:500;letter-spacing:-0.0277em;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;margin-bottom:0}
 .site-branding{float:left;width:260px}
 .header-menu .icon::before,.header-menu .icon::after{content:"";display:block;background-color:currentColor;position:absolute;bottom:calc(50% - 0.1rem);left:0}
