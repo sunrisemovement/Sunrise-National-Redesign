@@ -7,7 +7,7 @@
  *
  */
  ?>
-<nav class="blog-header container" aria-label="<?php esc_attr_e( 'Horizontal', 'sunrisenational' ); ?>" role="navigation">
+<nav class="blog-header container alignwide" aria-label="<?php esc_attr_e( 'Horizontal', 'sunrisenational' ); ?>" role="navigation">
 	<div class="blog-bar row">
 		<h3 class="blog-title"> <a href="">
 			UPRISING NEWS

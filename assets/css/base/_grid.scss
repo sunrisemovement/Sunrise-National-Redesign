@@ -24,7 +24,8 @@
 }
 
 main article .entry-content .wp-block-columns,
-main article .entry-content .wp-block-media-text {
+main article .entry-content .wp-block-media-text,
+main article .entry-content .container {
 	margin: 0 auto 2rem auto;
 	@include media-breakpoint-up(lg) {
 		max-width: map-get($container-max-widths, "xl");

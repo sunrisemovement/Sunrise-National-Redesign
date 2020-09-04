@@ -45,9 +45,6 @@
 				@include media-breakpoint-down(lg) {
 					position: relative;
 					bottom: unset;
-					h1 {
-						font-size: 4rem;
-					}
 					@include media-breakpoint-down(xs) {
 						h1 {
 							font-size: 2.5rem;
