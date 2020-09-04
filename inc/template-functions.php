@@ -1,5 +1,5 @@
 <?php
-require_once( 'ea8_api.php' );
+require_once( 'events_api.php' );
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
@@ -64,21 +64,23 @@ function createEventPost($onlineAction) {
 
 	try {
 		// insert the post and set the category
-		echo "Creating '".$onlineAction['formName']."' Form post";
+		echo "Creating '".$onlineAction['name']."' Form post";
 		$post_id = wp_insert_post(array (
 			'post_type' => 'events',
-			'post_title' => $onlineAction['formName'],
+			'post_title' => $onlineAction['name'],
 			'post_content' => 'test content',
 			'post_status' => 'publish',
 			'comment_status' => 'closed',
 			'ping_status' => 'closed'
 		));
 		// Using Advanced Custom Fields Plugin
-		update_field('form_tracking_id', $onlineAction['formTrackingId'], $post_id);
-		update_field('action_tag', sprintf(ACTION_TAG_STR, $onlineAction['formTrackingId']), $post_id);
-		update_field('event_start_date', $onlineAction['startDate'], $post_id);
-		update_field('event_type_name', $onlineAction['eventType']['name'], $post_id);
-		update_field('event_type_id', $onlineAction['eventType']['eventTypeId'], $post_id);
+		update_field('form_tracking_id', $onlineAction['form_tracking_id'], $post_id);
+		update_field('url', $onlineAction['url'], $post_id);
+		update_field('action_tag', sprintf(ACTION_TAG_STR, $onlineAction['form_tracking_id']), $post_id);
+		update_field('event_start_date', $onlineAction['event_start_date'], $post_id);
+		update_field('event_title', $onlineAction['event_title'], $post_id);
+		update_field('event_type', $onlineAction['event_type'], $post_id);
+		update_field('status', $onlineAction['status'], $post_id);
 	}
 	catch (exception $e) {
 		echo '<pre>'; print_r($e); echo '</pre>';
@@ -153,15 +155,13 @@ function setLastCallDate() {
 	$now = new DateTime("now");
 	file_put_contents(LAST_EA_API_CALL_TIME, json_encode($now));
 }
+
+// echo '<pre>'; print_r($filteredOnlineActions); echo '</pre>';
 // Call EveryAction API and return a json object with an array called "items" that contains all of the OnlineAction json objects returned
 // Called by fetchNewOnlineActionForms
 function getOnlineActionsFromApi() {
-
-	// $json = json_decode(file_get_contents(
-	//  	"test_data_online_actions_forms.json", true), true);
-	$ea8Api = new Ea8Api();
-	$onlineActions = $ea8Api->fetchOnlineActions();
-	//echo '<pre> hello'; print_r($json); echo '</pre>';
+	$eventsApi = new EventsAPI();
+	$onlineActions = $eventsApi->fetchOnlineActions();
 	setLastCallDate();
 	return $onlineActions;
 }
