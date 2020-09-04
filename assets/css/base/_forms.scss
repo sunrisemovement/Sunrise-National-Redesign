@@ -60,6 +60,17 @@ textarea {
 			@include media-breakpoint-down(md) {
 				margin-top: 2rem;
 			}
+			.HeaderHtml {
+				color: $black;
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			p {
+				width: 100%;
+				max-width: 100%;
+			}
 		}
 		.at-title {
 			display: none;

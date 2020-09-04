@@ -7,9 +7,9 @@
  *
  */
  ?>
-<nav class="blog-header container alignwide" aria-label="<?php esc_attr_e( 'Horizontal', 'sunrisenational' ); ?>" role="navigation">
+<nav class="blog-header alignwide container" aria-label="<?php esc_attr_e( 'Horizontal', 'sunrisenational' ); ?>" role="navigation">
 	<div class="blog-bar row">
-		<h3 class="blog-title"> <a href="">
+		<h3 class="blog-title"> <a href="/blog">
 			UPRISING NEWS
 		</a>
 		</h3><!-- .site-branding -->
@@ -26,6 +26,6 @@
 				);
 			}
 			?>
-		</ul>
+		</ul><?php echo do_shortcode( 'wpbsearch' ); ?>
 	</div>
 </nav>

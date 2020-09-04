@@ -472,6 +472,7 @@ button.close-nav-toggle .toggle-text {
 
 .modal-menu ul.sub-menu {
 	background: $yellow;
+	z-index: 100;
 	padding: 0;
 	> .menu-item a {
 		color: $gray-sunrise !important;
@@ -681,6 +682,12 @@ ul.social-icons li {
 	font-weight: 700;
 	letter-spacing: normal;
 	color: $yellow;
+}
+
+.secondary-menu li a {
+	font-size: 0.9rem;
+	font-weight: 400;
+	margin-top: 2px;
 }
 
 .toggle-inner .toggle-text {

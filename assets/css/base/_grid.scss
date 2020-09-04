@@ -1,18 +1,17 @@
 //Grid
+
+.post,
+.page {
+	margin: 0;
+}
+
 .entry-content
-	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns) {
+	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns):not(.has-text-align-center):not(.ngp-form) {
 	margin: 0 auto 1rem auto;
 
 	@include media-breakpoint-up(md) {
-		max-width: map-get($container-max-widths, "lg");
-		width: map-get($container-max-widths, "lg");
-	}
-
-	&h3.has-text-align-center {
-		@include media-breakpoint-up(md) {
-			max-width: map-get($container-max-widths, "lg");
-			width: map-get($container-max-widths, "lg");
-		}
+		max-width: map-get($container-max-widths, "md");
+		width: map-get($container-max-widths, "md");
 	}
 
 	@include media-breakpoint-down(md) {
@@ -23,19 +22,56 @@
 	}
 }
 
-main article .entry-content .wp-block-columns,
-main article .entry-content .wp-block-media-text,
-main article .entry-content .container {
-	margin: 0 auto 2rem auto;
+h3.has-text-align-middle,
+h2.has-text-align-middle {
+	@include media-breakpoint-up(md) {
+		max-width: map-get($container-max-widths, "md");
+		width: map-get($container-max-widths, "md");
+	}
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+}
+
+.single-post .entry-content {
+	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns) {
+		margin: 0 auto 1rem auto;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.entry-header .container {
 	@include media-breakpoint-up(lg) {
 		max-width: map-get($container-max-widths, "xl");
 		width: map-get($container-max-widths, "xl");
 	}
-
-	@include media-breakpoint-down(lg) {
+	@include media-breakpoint-down(md) {
 		width: 100%;
+		max-width: 100%;
 		padding-right: 17.5px;
 		padding-left: 17.5px;
+	}
+}
+
+article .entry-content .wp-block-columns,
+article .entry-content .wp-block-media-text,
+article .entry-content .container {
+	margin: 0 auto 2rem auto;
+
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		max-width: map-get($container-max-widths, "xl");
+		width: map-get($container-max-widths, "xl");
 	}
 
 	h1,
@@ -45,13 +81,6 @@ main article .entry-content .container {
 	h5,
 	p {
 		margin: 0 0 1rem 0;
-	}
-
-	@include media-breakpoint-down(md) {
-		width: 100%;
-		max-width: 100%;
-		padding-right: 17.5px;
-		padding-left: 17.5px;
 	}
 
 	&.alignwide {

@@ -20,15 +20,16 @@ html {
 	min-height: 100%;
 	display: contents;
 	.campaign-header {
-		margin-bottom: 100px;
 		position: relative;
 		overflow: hidden;
 		width: 100%;
 		height: calc(100% - 150px);
 		@include media-breakpoint-down(md) {
+			height: unset;
 			background-image: none;
 			overflow: initial;
 			margin-top: 53px;
+			margin-top: 14px;
 			@include border-gradient-sunrise;
 		}
 
@@ -38,18 +39,25 @@ html {
 			background-size: 100% 91%;
 			height: 100%;
 			width: 100%;
-			margin-top: 25px;
+			margin-top: 20px;
 			margin-bottom: 10%;
 			@include media-breakpoint-down(md) {
 				background-image: none;
 				margin-top: 130px;
+				display: flex;
+				height: unset;
+				margin: 0 auto;
 			}
 
 			.header-row {
 				align-items: flex-end;
-				position: absolute;
-				bottom: 40px;
-				width: 90%;
+				bottom: 0px;
+				@media screen and (min-height: 800px) {
+					bottom: -110px;
+				}
+				width: 110%;
+				position: relative;
+				display: flex;
 				@include media-breakpoint-down(md) {
 					width: unset;
 					position: relative;
@@ -61,7 +69,7 @@ html {
 				.header-blocks {
 					position: relative;
 					margin: 2rem 0;
-					@include media-breakpoint-up(md) {
+					@include media-breakpoint-up(lg) {
 						margin-bottom: 70px;
 						margin-left: -21px;
 						_::-webkit-full-page-media,
@@ -70,15 +78,22 @@ html {
 							margin-bottom: 100px;
 						}
 					}
+					&.header-text {
+						@include media-breakpoint-down(sm) {
+							margin-bottom: 0px;
+						}
+					}
 					&.header-media {
-						@include media-breakpoint-up(md) {
-							margin-bottom: 42px;
+						@include media-breakpoint-down(md) {
+							max-height: 400px;
+							overflow: hidden;
+							margin-top: 0;
 						}
 					}
 					&.header-media iframe,
 					&.header-media img {
 						@include drop-shadow;
-						@include media-breakpoint-down(md) {
+						@include media-breakpoint-down(lg) {
 							margin-top: 30px;
 						}
 					}
@@ -92,12 +107,12 @@ html {
 				color: $white;
 				margin-bottom: 50px;
 				line-height: 0.9;
-				@include media-breakpoint-down(md) {
+				@include media-breakpoint-down(lg) {
 					margin-bottom: 20px;
 				}
 			}
-			.header-button {
-				@include media-breakpoint-up(md) {
+			.button-row {
+				@include media-breakpoint-up(lg) {
 					position: absolute;
 					bottom: -30px;
 					left: 60px;
@@ -111,7 +126,7 @@ html {
 			@include affordance;
 		}
 		.site-content {
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(lg) {
 				margin-top: 9rem;
 			}
 		}

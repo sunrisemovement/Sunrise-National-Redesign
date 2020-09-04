@@ -3,7 +3,7 @@ body footer {
 	padding: 60px;
 	display: block;
 	float: left;
-	@include media-breakpoint-down(md) {
+	@include media-breakpoint-down(sm) {
 		padding: 40px;
 	}
 	.footer-top {
@@ -65,7 +65,7 @@ body footer {
 			font-family: $font-family-sans-serif;
 			float: right;
 			margin-bottom: 1rem;
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(sm) {
 				text-align: center;
 				width: 100%;
 			}
@@ -78,7 +78,7 @@ body footer {
 			width: 100%;
 			text-align: right;
 			width: 100%;
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(sm) {
 				text-align: center;
 				margin: 2rem 0;
 			}
@@ -91,13 +91,13 @@ body footer {
 				a svg {
 					height: 28px;
 					width: 28px;
-					@include media-breakpoint-down(md) {
+					@include media-breakpoint-down(sm) {
 						height: 24px;
 						width: 24px;
 					}
 				}
 			}
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(sm) {
 				margin: auto;
 				justify-content: center;
 			}
@@ -106,12 +106,12 @@ body footer {
 }
 .footer-nav-block {
 	float: left;
-	@include media-breakpoint-down(md) {
+	@include media-breakpoint-down(sm) {
 		flex-direction: column;
 	}
 	.block {
 		padding: 120px 0;
-		@include media-breakpoint-down(md) {
+		@include media-breakpoint-down(sm) {
 			padding: 40px 0;
 			span {
 				transition: 0.4s all;

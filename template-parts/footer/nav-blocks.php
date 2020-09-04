@@ -1,12 +1,12 @@
 <div class="footer-nav-block container-fluid">
   <div class="row ">
-   <a href="" class="col-md-4 block block-1">
+   <a href="/about" class="col-md-4 block block-1">
      <span>Who We Are</span>
    </a>
-   <a href="" class="col-md-4 block block-2">
-    <span> What We Do</span>
+   <a href="/green-new-deal" class="col-md-4 block block-2">
+    <span> What We Want</span>
    </a>
-   <a href="" class="col-md-4 block block-3">
+   <a href="/how-to-take-action-with-sunrise" class="col-md-4 block block-3">
     <span> How To Join</span>
    </a>
 </div>

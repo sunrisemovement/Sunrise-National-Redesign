@@ -1,4 +1,5 @@
 .blog-header {
+	display: flex;
 	.blog-bar {
 		padding: inherit;
 		padding-top: 20px;
@@ -231,10 +232,14 @@
 .blog-horizontal-section {
 	padding-bottom: 40px;
 	article {
-		.post-thumbnail img {
-			width: 100%;
-			float: left;
-			object-fit: cover;
+		.post-thumbnail {
+			height: 140px;
+			img {
+				width: 100%;
+				float: left;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 		.entry-header {
 			width: 100%;

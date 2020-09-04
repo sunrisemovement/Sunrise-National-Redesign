@@ -49,10 +49,9 @@ body .site .entry-content {
 		line-height: 1.2;
 		margin: 0 auto 1rem auto;
 		@include media-breakpoint-up(lg) {
-			max-width: map-get($container-max-widths, "md");
+			max-width: map-get($container-max-widths, "lg");
 		}
 	}
-
 	h1,
 	h2 {
 		font-weight: $font-weight-bolder;
@@ -71,11 +70,12 @@ body .site .entry-content {
 	}
 
 	h3.has-text-align-center {
-		@include media-breakpoint-down(md) {
-			max-width: map-get($container-max-widths, "lg");
-			width: map-get($container-max-widths, "lg");
-			line-height: 1.3;
-			margin: auto;
+		line-height: 1.3;
+		margin: auto;
+		@include media-breakpoint-down(lg) {
+			width: 100%;
+			padding-right: 17.5px;
+			padding-left: 17.5px;
 		}
 	}
 

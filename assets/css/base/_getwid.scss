@@ -29,6 +29,13 @@
 	}
 }
 
+.wp-block-media-text .wp-block-media-text__content {
+	@include media-breakpoint-down(sm) {
+		padding: 0;
+		margin-top: 2rem;
+	}
+}
+
 .custom-post-type-campaign {
 	overflow: visible;
 	@include media-breakpoint-up(md) {
@@ -182,6 +189,11 @@
 		border: 0px;
 	}
 }
+@media only screen and (min-width: 600px) {
+	.getwid-columns.getwid-columns-2 > * {
+		width: 50%;
+	}
+}
 
 .wp-block-getwid-section__wrapper {
 	padding: 120px 1rem;
@@ -189,6 +201,12 @@
 		padding: 1em;
 	}
 }
+
+.blocks-gallery-grid {
+	padding: 0;
+}
+
+// Padding Overides
 
 .getwid-padding-top-small {
 	padding-top: 30px;

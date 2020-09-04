@@ -8,7 +8,7 @@
  */
 
 ?>
-<div class="alignwide blog-horizontal-section blog-list">
+<div class="alignwide container blog-horizontal-section blog-list">
 		<div class="row">
 
 			<?php

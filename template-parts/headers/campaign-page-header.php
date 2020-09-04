@@ -12,23 +12,25 @@
 <header class="entry-header campaign-header">
 		<div class="container">
 			<div class="row header-row">
-				<div class="col-md-6 header-blocks">
+				<div class="col-md-6 header-blocks header-text">
 		<?php if(get_field('secondary_header')): ?>
 			<h4 class="h1-subhead">
 				<?php echo get_field('secondary_header'); ?>
 			</h4>
 		<?php endif?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<div class="button-row">
 		<?php if(get_field('button_1_url')): ?>
 			<a href="<?php echo get_field('button_1_url'); ?>"><button class="header-button yellow">
 			<?php echo get_field('button_1_text'); ?>
 		</button></a>
 			<?php endif?>
 			<?php if(get_field('button_2_url')): ?>
-				<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button yellow">
+				<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button btn-light">
 				<?php echo get_field('button_2_text'); ?>
 			</button></a>
 				<?php endif?>
+			</div>
 	</div>
 
 	<?php if(get_field('header_embed')): ?>
@@ -38,7 +40,7 @@
 	<?php elseif(get_the_post_thumbnail()): ?>
 		<div class="col-md-6 header-blocks header-media">
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail('medium'); ?>
+				<?php the_post_thumbnail('large'); ?>
 			</div><!-- .post-thumbnail -->
 		</div>
 	<?php endif?>

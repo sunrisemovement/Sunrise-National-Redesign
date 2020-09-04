@@ -8,7 +8,7 @@
  */
 
 ?>
-<div class=" blog-featured-section alignwide blog-list">
+<div class=" blog-featured-section container alignwide blog-list">
 		<div class="row">
 
 				<div class="col-lg-6 col-md-12 blog-featured-single order-lg-2">
