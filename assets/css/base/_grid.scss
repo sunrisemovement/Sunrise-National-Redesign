@@ -8,6 +8,7 @@
 .entry-content
 	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns):not(.has-text-align-center):not(.ngp-form):not(.wp-block-group) {
 	margin: 0 auto 1rem auto;
+	float: unset;
 
 	@include media-breakpoint-up(md) {
 		max-width: map-get($container-max-widths, "md");

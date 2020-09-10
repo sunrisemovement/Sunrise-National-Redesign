@@ -27,6 +27,9 @@
 			}
 			@include media-breakpoint-up(lg) {
 				.no-photo {
+					.header-blocks {
+						text-align: center;
+					}
 					.header-content {
 						@include make-col(8);
 					}
@@ -72,8 +75,8 @@
 
 				.header-blocks {
 					position: relative;
-					@include media-breakpoint-up(md) {
-						text-align: center;
+					@include media-breakpoint-up(lg) {
+						text-align: left;
 					}
 					.post-thumbnail {
 						max-height: 380px;
@@ -114,7 +117,7 @@
 						}
 						.button-row {
 							margin-top: 1rem;
-							margin-left: 10px;
+							margin-left: -10px;
 
 							button {
 								margin-bottom: 1rem;

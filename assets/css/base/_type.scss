@@ -102,6 +102,13 @@ body .site .entry-content {
 	.has-text-align-center {
 		width: 100%;
 	}
+	ul,
+	ol,
+	dl {
+		li {
+			margin-bottom: 0.6rem;
+		}
+	}
 }
 
 .entry-content {

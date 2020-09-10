@@ -539,3 +539,12 @@ function endorsement_taxonomy() {
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
+
+/**
+* Removes or edits the 'Protected:' part from posts titles
+*/
+
+add_filter( 'protected_title_format', 'remove_protected_text' );
+function remove_protected_text() {
+return __('Protected: %s');
+} 
