@@ -154,7 +154,7 @@
 			@include media-breakpoint-up(md) {
 				margin-top: -13rem;
 			}
-			header {
+			header.at-title {
 				text-align: left;
 				font-family: $font-family-serif;
 				padding: 0px 45px;
@@ -166,6 +166,7 @@
 				flex: 1 400px;
 			}
 			.at-markup {
+				padding: 0px 45px;
 			}
 			form {
 				position: relative;

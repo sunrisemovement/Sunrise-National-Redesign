@@ -1,14 +1,19 @@
 .base-page,
 .archive {
 	.post-header {
+		min-height: 440px;
+		display: flex;
+		align-items: center;
 		position: relative;
 		width: 100%;
 		padding: 80px;
 		float: left;
+
 		@include affordance;
 		@include border-gradient-sunrise;
 		@include media-breakpoint-down(lg) {
 			background-image: none;
+			min-height: unset;
 			overflow: initial;
 			padding: 4rem 0;
 		}
@@ -36,6 +41,7 @@
 						.button-row {
 							text-align: center;
 							justify-content: center;
+							margin-left: auto;
 						}
 					}
 				}
@@ -66,7 +72,8 @@
 
 				.header-blocks {
 					position: relative;
-					@include media-breakpoint-up(lg) {
+					@include media-breakpoint-up(md) {
+						text-align: center;
 					}
 					.post-thumbnail {
 						max-height: 380px;
@@ -107,6 +114,7 @@
 						}
 						.button-row {
 							margin-top: 1rem;
+							margin-left: 10px;
 
 							button {
 								margin-bottom: 1rem;

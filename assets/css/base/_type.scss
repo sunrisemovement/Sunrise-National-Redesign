@@ -99,6 +99,25 @@ body .site .entry-content {
 	ul {
 		padding-inline-start: 22px;
 	}
+	.has-text-align-center {
+		width: 100%;
+	}
+}
+
+.entry-content {
+	a {
+		text-decoration: underline;
+		font-weight: 700;
+		&:hover {
+			text-decoration: none;
+		}
+		&.card {
+			text-decoration: none;
+			p {
+				font-weight: 400;
+			}
+		}
+	}
 }
 
 .display-type {

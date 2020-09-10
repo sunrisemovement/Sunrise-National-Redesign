@@ -10,7 +10,7 @@ $base_class = esc_attr($extra_attr['block_name']);
   <div class=" <?php echo $base_class; ?>__post">
     <?php if(get_the_post_thumbnail()): ?>
       <div class="card-img">
-        <?php the_post_thumbnail('medium'); ?>
+        <?php the_post_thumbnail('large'); ?>
       </div><!-- .post-thumbnail -->
   <?php else:?>
       <div class="card-img">

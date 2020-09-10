@@ -28,8 +28,10 @@ $postType = get_post_type_object(get_post_type());
         <div class="excerpt <?php echo $base_class; ?>__post-excerpt"><?php
             the_excerpt();
         ?></div>
-          <button class="">
+          <button class="unbutton-link">
+            <div>
             Learn More
+          </div>
           </button>
     </div>
 </div>

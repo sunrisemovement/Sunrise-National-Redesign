@@ -3,6 +3,7 @@ body footer {
 	padding: 60px;
 	display: block;
 	float: left;
+	width: 100%;
 	@include media-breakpoint-down(sm) {
 		padding: 40px;
 	}

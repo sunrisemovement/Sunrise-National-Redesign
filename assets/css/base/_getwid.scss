@@ -41,14 +41,14 @@
 	@include media-breakpoint-up(md) {
 		@include offset-gradient-border;
 		&:after {
-			display: none;
+			top: 180px;
+			left: -50px;
+			right: 0;
+			height: 60%;
+			display: block;
 		}
 	}
-	&.after-outline:after {
-		top: 180px;
-		left: -50px;
-		right: 0;
-		height: 60%;
+	&.no-outline:after {
 		display: block;
 	}
 	a {
@@ -103,11 +103,20 @@
 		.excerpt {
 			font-size: $font-size-base;
 			color: $black;
+			margin-top: -0.9rem;
 		}
 		button {
 			margin-top: 1rem;
 		}
 	}
+}
+
+.has-image-left .wp-block-getwid-image-box__image-container {
+	margin: 0 3rem 0 0;
+}
+
+.has-image-right .wp-block-getwid-image-box__image-container {
+	margin: 0 0 0 3rem;
 }
 
 .custom-post-type-event.wp-block-getwid-post-carousel {
@@ -168,7 +177,6 @@
 			text-transform: uppercase;
 		}
 		.excerpt {
-			padding: 0 0 20px 0;
 			color: $black;
 		}
 		.event-title {
@@ -182,6 +190,14 @@
 			font-size: 1.9rem;
 		}
 	}
+}
+
+.custom-post-type-our_endorsements .has-layout-grid .card-img {
+	height: 360px;
+}
+
+.wp-block-getwid-section__background {
+	background-attachment: fixed;
 }
 
 .wp-block-getwid-custom-post-type {

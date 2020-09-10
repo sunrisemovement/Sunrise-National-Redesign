@@ -276,7 +276,9 @@ textarea {
 			font-family: $font-family-serif;
 			text-align: left;
 			font-style: italic;
+			line-height: 1.2;
 			font-size: 32px;
+			margin-bottom: 0.6rem;
 			padding: 10px 0 10px 20px;
 		}
 	}
@@ -289,6 +291,10 @@ textarea {
 		.at-markup {
 			padding-right: 17.5px;
 			padding-left: 17.5px;
+			margin: 0;
+			p {
+				width: 100% !important;
+			}
 		}
 		form {
 			margin-top: 20px;
@@ -309,9 +315,6 @@ textarea {
 					margin: 0;
 					padding-right: 1rem;
 				}
-			}
-			.AdditionalInformation {
-				margin-top: -90px;
 			}
 		}
 		.at-form-submit {

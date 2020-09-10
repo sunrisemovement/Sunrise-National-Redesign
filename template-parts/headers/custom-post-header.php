@@ -66,7 +66,7 @@
 							<iframe class="video" width="560" height="315" align="bottom" src="<?php echo get_field('header_embed'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						<?php elseif(get_the_post_thumbnail()): ?>
 							<div class="post-thumbnail">
-								<?php the_post_thumbnail('medium'); ?>
+								<?php the_post_thumbnail('large'); ?>
 							</div><!-- .post-thumbnail -->
 							<?php endif?>
 					</div>

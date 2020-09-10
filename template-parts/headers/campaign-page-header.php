@@ -48,7 +48,7 @@
 </div>
 <div class="header-background-image">
 <?php if(get_field('header_image')): ?>
-<div class="header-background-image">
+<div class="header-image">
 <img src="<?php echo get_field('header_image'); ?>" />
 <?php endif?>
 </div>

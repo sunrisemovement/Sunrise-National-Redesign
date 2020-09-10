@@ -6,7 +6,7 @@
 }
 
 .entry-content
-	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns):not(.has-text-align-center):not(.ngp-form) {
+	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns):not(.has-text-align-center):not(.ngp-form):not(.wp-block-group) {
 	margin: 0 auto 1rem auto;
 
 	@include media-breakpoint-up(md) {
@@ -37,10 +37,10 @@ h2.has-text-align-middle {
 }
 
 .single-post .entry-content {
-	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns) {
+	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns):not(.wp-block-group) {
 		margin: 0 auto 1rem auto;
-		width: 100%;
-		max-width: 100%;
+		width: 100% !important;
+		max-width: 100% !important;
 	}
 }
 
@@ -54,6 +54,12 @@ h2.has-text-align-middle {
 		max-width: 100%;
 		padding-right: 17.5px;
 		padding-left: 17.5px;
+	}
+}
+
+.wp-block-columns {
+	.wp-block-getwid-post-carousel .slick-dotted.slick-slider {
+		overflow: hidden;
 	}
 }
 

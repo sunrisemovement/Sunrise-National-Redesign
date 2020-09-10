@@ -47,7 +47,7 @@
 				<?php elseif(get_the_post_thumbnail()): ?>
 					<div class="col-md-6 header-blocks header-media">
 						<div class="post-thumbnail">
-							<?php the_post_thumbnail('medium'); ?>
+							<?php the_post_thumbnail('large'); ?>
 						</div><!-- .post-thumbnail -->
 					</div>
 				<?php endif?>

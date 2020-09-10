@@ -26,6 +26,6 @@
 				);
 			}
 			?>
-		</ul><?php echo do_shortcode( 'wpbsearch' ); ?>
+		</ul><?php //echo do_shortcode( 'wpbsearch' ); ?>
 	</div>
 </nav>
