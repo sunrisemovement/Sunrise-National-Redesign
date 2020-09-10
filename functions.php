@@ -531,12 +531,13 @@ function endorsement_taxonomy() {
 		"hierarchical" => true,
 		"rewrite" => [ "slug" => "events", "with_front" => true ],
 		"query_var" => true,
-		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "page-attributes", "post-formats" ],
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "page-attributes", "post-formats"],
 		"taxonomies" => [ "campaigns" ],
 	];
 
 	register_post_type( "events", $args );
 }
+
 
 add_action( 'init', 'cptui_register_my_cpts' );
 

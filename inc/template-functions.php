@@ -1,4 +1,5 @@
 <?php
+require_once( 'events_api.php' );
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
@@ -11,7 +12,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function sunrise_national_body_classes( $classes ) {
+function surnise_national_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -24,14 +25,223 @@ function sunrise_national_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'sunrise_national_body_classes' );
+add_filter( 'body_class', 'surnise_national_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function sunrise_national_pingback_header() {
+function surnise_national_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', 'sunrise_national_pingback_header' );
+add_action( 'wp_head', 'surnise_national_pingback_header' );
+
+
+// ======================================================
+// EveryAction8 - Specific Code
+// ======================================================
+
+
+//TODO this should be on some trigger, e.g. daily / time-based trigger
+//since it seems unlikely EA8 offers a webhook of some sort.
+//Read in test files
+
+const ACTION_TAG_STR = "<script type=\"text/javascript\" src=\"https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js\"></script><div class=\"ngp-form\" data-form-url=\"https://actions.everyaction.com/v1/Forms/%s\"></div>";
+
+// Fetch All Online Actions
+add_action( 'after_setup_theme', 'fetchNewOnlineActions' );
+//Create custom posts for actions that didn't exist.
+// createActionPosts($onlineActionsForms);
+
+// =========== Custom Post Type Manipulation ================
+// ================ Fetching / Storage ==================
+/**
+* Creates a wordpress post of the "event" post type from the json array passed in representing a single OnlineAction json object.
+* Done By: Andrew Jones
+*/
+function createEventPost($onlineAction) {
+
+	try {
+		// insert the post and set the category
+		echo "Creating '".$onlineAction['name']."' Form post";
+		$post_id = wp_insert_post(array (
+			'post_type' => 'events',
+			'post_title' => $onlineAction['name'],
+			'post_content' => 'test content',
+			'post_status' => 'publish',
+			'comment_status' => 'closed',
+			'ping_status' => 'closed'
+		));
+		// Using Advanced Custom Fields Plugin
+		update_field('form_tracking_id', $onlineAction['form_tracking_id'], $post_id);
+		update_field('url', $onlineAction['url'], $post_id);
+		update_field('action_tag', sprintf(ACTION_TAG_STR, $onlineAction['form_tracking_id']), $post_id);
+		update_field('event_start_date', $onlineAction['event_start_date'], $post_id);
+		update_field('event_title', $onlineAction['event_title'], $post_id);
+		update_field('event_type', $onlineAction['event_type'], $post_id);
+		update_field('status', $onlineAction['status'], $post_id);
+	}
+	catch (exception $e) {
+		echo '<pre>'; print_r($e); echo '</pre>';
+		return false;
+	}
+	return true;
+}
+
+// Takes API response json objects and creates a new post of the "events" post type for each OnlineAction that hasn't been created yet
+// When a post is created for an OnlineAction the json object used to create it will be stored in a file with the name matching the
+// form tracking id. Existence of a post for a given OnlineAction can be determined by checking for the json file existence.
+// Done By: Andrew Wilson
+// fetchNewOnlineActions();
+function fetchNewOnlineActions($bypassTimer = null) {
+	$ONLINE_ACTION_DIR = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."Action".DIRECTORY_SEPARATOR;
+	$LAST_EA_API_CALL_TIME = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."lastApiCallTime.json";
+	
+	// make directory if it doesn't exist	
+	$fileExist = file_exists($ONLINE_ACTION_DIR);
+	$isDir = is_dir($ONLINE_ACTION_DIR);
+	if (!file_exists($ONLINE_ACTION_DIR) && !is_dir($ONLINE_ACTION_DIR)) {
+		echo "Need to make the directory";
+		mkdir($ONLINE_ACTION_DIR, 0777, true);
+	}
+
+	if (is_null($bypassTimer) || empty($bypassTimer)){
+		return;
+		if (!checkApiCallTimer()) {
+			return;
+		}
+	}
+	$filteredOnlineActions = getOnlineActionsFromApi();
+
+	// echo '<pre>'; print_r($filteredOnlineActions); echo '</pre>';
+	echovar($filteredOnlineActions);
+	foreach ($filteredOnlineActions as $onlineAction) {
+
+		$actionJsonFilepath = $ONLINE_ACTION_DIR.$onlineAction['formTrackingId'].".json";
+
+		// if a file exists for a given formTrackingId, update the contents, but do not create a post and then move on
+		if (file_exists($actionJsonFilepath)) {
+			file_put_contents($actionJsonFilepath, json_encode($onlineAction));
+			continue;
+		}
+
+		// if the post is successfully created, store the response json in the file for it to mark that a post has been created for the formTrackingId
+		if (createEventPost($onlineAction)) {
+			file_put_contents($actionJsonFilepath, json_encode($onlineAction));
+		}
+	}
+}
+
+/* function that checks if it is time to call the API again.  $apiRefreshPeriod stores the time period that must elapse before refreshing
+ * The time of the last API call is persisted in a file stored in $LAST_EA_API_CALL_TIME to persist between requests.
+ * Returns true if enough time has past since the last call, false if not.
+*/
+function checkApiCallTimer() {
+	$runNow = false;
+	if (!file_exists($LAST_EA_API_CALL_TIME)) {
+		return true;
+	}
+	$lastCallDate = json_decode(file_get_contents($LAST_EA_API_CALL_TIME));
+	$lastCallDate = new DateTime($lastCallDate->date);
+	// time in seconds between EveryAction API calls.  The format starts with P and then 10H specifies 10 hours as the refresh period
+	// https://www.php.net/manual/en/dateinterval.construct.php
+	$apiRefreshPeriod = new DateInterval('PT10H');
+
+	$now = new DateTime("now");
+	$nextCallDate = $lastCallDate->add($apiRefreshPeriod);
+	$runNow = $now > $nextCallDate;
+	return $runNow;
+}
+
+// This function sets the last time that the API was called and stores it in a persisted file for quick reference
+function setLastCallDate() {
+	$now = new DateTime("now");
+	file_put_contents($LAST_EA_API_CALL_TIME, json_encode($now));
+}
+
+// echo '<pre>'; print_r($filteredOnlineActions); echo '</pre>';
+// Call EveryAction API and return a json object with an array called "items" that contains all of the OnlineAction json objects returned
+// Called by fetchNewOnlineActionForms
+function getOnlineActionsFromApi() {
+	$eventsApi = new EventsAPI();
+	$onlineActions = $eventsApi->fetchOnlineActions();
+	setLastCallDate();
+	return $onlineActions;
+}
+
+function echoVar($var) {
+	echo '<pre>'; print_r($var); echo '</pre>';
+}
+
+function addDashboardWidgets() {
+	wp_add_dashboard_widget('everyaction_fetch_data_widget', 'Fetch Everyaction Data', 'renderFetchOnlineActionsButton');
+}
+add_action('wp_dashboard_setup', 'addDashboardWidgets');
+add_action('wp_ajax_ea_action', 'onEveryactionAdminButtonClick');
+/**
+ * Add javascript file
+ */
+function addAjaxScript($hook) {
+	// add JS-File only on the dashboard page
+	if ('index.php' !== $hook) {
+		return;
+	}
+	$scriptLocation = get_template_directory_uri()."/ea8/ea8_widget_ajax_script.js";
+	wp_enqueue_script('ea8_widget_ajax_script', $scriptLocation, array(), NULL, true);
+}
+add_action('admin_enqueue_scripts', 'addAjaxScript');
+
+
+function renderFetchOnlineActionsButton() {
+	?>
+	<form id="ea_form" action="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" method="post">
+		<input type="hidden" name="ea_action" id="ea_action" value="ea_action">
+		<p class="submit">
+			<?php submit_button( __( 'Update Everyaction Data' ), 'primary', 'save', false ); ?>
+		</p>
+	</form>
+	<?php
+	return;
+}
+
+function onEveryactionAdminButtonClick() {
+	fetchNewOnlineActions(true);
+	echo "Everyaction Data Updated Successfully";
+}
+
+function ea_scheduleCronJobs() {
+	if ( !wp_next_scheduled( 'ea_delete_old_events' ) ) {
+		wp_schedule_event(time(), 'daily', 'ea_delete_old_events');
+	}
+}
+function ea_deleteOldEvents() {
+	$posts = get_posts([
+		'numberposts' => '-1', // -1 for all posts
+	  	'post_type' => 'events',
+	  	'post_status' => 'publish',
+		'fields' => 'ids'
+	]);
+	foreach($posts as $postId) {
+		$deletePost = false;
+		if( !get_field('event_start_date', $postId) ) {
+			$deletePost = true;
+		}
+		$eventDateTime = new DateTime(get_field('event_start_date', $postId));
+		$now = new DateTime("now");
+		// if the post is already marked for deleted or if the event's start date is in the past, delete the post.
+		$deletePost = $deletePost || ( $now > $eventDateTime );
+
+		if($deletePost) {
+			wp_delete_post($postId);
+		}
+	}
+}
+add_action('ea_cron_hook', 'ea_scheduleCronJobs');
+
+
+
+
+// fetchNewOnlineActions();
+
+// ==================== API Calls =======================
