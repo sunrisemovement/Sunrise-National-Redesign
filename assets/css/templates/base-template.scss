@@ -1,5 +1,7 @@
 .base-page,
-.archive {
+.archive,
+.error-404,
+.search-results {
 	.post-header {
 		min-height: 440px;
 		display: flex;
@@ -16,6 +18,7 @@
 			min-height: unset;
 			overflow: initial;
 			padding: 4rem 0;
+			margin-top: 14px;
 		}
 
 		.container {
@@ -118,10 +121,13 @@
 						.button-row {
 							margin-top: 1rem;
 							margin-left: -10px;
+							@include media-breakpoint-down(lg) {
+								margin-left: -2px;
+							}
 
 							button {
 								margin-bottom: 1rem;
-								margin-right: 1rem;
+								margin-right: 0.5rem;
 								&:nth-of-type(2) {
 									background-color: $secondary;
 								}
@@ -138,5 +144,18 @@
 	article {
 		float: left;
 		width: 100%;
+	}
+}
+
+.error-404,
+.archive,
+.search-results {
+	.entry-content {
+		padding: 60px 0 120px 0;
+		width: 100%;
+		float: left;
+	}
+	.post-header {
+		min-height: unset;
 	}
 }

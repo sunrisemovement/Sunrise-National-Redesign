@@ -15,8 +15,7 @@
 				<?php
 					$the_query = new WP_Query( array (
 					'post_type' => 'post',
-					'posts_per_page' => '1',
-					'category_name' => 'featured',
+					'posts_per_page' => '1'
 				 ) );
 					// output the random post
 					 if ( $the_query->have_posts() ) : ?>
@@ -35,8 +34,8 @@
 				<div class="col-lg-3 col-md-6 blog-vertical-thumbnail-section order-lg-1">
 				<?php
 					$the_query = new WP_Query( array (
-						'orderby' => 'rand', 'posts_per_page' => '5',
-						'post_type' => 'post',
+						'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => '5',
+						'post_type' => 'post', 'offset' => "1",
 					) );
 					// output the random post
 					 if ( $the_query->have_posts() ) : ?>

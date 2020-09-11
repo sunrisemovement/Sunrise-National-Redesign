@@ -12,7 +12,7 @@
 		<div class="row">
 
 			<?php
-				$the_query = new WP_Query( array ( 'orderby' => 'rand', 'posts_per_page' => '4', 'post_type' => 'post' ) );
+				$the_query = new WP_Query( array ( 'orderby' => 'date',  'offset' => '5', 'order' => 'DESC', 'posts_per_page' => '4', 'post_type' => 'post' ) );
 				// output the random post
 				 if ( $the_query->have_posts() ) : ?>
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>

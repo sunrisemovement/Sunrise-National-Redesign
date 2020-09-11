@@ -35,12 +35,12 @@
 					<?php //the_title( '<h1 class="entry-title"><b>', '</b></h1>' ); ?>
 					<div class="button-row">
 						<?php if(get_field('button_1_url')): ?>
-							<a href="<?php echo get_field('button_1_url'); ?>"><button class="header-button btn has-sunrise-gold-background-color ">
+							<a href="<?php echo get_field('button_1_url'); ?>"><button class="header-button btn has-sunrise-white-background-color ">
 								<?php echo get_field('button_1_text'); ?>
 							</button></a>
 						<?php endif?>
 						<?php if(get_field('button_2_url')): ?>
-							<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button btn has-sunrise-white-background-color">
+							<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button btn has-sunrise-gold-background-color">
 								<?php echo get_field('button_2_text'); ?>
 							</button></a>
 						<?php endif?>

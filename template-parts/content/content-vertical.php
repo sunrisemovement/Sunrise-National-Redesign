@@ -9,7 +9,7 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<a href="<?php the_permalink(); ?>">
+	<a class="card" href="<?php the_permalink(); ?>">
 		<?php if(get_the_post_thumbnail()): ?>
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail('medium'); ?>
@@ -38,6 +38,13 @@
 			echo get_field('post_author');
 			?>
 		</div><!-- .entry-meta -->
+
+		<?php if(the_excerpt()): ?>
+		<div class="excerpt <?php echo $base_class; ?>__post-excerpt"><?php
+				the_excerpt();
+		?></div>
+			<?php endif?>
+
 	</header><!-- .entry-header -->
 	<?php if ( 'post' === get_post_type() ) : ?>
 	<?php endif; ?>

@@ -26,6 +26,11 @@
 				);
 			}
 			?>
-		</ul><?php //echo do_shortcode( 'wpbsearch' ); ?>
+		</ul>
+    <div class="">
+    				<?php
+  				//	get_search_form();
+  					?>
+    </div>
 	</div>
 </nav>

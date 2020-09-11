@@ -106,12 +106,41 @@
 	}
 }
 
+.content-sidebar {
+	article {
+		margin-bottom: 0.8rem;
+	}
+}
+
+.has-layout-list
+	.wp-block-getwid-custom-post-type__post
+	+ .wp-block-getwid-custom-post-type__post {
+	margin-top: 22px;
+	overflow: visible;
+}
+.wp-block-getwid-custom-post-type {
+	overflow: visible;
+}
+
 .content-vertical {
 	article {
-		.post-thumbnail img {
-			width: 30%;
+		float: unset;
+		@include drop-shadow;
+		.card {
+			flex-direction: row;
+			align-items: center;
+		}
+		.post-thumbnail {
+			width: 200px;
 			float: left;
-			object-fit: cover;
+			height: 120px;
+			overflow: hidden;
+			margin-right: 1.2rem;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 		.entry-header {
 			width: 70%;
@@ -125,6 +154,7 @@
 		.entry-title {
 			font-size: 24px;
 			line-height: 1.2;
+			font-weight: 400;
 		}
 		.entry-meta {
 			font-size: 16px;

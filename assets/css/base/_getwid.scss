@@ -18,6 +18,12 @@
 	}
 }
 
+.content-search {
+	.card-img {
+		height: unset;
+	}
+}
+
 .entry-content div.wp-block-getwid-image-box {
 	@include media-breakpoint-down(md) {
 		display: inline-block;
@@ -38,13 +44,15 @@
 
 .custom-post-type-campaign {
 	overflow: visible;
+	position: relative;
 	@include media-breakpoint-up(md) {
 		@include offset-gradient-border;
 		&:after {
-			top: 180px;
-			left: -50px;
+			top: 80px;
+			left: -60px;
 			right: 0;
-			height: 60%;
+			height: calc(100% - 140px);
+			bottom: 0;
 			display: block;
 		}
 	}
@@ -200,10 +208,8 @@
 	background-attachment: fixed;
 }
 
-.wp-block-getwid-custom-post-type {
-	.card {
-		border: 0px;
-	}
+.card {
+	border: 0px !important;
 }
 @media only screen and (min-width: 600px) {
 	.getwid-columns.getwid-columns-2 > * {

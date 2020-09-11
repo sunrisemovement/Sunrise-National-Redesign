@@ -56,7 +56,7 @@
 }
 
 .header-menu.bottom {
-	width: 70%;
+	width: 100%;
 	float: right;
 	display: flex;
 	font-size: 1rem;
@@ -408,6 +408,10 @@ button.close-nav-toggle .toggle-text {
 	margin-bottom: 0;
 }
 
+.mobile-menu {
+	background-color: $yellow;
+}
+
 .modal-menu li {
 	display: flex;
 	flex-wrap: wrap;
@@ -415,12 +419,13 @@ button.close-nav-toggle .toggle-text {
 	justify-content: flex-start;
 	margin: 0;
 	border-top: 1px solid $gray-sunrise;
-	&:hover {
-		background-color: rgba(255, 255, 255, 0.04);
+	li {
+		background-color: $yellow;
 	}
 	&:last-of-type {
 		border-bottom: 1px solid $gray-sunrise;
 	}
+	background-color: $black;
 }
 
 .modal-menu > li.smvmt2020-highlight,
@@ -470,7 +475,7 @@ button.close-nav-toggle .toggle-text {
 }
 
 .modal-menu ul.sub-menu {
-	background: $yellow;
+	background-color: $yellow;
 	z-index: 100;
 	padding: 0;
 	> .menu-item a {

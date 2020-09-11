@@ -94,13 +94,13 @@
 }
 
 @mixin affordance {
-	&::before {
+	å &::before {
 		position: absolute;
 		left: calc(50% - 21px);
 		bottom: -36px;
 		content: "";
 		display: block;
-		background-image: url("/wp-content/themes/sunrise-national-redesign/assets/img/affordance.svg");
+		//background-image: url("/wp-content/themes/sunrise-national-redesign/assets/img/affordance.svg");
 		z-index: 200;
 		display: none; //change this after launch
 		@include media-breakpoint-down(md) {
