@@ -11,7 +11,7 @@ https://airtable.com/shrWWYWcB2LLxr8Le
 
 # WordPress Local Setup
 
-Download local by flywheel, install, and run a local instance
+Download flywheelby flywhee, install, and run a local instance
 https://localwp.com/
 
 Import theme in your site in app/public/wp-content/themes/ using
