@@ -15,6 +15,7 @@
 	</header><!-- .page-header -->
 
 	<div class="page-content">
+		<div class="row">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -34,18 +35,27 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'sunrise-national' ); ?></p>
+			<p class="col"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'sunrise-national' ); ?></p>
+			<div class="col text-align-right">
 			<?php
 			get_search_form();
-
+			?>
+			</div>
+				<?php
 		else :
 			?>
-
+			<div class="col ">
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'sunrise-national' ); ?></p>
+			</div>
+			<div class="col text-align-right">
 			<?php
 			get_search_form();
+			?>
 
+			</div>
+			<?php
 		endif;
 		?>
+	</div>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

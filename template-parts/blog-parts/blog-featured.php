@@ -8,15 +8,14 @@
  */
 
 ?>
-<div class="container blog-featured-section blog-list">
+<div class=" blog-featured-section container alignwide blog-list">
 		<div class="row">
 
 				<div class="col-lg-6 col-md-12 blog-featured-single order-lg-2">
 				<?php
 					$the_query = new WP_Query( array (
 					'post_type' => 'post',
-					'posts_per_page' => '1',
-					'category_name' => 'featured',
+					'posts_per_page' => '1'
 				 ) );
 					// output the random post
 					 if ( $the_query->have_posts() ) : ?>
@@ -35,8 +34,8 @@
 				<div class="col-lg-3 col-md-6 blog-vertical-thumbnail-section order-lg-1">
 				<?php
 					$the_query = new WP_Query( array (
-						'orderby' => 'rand', 'posts_per_page' => '5',
-						'post_type' => 'post',
+						'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => '5',
+						'post_type' => 'post', 'offset' => "1",
 					) );
 					// output the random post
 					 if ( $the_query->have_posts() ) : ?>

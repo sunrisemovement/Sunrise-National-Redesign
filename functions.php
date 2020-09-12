@@ -138,7 +138,7 @@ add_action( 'widgets_init', 'sunrise_national_widgets_init' );
  */
 function sunrise_national_scripts() {
 	wp_enqueue_style( 'sunrise-national-style', get_stylesheet_uri() );
-	
+
 	wp_enqueue_style(
 		'smvmt2020-source-serif-pro',
 		'https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap',
@@ -471,6 +471,35 @@ function cptui_register_my_cpts() {
 		"supports" => [ "title", "editor", "thumbnail", "custom-fields", "page-attributes", "post-formats" ],
 	];
 
+add_action( 'init', 'endorsement_taxonomy', 0 );
+
+	//create a custom taxonomy name it "type" for your posts
+function endorsement_taxonomy() {
+
+  $labels = array(
+    'name' => _x( 'tatus', 'taxonomy general name' ),
+    'singular_name' => _x( 'Status', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Status' ),
+    'all_items' => __( 'All Status' ),
+    'parent_item' => __( 'Parent Status' ),
+    'parent_item_colon' => __( 'Parent Status:' ),
+    'edit_item' => __( 'Edit Status' ),
+    'update_item' => __( 'Update Status' ),
+    'add_new_item' => __( 'Add New Status' ),
+    'new_item_name' => __( 'New Status Name' ),
+    'menu_name' => __( 'Status' ),
+  );
+
+  register_taxonomy('Status',array('our_endorsements'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'status' ),
+  ));
+}
+
 	register_post_type( "our_endorsements", $args );
 
 	/**
@@ -511,3 +540,18 @@ function cptui_register_my_cpts() {
 
 
 add_action( 'init', 'cptui_register_my_cpts' );
+
+/**
+* Removes or edits the 'Protected:' part from posts titles
+*/
+
+add_filter( 'protected_title_format', 'remove_protected_text' );
+function remove_protected_text() {
+return __('Protected: %s');
+}
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page();
+
+}

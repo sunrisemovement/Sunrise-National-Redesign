@@ -38,6 +38,10 @@
 				}
 				.header-blocks {
 					position: relative;
+					.post-thumbnail {
+						max-height: 380px;
+						overflow: hidden;
+					}
 					@include media-breakpoint-up(md) {
 						margin-top: 2.2rem;
 						min-height: 350px;

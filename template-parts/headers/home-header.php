@@ -10,13 +10,13 @@
 ?>
 
 <header class="entry-header post-header">
-	<div class="container">
+	<div class="alignwide">
 		<div class="row header-row <?php if(get_field('header_embed') || get_the_post_thumbnail()){
 				echo ""; }
 				else {
 				echo "";
 			}?>">
-				<div class="header-blocks header-content col-md-6">
+				<div class="header-blocks header-content col-md-7">
 					<?php if(get_field('secondary_header')): ?>
 						<div class="h1-subhead-row">
 							<h4 class="h1-subhead">
@@ -35,12 +35,12 @@
 					<?php //the_title( '<h1 class="entry-title"><b>', '</b></h1>' ); ?>
 					<div class="button-row">
 						<?php if(get_field('button_1_url')): ?>
-							<a href="<?php echo get_field('button_1_url'); ?>"><button class="header-button btn btn-primary">
+							<a href="<?php echo get_field('button_1_url'); ?>"><button class="header-button btn has-sunrise-white-background-color ">
 								<?php echo get_field('button_1_text'); ?>
 							</button></a>
 						<?php endif?>
 						<?php if(get_field('button_2_url')): ?>
-							<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button btn btn-light">
+							<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button btn has-sunrise-gold-background-color">
 								<?php echo get_field('button_2_text'); ?>
 							</button></a>
 						<?php endif?>

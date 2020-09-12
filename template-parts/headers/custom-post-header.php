@@ -41,12 +41,12 @@
 
 						<div class="button-row">
 							<?php if(get_field('button_1_url')): ?>
-								<a href="<?php echo get_field('button_1_url'); ?>"><button class="header-button btn btn-primary">
+								<a href="<?php echo get_field('button_1_url'); ?>"><button class="header-button  yellow">
 									<?php echo get_field('button_1_text'); ?>
 								</button></a>
 							<?php endif?>
 							<?php if(get_field('button_2_url')): ?>
-								<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button btn btn-light">
+								<a href="<?php echo get_field('button_2_url'); ?>"><button class="header-button  btn-light">
 									<?php echo get_field('button_2_text'); ?>
 								</button></a>
 							<?php endif?>
@@ -66,7 +66,7 @@
 							<iframe class="video" width="560" height="315" align="bottom" src="<?php echo get_field('header_embed'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						<?php elseif(get_the_post_thumbnail()): ?>
 							<div class="post-thumbnail">
-								<?php the_post_thumbnail('medium'); ?>
+								<?php the_post_thumbnail('large'); ?>
 							</div><!-- .post-thumbnail -->
 							<?php endif?>
 					</div>

@@ -8,12 +8,14 @@ $base_class = esc_attr($extra_attr['block_name']);
 ?>
 <a class="card" href="<?php echo get_the_permalink();?>">
   <div class=" <?php echo $base_class; ?>__post">
-    <?php if(get_field('header_image')): ?>
-      <div class="post-thumbnail">
-        <?php the_post_thumbnail('medium'); ?>
+    <?php if(get_the_post_thumbnail()): ?>
+      <div class="card-img">
+        <?php the_post_thumbnail('large'); ?>
       </div><!-- .post-thumbnail -->
   <?php else:?>
-    <img class="card-img-top card-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/event-card.jpg" />
+      <div class="card-img">
+        <img class="card-img-top card-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/event-card.jpg" />
+      </div>
   <?php endif?>
       <div class="card-body <?php echo $base_class; ?>__post-content-wrapper">
           <div class="event-timing">
@@ -29,7 +31,15 @@ $base_class = esc_attr($extra_attr['block_name']);
           <?php endif?>
         </div>
           <div class="event-title <?php echo $base_class; ?>__post-header">
-              <?php the_title( '<h4 class="card-title '.$base_class.'__post-title">', '</h4>' ); ?>
+              <?php
+              $thetitle = get_the_title(); /* or you can use get_the_title() */
+              $getlength = strlen($thetitle);
+              $thelength = 25;
+                ?>
+                <h4 class="card-title">
+                    <?php echo substr($thetitle, 0, $thelength);
+                    if ($getlength > $thelength) echo "...";?>
+              </h4>
           </div>
         </div>
       </div>

@@ -17,6 +17,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
@@ -76,7 +77,7 @@
 						</div>
 							<div class="bottom-menu">
 								<a href="/" class="site-branding">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/sunrise-logo.svg" width="" height="" alt="Sunrise Movement Logo" />
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/sunrise-logo.png" width="" height="" alt="Sunrise Movement Logo" />
 								</a><!-- .site-branding -->
 								<ul class="header-menu bottom primary-menu d-none d-md-flex">
 									<?php

@@ -43,8 +43,7 @@
 }
 
 .header-menu.top {
-	width: 50%;
-	float: right;
+	flex: 1;
 	display: flex;
 	font-size: 1rem;
 	font-weight: 500;
@@ -53,11 +52,11 @@
 	justify-content: flex-end;
 }
 .social-menu {
-	width: 223px;
+	width: auto;
 }
 
 .header-menu.bottom {
-	width: 70%;
+	width: 100%;
 	float: right;
 	display: flex;
 	font-size: 1rem;
@@ -158,7 +157,10 @@
 	padding: 24px 32px;
 	font-weight: $font-weight-bold;
 	font-size: $font-size-base;
-	&, &:hover, &:active, &:focus {
+	&,
+	&:hover,
+	&:active,
+	&:focus {
 		color: $yellow !important;
 		fill: $yellow;
 		background: none !important;
@@ -334,6 +336,9 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 	transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
 	z-index: 101;
 }
+.btn.nav-toggle {
+	margin-right: 0;
+}
 
 .admin-bar .menu-modal {
 	top: 32px;
@@ -357,7 +362,7 @@ body.touch-enabled .primary-menu ul li.menu-item-has-children > a {
 }
 
 .menu-modal-inner {
-	background: rgba(0,0,0,0.9);
+	background: rgba(0, 0, 0, 0.9);
 	display: flex;
 	justify-content: stretch;
 	overflow: auto;
@@ -403,6 +408,10 @@ button.close-nav-toggle .toggle-text {
 	margin-bottom: 0;
 }
 
+.mobile-menu {
+	background-color: $yellow;
+}
+
 .modal-menu li {
 	display: flex;
 	flex-wrap: wrap;
@@ -410,12 +419,13 @@ button.close-nav-toggle .toggle-text {
 	justify-content: flex-start;
 	margin: 0;
 	border-top: 1px solid $gray-sunrise;
-	&:hover {
-		background-color: rgba(255,255,255,0.04);
+	li {
+		background-color: $yellow;
 	}
 	&:last-of-type {
 		border-bottom: 1px solid $gray-sunrise;
 	}
+	background-color: $black;
 }
 
 .modal-menu > li.smvmt2020-highlight,
@@ -465,7 +475,8 @@ button.close-nav-toggle .toggle-text {
 }
 
 .modal-menu ul.sub-menu {
-	background: $yellow;
+	background-color: $yellow;
+	z-index: 100;
 	padding: 0;
 	> .menu-item a {
 		color: $gray-sunrise !important;
@@ -675,6 +686,12 @@ ul.social-icons li {
 	font-weight: 700;
 	letter-spacing: normal;
 	color: $yellow;
+}
+
+.secondary-menu li a {
+	font-size: 0.9rem;
+	font-weight: 400;
+	margin-top: 2px;
 }
 
 .toggle-inner .toggle-text {

@@ -60,6 +60,17 @@ textarea {
 			@include media-breakpoint-down(md) {
 				margin-top: 2rem;
 			}
+			.HeaderHtml {
+				color: $black;
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			p {
+				width: 100%;
+				max-width: 100%;
+			}
 		}
 		.at-title {
 			display: none;
@@ -156,11 +167,21 @@ textarea {
 .ngp-form,
 .ngp-form .at-inner {
 	background-color: $black;
+
+	.thankYou p {
+		color: $white;
+	}
 }
 .yellow .ngp-form,
 .yellow .ngp-form .at-inner {
 	background-color: $yellow;
 	header {
+		color: $black;
+		&.at-title {
+			color: black;
+		}
+	}
+	.thankYou p {
 		color: $black;
 	}
 	legend {
@@ -185,6 +206,12 @@ textarea {
 	}
 	header {
 		color: $white;
+		&.at-title {
+			color: $white;
+		}
+	}
+	.thankYou p {
+		color: $white;
 	}
 }
 
@@ -192,6 +219,12 @@ textarea {
 .white .ngp-form .at-inner {
 	background-color: $white;
 	header {
+		color: $black;
+		&.at-title {
+			color: $black;
+		}
+	}
+	.thankYou p {
 		color: $black;
 	}
 	legend {
@@ -212,8 +245,14 @@ textarea {
 	background-color: $sunrise-background-dark;
 	header {
 		color: $black;
+		&.at-title {
+			color: $black;
+		}
 	}
 	legend {
+		color: $black;
+	}
+	.thankYou p {
 		color: $black;
 	}
 	.at-fieldset {
@@ -235,7 +274,9 @@ textarea {
 }
 // event styling
 .ngp-form {
-	max-width: map-get($container-max-widths, "md") !important;
+	@include media-breakpoint-up(md) {
+		max-width: map-get($container-max-widths, "lg") !important;
+	}
 	margin: 0 auto;
 	padding: 2rem;
 	@include drop-shadow;
@@ -247,10 +288,13 @@ textarea {
 	header {
 		color: $white;
 		&.at-title {
+			color: $white;
 			font-family: $font-family-serif;
 			text-align: left;
 			font-style: italic;
+			line-height: 1.2;
 			font-size: 32px;
+			margin-bottom: 0.6rem;
 			padding: 10px 0 10px 20px;
 		}
 	}
@@ -263,6 +307,10 @@ textarea {
 		.at-markup {
 			padding-right: 17.5px;
 			padding-left: 17.5px;
+			margin: 0;
+			p {
+				width: 100% !important;
+			}
 		}
 		form {
 			margin-top: 20px;
@@ -283,9 +331,6 @@ textarea {
 					margin: 0;
 					padding-right: 1rem;
 				}
-			}
-			.AdditionalInformation {
-				margin-top: -90px;
 			}
 		}
 		.at-form-submit {

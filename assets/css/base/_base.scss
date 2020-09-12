@@ -27,6 +27,7 @@ object {
 
 .button,
 button,
+.btn,
 .wp-block-button a,
 .at-submit,
 .btn-at .btn-at-primary {
@@ -38,6 +39,28 @@ button,
 	&.yellow {
 		background: $yellow;
 		color: $black;
+	}
+}
+
+.unbutton-link {
+	padding: 0;
+	background: transparent;
+	color: $primary;
+	&yellow {
+		color: $yellow;
+	}
+	&:hover {
+		background: transparent;
+		color: $primary;
+	}
+	a,
+	div {
+		@include reverse-underliner;
+		padding: 0;
+		background: transparent;
+		&:hover {
+			background: transparent;
+		}
 	}
 }
 
@@ -60,10 +83,6 @@ button,
 	margin-bottom: 64px;
 }
 
-.entry-content {
-	min-height: 300px;
-}
-
 $section-padding: 100px 0;
 
 @include media-breakpoint-down(md) {
@@ -81,7 +100,7 @@ $section-padding: 100px 0;
 	margin: 0 calc(50% - 50vw);
 	max-width: 100vw;
 	width: 100vw;
-	overflow: hidden;
+	position: relative;
 }
 
 .alignfull {
@@ -103,121 +122,5 @@ $section-padding: 100px 0;
 		max-width: 100%;
 		padding-right: 17.5px;
 		padding-left: 17.5px;
-	}
-}
-
-//Grid
-
-.entry-content
-	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns) {
-	margin: 0 auto 1rem auto;
-
-	@include media-breakpoint-down(xl) {
-		max-width: map-get($container-max-widths, "md");
-		width: map-get($container-max-widths, "md");
-	}
-
-	@include media-breakpoint-down(md) {
-		width: 100%;
-		max-width: 100%;
-		padding-right: 17.5px;
-		padding-left: 17.5px;
-	}
-}
-
-main article .entry-content .wp-block-columns {
-	margin: 0 auto 2rem auto;
-	@include media-breakpoint-down(xl) {
-		max-width: map-get($container-max-widths, "lg");
-		width: map-get($container-max-widths, "lg");
-	}
-
-	@include media-breakpoint-down(md) {
-		width: 100%;
-		max-width: 100%;
-		padding-right: 17.5px;
-		padding-left: 17.5px;
-	}
-	&.alignwide {
-		@include media-breakpoint-down(xl) {
-			max-width: map-get($container-max-widths, "xl");
-			width: map-get($container-max-widths, "xl");
-		}
-	}
-	&.alignfull {
-		width: 100%;
-		max-width: 100%;
-		padding-right: 17.5px;
-		padding-left: 17.5px;
-	}
-}
-
-.wp-block-getwid-section
-	.wp-block-getwid-section__wrapper
-	.wp-block-getwid-section__inner-wrapper {
-	margin: 0 auto;
-
-	.wp-block-columns.alignwide {
-		@include media-breakpoint-down(xl) {
-			max-width: map-get($container-max-widths, "xl");
-			width: map-get($container-max-widths, "xl");
-		}
-	}
-	.wp-block-columns {
-		@include media-breakpoint-down(xl) {
-			max-width: map-get($container-max-widths, "md");
-			width: map-get($container-max-widths, "md");
-		}
-
-		@include media-breakpoint-down(md) {
-			width: 100%;
-			padding-right: 17.5px;
-			padding-left: 17.5px;
-		}
-	}
-	.wp-block-getwid-section__inner-wrapper {
-		@include media-breakpoint-down(xl) {
-			max-width: map-get($container-max-widths, "md");
-			width: map-get($container-max-widths, "md");
-		}
-
-		@include media-breakpoint-down(md) {
-			width: 100%;
-			padding-right: 17.5px;
-			padding-left: 17.5px;
-		}
-	}
-}
-
-.wp-block-getwid-section.alignwide
-	.wp-block-getwid-section__wrapper
-	.wp-block-getwid-section__inner-wrapper {
-	@include media-breakpoint-down(xl) {
-		max-width: map-get($container-max-widths, "xl");
-		width: map-get($container-max-widths, "xl");
-	}
-}
-
-.narrow-container {
-	margin: 0 auto;
-
-	@include media-breakpoint-down(xl) {
-		max-width: map-get($container-max-widths, "md");
-		width: map-get($container-max-widths, "md");
-	}
-
-	@include media-breakpoint-down(md) {
-		width: 100%;
-		padding-right: 17.5px;
-		padding-left: 17.5px;
-	}
-}
-
-.wp-block-column {
-	@include media-breakpoint-down(md) {
-		padding: 0 1em 60px 1em;
-	}
-	.wp-block-column {
-		padding: 0;
 	}
 }

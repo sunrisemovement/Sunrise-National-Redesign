@@ -146,11 +146,12 @@ $emphasized-link-hover-darken-percentage: 15% !default;
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
+  xxs: 0,
+  xs: 568,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1400px,
 ) !default;
 
 
@@ -245,7 +246,6 @@ $h1-font-size:                $font-size-base * 3.3 !default;
 $h2-font-size:                $font-size-base * 2.2 !default;
 $h3-font-size:                $font-size-base * 1.67 !default;
 $h4-font-size:                $font-size-base * 1.167 !default;
-
 
 $headings-margin-bottom:      $spacer / 2 !default;
 $headings-font-family:        $font-family-sans-serif !default;

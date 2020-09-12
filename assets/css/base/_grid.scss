@@ -1,0 +1,210 @@
+//Grid
+
+.post,
+.page {
+	margin: 0;
+}
+
+.entry-content
+	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns):not(.has-text-align-center):not(.ngp-form):not(.wp-block-group):not(.wp-block-separator) {
+	margin: 0 auto 1rem auto;
+	float: unset;
+
+	@include media-breakpoint-up(md) {
+		max-width: map-get($container-max-widths, "md");
+		width: map-get($container-max-widths, "md");
+	}
+
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+}
+
+h3.has-text-align-middle,
+h2.has-text-align-middle {
+	@include media-breakpoint-up(md) {
+		max-width: map-get($container-max-widths, "md");
+		width: map-get($container-max-widths, "md");
+	}
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+}
+
+.single-post .entry-content {
+	> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width):not(.wp-block-columns):not(.wp-block-group) {
+		margin: 0 auto 1rem auto;
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+}
+
+.entry-header .container {
+	@include media-breakpoint-up(lg) {
+		max-width: map-get($container-max-widths, "xl");
+		width: map-get($container-max-widths, "xl");
+	}
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+}
+
+.wp-block-columns {
+	.wp-block-getwid-post-carousel .slick-dotted.slick-slider {
+		overflow: hidden;
+	}
+}
+
+article .entry-content .wp-block-columns,
+article .entry-content .wp-block-media-text,
+article .entry-content .container {
+	margin: 0 auto 2rem auto;
+
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		max-width: map-get($container-max-widths, "xl");
+		width: map-get($container-max-widths, "xl");
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	p {
+		margin: 0 0 1rem 0;
+	}
+
+	&.alignwide {
+		@include media-breakpoint-up(lg) {
+			max-width: map-get($container-max-widths, "xl");
+			width: map-get($container-max-widths, "xl");
+		}
+		@include media-breakpoint-down(lg) {
+			max-width: map-get($container-max-widths, "lg");
+			width: map-get($container-max-widths, "lg");
+		}
+		@include media-breakpoint-down(md) {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+	&.alignfull {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+}
+
+.wp-block-getwid-section {
+	overflow: hidden;
+	&.alignfull {
+		padding: 0;
+	}
+}
+
+.wp-block-getwid-section
+	.wp-block-getwid-section__wrapper
+	.wp-block-getwid-section__inner-wrapper {
+	margin: 0 auto;
+
+	.wp-block-columns.alignwide {
+		@include media-breakpoint-up(lg) {
+			max-width: map-get($container-max-widths, "xl");
+			width: map-get($container-max-widths, "xl");
+		}
+	}
+	.wp-block-columns.alignfull {
+		@include media-breakpoint-up(md) {
+			width: 100%;
+			max-width: 100%;
+			padding-right: 17.5px;
+			padding-left: 17.5px;
+		}
+	}
+
+	.wp-block-getwid-section__inner-wrapper {
+		@include media-breakpoint-up(md) {
+			max-width: map-get($container-max-widths, "md") !important;
+			width: map-get($container-max-widths, "md") !important;
+		}
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+			padding-right: 17.5px;
+			padding-left: 17.5px;
+		}
+	}
+}
+
+.wp-block-getwid-section.alignfull {
+	overflow: hidden;
+}
+
+.wp-block-getwid-section.alignwide
+	.wp-block-getwid-section__wrapper
+	.wp-block-getwid-section__inner-wrapper {
+	@include media-breakpoint-up(md) {
+		max-width: map-get($container-max-widths, "xl");
+		width: map-get($container-max-widths, "xl");
+	}
+}
+
+.wp-block-getwid-section.alignfull
+	.wp-block-getwid-section__wrapper
+	.wp-block-getwid-section__inner-wrapper {
+	@include media-breakpoint-up(md) {
+		max-width: map-get($container-max-widths, "xl");
+		width: map-get($container-max-widths, "xl");
+	}
+}
+
+.narrow-container {
+	margin: 0 auto;
+
+	@include media-breakpoint-up(md) {
+		max-width: map-get($container-max-widths, "md");
+		width: map-get($container-max-widths, "md");
+	}
+
+	@include media-breakpoint-down(md) {
+		width: 100%;
+		padding-right: 17.5px;
+		padding-left: 17.5px;
+	}
+}
+
+.wp-block-column {
+	@include media-breakpoint-down(md) {
+		padding: 0 1em 60px 1em;
+	}
+	.wp-block-column {
+		padding: 0;
+	}
+}
+
+@media (max-width: 960px) {
+	.wp-block-columns {
+		display: block;
+		.wp-block-column {
+			padding: 0;
+			margin: 50px 0;
+		}
+	}
+}
