@@ -4,52 +4,74 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package WordPress_Bootstrap_Starter_Theme
+ * @package Sunrise_National
  */
 
-get_header();
-?>
-
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'wordpress-bootstrap-starter-theme' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
+		get_header();
 		?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+			<div id="primary" class="content-area archive">
+				<main id="main" class="site-main">
+					<header class="entry-header post-header">
+						<div class="container">
+							<div class="row header-row <?php if(get_field('header_embed') || get_the_post_thumbnail()){
+									echo ""; }
+									else {
+									echo "justify-content-center no-photo";
+								}?>">
 
-<?php
-get_sidebar();
-get_footer();
+								<div class="header-blocks header-content col-md-8">
+										<div class="h1-subhead-row">
+											<h4 class="h1-subhead">
+												<b>
+												Search Results for
+												</b>
+											</h4>
+										</div>
+										<h1 class="entry-title"><b>
+									<?php 	printf( esc_html__( '%s', 'sunrise-national' ), '<span>' . get_search_query() . '</span>' );?>
+									</b>
+									</h1>
+						</div>
+						</div>
+						<div class="header-background-image">
+							<?php if(get_field('header_image')): ?>
+								<div class="header-background-image">
+								<img src="<?php echo get_field('header_image'); ?>" />
+							<?php endif?>
+						</div>
+
+					</header><!-- .entry-header -->
+					<div class="list-container">
+						<div class="narrow-container">
+							<?php
+ 						if ( have_posts() ) :
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
+
+						/*
+						 * Include the Post-Type-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						 */
+						get_template_part( 'template-parts/content/content-search', get_post_type() );
+
+					endwhile;
+
+					the_posts_navigation();
+
+				else :
+
+					get_template_part( 'template-parts/content/content', 'none' );
+
+				endif;
+				?>
+			</div>
+			</div>
+
+				</main><!-- #main -->
+			</div><!-- #primary -->
+
+		<?php
+		get_footer();

@@ -1,0 +1,139 @@
+html {
+	height: 100%;
+	min-height: 100%;
+}
+.single-campaign {
+	height: 100%;
+	min-height: 100%;
+	.site {
+		height: 100%;
+		min-height: 100%;
+	}
+	.site-content {
+		float: left;
+		margin: 0 auto;
+		width: 100%;
+	}
+}
+.campaign-single {
+	height: 100%;
+	min-height: 100%;
+	display: contents;
+	.campaign-header {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: calc(100% - 150px);
+		@include media-breakpoint-down(md) {
+			height: unset;
+			background-image: none;
+			overflow: initial;
+			margin-top: 53px;
+			margin-top: 14px;
+			@include border-gradient-sunrise;
+		}
+
+		.container {
+			background-image: url("assets/img/gradientborderbroken.svg");
+			background-repeat: no-repeat;
+			background-size: 100% 91%;
+			height: 100%;
+			width: 100%;
+			margin-top: 20px;
+			margin-bottom: 10%;
+			display: flex;
+			align-items: bottom;
+			@include media-breakpoint-down(md) {
+				background-image: none;
+				margin-top: 130px;
+				display: flex;
+				height: unset;
+				margin: 0 auto;
+			}
+
+			.header-row {
+				align-items: flex-end;
+				bottom: 60px;
+				width: 110%;
+				position: relative;
+				display: flex;
+				@include media-breakpoint-down(md) {
+					width: unset;
+					position: relative;
+					bottom: unset;
+					h1 {
+						font-size: 2.5rem;
+					}
+				}
+				.header-blocks {
+					position: relative;
+					margin: 2rem 0;
+					@include media-breakpoint-up(lg) {
+						margin-bottom: 70px;
+						margin-left: -21px;
+						_::-webkit-full-page-media,
+						_:future,
+						:root .safari_only {
+							margin-bottom: 100px;
+						}
+					}
+					&.header-text {
+						@include media-breakpoint-down(sm) {
+							margin-bottom: 0px;
+						}
+					}
+					&.header-media {
+						@include media-breakpoint-down(md) {
+							max-height: 400px;
+							overflow: hidden;
+							margin-top: 0;
+						}
+					}
+					&.header-media iframe,
+					&.header-media img {
+						@include drop-shadow;
+						@include media-breakpoint-down(lg) {
+							margin-top: 30px;
+						}
+					}
+				}
+			}
+			.h1-subhead {
+				color: $yellow;
+			}
+
+			.entry-title {
+				color: $white;
+				margin-bottom: 50px;
+				line-height: 0.9;
+				@include media-breakpoint-down(lg) {
+					margin-bottom: 20px;
+				}
+			}
+			.button-row {
+				@include media-breakpoint-up(lg) {
+					position: absolute;
+					bottom: -30px;
+					left: 60px;
+				}
+				button {
+					margin-right: 1rem;
+					@include media-breakpoint-down(lg) {
+						margin-bottom: 1rem;
+					}
+				}
+			}
+		}
+		.header-background-image {
+			@include dark-full-overlay;
+		}
+		.site-content {
+			@include affordance;
+		}
+		.site-content {
+			@include media-breakpoint-down(lg) {
+				margin-top: 9rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,115 @@
+.post-single {
+	.post-header {
+		position: relative;
+		width: 100%;
+		float: left;
+		height: 420px;
+		z-index: 10;
+		@include border-gradient-sunrise;
+		@include media-breakpoint-down(md) {
+			height: unset;
+			background-image: none;
+			overflow: initial;
+		}
+		.header-background-image {
+			@include dark-full-overlay;
+		}
+
+		.container {
+			background-repeat: no-repeat;
+			background-size: 100% 91%;
+			height: 100%;
+			width: 100%;
+			margin-top: 25px;
+			margin-bottom: 10%;
+			@include media-breakpoint-down(md) {
+				background-image: none;
+			}
+
+			.header-row {
+				align-items: center;
+				bottom: 40px;
+				@include media-breakpoint-down(md) {
+					position: relative;
+					bottom: unset;
+					h1 {
+						font-size: 2.5rem;
+					}
+				}
+				.header-blocks {
+					position: relative;
+					.post-thumbnail {
+						max-height: 380px;
+						overflow: hidden;
+					}
+					@include media-breakpoint-up(md) {
+						margin-top: 2.2rem;
+						min-height: 350px;
+						display: flex;
+						flex-flow: column;
+						justify-content: center;
+					}
+					&.header-media {
+						@include media-breakpoint-up(md) {
+							margin-bottom: 42px;
+						}
+					}
+					&.header-media iframe,
+					&.header-media img {
+						@include drop-shadow;
+					}
+					&.header-content {
+						.h1-subhead {
+							color: $yellow;
+						}
+
+						.dates {
+							color: $white;
+						}
+
+						.entry-title {
+							color: $white;
+							margin-bottom: 1rem;
+							line-height: 0.9;
+							@include media-breakpoint-down(md) {
+								margin-bottom: 20px;
+							}
+						}
+						.header-button {
+							@include media-breakpoint-up(md) {
+								position: absolute;
+								bottom: -30px;
+								left: 60px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.single .post-single article .entry-content {
+	margin-top: 0;
+}
+
+.single-actions,
+.single-our_endorsements {
+	article {
+		float: left;
+		width: 100%;
+		margin-top: 6rem;
+	}
+	.entry-content {
+		margin: 0 auto;
+	}
+}
+
+.single-actions {
+	.entry-content
+		> *:not(.alignwide):not(.alignfull):not(.getwid-section-content-full-width) {
+		margin: 0 auto;
+		max-width: map-get($container-max-widths, md);
+		width: map-get($container-max-widths, md);
+	}
+}

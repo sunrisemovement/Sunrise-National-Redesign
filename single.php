@@ -1,37 +1,28 @@
 <?php
 /**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress_Bootstrap_Starter_Theme
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+* Template Name: Custom Post Type
+ * @package Sunrise_National
  */
 
 get_header();
 ?>
+<div class="post-single">
+		<div id="content" class="site-content">
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+		<main id="main" class="site-main <?php if( get_field('square_image')): ?> square-image 	<?php endif?>">
+			<?php
+			while ( have_posts() ) :
+				the_post();
+			get_template_part( 'template-parts/headers/custom-post-header', '' );
+			get_template_part( 'template-parts/content/content', 'page' );
 
 		endwhile; // End of the loop.
 		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div>
 <?php
-get_sidebar();
 get_footer();

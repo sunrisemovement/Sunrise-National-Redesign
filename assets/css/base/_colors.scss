@@ -5,37 +5,113 @@
 
 --------------------------------------------------------------*/
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    @extend .btn;
-    @extend .btn-primary;
+.has-sunrise-magenta-color {
+	color: $purple !important;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	@extend .form-control;
+.has-sunrise-magenta-background-color {
+	background: $purple !important;
 }
 
-select {
-	@extend .form-control;
+.has-sunrise-gold-color {
+	color: $yellow !important;
 }
 
-textarea {
-	@extend .form-control;
+.has-sunrise-gold-background-color {
+	background: $yellow !important;
+}
+
+.has-sunrise-red-color {
+	color: $red !important;
+}
+
+.has-sunrise-red-background-color {
+	background: $red !important;
+}
+
+.has-sunrise-grey-color {
+	color: $gray-sunrise !important;
+}
+
+.has-sunrise-grey-background-color {
+	background: $gray-sunrise !important;
+}
+
+.has-sunrise-white-color {
+	color: $white !important;
+}
+
+.has-sunrise-white-background-color {
+	background: $white !important;
+}
+
+.has-sunrise-orange-color {
+	color: $orange !important;
+}
+
+.has-sunrise-orange-background-color {
+	background: $orange !important;
+}
+
+.has-sunrise-green-color {
+	color: $green !important;
+}
+
+.has-sunrise-green-background-color {
+	background: $green !important;
+}
+
+.has-sunrise-background-dark-color {
+	color: $sunrise-background-dark !important;
+}
+
+.has-sunrise-background-dark-background-color {
+	background: $sunrise-background-dark !important;
+}
+
+.has-sunrise-background-light-color {
+	color: $sunrise-background-light !important;
+}
+
+.has-sunrise-background-light-background-color {
+	background: $sunrise-background-light !important;
+}
+
+.has-sunrise-black-color {
+	color: $black !important;
+}
+
+.has-sunrise-black-background-color {
+	background: $black !important;
+}
+
+.has-sunrise-white-color {
+	color: $white !important;
+}
+
+.has-sunrise-white-background-color {
+	background: $white !important;
+}
+
+@mixin background-graident {
+	background: rgb(143, 13, 86) !important;
+	background: -moz-linear-gradient(
+		180deg,
+		rgba(143, 13, 86, 1) 0%,
+		rgba(239, 76, 57, 1) 35%,
+		rgba(255, 222, 22, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		180deg,
+		rgba(143, 13, 86, 1) 0%,
+		rgba(239, 76, 57, 1) 35%,
+		rgba(255, 222, 22, 1) 100%
+	);
+	background: linear-gradient(
+		180deg,
+		rgba(143, 13, 86, 1) 0%,
+		rgba(239, 76, 57, 1) 35%,
+		rgba(255, 222, 22, 1) 100%
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8f0d56",endColorstr="#ffde16",GradientType=1) !important;
 }

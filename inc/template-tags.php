@@ -4,14 +4,14 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package WordPress_Bootstrap_Starter_Theme
+ * @package Sunrise_National
  */
 
-if ( ! function_exists( 'wordpress_bootstrap_starter_theme_posted_on' ) ) :
+if ( ! function_exists( 'sunrise_national_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function wordpress_bootstrap_starter_theme_posted_on() {
+	function sunrise_national_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -26,8 +26,8 @@ if ( ! function_exists( 'wordpress_bootstrap_starter_theme_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'wordpress-bootstrap-starter-theme' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			esc_html_x( '%s', 'post date', 'sunrise-national' ),
+			'<span href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</span>'
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
@@ -35,15 +35,15 @@ if ( ! function_exists( 'wordpress_bootstrap_starter_theme_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'wordpress_bootstrap_starter_theme_posted_by' ) ) :
+if ( ! function_exists( 'sunrise_national_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function wordpress_bootstrap_starter_theme_posted_by() {
+	function sunrise_national_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'wordpress-bootstrap-starter-theme' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			esc_html_x( ' %s', 'post author', 'sunrise-national' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a> | </span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -51,27 +51,49 @@ if ( ! function_exists( 'wordpress_bootstrap_starter_theme_posted_by' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'wordpress_bootstrap_starter_theme_entry_footer' ) ) :
+
+if ( ! function_exists( 'sunrise_national_posted_by_no_line' ) ) :
+function sunrise_national_posted_by_no_line() {
+	$byline = sprintf(
+		/* translators: %s: post author. */
+		esc_html_x( ' %s', 'post author', 'sunrise-national' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a> </span>'
+	);
+
+	echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+
+}
+endif;
+
+if ( ! function_exists( 'sunrise_national_entry_category' ) ) :
+		function sunrise_national_entry_category() {
+			if ( 'post' === get_post_type() ) {
+				/* translators: used between list items, there is a space after the comma */
+				$categories_list = get_the_category_list( esc_html__( '    ', 'sunrise-national' ) );
+					if ( $categories_list ) {
+						/* translators: 1: list of categories. */
+						printf( '<span class="cat-links">' . esc_html__( '%1$s  ', 'sunrise-national' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+						}
+					}
+			}
+endif;
+
+
+if ( ! function_exists( 'sunrise_national_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function wordpress_bootstrap_starter_theme_entry_footer() {
+
+	function sunrise_national_entry_footer() {
 		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'wordpress-bootstrap-starter-theme' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'wordpress-bootstrap-starter-theme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'wordpress-bootstrap-starter-theme' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'sunrise-national' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'wordpress-bootstrap-starter-theme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'sunrise-national' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
-		}
+
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
@@ -79,7 +101,7 @@ if ( ! function_exists( 'wordpress_bootstrap_starter_theme_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'wordpress-bootstrap-starter-theme' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'sunrise-national' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -96,7 +118,7 @@ if ( ! function_exists( 'wordpress_bootstrap_starter_theme_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'wordpress-bootstrap-starter-theme' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'sunrise-national' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -111,14 +133,14 @@ if ( ! function_exists( 'wordpress_bootstrap_starter_theme_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'wordpress_bootstrap_starter_theme_post_thumbnail' ) ) :
+if ( ! function_exists( 'sunrise_national_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function wordpress_bootstrap_starter_theme_post_thumbnail() {
+	function sunrise_national_post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -146,3 +168,96 @@ if ( ! function_exists( 'wordpress_bootstrap_starter_theme_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+
+/**
+ * Display SVG icons in social links menu.
+ *
+ * @param  string  $item_output The menu item output.
+ * @param  WP_Post $item        Menu item object.
+ * @param  int     $depth       Depth of the menu.
+ * @param  array   $args        wp_nav_menu() arguments.
+ * @return string  $item_output The menu item output with social icon.
+ */
+function sunrisenational_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
+	// Change SVG icon inside social links menu if there is supported URL.
+	if ( 'social' === $args->theme_location ) {
+		$svg = SunriseNational_SVG_Icons::get_social_link_svg( $item->url );
+		if ( empty( $svg ) ) {
+			$svg = sunrisenational_get_theme_svg( 'link' );
+		}
+		$item_output = str_replace( $args->link_after, '</span>' . $svg, $item_output );
+	}
+
+	return $item_output;
+}
+
+add_filter( 'walker_nav_menu_start_el', 'sunrisenational_nav_menu_social_icons', 10, 4 );
+
+/**
+ * Add a Sub Nav Toggle to the Expanded Menu and Mobile Menu.
+ *
+ * @param stdClass $args An array of arguments.
+ * @param string   $item Menu item.
+ * @param int      $depth Depth of the current menu item.
+ *
+ * @return stdClass $args An object of wp_nav_menu() arguments.
+ */
+function sunrisenational_add_sub_toggles_to_main_menu( $args, $item, $depth ) {
+
+	// Add sub menu toggles to the Expanded Menu with toggles.
+	if ( isset( $args->show_toggles ) && $args->show_toggles ) {
+
+		// Wrap the menu item link contents in a div, used for positioning.
+		$args->before = '<div class="ancestor-wrapper">';
+		$args->after  = '';
+
+		// Add a toggle to items with children.
+		if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
+
+			$toggle_target_string = '.menu-modal .menu-item-' . $item->ID . ' > .sub-menu';
+			$toggle_duration      = sunrisenational_toggle_duration();
+
+			// Add the sub menu toggle.
+			$args->after .= '<button class="toggle sub-menu-toggle fill-children-current-color" data-toggle-target="' . $toggle_target_string . '" data-toggle-type="slidetoggle" data-toggle-duration="' . absint( $toggle_duration ) . '" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'twentytwenty' ) . '</span>' . sunrisenational_get_theme_svg( 'chevron-down' ) . '</button>';
+
+		}
+
+		// Close the wrapper.
+		$args->after .= '</div><!-- .ancestor-wrapper -->';
+
+		// Add sub menu icons to the primary menu without toggles.
+	} elseif ( 'primary' === $args->theme_location ) {
+		if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
+			$args->after = '<span class="icon"></span>';
+		} else {
+			$args->after = '';
+		}
+	}
+
+	return $args;
+
+}
+
+add_filter( 'nav_menu_item_args', 'sunrisenational_add_sub_toggles_to_main_menu', 10, 3 );
+
+/**
+ * Miscellaneous
+ */
+/**
+ * Toggle animation duration in milliseconds.
+ *
+ * @return integer Duration in milliseconds
+ */
+function sunrisenational_toggle_duration() {
+	/**
+	 * Filters the animation duration/speed used usually for submenu toggles.
+	 *
+	 * @since Twenty Twenty 1.0
+	 *
+	 * @param integer $duration Duration in milliseconds.
+	 */
+	$duration = apply_filters( 'sunrisenational_toggle_duration', 250 );
+
+	return $duration;
+}

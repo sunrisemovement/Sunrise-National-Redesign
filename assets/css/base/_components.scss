@@ -1,0 +1,17 @@
+.wp-block-pullquote {
+	border-top: 10px solid;
+	border-bottom: 10px solid;
+	cite {
+		text-transform: uppercase;
+	}
+}
+
+.search-form {
+	.search-field {
+		border: 1px solid black;
+		border-radius: 0;
+	}
+	.search-submit {
+		margin-top: -5px;
+	}
+}
