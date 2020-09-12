@@ -71,6 +71,12 @@
 		}
 	}
 }
+
+.blog-horizontal-section {
+	.entry-meta {
+	}
+}
+
 .blog-list {
 	article {
 		float: left;
@@ -133,7 +139,7 @@
 		.post-thumbnail {
 			width: 200px;
 			float: left;
-			height: 120px;
+			min-height: 180px;
 			overflow: hidden;
 			margin-right: 1.2rem;
 			img {

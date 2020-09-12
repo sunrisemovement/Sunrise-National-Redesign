@@ -6,7 +6,7 @@
    <a href="/green-new-deal" class="col-md-4 block block-2">
     <span> What We Want</span>
    </a>
-   <a href="/how-to-take-action-with-sunrise" class="col-md-4 block block-3">
+   <a href="/take-action" class="col-md-4 block block-3">
     <span> How To Join</span>
    </a>
 </div>

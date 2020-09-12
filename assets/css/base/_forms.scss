@@ -167,6 +167,10 @@ textarea {
 .ngp-form,
 .ngp-form .at-inner {
 	background-color: $black;
+
+	.thankYou p {
+		color: $white;
+	}
 }
 .yellow .ngp-form,
 .yellow .ngp-form .at-inner {
@@ -176,6 +180,9 @@ textarea {
 		&.at-title {
 			color: black;
 		}
+	}
+	.thankYou p {
+		color: $black;
 	}
 	legend {
 		color: $black;
@@ -203,6 +210,9 @@ textarea {
 			color: $white;
 		}
 	}
+	.thankYou p {
+		color: $white;
+	}
 }
 
 .white .ngp-form,
@@ -213,6 +223,9 @@ textarea {
 		&.at-title {
 			color: $black;
 		}
+	}
+	.thankYou p {
+		color: $black;
 	}
 	legend {
 		color: $black;
@@ -237,6 +250,9 @@ textarea {
 		}
 	}
 	legend {
+		color: $black;
+	}
+	.thankYou p {
 		color: $black;
 	}
 	.at-fieldset {

@@ -67,9 +67,11 @@ embed,iframe,object{max-width:100%}
 .single-events .square-image article .entry-content .at-form .at-inner form{position:relative;padding-left:17.5px;padding-right:17.5px;margin:0;-webkit-box-flex:0;-ms-flex:0 0 33.3333333333%;flex:0 0 33.3333333333%;max-width:33.3333333333%;margin-left:16.6666666667%}
 .single-events .square-image article .entry-content .at-form .at-inner .at-markup{-webkit-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}
 .ngp-form,.ngp-form .at-inner{background-color:#000}
+.ngp-form .thankYou p,.ngp-form .at-inner .thankYou p{color:#fff}
 .yellow .ngp-form,.yellow .ngp-form .at-inner{background-color:#ffde16}
 .yellow .ngp-form header,.yellow .ngp-form .at-inner header{color:#000}
 .yellow .ngp-form header.at-title,.yellow .ngp-form .at-inner header.at-title{color:black}
+.yellow .ngp-form .thankYou p,.yellow .ngp-form .at-inner .thankYou p{color:#000}
 .yellow .ngp-form legend,.yellow .ngp-form .at-inner legend{color:#000}
 .yellow .ngp-form .at-fieldset label,.yellow .ngp-form .at-inner .at-fieldset label{color:#000}
 .yellow .ngp-form .at-submit,.yellow .ngp-form .at-inner .at-submit{background-color:#ffde16;color:#000}
@@ -77,9 +79,11 @@ embed,iframe,object{max-width:100%}
 .purple .ngp-form .at-submit,.purple .ngp-form .at-inner .at-submit{background-color:#000 !important}
 .purple .ngp-form header,.purple .ngp-form .at-inner header{color:#fff}
 .purple .ngp-form header.at-title,.purple .ngp-form .at-inner header.at-title{color:#fff}
+.purple .ngp-form .thankYou p,.purple .ngp-form .at-inner .thankYou p{color:#fff}
 .white .ngp-form,.white .ngp-form .at-inner{background-color:#fff}
 .white .ngp-form header,.white .ngp-form .at-inner header{color:#000}
 .white .ngp-form header.at-title,.white .ngp-form .at-inner header.at-title{color:#000}
+.white .ngp-form .thankYou p,.white .ngp-form .at-inner .thankYou p{color:#000}
 .white .ngp-form legend,.white .ngp-form .at-inner legend{color:#000}
 .white .ngp-form .at-fieldset label,.white .ngp-form .at-inner .at-fieldset label{color:#000}
 .white .ngp-form .at input[type="checkbox"]+span:before,.white .ngp-form .at-inner .at input[type="checkbox"]+span:before{border-color:black}
@@ -87,6 +91,7 @@ embed,iframe,object{max-width:100%}
 .light .ngp-form header,.light .ngp-form .at-inner header{color:#000}
 .light .ngp-form header.at-title,.light .ngp-form .at-inner header.at-title{color:#000}
 .light .ngp-form legend,.light .ngp-form .at-inner legend{color:#000}
+.light .ngp-form .thankYou p,.light .ngp-form .at-inner .thankYou p{color:#000}
 .light .ngp-form .at-fieldset label,.light .ngp-form .at-inner .at-fieldset label{color:#000}
 .light .ngp-form .at input[type="checkbox"]+span:before,.light .ngp-form .at-inner .at input[type="checkbox"]+span:before{border-color:black}
 .no-title .at-title{display:none}
@@ -205,7 +210,6 @@ svg,img,embed,object{display:block;height:auto;max-width:100%}
 .acf-hidden{display:none}
 .admin-bar .site-header.fixed-menu{margin-bottom:64px}
 .site-header.fixed-menu{margin-bottom:64px}
-.entry-content{min-height:300px}
 .section-padding{padding:100px 0}
 .alignwide,.alignfull{margin:0 calc(50% - 50vw);max-width:100vw;width:100vw;position:relative}
 .alignfull{width:100%;max-width:100%;padding-right:17.5px;padding-left:17.5px}
@@ -472,7 +476,7 @@ body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .wp-block-getwid-custom-post-type{overflow:visible}
 .content-vertical article{float:unset;box-shadow:0 5px 10px rgba(0,0,0,0.15);-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.15);-moz-box-shadow:0 5px 10px rgba(0,0,0,0.15)}
 .content-vertical article .card{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
-.content-vertical article .post-thumbnail{width:200px;float:left;height:120px;overflow:hidden;margin-right:1.2rem}
+.content-vertical article .post-thumbnail{width:200px;float:left;min-height:180px;overflow:hidden;margin-right:1.2rem}
 .content-vertical article .post-thumbnail img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
 .content-vertical article .entry-header{width:70%;float:left;padding-left:10px}
 .content-vertical article .cat-links{font-size:16px;width:100%}

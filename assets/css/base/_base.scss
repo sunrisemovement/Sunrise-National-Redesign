@@ -83,10 +83,6 @@ button,
 	margin-bottom: 64px;
 }
 
-.entry-content {
-	min-height: 300px;
-}
-
 $section-padding: 100px 0;
 
 @include media-breakpoint-down(md) {

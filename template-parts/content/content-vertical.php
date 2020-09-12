@@ -39,11 +39,7 @@
 			?>
 		</div><!-- .entry-meta -->
 
-		<?php if(the_excerpt()): ?>
-		<div class="excerpt <?php echo $base_class; ?>__post-excerpt"><?php
-				the_excerpt();
-		?></div>
-			<?php endif?>
+
 
 	</header><!-- .entry-header -->
 	<?php if ( 'post' === get_post_type() ) : ?>
