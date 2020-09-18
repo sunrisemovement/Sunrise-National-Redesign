@@ -97,8 +97,8 @@ function createEventPost($onlineAction) {
 function fetchNewOnlineActions($bypassTimer = null) {
 	$ONLINE_ACTION_DIR = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."Action".DIRECTORY_SEPARATOR;
 	$LAST_EA_API_CALL_TIME = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."lastApiCallTime.json";
-	
-	// make directory if it doesn't exist	
+
+	// make directory if it doesn't exist
 	$fileExist = file_exists($ONLINE_ACTION_DIR);
 	$isDir = is_dir($ONLINE_ACTION_DIR);
 	if (!file_exists($ONLINE_ACTION_DIR) && !is_dir($ONLINE_ACTION_DIR)) {
@@ -118,7 +118,7 @@ function fetchNewOnlineActions($bypassTimer = null) {
 	echovar($filteredOnlineActions);
 	foreach ($filteredOnlineActions as $onlineAction) {
 
-		$actionJsonFilepath = $ONLINE_ACTION_DIR.$onlineAction['formTrackingId'].".json";
+		$actionJsonFilepath = $ONLINE_ACTION_DIR.$onlineAction['form_tracking_id'].".json";
 
 		// if a file exists for a given formTrackingId, update the contents, but do not create a post and then move on
 		if (file_exists($actionJsonFilepath)) {
