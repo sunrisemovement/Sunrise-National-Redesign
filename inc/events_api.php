@@ -23,7 +23,6 @@ class EventsAPI {
   	foreach ($json as $eventJson) {
       if ($eventJson["event_source"] == self::EA_EVENT_SOURCE) {
         foreach ($eventJson['online_forms'] as $onlineActionJson) {
-          $splitUrl = explode("/", $onlineActionJson['url']);
           $onlineAction = array(
             'url' => $onlineActionJson['url'],
       			'form_tracking_id' => $onlineActionJson['form_tracking_id'],
