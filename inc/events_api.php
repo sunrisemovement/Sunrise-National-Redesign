@@ -1,19 +1,13 @@
 <?php
 
 class EventsAPI {
-
-  const EVENTS_URL = "https://sunrise-events.s3.amazonaws.com/ea-events-staging.json ";
+  //TODO move to env var
+  const EVENTS_URL = "https://sunrise-events.s3.amazonaws.com/ea-events-staging.json";
   const PROD_KEYTYPE = "PROD";
   const DEV_KEYTYPE = "DEV";
   const EA_EVENT_SOURCE = "everyaction";
 
-  public function __construct() {
-    // Staging or Dev
-    $Dev_Mode = false;
-    if ($Dev_Mode) {
-    } else {
-    }
-  }
+  public function __construct() { }
 
   /**
   * Returns a modified list of Online Actions Forms that have a valid associated
@@ -32,7 +26,7 @@ class EventsAPI {
           $splitUrl = explode("/", $onlineActionJson['url']);
           $onlineAction = array(
             'url' => $onlineActionJson['url'],
-      			'form_tracking_id' => $splitUrl[count($splitUrl) - 1],
+      			'form_tracking_id' => $onlineActionJson['form_tracking_id'],
       			'name' => $onlineActionJson['name'],
       			'status' => $onlineActionJson['status'],
       			'event_title' => $eventJson['event_title'],
