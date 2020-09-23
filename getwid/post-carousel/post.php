@@ -20,13 +20,13 @@ $base_class = esc_attr($extra_attr['block_name']);
       <div class="card-body <?php echo $base_class; ?>__post-content-wrapper">
           <div class="event-timing">
           <?php if(get_field('dates')): ?>
-            <div class="dates">
+            <span class="dates">
               <?php echo get_field('dates'); ?>
-            </div>
+            </span>
               <?php if(get_field('times')): ?>
-                  <div class="times">
+                  <span class="times">
                 <?php echo get_field('times'); ?>
-                  </div>
+              </span>
               <?php endif?>
           <?php endif?>
         </div>
@@ -34,7 +34,7 @@ $base_class = esc_attr($extra_attr['block_name']);
               <?php
               $thetitle = get_the_title(); /* or you can use get_the_title() */
               $getlength = strlen($thetitle);
-              $thelength = 25;
+              $thelength = 32;
                 ?>
                 <h4 class="card-title">
                     <?php echo substr($thetitle, 0, $thelength);
