@@ -134,24 +134,25 @@
 .wp-block-getwid-post-carousel,
 .wp-block-getwid-custom-post-type.has-layout-grid {
 	.slick-next {
-		right: -35px;
-		@include media-breakpoint-down(md) {
-			right: 15px;
+		@include media-breakpoint-up(md) {
+			right: 30% !important;
 		}
+		right: 15px;
 	}
 	.slick-prev {
-		left: -45px;
-		@include media-breakpoint-down(md) {
-			left: 0;
+		@include media-breakpoint-up(md) {
+			left: 30% !important;
 		}
+		left: 0;
 	}
 	.slick-next,
 	.slick-prev {
-		top: 40%;
+		top: unset;
 		border: 0 solid;
 		box-shadow: 0 0 black;
 		width: 150px;
 		height: 70px;
+		bottom: -90px;
 	}
 	.slick-next:before,
 	.slick-prev:before {
@@ -201,8 +202,8 @@
 	}
 }
 
-.custom-post-type-our_endorsements .has-layout-grid .card-img {
-	height: 360px;
+.custom-post-type-our_endorsements.has-layout-grid .card-img {
+	height: 180px;
 }
 
 .wp-block-getwid-section__background {
@@ -233,7 +234,8 @@
 .wp-block-getwid-media-text-slider .slick-dots,
 .wp-block-getwid-post-slider .slick-dots,
 .wp-block-getwid-post-carousel .slick-dots {
-	bottom: -20px;
+	bottom: -34px;
+	padding-inline-start: 0px !important;
 }
 
 // Padding Overides

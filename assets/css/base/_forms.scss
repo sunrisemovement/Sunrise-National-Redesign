@@ -40,6 +40,20 @@ textarea {
 	@extend .form-control;
 }
 
+.post-password-required {
+	.post-password-form {
+		margin: 60px auto !important;
+		input[type="password"] {
+			border-radius: 0 !important;
+			border: 1px solid $black !important;
+		}
+		input[type="submit"] {
+			margin-top: -4px;
+			height: 49px;
+		}
+	}
+}
+
 .ngp-form {
 	@include media-breakpoint-up(md) {
 		max-width: map-get($container-max-widths, "lg") !important;

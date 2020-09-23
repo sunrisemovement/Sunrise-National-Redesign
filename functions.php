@@ -547,7 +547,7 @@ add_action( 'init', 'cptui_register_my_cpts' );
 
 add_filter( 'protected_title_format', 'remove_protected_text' );
 function remove_protected_text() {
-return __('Protected: %s');
+return __('%s');
 }
 
 if( function_exists('acf_add_options_page') ) {
