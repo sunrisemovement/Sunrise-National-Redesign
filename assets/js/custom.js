@@ -817,6 +817,10 @@ function sunrisenationalFindParents(target, query) {
 }
 "use strict";
 
+var _typed = _interopRequireDefault(require("typed.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {} else {
   jQuery(window).on("scroll", function (event) {
     var scrollValue = jQuery(window).scrollTop();
@@ -830,6 +834,14 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     }
   });
 }
+
+var options = {
+  strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
+  typeSpeed: 40
+};
+var typed = new _typed.default('.element', options);
+console.log("test");
+alert("heelo");
 "use strict";
 
 /**
