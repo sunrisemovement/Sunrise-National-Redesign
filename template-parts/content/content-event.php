@@ -13,14 +13,11 @@
 
 	<div class="entry-content">
 		<?php if( get_field('action_tag')): ?>
-			<script type="text/javascript" src="https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js"></script><div class="ngp-form" data-form-url="<?php echo get_field('action_tag'); ?>
+		<div class=" auto-created">
+		<?php echo get_field('action_tag'); ?>
+	</div>
 		<?php else: ?>
-			<?php echo get_field('form_tracking_id'); ?>
-			<?php echo get_field('event_start_date'); ?>
-			<?php echo get_field('event_type'); ?>
-			<?php echo get_field('event_title'); ?>
-			<?php echo get_field('url'); ?>
-			<?php echo get_field('status'); ?>
+
 		<?php endif?>
 		<?php
 		the_content();
