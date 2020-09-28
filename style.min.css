@@ -70,7 +70,7 @@ embed,iframe,object{max-width:100%}
 .single-events article{width:100%;float:left}
 .single-events article .entry-content{margin:60px}
 .single-events article .ngp-form{max-width:100% !important;background-color:#fffffb !important;-webkit-box-shadow:none;box-shadow:none;padding:0}
-.single-events article .ngp-form .HeaderHtml{color:#000}
+.single-events article .ngp-form .HeaderHtml p{color:#000}
 .single-events article .ngp-form h1,.single-events article .ngp-form h2,.single-events article .ngp-form h3,.single-events article .ngp-form h4,.single-events article .ngp-form p{width:100%;max-width:100%}
 .single-events article .at-title{display:none}
 .single-events article .at-form{width:100%;padding-right:17.5px;padding-left:17.5px;margin-right:auto;margin-left:auto;max-width:1200px}
@@ -84,7 +84,7 @@ embed,iframe,object{max-width:100%}
 .single-events article .at-form .at-inner form .at-row>[class^="at-"]{min-width:100%}
 .single-events article .at-form .at-inner form .at-fieldset{background-color:#000;padding:2rem 2rem 0 2rem}
 .single-events article .at-form .at-inner form .at-fieldset.EventSignup{padding:0 2rem}
-.single-events article .at-form .at-inner form .at-fieldset label{color:#fff;padding:0}
+.single-events article .at-form .at-inner form .at-fieldset label{color:#fff;padding:0;display:block}
 .single-events article .at-form .at-inner form .AdditionalInformation{margin-top:-90px}
 .single-events .square-image article .entry-content .at-form .at-inner form{position:relative;padding-left:17.5px;padding-right:17.5px;margin:0;-webkit-box-flex:0;-ms-flex:0 0 33.3333333333%;flex:0 0 33.3333333333%;max-width:33.3333333333%;margin-left:16.6666666667%}
 .single-events .square-image article .entry-content .at-form .at-inner .at-markup{-webkit-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}

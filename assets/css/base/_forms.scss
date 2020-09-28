@@ -161,7 +161,7 @@ textarea {
 			@include media-breakpoint-down(md) {
 				margin-top: 2rem;
 			}
-			.HeaderHtml {
+			.HeaderHtml p {
 				color: $black;
 			}
 			h1,
@@ -241,6 +241,7 @@ textarea {
 						label {
 							color: $white;
 							padding: 0;
+							display:block;
 						}
 					}
 					.AdditionalInformation {
