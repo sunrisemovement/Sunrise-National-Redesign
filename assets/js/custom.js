@@ -835,11 +835,12 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   });
 }
 
+console.log("test");
 var options = {
   strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
   typeSpeed: 40
 };
-var typed = new _typed.default('.element', options);
+var typed = new _typed.default('#typed', options);
 console.log("test");
 alert("heelo");
 "use strict";

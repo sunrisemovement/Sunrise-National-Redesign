@@ -15,7 +15,7 @@ if (
 		}
 	});
 }
-
+console.log("test");
 import Typed from 'typed.js';
 
 	var options = {
@@ -23,7 +23,7 @@ import Typed from 'typed.js';
 		typeSpeed: 40
 	};
 
-	var typed = new Typed('.element', options);
+	var typed = new Typed('#typed', options);
 
 console.log("test");
 alert("heelo");

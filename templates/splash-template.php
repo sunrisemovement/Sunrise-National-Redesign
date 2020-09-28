@@ -32,7 +32,7 @@
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main splash-page">
 
-			<div class="element">
+			<div id="typed">
 				example
 			</div>
 		<?php
