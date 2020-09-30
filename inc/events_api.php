@@ -24,7 +24,6 @@ class EventsAPI {
     $filteredOnlineActions = [];
   	$response = self::callAPI("GET", self::EVENTS_URL);
     $json = json_decode($response, true)["map_data"];
-    // echo '<pre>'; print_r($json); echo '</pre>';
 
   	foreach ($json as $eventJson) {
       if ($eventJson["event_source"] == self::EA_EVENT_SOURCE) {
@@ -37,7 +36,10 @@ class EventsAPI {
       			'status' => $onlineActionJson['status'],
       			'event_title' => $eventJson['event_title'],
       			'event_type' => $eventJson['event_type'],
-      			'event_start_date' => $eventJson['start_date']);
+      			'event_start_date' => $eventJson['start_date'],
+            'featured_image_url' => $eventJson['featured_image_url'],
+            'description' => $eventJson['description']
+          );
           array_push($filteredOnlineActions, $onlineAction);
         }
       }

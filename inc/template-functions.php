@@ -42,11 +42,7 @@ add_action( 'wp_head', 'surnise_national_pingback_header' );
 // EveryAction8 - Specific Code
 // ======================================================
 
-
-//TODO this should be on some trigger, e.g. daily / time-based trigger
-//since it seems unlikely EA8 offers a webhook of some sort.
-//Read in test files
-
+// We may need to change this Cloudfront URL at some point.
 const ACTION_TAG_STR = "<script type=\"text/javascript\" src=\"https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js\"></script><div class=\"ngp-form\" data-form-url=\"https://actions.everyaction.com/v1/Forms/%s\"></div>";
 
 // Fetch All Online Actions
@@ -67,8 +63,8 @@ function createEventPost($onlineAction) {
 		echo "Creating '".$onlineAction['name']."' Form post";
 		$post_id = wp_insert_post(array (
 			'post_type' => 'events',
-			'post_title' => $onlineAction['name'],
-			'post_content' => 'test content',
+			'post_title' => $onlineAction['event_title'],
+			'post_content' => '',
 			'post_status' => 'publish',
 			'comment_status' => 'closed',
 			'ping_status' => 'closed'
@@ -81,6 +77,8 @@ function createEventPost($onlineAction) {
 		update_field('event_title', $onlineAction['event_title'], $post_id);
 		update_field('event_type', $onlineAction['event_type'], $post_id);
 		update_field('status', $onlineAction['status'], $post_id);
+		update_field('featured_image_url', $onlineAction['featured_image_url'], $post_id);
+		update_field('description', $onlineAction['description'], $post_id);
 	}
 	catch (exception $e) {
 		echo '<pre>'; print_r($e); echo '</pre>';
@@ -93,7 +91,7 @@ function createEventPost($onlineAction) {
 // When a post is created for an OnlineAction the json object used to create it will be stored in a file with the name matching the
 // form tracking id. Existence of a post for a given OnlineAction can be determined by checking for the json file existence.
 // Done By: Andrew Wilson
-// fetchNewOnlineActions();
+
 function fetchNewOnlineActions($bypassTimer = null) {
 	$ONLINE_ACTION_DIR = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."Action".DIRECTORY_SEPARATOR;
 	$LAST_EA_API_CALL_TIME = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."lastApiCallTime.json";
@@ -115,7 +113,7 @@ function fetchNewOnlineActions($bypassTimer = null) {
 	$filteredOnlineActions = getOnlineActionsFromApi();
 
 	// echo '<pre>'; print_r($filteredOnlineActions); echo '</pre>';
-	echovar($filteredOnlineActions);
+	// echovar($filteredOnlineActions);
 	foreach ($filteredOnlineActions as $onlineAction) {
 
 		$actionJsonFilepath = $ONLINE_ACTION_DIR.$onlineAction['form_tracking_id'].".json";
@@ -238,10 +236,3 @@ function ea_deleteOldEvents() {
 	}
 }
 add_action('ea_cron_hook', 'ea_scheduleCronJobs');
-
-
-
-
-// fetchNewOnlineActions();
-
-// ==================== API Calls =======================
