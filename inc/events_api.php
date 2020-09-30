@@ -2,7 +2,7 @@
 
 class EventsAPI {
 
-  const EVENTS_URL = "https://sunrise-events.s3.amazonaws.com/ea-events-staging.json ";
+  const EVENTS_URL = "https://sunrise-events.s3.amazonaws.com/events.json";
   const PROD_KEYTYPE = "PROD";
   const DEV_KEYTYPE = "DEV";
   const EA_EVENT_SOURCE = "everyaction";

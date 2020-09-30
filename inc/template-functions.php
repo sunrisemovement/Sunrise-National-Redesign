@@ -113,7 +113,7 @@ function fetchNewOnlineActions($bypassTimer = null) {
 	$filteredOnlineActions = getOnlineActionsFromApi();
 
 	// echo '<pre>'; print_r($filteredOnlineActions); echo '</pre>';
-	// echovar($filteredOnlineActions);
+	echovar($filteredOnlineActions);
 	foreach ($filteredOnlineActions as $onlineAction) {
 
 		$actionJsonFilepath = $ONLINE_ACTION_DIR.$onlineAction['form_tracking_id'].".json";
