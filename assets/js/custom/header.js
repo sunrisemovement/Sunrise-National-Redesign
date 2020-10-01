@@ -15,15 +15,3 @@ if (
 		}
 	});
 }
-console.log("test");
-import Typed from 'typed.js';
-
-	var options = {
-		strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
-		typeSpeed: 40
-	};
-
-	var typed = new Typed('#typed', options);
-
-console.log("test");
-alert("heelo");

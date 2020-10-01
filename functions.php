@@ -148,7 +148,8 @@ function sunrise_national_scripts() {
 		'smvmt2020-source-sans-pro',
 		'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap',
 		false
-	);
+	);	
+
 
 	// https://getbootstrap.com/docs/4.3/getting-started/download/#bootstrapcdn
 	wp_enqueue_script( 'sunrise-national-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array('jquery'), '20151215', true );
