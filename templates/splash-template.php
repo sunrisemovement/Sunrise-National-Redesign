@@ -54,7 +54,7 @@
 				<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 				<div class="row typing">
 				 <div class="col-md-6  trump">
-					 			President Trump<br> has allowed
+					 			Boomers Let
 				 </div>
 
 				<div class="response-strings col-md-6">
