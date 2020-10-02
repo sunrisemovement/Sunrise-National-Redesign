@@ -150,6 +150,29 @@
 	border-width: 5px;
 }
 
+@mixin background-black-gradient {
+	background: rgb(0, 0, 0);
+	background: -moz-linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 1) 18%,
+		rgba(17, 17, 17, 0.16150210084033612) 68%,
+		rgba(17, 17, 17, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 1) 18%,
+		rgba(17, 17, 17, 0.16150210084033612) 68%,
+		rgba(17, 17, 17, 1) 100%
+	);
+	background: linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 1) 18%,
+		rgba(17, 17, 17, 0.16150210084033612) 68%,
+		rgba(17, 17, 17, 1) 100%
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#111111",GradientType=1);
+}
+
 @mixin affordance {
 	å &::before {
 		position: absolute;

@@ -137,7 +137,8 @@ add_action( 'widgets_init', 'sunrise_national_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sunrise_national_scripts() {
-	wp_enqueue_style( 'sunrise-national-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'theme-styles', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
+
 
 	wp_enqueue_style(
 		'smvmt2020-source-serif-pro',
@@ -148,7 +149,7 @@ function sunrise_national_scripts() {
 		'smvmt2020-source-sans-pro',
 		'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap',
 		false
-	);	
+	);
 
 
 	// https://getbootstrap.com/docs/4.3/getting-started/download/#bootstrapcdn

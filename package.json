@@ -1,7 +1,7 @@
 {
   "name": "your-project",
   "description": "A WPGulp based project.",
-  "version": "1.0.0",
+  "version": "6.0.0",
   "author": "Author Name (https://twitter.com/MrAhmadAwais/)",
   "repository": {
     "type": "git",

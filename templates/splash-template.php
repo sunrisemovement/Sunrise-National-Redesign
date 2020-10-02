@@ -13,7 +13,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -35,45 +35,49 @@
 				<div class="container">
 				<div class="row logo-bar">
 
-							<div class="col logos">
+							<a href="http://marchforourlives.org" class="col-xs-6 col-md logos">
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/march.png" width="" height="" alt="" />
-							</div>
-							<div class="col logos">
+							</a>
+							<a href="http://sunrisemovment.org/" class="col-xs-6 col-md logos">
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/sunrise.png" width="" height="" alt="" />
-							</div>
-							<div class="col logos">
+							</a>
+							<a href="https://wecountonus.org" class="col-xs-12 count col-md ">
 							 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/count.png" width="" height="" alt="" />
-							</div>
-							<div class="col logos">
+						 </a>
+							<a href="https://dreamdefenders.org/" class="col-xs-6 col-md logos">
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/dream.png" width="" height="" alt="" />
-							</div>
-							<div class="col logos">
+							</a>
+							<a href="https://unitedwedream.org/" class="col-xs-6 col-md logos">
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/united.png" width="" height="" alt="" />
-							</div>
+							</a>
 				</div>
 				<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 				<div class="row typing">
 				 <div class="col-md-6  trump">
-					 			Boomers Let
+					 	<?php if( get_field('left-head')): ?>
+								<?php echo get_field('left-head'); ?>
+					<?php else: ?>
+					 			In the last four <br> years under this admininstration
+							<?endif?>
+
 				 </div>
 
 				<div class="response-strings col-md-6">
 
 					<div id="typed-strings">
 
-						<p>		20,100 black men shot by cops</p>
-						<p>		990,100 acres burned </p>
-						<p> 200,100 covid deaths </p>
-							<p>		322,100 school students killed</p>
-							<p>		20,100 black men shot by cops</p>
-							<p>		2,100 deportations </p>
+						<p>		985 black men have been shot by cops</p>
+						<p>		31,000,000 acres have burned </p>
+						<p>    207,000 people died of COVID </p>
+						<p>		317 school shootings occured</p>
+						<p>		300,000 people were kept from DACA protections</p>
 
 					</div>
 					<span id="typed"></span>
 				</div >
 			</div>
 				<div class="row callout">
-					<h1>It's time for <span class="count-red-color"> change. </span> <br>
+					<h1 class="col">It's time for <span class="count-red-color"> change. </span> <br>
 					</h1>
 				</div>
 

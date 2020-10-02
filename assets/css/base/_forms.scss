@@ -68,6 +68,11 @@ textarea {
 
 	header {
 		color: $white;
+		h1,
+		h2,
+		h3 {
+			color: $white;
+		}
 		&.at-title {
 			color: $white;
 			font-family: $font-family-serif;
@@ -281,6 +286,11 @@ textarea {
 	background-color: $yellow;
 	header {
 		color: $black;
+		h1,
+		h2,
+		h3 {
+			color: $black;
+		}
 		&.at-title {
 			color: black;
 		}
@@ -305,6 +315,40 @@ textarea {
 	}
 }
 
+.red .ngp-form,
+.red .ngp-form .at-inner {
+	background-color: $red;
+	header {
+		color: $white;
+		h1,
+		h2,
+		h3 {
+			color: $white;
+		}
+		&.at-title {
+			color: $white;
+		}
+	}
+	p {
+		color: $white;
+	}
+	legend {
+		color: $white;
+	}
+	.at-fieldset {
+		label {
+			color: $white;
+		}
+	}
+	.at-submit {
+		background-color: $black;
+		color: $white;
+	}
+	small {
+		color: $black;
+	}
+}
+
 .purple .ngp-form,
 .purple .ngp-form .at-inner {
 	background-color: $purple;
@@ -313,6 +357,11 @@ textarea {
 	}
 	header {
 		color: $white;
+		h1,
+		h2,
+		h3 {
+			color: $white;
+		}
 		&.at-title {
 			color: $white;
 		}
@@ -330,6 +379,11 @@ textarea {
 	background-color: $white;
 	header {
 		color: $black;
+		h1,
+		h2,
+		h3 {
+			color: $black;
+		}
 		&.at-title {
 			color: $black;
 		}
@@ -355,6 +409,11 @@ textarea {
 	background-color: $sunrise-background-dark;
 	header {
 		color: $black;
+		h1,
+		h2,
+		h3 {
+			color: $black;
+		}
 		&.at-title {
 			color: $black;
 		}
