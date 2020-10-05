@@ -19,6 +19,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 	<link href="<?php echo get_template_directory_uri(); ?>/assets/Santio-regular.otf" rel="stylesheet">
 	<link href="<?php echo get_template_directory_uri(); ?>/assets/Santio-Bold.otf" rel="stylesheet">
+
 	<?php wp_head(); ?>
 
 </head>
@@ -66,11 +67,11 @@
 
 					<div id="typed-strings">
 
-						<p>		985 black men have been shot by cops</p>
+						<p>		985 people people have been shot by cops</p>
 						<p>		31,000,000 acres have burned </p>
 						<p>    207,000 people died of COVID </p>
 						<p>		317 school shootings occured</p>
-						<p>		300,000 people were kept from DACA protections</p>
+						<p>		300,000 youth were kept from DACA protections</p>
 
 					</div>
 					<span id="typed"></span>
@@ -103,7 +104,7 @@
 	</div><!-- #primary -->
 
 <?php
-get_footer();?>
+wp_footer();?>
 <script>
 
 	var typed = new Typed('#typed', {
@@ -120,6 +121,17 @@ get_footer();?>
 	});
 
 </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179489000-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179489000-1');
+</script>
+
 
 <script
 				 src="https://app.sunrisemovement.civicengine.com/embed.js"

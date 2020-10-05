@@ -24,6 +24,9 @@
 		font-size: 80px;
 		font-weight: 800;
 		font-style: normal;
+		@include media-breakpoint-down(md) {
+			font-size: 60px;
+		}
 	}
 
 	h2 {
@@ -49,6 +52,10 @@
 
 	p {
 		font-family: "DM Sans", sans-serif;
+	}
+
+	a {
+		color: $red;
 	}
 
 	.background-slider {
@@ -147,6 +154,7 @@
 			animation-delay: 1s;
 			@include media-breakpoint-down(sm) {
 				text-align: center;
+				font-size: 42px;
 			}
 
 			.trump {
