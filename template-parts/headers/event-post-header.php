@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying header event.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -22,22 +22,31 @@
 
 						<?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );}?>
 
-						<?php if( get_field('secondary_header')): ?>
+
+						<?php if( get_field('event_title')): ?>
+							<h1 class="entry-title h2">	<?php echo get_field('event_title'); ?> </h1>
+						<?php else: ?>
+								<?php the_title( '<h1 class="entry-title h2">', '</h1>' ); ?>
+						<?php endif?>
+
+						<?php if( get_field('event_start_date')): ?>
+							<h3 class="dates">	<?php echo get_field('event_start_date'); ?> </h3>
+						<?php else: ?>
+							<?php if(get_field('dates')): ?>
+								<h3 class="dates">
+									<?php echo get_field('dates'); ?>
+									<?php if(get_field('times')): ?>
+										 @ <?php echo get_field('times'); ?>
+									<?php endif?>
+								</h3>
+							<?php endif?>
+						<?php endif?>
+						<?php if( get_field('event_type')): ?>
 							<h4 class="h1-subhead">
-								<?php echo get_field('secondary_header'); ?>
+								<?php echo get_field('event_type'); ?>
 							</h4>
 						<?php endif?>
 
-						<?php the_title( '<h1 class="entry-title h2">', '</h1>' ); ?>
-
-						<?php if(get_field('dates')): ?>
-							<h3 class="dates">
-								<?php echo get_field('dates'); ?>
-								<?php if(get_field('times')): ?>
-									 @ <?php echo get_field('times'); ?>
-								<?php endif?>
-							</h3>
-						<?php endif?>
 
 						<div class="button-row">
 							<?php if(get_field('button_1_url')): ?>
@@ -52,6 +61,8 @@
 							<?php endif?>
 						</div>
 					</div>
+
+
 
 
 					<?php if( get_field('square_image')): ?>

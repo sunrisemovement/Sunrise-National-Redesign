@@ -40,19 +40,125 @@ textarea {
 	@extend .form-control;
 }
 
-.single-events {
-	// event styling
+.post-password-required {
+	.post-password-form {
+		margin: 60px auto !important;
+		input[type="password"] {
+			border-radius: 0 !important;
+			border: 1px solid $black !important;
+		}
+		input[type="submit"] {
+			margin-top: -4px;
+			height: 49px;
+		}
+	}
+}
 
+.ngp-form {
+	@include media-breakpoint-up(md) {
+		max-width: map-get($container-max-widths, "lg") !important;
+	}
+	margin: 0 auto;
+	padding: 2rem;
+	@include drop-shadow;
+
+	.at input[type="checkbox"] + span:before {
+		border-color: white;
+	}
+
+	header {
+		color: $white;
+		&.at-title {
+			color: $white;
+			font-family: $font-family-serif;
+			text-align: left;
+			font-style: italic;
+			line-height: 1.2;
+			font-size: 32px;
+			margin-bottom: 0.6rem;
+			padding: 10px 0 10px 20px;
+		}
+	}
+	.UpdateMyProfile {
+		margin: 0;
+		padding: 0 !important;
+	}
+
+	.at-form {
+		.at-markup {
+			padding-right: 17.5px;
+			padding-left: 17.5px;
+			margin: 0;
+			p {
+				width: 100% !important;
+			}
+		}
+		form {
+			margin-top: 20px;
+
+			position: relative;
+			.at-fieldset {
+				padding: 0;
+			}
+			.FastAction,
+			.UpdateMyProfile {
+				//display: none;
+			}
+			.SmsLegalDisclaimer p {
+				font-size: 0.5rem;
+			}
+			legend {
+				color: $white;
+				z-index: 5;
+				margin: 0;
+				display: none;
+			}
+			.at-fieldset {
+				label {
+					color: $white;
+					margin: 0;
+				}
+			}
+			.SmsLegalDisclaimer.at-markup {
+				padding: 0 !important;
+				margin-top: 0.5rem !important;
+			}
+			.SmsSubscribeMobilePhone {
+				margin-top: 1.3rem;
+			}
+			.at-row > [class^="at-"] {
+				padding: 0 1rem;
+			}
+		}
+		.at-form-submit {
+			padding: 1rem 0 0 1rem;
+			.at-submit {
+				float: left;
+				padding: 0;
+				margin: 0;
+				@include button;
+			}
+		}
+	}
+}
+
+// event styling
+.single-events {
 	article {
 		width: 100%;
 		float: left;
 		.entry-content {
-			margin-top: 100px;
+			margin: 60px;
 			@include media-breakpoint-down(md) {
 				margin-top: 2rem;
 			}
 		}
-		.ngp-form {
+		.wp-block-every-action-every-action-embed {
+
+		}
+
+		.auto-created , .event-signup  {
+			.ngp-form{
 			max-width: 100% !important;
 			background-color: $sunrise-background-light !important;
 			box-shadow: none;
@@ -60,7 +166,7 @@ textarea {
 			@include media-breakpoint-down(md) {
 				margin-top: 2rem;
 			}
-			.HeaderHtml {
+			.HeaderHtml p {
 				color: $black;
 			}
 			h1,
@@ -71,7 +177,6 @@ textarea {
 				width: 100%;
 				max-width: 100%;
 			}
-		}
 		.at-title {
 			display: none;
 		}
@@ -80,9 +185,6 @@ textarea {
 			max-width: 1200px;
 			.at-inner {
 				background-color: $white !important;
-				@include media-breakpoint-up(md) {
-					margin-top: 3rem;
-				}
 				@include make-row();
 				.at-markup {
 					@include make-col(5);
@@ -136,10 +238,14 @@ textarea {
 					}
 					.at-fieldset {
 						background-color: $black;
-						padding: 2rem;
+						padding: 2rem 2rem 0 2rem;
+						&.EventSignup {
+							padding: 0 2rem;
+						}
 						label {
 							color: $white;
 							padding: 0;
+							display:block;
 						}
 					}
 					.AdditionalInformation {
@@ -162,13 +268,17 @@ textarea {
 			@include make-col(6);
 		}
 	}
+}}
 }
 
 .ngp-form,
 .ngp-form .at-inner {
 	background-color: $black;
 
-	.thankYou p {
+	p {
+		color: $white;
+	}
+	.small {
 		color: $white;
 	}
 }
@@ -181,7 +291,7 @@ textarea {
 			color: black;
 		}
 	}
-	.thankYou p {
+	p {
 		color: $black;
 	}
 	legend {
@@ -193,7 +303,10 @@ textarea {
 		}
 	}
 	.at-submit {
-		background-color: $yellow;
+		background-color: $black;
+		color: $white;
+	}
+	small {
 		color: $black;
 	}
 }
@@ -210,7 +323,10 @@ textarea {
 			color: $white;
 		}
 	}
-	.thankYou p {
+	p {
+		color: $white;
+	}
+	.small {
 		color: $white;
 	}
 }
@@ -224,7 +340,7 @@ textarea {
 			color: $black;
 		}
 	}
-	.thankYou p {
+	p {
 		color: $black;
 	}
 	legend {
@@ -252,7 +368,7 @@ textarea {
 	legend {
 		color: $black;
 	}
-	.thankYou p {
+	p {
 		color: $black;
 	}
 	.at-fieldset {
@@ -271,77 +387,4 @@ textarea {
 
 .no-description .at-markup {
 	display: none;
-}
-// event styling
-.ngp-form {
-	@include media-breakpoint-up(md) {
-		max-width: map-get($container-max-widths, "lg") !important;
-	}
-	margin: 0 auto;
-	padding: 2rem;
-	@include drop-shadow;
-
-	.at input[type="checkbox"] + span:before {
-		border-color: white;
-	}
-
-	header {
-		color: $white;
-		&.at-title {
-			color: $white;
-			font-family: $font-family-serif;
-			text-align: left;
-			font-style: italic;
-			line-height: 1.2;
-			font-size: 32px;
-			margin-bottom: 0.6rem;
-			padding: 10px 0 10px 20px;
-		}
-	}
-	.UpdateMyProfile {
-		margin: 0;
-		padding: 0 !important;
-	}
-
-	.at-form {
-		.at-markup {
-			padding-right: 17.5px;
-			padding-left: 17.5px;
-			margin: 0;
-			p {
-				width: 100% !important;
-			}
-		}
-		form {
-			margin-top: 20px;
-			padding-left: 17.5px;
-			position: relative;
-			.at-fieldset {
-				padding: 0;
-			}
-			legend {
-				color: $white;
-				z-index: 5;
-				margin: 0;
-				display: none;
-			}
-			.at-fieldset {
-				label {
-					color: $white;
-					margin: 0;
-					padding-right: 1rem;
-				}
-			}
-		}
-		.at-form-submit {
-			padding: 0;
-			margin-top: 0.625rem;
-			.at-submit {
-				float: left;
-				padding: 0;
-				margin: 0;
-				@include button;
-			}
-		}
-	}
 }

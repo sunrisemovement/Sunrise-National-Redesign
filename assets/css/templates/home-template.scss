@@ -162,6 +162,9 @@
 				width: 100%;
 			}
 		}
+		.at-markup p {
+			font-size: 0.9rem;
+		}
 		.at-inner {
 			padding: 35px 0;
 			background-color: $yellow;
@@ -173,7 +176,7 @@
 				font-family: $font-family-serif;
 				padding: 0px 45px;
 				padding-bottom: 0;
-				font-size: 2rem;
+				font-size: 1.8rem;
 				font-style: italic;
 			}
 			.at-row > [class^="at-"] {
@@ -192,9 +195,10 @@
 					display: none;
 				}
 				.at-fieldset {
-					padding: 0 35px;
+					padding: 0px 43px;
 					label {
 						color: $black;
+						padding: 0;
 					}
 				}
 				.AdditionalInformation {
@@ -202,7 +206,7 @@
 				}
 			}
 			.at-form-submit {
-				padding: 1rem 37px;
+				padding: 0rem 43px;
 				.at-submit {
 					float: left;
 				}

@@ -46,7 +46,7 @@ add_action( 'wp_head', 'surnise_national_pingback_header' );
 const ACTION_TAG_STR = "<script type=\"text/javascript\" src=\"https://d1aqhv4sn5kxtx.cloudfront.net/actiontag/at.js\"></script><div class=\"ngp-form\" data-form-url=\"https://actions.everyaction.com/v1/Forms/%s\"></div>";
 
 // Fetch All Online Actions
-add_action( 'after_setup_theme', 'fetchNewOnlineActions' );
+//add_action( 'after_setup_theme', 'fetchNewOnlineActions' );
 //Create custom posts for actions that didn't exist.
 // createActionPosts($onlineActionsForms);
 
@@ -234,5 +234,6 @@ function ea_deleteOldEvents() {
 			wp_delete_post($postId);
 		}
 	}
-}
+
 add_action('ea_cron_hook', 'ea_scheduleCronJobs');
+
