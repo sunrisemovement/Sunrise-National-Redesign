@@ -74,6 +74,8 @@ function createEventPost($onlineAction) {
 		update_field('url', $onlineAction['url'], $post_id);
 		update_field('action_tag', sprintf(ACTION_TAG_STR, $onlineAction['form_tracking_id']), $post_id);
 		update_field('event_start_date', $onlineAction['event_start_date'], $post_id);
+		update_field('event_start_string', $onlineAction['start_date_string'], $post_id);
+		update_field('event_end_string', $onlineAction['end_date_string'], $post_id);
 		update_field('event_title', $onlineAction['event_title'], $post_id);
 		update_field('event_type', $onlineAction['event_type'], $post_id);
 		update_field('status', $onlineAction['status'], $post_id);
@@ -234,6 +236,6 @@ function ea_deleteOldEvents() {
 			wp_delete_post($postId);
 		}
 	}
+}
 
 add_action('ea_cron_hook', 'ea_scheduleCronJobs');
-

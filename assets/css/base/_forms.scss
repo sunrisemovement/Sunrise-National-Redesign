@@ -153,122 +153,126 @@ textarea {
 				margin-top: 2rem;
 			}
 		}
-		.wp-block-every-action-every-action-embed {
-
+		.auto-created {
+			margin-top: 60px;
 		}
 
-		.auto-created , .event-signup  {
-			.ngp-form{
-			max-width: 100% !important;
-			background-color: $sunrise-background-light !important;
-			box-shadow: none;
-			padding: 0;
-			@include media-breakpoint-down(md) {
-				margin-top: 2rem;
-			}
-			.HeaderHtml p {
-				color: $black;
-			}
-			h1,
-			h2,
-			h3,
-			h4,
-			p {
-				width: 100%;
-				max-width: 100%;
-			}
-		.at-title {
-			display: none;
-		}
-		.at-form {
-			@include make-container();
-			max-width: 1200px;
-			.at-inner {
-				background-color: $white !important;
-				@include make-row();
-				.at-markup {
-					@include make-col(5);
-					padding-right: 17.5px;
-					padding-left: 17.5px;
-					@include media-breakpoint-down(md) {
-						@include make-col(12);
+		.auto-created,
+		.event-signup {
+			.ngp-form {
+				max-width: 100% !important;
+				background-color: $sunrise-background-light !important;
+				box-shadow: none;
+				padding: 0;
+				@include media-breakpoint-down(md) {
+					margin-top: 2rem;
+				}
+				.HeaderHtml p,
+				ul li {
+					color: $black;
+				}
+				h1,
+				h2,
+				h3,
+				h4,
+				p {
+					width: 100%;
+					max-width: 100%;
+				}
+				.at-title {
+					display: none;
+				}
+
+				.at-form {
+					@include make-container();
+					max-width: 1200px;
+					.at-inner {
+						background-color: $white !important;
+						@include make-row();
+						.at-markup {
+							@include make-col(5);
+							padding-right: 17.5px;
+							padding-left: 17.5px;
+							@include media-breakpoint-down(md) {
+								@include make-col(12);
+							}
+						}
+						form {
+							position: relative;
+							padding-left: 17.5px;
+							padding-right: 17.5px;
+							margin: 0;
+							@include make-col(6);
+							@include make-col-offset(1);
+							@include media-breakpoint-down(md) {
+								padding-left: 0;
+								padding-right: 0;
+								@include make-col(12);
+								margin: auto;
+							}
+							legend {
+								color: $white;
+								z-index: 5;
+							}
+
+							.ContactInformation {
+								@include drop-shadow;
+								&:before {
+									content: "Sign Up to Attend";
+									color: $white;
+									font-size: 32px;
+									font-style: italic;
+									font-family: $font-family-serif;
+									display: block;
+									position: relative;
+									margin-bottom: 10px;
+								}
+							}
+
+							.at-form-submit {
+								@include drop-shadow;
+								padding: 0 2rem 2rem 2rem;
+								background-color: black;
+								margin-top: 0;
+							}
+
+							.at-row > [class^="at-"] {
+								min-width: 100%;
+							}
+							.at-fieldset {
+								background-color: $black;
+								padding: 2rem 2rem 0 2rem;
+								&.EventSignup {
+									padding: 0 2rem;
+								}
+								label {
+									color: $white;
+									padding: 0;
+									display: block;
+								}
+							}
+							.AdditionalInformation {
+								margin-top: -90px;
+							}
+						}
 					}
 				}
+			}
+			.square-image article .entry-content .at-form .at-inner {
 				form {
 					position: relative;
 					padding-left: 17.5px;
 					padding-right: 17.5px;
 					margin: 0;
+					@include make-col(4);
+					@include make-col-offset(2);
+				}
+				.at-markup {
 					@include make-col(6);
-					@include make-col-offset(1);
-					@include media-breakpoint-down(md) {
-						padding-left: 0;
-						padding-right: 0;
-						@include make-col(12);
-						margin: auto;
-					}
-					legend {
-						color: $white;
-						z-index: 5;
-					}
-
-					.ContactInformation {
-						@include drop-shadow;
-						&:before {
-							content: "Sign Up to Attend";
-							color: $white;
-							font-size: 32px;
-							font-style: italic;
-							font-family: $font-family-serif;
-							display: block;
-							position: relative;
-							margin-bottom: 10px;
-						}
-					}
-
-					.at-form-submit {
-						@include drop-shadow;
-						padding: 0 2rem 2rem 2rem;
-						background-color: black;
-						margin-top: 0;
-					}
-
-					.at-row > [class^="at-"] {
-						min-width: 100%;
-					}
-					.at-fieldset {
-						background-color: $black;
-						padding: 2rem 2rem 0 2rem;
-						&.EventSignup {
-							padding: 0 2rem;
-						}
-						label {
-							color: $white;
-							padding: 0;
-							display:block;
-						}
-					}
-					.AdditionalInformation {
-						margin-top: -90px;
-					}
 				}
 			}
 		}
 	}
-	.square-image article .entry-content .at-form .at-inner {
-		form {
-			position: relative;
-			padding-left: 17.5px;
-			padding-right: 17.5px;
-			margin: 0;
-			@include make-col(4);
-			@include make-col-offset(2);
-		}
-		.at-markup {
-			@include make-col(6);
-		}
-	}
-}}
 }
 
 .ngp-form,

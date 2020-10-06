@@ -29,24 +29,19 @@
 								<?php the_title( '<h1 class="entry-title h2">', '</h1>' ); ?>
 						<?php endif?>
 
-						<?php if( get_field('event_start_date')): ?>
-							<h3 class="dates">	<?php echo get_field('event_start_date'); ?> </h3>
-						<?php else: ?>
+
 							<?php if(get_field('dates')): ?>
 								<h3 class="dates">
 									<?php echo get_field('dates'); ?>
 									<?php if(get_field('times')): ?>
-										 @ <?php echo get_field('times'); ?>
+										 @ <?php echo get_field('times'); ?> EST
 									<?php endif?>
 								</h3>
+							<?php elseif( get_field('event_start_string')): ?>
+									<h3 class="dates"><?php echo get_field('event_start_string'); ?> 	<?php echo get_field('event_end_string'); ?> EST</h3>
+							<?php else: ?>
+								<h3 class="dates"><?php echo get_field('event_start_date'); ?> EST</h3>
 							<?php endif?>
-						<?php endif?>
-						<?php if( get_field('event_type')): ?>
-							<h4 class="h1-subhead">
-								<?php echo get_field('event_type'); ?>
-							</h4>
-						<?php endif?>
-
 
 						<div class="button-row">
 							<?php if(get_field('button_1_url')): ?>
@@ -71,21 +66,26 @@
 						<div class="col-md-6 header-blocks header-media">
 					<?php endif?>
 
-						<?php if(get_field('header_embed')): ?>
+						<?php if (get_field('header_embed')){ ?>
 							<iframe class="video" width="560" height="315" align="bottom" src="<?php echo get_field('header_embed'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						<?php elseif(get_the_post_thumbnail()): ?>
+						<?php } ?>
+						<?php if (get_the_post_thumbnail()){ ?>
 							<div class="post-thumbnail">
-								<?php the_post_thumbnail('large'); ?>
+								<?php echo the_post_thumbnail('large'); ?>
 							</div><!-- .post-thumbnail -->
-							<?php endif?>
+						<?php } ?>
+
 					</div>
 				</div>
 			</div>
 
 		<div class="header-background-image">
-			<?php if(get_field('header_image')): ?>
+			<?php if (get_field('header_image')){ ?>
 				<img src="<?php echo get_field('header_image'); ?>" />
-			<?php endif?>
+			<?php } ?>
+		<?php if (get_field('featured_image_url')) { ?>
+					<img src="<?php echo get_field('featured_image_url'); ?>" />
+			<?php } ?>
 		</div>
 
 </header><!-- .entry-header -->

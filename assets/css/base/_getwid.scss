@@ -176,6 +176,7 @@
 			box-shadow: none;
 			transition: 0.4s all;
 		}
+
 		.card-body {
 			width: 100%;
 			padding: 1rem;
@@ -238,6 +239,25 @@
 	padding-inline-start: 0px !important;
 }
 
+.wp-block-getwid-post-carousel__slide {
+	.h1-subhead {
+		color: $gray-sunrise;
+	}
+	.dates {
+		color: $gray-sunrise;
+	}
+	.post-thumbnail img {
+		width: 100%;
+		min-height: 150px;
+		object-fit: cover;
+	}
+	.event-title h4 {
+		color: $purple !important;
+	}
+	.event-timing {
+		color: $black !important;
+	}
+}
 // Padding Overides
 
 .getwid-padding-top-small {
