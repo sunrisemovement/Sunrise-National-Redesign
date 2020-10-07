@@ -37,6 +37,8 @@ class EventsAPI {
       			'event_title' => $eventJson['event_title'],
       			'event_type' => $eventJson['event_type'],
       			'event_start_date' => $eventJson['start_date'],
+            'event_start_string' => $eventJson['start_date_string'],
+            'event_end_string' => $eventJson['start_end_string'],
             'featured_image_url' => $eventJson['featured_image_url'],
             'description' => $eventJson['description']
           );
