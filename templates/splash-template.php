@@ -67,10 +67,10 @@
 
 					<div id="typed-strings">
 
-						<p>		985 people people have been shot by cops</p>
+						<p>		985 black people have been shot by cops</p>
 						<p>		31,000,000 acres have burned </p>
-						<p>    207,000 people died of COVID </p>
-						<p>		317 school shootings occured</p>
+						<p>   207,000 people died of COVID </p>
+						<p>		317 school shootings occurred</p>
 						<p>		300,000 youth were kept from DACA protections</p>
 
 					</div>
