@@ -29,7 +29,7 @@
 								<?php the_title( '<h1 class="entry-title h2">', '</h1>' ); ?>
 						<?php endif?>
 
-						<?php echo get_field('event_start_string'); ?>
+
 							<?php if(get_field('dates')): ?>
 								<h3 class="dates">
 									<?php echo get_field('dates'); ?>
@@ -37,8 +37,14 @@
 										 @ <?php echo get_field('times'); ?> EST
 									<?php endif?>
 								</h3>
-							<?php elseif( get_field('event_start_string')): ?>
-									<h3 class="dates"><?php echo get_field('event_start_string'); ?> 	<?php echo get_field('event_end_string'); ?> EST</h3>
+								<?php endif?>
+								<?php if(get_field('event_start_string')): ?>
+									<h3 class="dates">
+										<?php echo get_field('event_start_string'); ?>
+										<?php if(get_field('event_end_string')): ?>
+											- <?php echo get_field('event_end_string'); ?> EST
+										<?php endif?>
+									</h3>
 							<?php else: ?>
 								<h3 class="dates"><?php echo get_field('event_start_date'); ?> EST</h3>
 							<?php endif?>
