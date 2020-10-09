@@ -234,6 +234,5 @@ function ea_deleteOldEvents() {
 			wp_delete_post($postId);
 		}
 	}
-
+}
 add_action('ea_cron_hook', 'ea_scheduleCronJobs');
-
