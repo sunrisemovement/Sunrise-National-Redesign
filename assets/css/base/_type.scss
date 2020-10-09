@@ -49,7 +49,10 @@ body .site .entry-content {
 		line-height: 1.2;
 		margin: 0 auto 1rem auto;
 		@include media-breakpoint-up(lg) {
-			max-width: map-get($container-max-widths, "lg");
+			&.align-center {
+				max-width: map-get($container-max-widths, "lg");
+			}
+			max-width: map-get($container-max-widths, "md");
 		}
 	}
 	h1,
