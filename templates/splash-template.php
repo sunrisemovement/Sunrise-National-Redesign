@@ -39,14 +39,14 @@
 							<a href="http://marchforourlives.org" class="col-xs-6 col-md logos">
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/march.png" width="" height="" alt="" />
 							</a>
-							<a href="http://sunrisemovment.org/" class="col-xs-6 col-md logos">
+							<a href="https://www.sunrisemovement.org" class="col-xs-6 col-md logos">
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/sunrise.png" width="" height="" alt="" />
 							</a>
 							<a href="https://wecountonus.org" class="col-xs-12 count col-md ">
 							 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/count.png" width="" height="" alt="" />
 						 </a>
 							<a href="https://dreamdefenders.org/" class="col-xs-6 col-md logos">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/dream.png" width="" height="" alt="" />
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/dream-light.png" width="" height="" alt="" />
 							</a>
 							<a href="https://unitedwedream.org/" class="col-xs-6 col-md logos">
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/united.png" width="" height="" alt="" />
