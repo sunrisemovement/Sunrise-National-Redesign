@@ -1,7 +1,7 @@
 <?php
 
 class EventsAPI {
-
+  public const EVERY_ACTION = "everyaction";
   private const EVENTS_URL = "https://sunrise-events.s3.amazonaws.com/events.json";
   private const ACCEPTED_TRAINING_TYPES = ["Sunrise School", "Training", "Phonebank"];
 
@@ -30,8 +30,7 @@ class EventsAPI {
               'description' => $onlineActionJson['description'],
               'banner_image_path' => $onlineActionJson['bannerImagePath'],
             );
-            $this->addEventFields($onlineAction, $eventJson);
-            array_push($filteredEventsAndActions, $onlineAction);
+            array_push($filteredEventsAndActions, $this->addEventFields($onlineAction, $eventJson));
           }
         }
         else {
@@ -48,8 +47,7 @@ class EventsAPI {
             'name' => $eventJson['event_title'],
             'description' => $eventJson['description']
           );
-          $this->addEventFields($event, $eventJson);
-          array_push($filteredEventsAndActions, $event);
+          array_push($filteredEventsAndActions, $this->addEventFields($event, $eventJson));
         }
       }
     }

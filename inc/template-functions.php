@@ -69,15 +69,21 @@ function createEventPost($onlineAction) {
 			'comment_status' => 'closed',
 			'ping_status' => 'closed'
 		));
+
 		// Using Advanced Custom Fields Plugin
 		update_field('form_tracking_id', $onlineAction['form_tracking_id'], $post_id);
 		update_field('url', $onlineAction['url'], $post_id);
-		update_field('action_tag', sprintf(ACTION_TAG_STR, $onlineAction['form_tracking_id']), $post_id);
+
+		if ($onlineAction['event_source'] == EventsApi::EVERY_ACTION) {
+			update_field('action_tag', sprintf(ACTION_TAG_STR, $onlineAction['form_tracking_id']), $post_id);
+		}
+
 		update_field('event_start_date', $onlineAction['event_start_date'], $post_id);
 		update_field('event_start_string', $onlineAction['event_start_string'], $post_id);
 		update_field('event_end_string', $onlineAction['event_end_string'], $post_id);
 		update_field('event_title', $onlineAction['event_title'], $post_id);
 		update_field('event_type', $onlineAction['event_type'], $post_id);
+		update_field('event_source', $onlineAction['event_source'], $post_id);
 		if (isset($onlineAction['status'])) {
 			update_field('status', $onlineAction['status'], $post_id);
 		}
