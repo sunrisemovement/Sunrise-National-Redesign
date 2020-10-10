@@ -78,9 +78,14 @@ function createEventPost($onlineAction) {
 		update_field('event_end_string', $onlineAction['event_end_string'], $post_id);
 		update_field('event_title', $onlineAction['event_title'], $post_id);
 		update_field('event_type', $onlineAction['event_type'], $post_id);
-		update_field('status', $onlineAction['status'], $post_id);
+		if (isset($onlineAction['status'])) {
+			update_field('status', $onlineAction['status'], $post_id);
+		}
 		update_field('featured_image_url', $onlineAction['featured_image_url'], $post_id);
 		update_field('description', $onlineAction['description'], $post_id);
+		if (isset($onlineAction['banner_image_path'])) {
+			update_field('banner_image_path', $onlineAction['banner_image_path'], $post_id);
+		}
 	}
 	catch (exception $e) {
 		echo '<pre>'; print_r($e); echo '</pre>';

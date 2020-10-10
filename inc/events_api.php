@@ -2,18 +2,10 @@
 
 class EventsAPI {
 
-  const EVENTS_URL = "https://sunrise-events.s3.amazonaws.com/events.json";
-  const PROD_KEYTYPE = "PROD";
-  const DEV_KEYTYPE = "DEV";
-  const EA_EVENT_SOURCE = "everyaction";
+  private const EVENTS_URL = "https://sunrise-events.s3.amazonaws.com/events.json";
+  private const ACCEPTED_TRAINING_TYPES = ["Sunrise School", "Training", "Phonebank"];
 
-  public function __construct() {
-    // Staging or Dev
-    $Dev_Mode = false;
-    if ($Dev_Mode) {
-    } else {
-    }
-  }
+  public function __construct() { }
 
   /**
   * Returns a modified list of Online Actions Forms that have a valid associated
@@ -21,32 +13,64 @@ class EventsAPI {
   * Currently only returns select values in the Online Actions Form response.
   */
   public function fetchOnlineActions() {
-    $filteredOnlineActions = [];
+    $filteredEventsAndActions = [];
   	$response = self::callAPI("GET", self::EVENTS_URL);
     $json = json_decode($response, true)["map_data"];
 
   	foreach ($json as $eventJson) {
-      if ($eventJson["event_source"] == self::EA_EVENT_SOURCE) {
-        foreach ($eventJson['online_forms'] as $onlineActionJson) {
-          $splitUrl = explode("/", $onlineActionJson['url']);
-          $onlineAction = array(
-            'url' => $onlineActionJson['url'],
-      			'form_tracking_id' => $splitUrl[count($splitUrl) - 1],
-      			'name' => $onlineActionJson['name'],
-      			'status' => $onlineActionJson['status'],
-      			'event_title' => $eventJson['event_title'],
-      			'event_type' => $eventJson['event_type'],
-      			'event_start_date' => $eventJson['start_date'],
-            'event_start_string' => $eventJson['start_date_string'],
-            'event_end_string' => $eventJson['end_date_string'],
-            'featured_image_url' => $eventJson['featured_image_url'],
+      if ($this->filter($eventJson)) {
+        if (isset($eventJson['online_forms'])) {
+          foreach ($eventJson['online_forms'] as $onlineActionJson) {
+            $splitUrl = explode("/", $onlineActionJson['url']);
+            $onlineAction = array(
+              'url' => $onlineActionJson['url'],
+        			'form_tracking_id' => $splitUrl[count($splitUrl) - 1],
+        			'name' => $onlineActionJson['name'],
+        			'status' => $onlineActionJson['status'],
+              'description' => $onlineActionJson['description'],
+              'banner_image_path' => $onlineActionJson['bannerImagePath'],
+            );
+            $this->addEventFields($onlineAction, $eventJson);
+            array_push($filteredEventsAndActions, $onlineAction);
+          }
+        }
+        else {
+          $splitUrl = explode("/", $eventJson['registration_link']);
+          $formTrackingId = $splitUrl[count($splitUrl) - 1];
+
+          if (!$formTrackingId) {
+             $formTrackingId = $splitUrl[count($splitUrl) - 2];
+          }
+
+          $event = array(
+            'url' => $eventJson['registration_link'],
+            'form_tracking_id' => $formTrackingId,
+            'name' => $eventJson['event_title'],
             'description' => $eventJson['description']
           );
-          array_push($filteredOnlineActions, $onlineAction);
+          $this->addEventFields($event, $eventJson);
+          array_push($filteredEventsAndActions, $event);
         }
       }
     }
-  	return $filteredOnlineActions;
+  	return $filteredEventsAndActions;
+  }
+
+  private function addEventFields($eventOrAction, $eventJson) {
+    return array_merge($eventOrAction, array(
+      'event_source' => $eventJson['event_source'],
+      'event_title' => $eventJson['event_title'],
+      'event_type' => $eventJson['event_type'],
+      'event_start_date' => $eventJson['start_date'],
+      'event_start_string' => $eventJson['start_date_string'],
+      'event_end_string' => $eventJson['end_date_string'],
+      'featured_image_url' => $eventJson['featured_image_url'],
+    ));
+  }
+
+  private function filter($item) {
+    return $item["is_national"] &&
+      in_array($item["event_type"], self::ACCEPTED_TRAINING_TYPES);
   }
 
   static function callAPI($method, $url, $authKey = null, $data = false) {
