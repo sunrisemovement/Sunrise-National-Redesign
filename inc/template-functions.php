@@ -104,9 +104,12 @@ function createEventPost($onlineAction) {
 // When a post is created for an OnlineAction the json object used to create it will be stored in a file with the name matching the
 // form tracking id. Existence of a post for a given OnlineAction can be determined by checking for the json file existence.
 // Done By: Andrew Wilson
+function getOnlineActionsDirectory() {
+	return get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."Action".DIRECTORY_SEPARATOR;
+}
 
 function fetchNewOnlineActions($bypassTimer = null) {
-	$ONLINE_ACTION_DIR = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."Action".DIRECTORY_SEPARATOR;
+	$ONLINE_ACTION_DIR = getOnlineActionsDirectory();
 	$LAST_EA_API_CALL_TIME = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."lastApiCallTime.json";
 
 	// make directory if it doesn't exist
@@ -187,9 +190,11 @@ function echoVar($var) {
 
 function addDashboardWidgets() {
 	wp_add_dashboard_widget('everyaction_fetch_data_widget', 'Fetch Everyaction Data', 'renderFetchOnlineActionsButton');
+	wp_add_dashboard_widget('everyaction_delete_data_widget', 'Delete Everyaction Data', 'renderDeleteOnlineActionsButton');
 }
 add_action('wp_dashboard_setup', 'addDashboardWidgets');
 add_action('wp_ajax_ea_action', 'onEveryactionAdminButtonClick');
+add_action('wp_ajax_ea_delete_action', 'onEveryactionDeleteButtonClick');
 /**
  * Add javascript file
  */
@@ -203,6 +208,17 @@ function addAjaxScript($hook) {
 }
 add_action('admin_enqueue_scripts', 'addAjaxScript');
 
+function renderDeleteOnlineActionsButton() {
+	?>
+	<form id="ea_delete_form" action="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" method="post">
+		<input type="hidden" name="ea_delete_action" id="ea_delete_action" value="ea_delete_action">
+		<p class="submit">
+			<?php submit_button( __( 'Delete Everyaction Data' ), 'primary', 'save', false ); ?>
+		</p>
+	</form>
+	<?php
+	return;
+}
 
 function renderFetchOnlineActionsButton() {
 	?>
@@ -221,33 +237,74 @@ function onEveryactionAdminButtonClick() {
 	echo "Everyaction Data Updated Successfully";
 }
 
+function onEveryactionDeleteButtonClick() {
+	echo ea_deleteOldEvents(true)." posts deleted.\n";
+
+	$removed = deleteDirectory(getOnlineActionsDirectory());
+
+	if ($removed) {
+		echo "Directory deleted";
+	} else {
+		echo "Failed to delete directory";
+	}
+}
+
+function deleteDirectory($dir) {
+    if (!file_exists($dir)) {
+        return true;
+    }
+
+    if (!is_dir($dir)) {
+        return unlink($dir);
+    }
+
+    foreach (scandir($dir) as $item) {
+        if ($item == '.' || $item == '..') {
+            continue;
+        }
+
+        if (!deleteDirectory($dir . DIRECTORY_SEPARATOR . $item)) {
+            return false;
+        }
+
+    }
+    return rmdir($dir);
+}
+
+
 function ea_scheduleCronJobs() {
 	if ( !wp_next_scheduled( 'ea_deleteOldEvents' ) ) {
 		wp_schedule_event(time(), 'daily', 'ea_deleteOldEvents');
 	}
 }
 
-function ea_deleteOldEvents() {
+function ea_deleteOldEvents($bypassDateTime = false) {
 	$posts = get_posts([
 		'numberposts' => '-1', // -1 for all posts
 	  	'post_type' => 'events',
 	  	'post_status' => 'publish',
 		'fields' => 'ids'
 	]);
+	$countPostsDeleted = 0;
 	foreach($posts as $postId) {
 		$deletePost = false;
-		if( !get_field('event_start_date', $postId) ) {
+		if (!$bypassDateTime) {
+			if( !get_field('event_start_date', $postId) ) {
+				$deletePost = true;
+			}
+			$eventDateTime = new DateTime(get_field('event_start_date', $postId));
+			$now = new DateTime("now");
+			// if the post is already marked for deleted or if the event's start date is in the past, delete the post.
+			$deletePost = $deletePost || ( $now > $eventDateTime );
+		} else {
 			$deletePost = true;
 		}
-		$eventDateTime = new DateTime(get_field('event_start_date', $postId));
-		$now = new DateTime("now");
-		// if the post is already marked for deleted or if the event's start date is in the past, delete the post.
-		$deletePost = $deletePost || ( $now > $eventDateTime );
-
 		if($deletePost) {
+			$countPostsDeleted += 1;
 			wp_delete_post($postId);
 		}
 	}
+	return $countPostsDeleted;
 }
 
 add_action('ea_cron_hook', 'ea_scheduleCronJobs');
