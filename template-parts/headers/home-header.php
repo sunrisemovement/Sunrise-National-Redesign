@@ -57,7 +57,8 @@
 	<?php elseif(get_field('header_embed')): ?>
 				<div class="header-background-image video">
 				<div class="header-blocks header-media">
-					<iframe frameborder="0" loop autoplay allowfullscreen src="<?php echo get_field('header_embed'); ?>controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&autohide=1&showinfo=0&wmode=transparent "></iframe>
+					<iframe src="<?php echo get_field('header_embed'); ?>?autoplay=1&loop=1&autopause=0" width="640" height="360" frameborder=“0” allowfullscreen allow=autoplay></iframe>
+			
 				</div>
 			</div>
 		<?php elseif(get_field('header_image')): ?>

@@ -11,20 +11,21 @@ $base_class = esc_attr($extra_attr['block_name']);
   <?php else: ?>
   <a class="card everyaction" href="<?php echo get_the_permalink();?>">
   <?php endif?>
-
-  <div class=" <?php echo $base_class; ?>__post">
-    <?php if(get_the_post_thumbnail()): ?>
-      <div class="card-img">
-        <?php the_post_thumbnail('large'); ?>
-      </div><!-- .post-thumbnail -->
-    <?php elseif (get_field('featured_image_url')): //breaking for now due to slow loading?>
-        <div class="post-thumbnail">
-            <img src="<?php echo get_field('featured_image_url'); ?>"/>
-        </div><!-- .post-thumbnail -->
-    <?php else :?>
-        <div class="card-img">
-          <img class="card-img-top card-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/event-card.jpg" />
-        </div>
+        <div class=" <?php echo $base_class; ?>__post">
+    <?php if("x"==="y"): ?>
+        <?php if(get_the_post_thumbnail()): ?>
+          <div class="card-img">
+            <?php the_post_thumbnail('large'); ?>
+          </div><!-- .post-thumbnail -->
+        <?php elseif (get_field('featured_image_url')): //breaking for now due to slow loading?>
+            <div class="post-thumbnail">
+                <img src="<?php echo get_field('featured_image_url'); ?>"/>
+            </div><!-- .post-thumbnail -->
+        <?php else :?>
+            <div class="card-img">
+              <img class="card-img-top card-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/event-card.jpg" />
+            </div>
+        <?php endif?>
     <?php endif?>
       <div class="card-body <?php echo $base_class; ?>__post-content-wrapper">
           <?php if( get_field('event_type')): ?>
