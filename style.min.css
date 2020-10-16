@@ -69,8 +69,9 @@ embed,iframe,object{max-width:100%}
 .ngp-form .at-form .at-form-submit .at-submit:hover{opacity:.8;-webkit-transition:.4s opacity ease;transition:.4s opacity ease;text-decoration:none}
 .single-events article{width:100%;float:left}
 .single-events article .entry-content{margin:60px}
+.single-events article .auto-created{margin-top:60px}
 .single-events article .auto-created .ngp-form,.single-events article .event-signup .ngp-form{max-width:100% !important;background-color:#fffffb !important;-webkit-box-shadow:none;box-shadow:none;padding:0}
-.single-events article .auto-created .ngp-form .HeaderHtml p,.single-events article .event-signup .ngp-form .HeaderHtml p{color:#000}
+.single-events article .auto-created .ngp-form .HeaderHtml p,.single-events article .auto-created .ngp-form ul li,.single-events article .event-signup .ngp-form .HeaderHtml p,.single-events article .event-signup .ngp-form ul li{color:#000}
 .single-events article .auto-created .ngp-form h1,.single-events article .auto-created .ngp-form h2,.single-events article .auto-created .ngp-form h3,.single-events article .auto-created .ngp-form h4,.single-events article .auto-created .ngp-form p,.single-events article .event-signup .ngp-form h1,.single-events article .event-signup .ngp-form h2,.single-events article .event-signup .ngp-form h3,.single-events article .event-signup .ngp-form h4,.single-events article .event-signup .ngp-form p{width:100%;max-width:100%}
 .single-events article .auto-created .ngp-form .at-title,.single-events article .event-signup .ngp-form .at-title{display:none}
 .single-events article .auto-created .ngp-form .at-form,.single-events article .event-signup .ngp-form .at-form{width:100%;padding-right:17.5px;padding-left:17.5px;margin-right:auto;margin-left:auto;max-width:1200px}
@@ -159,6 +160,11 @@ embed,iframe,object{max-width:100%}
 .wp-block-getwid-section__wrapper .wp-block-getwid-section__wrapper{padding:1em}
 .blocks-gallery-grid{padding:0}
 .wp-block-getwid-images-slider .slick-dots,.wp-block-getwid-media-text-slider .slick-dots,.wp-block-getwid-post-slider .slick-dots,.wp-block-getwid-post-carousel .slick-dots{bottom:-34px;-webkit-padding-start:0 !important;padding-inline-start:0 !important}
+.wp-block-getwid-post-carousel__slide .h1-subhead{color:#33342e}
+.wp-block-getwid-post-carousel__slide .dates{color:#33342e}
+.wp-block-getwid-post-carousel__slide .post-thumbnail img{width:100%;min-height:150px;-o-object-fit:cover;object-fit:cover}
+.wp-block-getwid-post-carousel__slide .event-title h4{color:#8f0d56 !important}
+.wp-block-getwid-post-carousel__slide .event-timing{color:#000 !important}
 .getwid-padding-top-small{padding-top:30px}
 .getwid-padding-top-medium{padding-top:60px}
 .getwid-padding-top-normal{padding-top:120px}

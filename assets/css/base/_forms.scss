@@ -152,8 +152,9 @@ textarea {
 				margin-top: 2rem;
 			}
 		}
-		.wp-block-every-action-every-action-embed {
-		}
+		.auto-created {
+			margin-top: 60px;
+
 
 		.auto-created,
 		.event-signup {
@@ -165,7 +166,8 @@ textarea {
 				@include media-breakpoint-down(md) {
 					margin-top: 2rem;
 				}
-				.HeaderHtml p {
+				.HeaderHtml p,
+				ul li {
 					color: $black;
 				}
 				h1,
@@ -179,6 +181,7 @@ textarea {
 				.at-title {
 					display: none;
 				}
+
 				.at-form {
 					@include make-container();
 					max-width: 1200px;
