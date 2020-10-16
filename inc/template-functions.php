@@ -304,7 +304,7 @@ function ea_deleteOldEvents($bypassDateTime = false) {
 			wp_delete_post($postId);
 		}
 	}
+
 	return $countPostsDeleted;
 }
-
 add_action('ea_cron_hook', 'ea_scheduleCronJobs');

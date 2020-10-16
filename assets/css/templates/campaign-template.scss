@@ -113,7 +113,6 @@ html {
 			.button-row {
 				@include media-breakpoint-up(lg) {
 					position: absolute;
-					bottom: -30px;
 					left: 60px;
 				}
 				button {

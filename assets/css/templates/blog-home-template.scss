@@ -89,9 +89,12 @@
 			transition: 0.3s all;
 			cursor: pointer;
 		}
-		.post-thumbnail img {
-			float: left;
-			object-fit: cover;
+		.post-thumbnail {
+			min-height: unset !important;
+			img {
+				float: left;
+				object-fit: cover;
+			}
 		}
 		.entry-header {
 			float: left;

@@ -81,7 +81,6 @@ textarea {
 	}
 	.UpdateMyProfile {
 		margin: 0;
-		padding: 0 !important;
 	}
 
 	.at-form {
@@ -102,7 +101,7 @@ textarea {
 			}
 			.FastAction,
 			.UpdateMyProfile {
-				//display: none;
+				display: none;
 			}
 			.SmsLegalDisclaimer p {
 				font-size: 0.5rem;
@@ -155,7 +154,7 @@ textarea {
 		}
 		.auto-created {
 			margin-top: 60px;
-		}
+
 
 		.auto-created,
 		.event-signup {
