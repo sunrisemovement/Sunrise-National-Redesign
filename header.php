@@ -19,7 +19,22 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+	<!--tiktok pixel tracking code-->
+	<script>
+	  (function() {
+		var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+		ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BTUHCLGRQH54JI5RLS70';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ta, s);
+	  })();
+	</script>
+	<meta name="facebook-domain-verification" content="e4adyjw30pdtot2gm4mtm4vcpvimxc" />
+
+	<?php if(get_field('js-header')){
+	  echo get_field('js-header');
+	}?>
 	<?php wp_head(); ?>
+		<link href="https://github.com/sunrisemovement/extra-files/blob/main/actblue.css" rel="stylesheet">
 </head>
 
 <body <?php body_class(); ?>>
