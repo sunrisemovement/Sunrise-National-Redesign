@@ -38,11 +38,11 @@ $base_class = esc_attr($extra_attr['block_name']);
             <?php if( get_field('event_title')): ?>
               <?php $thetitle = get_field('event_title');
               $getlength = strlen($thetitle);
-              $thelength = 28;?>
+              $thelength = 70;?>
             <?php else:
               $thetitle = get_the_title(); /* or you can use get_the_title() */
               $getlength = strlen($thetitle);
-              $thelength = 28;
+              $thelength = 70;
                 ?>
             <?php endif?>
                 <h4 class="card-title">
