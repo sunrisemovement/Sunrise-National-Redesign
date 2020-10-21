@@ -29,12 +29,14 @@
 	  })();
 	</script>
 	<meta name="facebook-domain-verification" content="e4adyjw30pdtot2gm4mtm4vcpvimxc" />
-
+	<!-- The script tag needs to be included once per page where embeds appear. Putting it in the <head> tag will be fastest. -->
 	<?php if(get_field('js-header')){
-	  echo get_field('js-header');
+		echo get_field('js-header');
 	}?>
+	<script src="https://secure.actblue.com/cf/assets/actblue.js" async=""></script>
+	<script>window.actBlueConfig = {styleSheetHref: "https://raw.githubusercontent.com/sunrisemovement/extra-files/main/actblue.css"};</script>
 	<?php wp_head(); ?>
-		<link href="https://github.com/sunrisemovement/extra-files/blob/main/actblue.css" rel="stylesheet">
+
 </head>
 
 <body <?php body_class(); ?>>

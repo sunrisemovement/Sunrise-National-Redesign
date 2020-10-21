@@ -46,6 +46,7 @@ button,
 	padding: 0;
 	background: transparent;
 	color: $primary;
+	inline-size: fit-content;
 	&yellow {
 		color: $yellow;
 	}

@@ -67,7 +67,10 @@
 	.wp-block-getwid-custom-post-type__post {
 		@include media-breakpoint-up(md) {
 			&:nth-child(even) {
-				margin-top: 60px;
+				margin-top: 40px;
+			}
+			&:nth-child(odd) {
+				margin-bottom: 40px;
 			}
 		}
 	}
@@ -115,6 +118,7 @@
 		}
 		button {
 			margin-top: 1rem;
+			width: fit-content;
 		}
 	}
 }

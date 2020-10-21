@@ -3,7 +3,7 @@
 class EventsAPI {
   public const EVERY_ACTION = "everyaction";
   private const EVENTS_URL = "https://sunrise-events.s3.amazonaws.com/events.json";
-  private const ACCEPTED_TRAINING_TYPES = ["Sunrise School", "Training", "Phonebank", "Welcome Call"];
+  private const ACCEPTED_TRAINING_TYPES = ["Sunrise School", "Training", "Phonebank", "Welcome Call, Mass Call"];
 
   public function __construct() { }
 
