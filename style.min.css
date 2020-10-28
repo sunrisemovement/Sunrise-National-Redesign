@@ -125,6 +125,15 @@ embed,iframe,object{max-width:100%}
 .no-description .at-markup{display:none}
 .ctf{max-height:500px}
 .ctf #ctf.ctf-super-narrow .ctf-tweet-content{width:100%}
+.menu-item-gtranslate{width:140px}
+.menu-item-gtranslate #gtranslate_wrapper{left:0;top:-8px}
+.menu-item-gtranslate .switcher .selected{background:#292b20;width:140px}
+.menu-item-gtranslate .switcher .selected a{position:relative;color:#ffde16;border:0 solid #ffde16;width:140px;margin-top:7px}
+.menu-item-gtranslate .switcher .selected a:hover{background:#000}
+.menu-item-gtranslate .switcher .selected a:after{left:unset !important;right:4px;width:25px;top:3px;background-color:transparent;background:transparent;display:none}
+.menu-item-gtranslate .switcher .option{background:#33342e;background-color:#33342e;width:140px}
+.menu-item-gtranslate .switcher .option a,.menu-item-gtranslate .switcher .option a.selected{color:#ffde16;background:#000}
+.menu-item-gtranslate .switcher .option a:hover,.menu-item-gtranslate .switcher .option a.selected:hover{background:#000}
 .card-type{color:#495057;font-size:14px;font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-style:italic}
 .card-img{height:250px;float:left;width:100%;overflow:hidden}
 .card-img img{width:100%;-o-object-fit:cover;object-fit:cover;height:100%}
@@ -132,13 +141,14 @@ embed,iframe,object{max-width:100%}
 .custom-post-type-campaign{overflow:visible;position:relative}
 .custom-post-type-campaign.no-outline:after{display:block}
 .custom-post-type-campaign a:hover{text-decoration:none}
-.custom-post-type-campaign .card{border:0 solid;box-shadow:0 5px 10px rgba(0,0,0,0.15);-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.15);-moz-box-shadow:0 5px 10px rgba(0,0,0,0.15)}
+.custom-post-type-campaign .card{border:0 solid;box-shadow:0 5px 10px rgba(0,0,0,0.15);-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.15);-moz-box-shadow:0 5px 10px rgba(0,0,0,0.15);height:100%}
+.custom-post-type-campaign .card .card-body p{width:100%;text-align:left}
 .custom-post-type-campaign .card .wp-block-getwid-custom-post-type__post-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:unset;-ms-flex-align:unset;align-items:unset;height:100%}
-.custom-post-type-campaign .card .card-img{min-height:100%;height:unset}
+.custom-post-type-campaign .card .card-img{height:unset}
 .custom-post-type-campaign .card .card-img img{min-height:100%}
 .custom-post-type-campaign .card .card-body.wp-block-getwid-custom-post-type__content-wrapper{width:100%;float:left;padding:2rem !important}
 .custom-post-type-campaign .card .excerpt{font-size:1.125rem;color:#000;margin-top:-0.9rem}
-.custom-post-type-campaign .card button{margin-top:1rem}
+.custom-post-type-campaign .card button{margin-top:1rem;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}
 .has-image-left .wp-block-getwid-image-box__image-container{margin:0 3rem 0 0}
 .has-image-right .wp-block-getwid-image-box__image-container{margin:0 0 0 3rem}
 .custom-post-type-event.wp-block-getwid-post-carousel{overflow:hidden}
@@ -218,7 +228,7 @@ svg,img,embed,object{display:block;height:auto;max-width:100%}
 .button:hover,button:hover,.btn:hover,button:hover,input:hover[type="button"],input:hover[type="reset"],input:hover[type="submit"],.wp-block-button a:hover,.at-submit:hover,.btn-at .btn-at-primary:hover{opacity:.8;-webkit-transition:.4s opacity ease;transition:.4s opacity ease;text-decoration:none}
 .button.white,button.white,.btn.white,button.white,input.white[type="button"],input.white[type="reset"],input.white[type="submit"],.wp-block-button a.white,.at-submit.white,.btn-at .btn-at-primary.white{background:#fffffb;color:#000}
 .button.yellow,button.yellow,.btn.yellow,button.yellow,input.yellow[type="button"],input.yellow[type="reset"],input.yellow[type="submit"],.wp-block-button a.yellow,.at-submit.yellow,.btn-at .btn-at-primary.yellow{background:#ffde16;color:#000}
-.unbutton-link{padding:0;background:transparent;color:#8f0d56}
+.unbutton-link{padding:0;background:transparent;color:#8f0d56;inline-size:-webkit-fit-content;inline-size:-moz-fit-content;inline-size:fit-content}
 .unbutton-linkyellow{color:#ffde16}
 .unbutton-link:hover{background:transparent;color:#8f0d56}
 .unbutton-link a,.unbutton-link div{position:relative;text-decoration:none;-webkit-transition:.25s all ease-out;transition:.25s all ease-out;padding:0;background:transparent}
@@ -435,7 +445,7 @@ body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .footer-nav-block .block-3{background-color:#000;color:#fff}
 .footer-nav-block .block-3 span:after{background-color:#fff}
 .base-page .post-header,.archive .post-header,.error-404 .post-header,.search-results .post-header{min-height:440px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;width:100%;padding:80px;float:left;border-image-source:linear-gradient(to bottom,#8f0d56,#ef4c39,#ffde16);border-style:solid;border-image-slice:1;border-width:5px}
-.base-page .post-header::before,.archive .post-header::before,.error-404 .post-header::before,.search-results .post-header::before{position:absolute;left:calc(50% - 21px);bottom:-36px;content:"";display:block;background-image:url("/wp-content/themes/sunrise-national-redesign/assets/img/affordance.svg");z-index:200;display:block;width:40px;height:56px;background-repeat:no-repeat}
+.base-page .post-header::before,.archive .post-header::before,.error-404 .post-header::before,.search-results .post-header::before{position:absolute;left:calc(50% - 21px);bottom:-36px;content:"";display:block;background-image:url("/wp-content/themes/sunrise-national-redesign/assets/img/Affordance.svg");z-index:200;display:block;width:40px;height:56px;background-repeat:no-repeat}
 .base-page .post-header .container,.archive .post-header .container,.error-404 .post-header .container,.search-results .post-header .container{background-repeat:no-repeat;height:100%;width:100%}
 .base-page .post-header .container .header-row,.archive .post-header .container .header-row,.error-404 .post-header .container .header-row,.search-results .post-header .container .header-row{-webkit-box-align:center;-ms-flex-align:center;align-items:center;bottom:40px}
 .base-page .post-header .container .header-row .header-blocks,.archive .post-header .container .header-row .header-blocks,.error-404 .post-header .container .header-row .header-blocks,.search-results .post-header .container .header-row .header-blocks{position:relative}
@@ -553,9 +563,9 @@ html{height:100%;min-height:100%}
 .campaign-single .campaign-header .header-background-image{left:0;top:0;position:absolute;z-index:-10;width:100%;bottom:0;background-color:#000;overflow:hidden}
 .campaign-single .campaign-header .header-background-image::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.5;z-index:1;mix-blend-mode:unset}
 .campaign-single .campaign-header .header-background-image img{width:100%;-o-object-fit:cover;object-fit:cover;height:100%}
-.campaign-single .campaign-header .site-content::before{position:absolute;left:calc(50% - 21px);bottom:-36px;content:"";display:block;background-image:url("/wp-content/themes/sunrise-national-redesign/assets/img/affordance.svg");z-index:200;display:block;width:40px;height:56px;background-repeat:no-repeat}
+.campaign-single .campaign-header .site-content::before{position:absolute;left:calc(50% - 21px);bottom:-36px;content:"";display:block;background-image:url("/wp-content/themes/sunrise-national-redesign/assets/img/Affordance.svg");z-index:200;display:block;width:40px;height:56px;background-repeat:no-repeat}
 .home-page .post-header{position:relative;width:100%;padding:120px;float:left}
-.home-page .post-header::before{position:absolute;left:calc(50% - 21px);bottom:-36px;content:"";display:block;background-image:url("/wp-content/themes/sunrise-national-redesign/assets/img/affordance.svg");z-index:200;display:block;width:40px;height:56px;background-repeat:no-repeat}
+.home-page .post-header::before{position:absolute;left:calc(50% - 21px);bottom:-36px;content:"";display:block;background-image:url("/wp-content/themes/sunrise-national-redesign/assets/img/Affordance.svg");z-index:200;display:block;width:40px;height:56px;background-repeat:no-repeat}
 .home-page .post-header .alignwide{background-repeat:no-repeat;height:100%;width:100%}
 .home-page .post-header .alignwide .header-row{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;bottom:40px}
 .home-page .post-header .alignwide .header-row .header-blocks{position:relative}
@@ -1930,7 +1940,10 @@ a.text-dark:hover,a.text-dark:focus{color:#0b0b0a !important}
 }@media(min-width:992px){.ngp-form{max-width:920px !important}
 .custom-post-type-campaign:after{border-image-source:linear-gradient(to bottom,#8f0d56,#ef4c39,#ffde16);border-style:solid;border-image-slice:1;border-width:5px;content:"";display:block;top:7%;right:30px;left:-20px;padding:2rem;position:absolute;width:110%;z-index:-1;height:100%}
 .custom-post-type-campaign:after{top:80px;left:-60px;right:0;height:calc(100% - 140px);bottom:0;display:block}
-.custom-post-type-campaign .wp-block-getwid-custom-post-type__post:nth-child(even){margin-top:60px}
+.custom-post-type-campaign .wp-block-getwid-custom-post-type__post{margin-top:0}
+.custom-post-type-campaign .wp-block-getwid-custom-post-type__post:nth-child(even){margin-top:40px}
+.custom-post-type-campaign .wp-block-getwid-custom-post-type__post:nth-child(odd){margin-bottom:40px}
+.custom-post-type-campaign .card .card-img{min-height:100%}
 .custom-post-type-campaign .card .card-body.wp-block-getwid-custom-post-type__content-wrapper{width:60%}
 .custom-post-type-campaign .card img{-o-object-fit:cover;object-fit:cover;height:100%;width:100%}
 .wp-block-getwid-post-carousel .slick-next,.wp-block-getwid-custom-post-type.has-layout-grid .slick-next{right:30% !important}

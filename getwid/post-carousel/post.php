@@ -56,7 +56,7 @@ $base_class = esc_attr($extra_attr['block_name']);
               <span class="dates">
                 <?php echo get_field('dates'); ?>
                 <?php if(get_field('times')): ?>
-                   @ <?php echo get_field('times'); ?>
+                 <?php echo get_field('times'); ?>
                 <?php endif?>
               </span>
             <?php elseif( get_field('event_start_string')): ?>
