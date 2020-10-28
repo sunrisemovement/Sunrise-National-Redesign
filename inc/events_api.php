@@ -3,7 +3,6 @@
 class EventsAPI {
   public const EVERY_ACTION = "everyaction";
   private const EVENTS_URL = "https://sunrise-events.s3.amazonaws.com/events.json";
-  private const ACCEPTED_TRAINING_TYPES = ["Sunrise School", "Training", "Phonebank", "Welcome Call, Mass Call"];
 
   public function __construct() { }
 
@@ -67,8 +66,9 @@ class EventsAPI {
   }
 
   private function filter($item) {
-    return $item["is_national"] &&
-      in_array($item["event_type"], self::ACCEPTED_TRAINING_TYPES);
+    //https://github.com/sunrisemovement/events-map/pull/13
+    //This PR changes it so all we need to do to filter on the plugin side is use the bool property "include_on_carousel"
+    return $item["include_on_carousel"];
   }
 
   static function callAPI($method, $url, $authKey = null, $data = false) {
