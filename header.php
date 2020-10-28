@@ -33,7 +33,7 @@
 	<?php if(get_field('js-header')){
 		echo get_field('js-header');
 	}?>
-	<script src="https://secure.actblue.com/cf/assets/actblue.js" async=""></script>
+	<style href="<?php bloginfo('template_url'); ?>/assets/css/actblue.css"></style>
 	<script>window.actBlueConfig = {styleSheetHref: "https://raw.githubusercontent.com/sunrisemovement/extra-files/main/actblue.css"};</script>
 	<?php wp_head(); ?>
 
