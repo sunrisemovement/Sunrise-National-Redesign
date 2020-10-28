@@ -66,15 +66,24 @@
 	}
 	.wp-block-getwid-custom-post-type__post {
 		@include media-breakpoint-up(md) {
+			margin-top: 0;
 			&:nth-child(even) {
-				margin-top: 60px;
+				margin-top: 40px;
+			}
+			&:nth-child(odd) {
+				margin-bottom: 40px;
 			}
 		}
 	}
 	.card {
 		border: 0 solid;
 		@include drop-shadow;
+		height: 100%;
 
+		.card-body p {
+			width: 100%;
+			text-align: left;
+		}
 		.wp-block-getwid-custom-post-type__post-wrapper {
 			display: flex;
 			flex-direction: row;
@@ -85,7 +94,9 @@
 			}
 		}
 		.card-img {
-			min-height: 100%;
+			@include media-breakpoint-up(md) {
+				min-height: 100%;
+			}
 			height: unset;
 			img {
 				min-height: 100%;
@@ -115,6 +126,7 @@
 		}
 		button {
 			margin-top: 1rem;
+			width: fit-content;
 		}
 	}
 }

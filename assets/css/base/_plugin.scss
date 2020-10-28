@@ -4,3 +4,49 @@
 		width: 100%;
 	}
 }
+
+.menu-item-gtranslate {
+	width: 140px;
+	#gtranslate_wrapper {
+		left: 0;
+		top: -8px;
+	}
+	.switcher {
+		.selected {
+			background: #292b20;
+			width: 140px;
+			a {
+				position: relative;
+				color: $yellow;
+				border: 0px solid $yellow;
+				width: 140px;
+				margin-top: 7px;
+				&:hover {
+					background: $black;
+				}
+				&:after {
+					left: unset !important;
+					right: 4px;
+					width: 25px;
+					top: 3px;
+					background-color: transparent;
+					background: transparent;
+					display: none;
+				}
+			}
+		}
+		.option {
+			background: $gray-sunrise;
+			background-color: $gray-sunrise;
+			width: 140px;
+			a,
+			a.selected {
+				color: $yellow;
+				background: $black;
+				&:hover {
+					background: $black;
+				}
+			}
+		}
+	}
+}
