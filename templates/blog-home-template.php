@@ -16,7 +16,6 @@ get_template_part( 'template-parts/blog-parts/blog-navigation' );
 		<main id="main" class="site-main">
 				<?php get_template_part( 'template-parts/blog-parts/blog-featured', '' ); ?>
 				<?php get_template_part( 'template-parts/blog-parts/blog-horizontal', '' ); ?>
-			<?php get_template_part( 'template-parts/instagram', '' ); ?>
 			<?php
 			while ( have_posts() ) :
 				the_post();

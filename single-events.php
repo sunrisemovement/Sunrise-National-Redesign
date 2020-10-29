@@ -17,8 +17,8 @@ get_header();
 			<?php
 			while ( have_posts() ) :
 				the_post();
-			get_template_part( 'template-parts/headers/custom-post-header', '' );
-			get_template_part( 'template-parts/content/content', 'page' );
+			get_template_part( 'template-parts/headers/event-post-header', '' );
+			get_template_part( 'template-parts/content/content', 'event' );
 
 		endwhile; // End of the loop.
 		?>

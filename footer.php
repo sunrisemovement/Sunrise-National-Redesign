@@ -159,7 +159,7 @@
 	</div>
 
 	</div><!-- .section-inner -->
-
+	<script src="https://secure.actblue.com/cf/assets/actblue.js" async></script>
 </footer><!-- #site-footer -->
 
 <?php wp_footer(); ?>

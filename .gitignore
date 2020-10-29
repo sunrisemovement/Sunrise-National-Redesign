@@ -66,3 +66,7 @@ assets/bower_components/*
 .idea/
 library/vendors/composer
 assets/img/.DS_Store
+
+# EA8 Local Files #
+###################
+ea8/Action/*
