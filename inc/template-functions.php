@@ -1,7 +1,5 @@
 <?php
 require_once( 'events_api.php' );
-// Enable Debug logging to the /wp-content/debug.log file
-
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
@@ -281,10 +279,10 @@ function IsNullOrEmptyString($str){
 
 function ea_scheduleCronJobs() {
 	if ( !wp_next_scheduled( 'ea_deleteOldEvents' ) ) {
-		wp_schedule_event(time(), 'twicedaily', 'ea_deleteOldEvents');
+		wp_schedule_event(time(), 'hourly', 'ea_deleteOldEvents');
 	}
 	if ( !wp_next_scheduled( 'fetchNewOnlineActions' ) ) {
-		wp_schedule_event(time(), 'twicedaily', 'fetchNewOnlineActions');
+		wp_schedule_event(time(), 'hourly', 'fetchNewOnlineActions');
 	}
 }
 
