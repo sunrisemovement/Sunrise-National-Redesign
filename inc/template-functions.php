@@ -370,8 +370,6 @@ if (!function_exists('write_log')) {
 
 }
 
-write_log("hello");
-
 // test function used to modify the dates of some of the events coming in so they would be expired in ways that I could test - Andrew Wilson
 // function ea_test() {
 // 	$posts = get_posts([
