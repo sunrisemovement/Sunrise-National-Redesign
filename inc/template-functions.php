@@ -112,7 +112,6 @@ function fetchNewOnlineActions($bypassTimer = null) {
 	$calledDate = new DateTime("now");
 	write_log($calledDate->format('d/m/Y')."-"."fetchNewOnlineActions called");
 	$ONLINE_ACTION_DIR = getOnlineActionsDirectory();
-	$LAST_EA_API_CALL_TIME = get_template_directory().DIRECTORY_SEPARATOR."ea8".DIRECTORY_SEPARATOR."lastApiCallTime.json";
 
 	// make directory if it doesn't exist
 	$fileExist = file_exists($ONLINE_ACTION_DIR);
@@ -121,12 +120,7 @@ function fetchNewOnlineActions($bypassTimer = null) {
 		mkdir($ONLINE_ACTION_DIR, 0777, true);
 	}
 
-	if (is_null($bypassTimer) || empty($bypassTimer)){
-		return;
-		if (!checkApiCallTimer()) {
-			return;
-		}
-	}
+
 	write_log($calledDate->format('d/m/Y')."-"."fetchNewOnlineActions timer passed, fetching...");
 	$filteredOnlineActions = getOnlineActionsFromApi();
 
@@ -150,40 +144,12 @@ function fetchNewOnlineActions($bypassTimer = null) {
 	return $actionsCreated;
 }
 
-/* function that checks if it is time to call the API again.  $apiRefreshPeriod stores the time period that must elapse before refreshing
- * The time of the last API call is persisted in a file stored in $LAST_EA_API_CALL_TIME to persist between requests.
- * Returns true if enough time has past since the last call, false if not.
-*/
-function checkApiCallTimer() {
-	$runNow = false;
-	if (!file_exists($LAST_EA_API_CALL_TIME)) {
-		return true;
-	}
-	$lastCallDate = json_decode(file_get_contents($LAST_EA_API_CALL_TIME));
-	$lastCallDate = new DateTime($lastCallDate->date);
-	// time in seconds between EveryAction API calls.  The format starts with P and then 10H specifies 10 hours as the refresh period
-	// https://www.php.net/manual/en/dateinterval.construct.php
-	$apiRefreshPeriod = new DateInterval('PT10H');
-
-	$now = new DateTime("now");
-	$nextCallDate = $lastCallDate->add($apiRefreshPeriod);
-	$runNow = $now > $nextCallDate;
-	return $runNow;
-}
-
-// This function sets the last time that the API was called and stores it in a persisted file for quick reference
-function setLastCallDate() {
-	$now = new DateTime("now");
-	file_put_contents($LAST_EA_API_CALL_TIME, json_encode($now));
-}
-
 // echo '<pre>'; print_r($filteredOnlineActions); echo '</pre>';
 // Call EveryAction API and return a json object with an array called "items" that contains all of the OnlineAction json objects returned
 // Called by fetchNewOnlineActionForms
 function getOnlineActionsFromApi() {
 	$eventsApi = new EventsAPI();
 	$onlineActions = $eventsApi->fetchOnlineActions();
-	setLastCallDate();
 	return $onlineActions;
 }
  if (!function_exists('write_log')) {
