@@ -383,7 +383,10 @@ gulp.task("clean", (cb) => {
 });
 
 gulp.task("zip", (cb) => {
-	gulp.src("./dist").pipe(zip("sunrise-theme.zip")).pipe(gulp.dest("exports"));
+	gulp
+		.src("./dist/*")
+		.pipe(zip("sunrise-theme.zip"))
+		.pipe(gulp.dest("exports"));
 	cb();
 });
 
