@@ -36,10 +36,14 @@
 			?>
 			<div class="entry-meta">
 				<div class="entry-details">
-				<?php
-				echo get_field('post_author');
-				sunrise_national_posted_on();
+			<?php if(get_field('post_author')):
+							echo get_field('post_author');
+						elseif(get_the_author()):?>
+						<?php the_author_posts_link();?>
 
+					<?php endif; ?> |
+			<?php
+				sunrise_national_posted_on();
 				?>
 			</div>
 				<div class="entry-share">
