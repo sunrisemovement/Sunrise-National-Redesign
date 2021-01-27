@@ -16,7 +16,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 	<!--tiktok pixel tracking code-->
 	<script>
@@ -37,7 +37,6 @@
 	<style href="<?php bloginfo('template_url'); ?>/assets/css/actblue.css"></style>
 	<script>window.actBlueConfig = {styleSheetHref: "https://raw.githubusercontent.com/sunrisemovement/extra-files/main/actblue.css"};</script>
 	<?php wp_head(); ?>
-
 </head>
 
 <body <?php body_class(); ?>>

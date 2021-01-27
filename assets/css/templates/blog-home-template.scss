@@ -1,7 +1,9 @@
 .blog-header {
 	display: flex;
+	margin-bottom: 0 !important;
 	.blog-bar {
 		padding: inherit;
+		align-items: center;
 		padding-top: 20px;
 		padding-bottom: 20px;
 		display: flex;
@@ -18,6 +20,7 @@
 		li {
 			display: inline-block;
 			margin-right: 1rem;
+			margin-bottom: 0 !important;
 			a {
 				color: $primary;
 				font-family: $font-family-sans-serif;

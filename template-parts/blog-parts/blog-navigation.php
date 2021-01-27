@@ -7,7 +7,8 @@
  *
  */
  ?>
-<nav class="blog-header alignwide container" aria-label="<?php esc_attr_e( 'Horizontal', 'sunrisenational' ); ?>" role="navigation">
+ <div class="blog-header">
+<nav class=" alignwide container" aria-label="<?php esc_attr_e( 'Horizontal', 'sunrisenational' ); ?>" role="navigation">
 	<div class="blog-bar row">
 		<h3 class="blog-title"> <a href="/blog">
 			UPRISING NEWS
@@ -34,3 +35,4 @@
     </div>
 	</div>
 </nav>
+</div>

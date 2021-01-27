@@ -13,7 +13,7 @@ get_template_part( 'template-parts/blog-parts/blog-navigation' );
 
 <div class="container">
 	<div class="row">
-	<div id="primary" class="content-area blog-single col-lg-9">
+	<div id="primary" class="content-area blog-single col-lg-12">
 		<main id="main" class="site-main">
 		<?php
 		while ( have_posts() ) :
@@ -29,19 +29,19 @@ get_template_part( 'template-parts/blog-parts/blog-navigation' );
 </div>
 <div class="container post-footer">
 	<div class="row">
-	<div class="border-gradient-sunrise col-sm-7">
+	<div class="border-gradient-sunrise col-sm-8">
 		<div>
 		<h4 class="post-footer-text">
 			Want to start taking action to make a difference? Join one of upcoming campaigns and get involved!
 		</h4>
-		<a href="/take-action/"><button>
+		<a class="btn-primary btn" href="/take-action/">
 			Take Action with Sunrise
-		</button></a>
+		</a>
 			</div>
 	</div>
 	<div class="col post-next d-none d-md-flex">
 	<?php
-		$the_query = new WP_Query( array ( 'orderby' => 'rand', 'posts_per_page' => '3' ) );
+		$the_query = new WP_Query( array ( 'orderby' => 'date', 'posts_per_page' => '3',  'post__not_in' => array( $post->ID ) ) );
 		// output the random post
 		 if ( $the_query->have_posts() ) : ?>
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>

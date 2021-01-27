@@ -555,3 +555,13 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 
 }
+
+//Shortcodes
+function blog_shortcode() {
+				ob_start();
+				get_template_part( 'template-parts/blog-parts/blog-navigation', '' );
+	 			get_template_part( 'template-parts/blog-parts/blog-featured', '' );
+				return ob_get_clean();
+}
+
+add_shortcode('insert_blog', 'blog_shortcode');

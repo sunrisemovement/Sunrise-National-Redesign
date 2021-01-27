@@ -34,7 +34,7 @@
 				<div class="col-lg-3 col-md-6 blog-vertical-thumbnail-section order-lg-1">
 				<?php
 					$the_query = new WP_Query( array (
-						'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => '5',
+						'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => '6',
 						'post_type' => 'post', 'offset' => "1",
 					) );
 					// output the random post

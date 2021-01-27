@@ -67,7 +67,6 @@ body .site .entry-content {
 
 	h2 {
 		@include media-breakpoint-down(md) {
-			text-align: center;
 			font-size: 2rem;
 		}
 	}
@@ -175,9 +174,9 @@ body .site .entry-content {
 }
 
 .cat-links a {
-	font-family: $font-family-sans-serif;
+	font-family: $font-family-serif;
 	font-weight: $font-weight-bold;
 	//@include reverse-underliner;
-	font-size: 16px;
+	font-size: 20px;
 	margin-right: 0.7rem;
 }

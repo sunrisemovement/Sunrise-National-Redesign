@@ -23,17 +23,6 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-		<div class="after-content">
-				<div class="section-padding">
-			<?php
-				get_template_part( 'template-parts/blog-parts/blog-navigation', '' );
-				get_template_part( 'template-parts/blog-parts/blog-featured', '' );
-			?>
-			</div>
-			<?php
-			?>
-		</div>
-
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
