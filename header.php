@@ -17,7 +17,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 	<!--tiktok pixel tracking code-->
 	<script>
@@ -28,6 +27,7 @@
 		s.parentNode.insertBefore(ta, s);
 	  })();
 	</script>
+
 
 	<meta name="facebook-domain-verification" content="e4adyjw30pdtot2gm4mtm4vcpvimxc" />
 	<!-- The script tag needs to be included once per page where embeds appear. Putting it in the <head> tag will be fastest. -->
@@ -40,7 +40,8 @@
 
 </head>
 
-<body <?php body_class(); ?>
+<body <?php body_class(); ?>>
+	<!-- Google Tag Manager (noscript) -->
 	<div id="page" class="site">
 		<a class="sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'sunrise-national' ); ?></a>
 

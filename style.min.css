@@ -551,6 +551,7 @@ body footer .footer-right .social-menu li a svg{height:28px;width:28px}
 .blog-single article h1{font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:400;font-size:3.3rem;text-transform:none !important}
 .blog-single article h3{font-style:italic;padding:.2rem 0 1rem;font-size:20px}
 .blog-single article .entry-content{margin-top:2rem}
+.blog-single article .entry-content p{line-height:1.5;font-size:20px;font-weight:300}
 .blog-single article .entry-meta{font-size:1.2rem;padding-bottom:1.6rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .blog-single article .entry-share{margin-top:-14px}
 .blog-single article .entry-share li a{background-color:#33342e}

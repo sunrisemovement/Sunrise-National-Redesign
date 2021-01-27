@@ -13,7 +13,7 @@ get_template_part( 'template-parts/blog-parts/blog-navigation' );
 
 <div class="container">
 	<div class="row">
-	<div id="primary" class="content-area blog-single col-lg-8">
+	<div id="primary" class="content-area blog-single col-lg-9">
 		<main id="main" class="site-main">
 		<?php
 		while ( have_posts() ) :
@@ -25,11 +25,6 @@ get_template_part( 'template-parts/blog-parts/blog-navigation' );
 		?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<div class="col">
-	<?php
-	get_sidebar();
-	?>
-</div>
 	</div>
 </div>
 <div class="container post-footer">
@@ -37,7 +32,7 @@ get_template_part( 'template-parts/blog-parts/blog-navigation' );
 	<div class="border-gradient-sunrise col-sm-7">
 		<div>
 		<h4 class="post-footer-text">
-			Want to start taking action to make a difference? Join one of upcoming campaigns and get involved
+			Want to start taking action to make a difference? Join one of upcoming campaigns and get involved!
 		</h4>
 		<a href="/take-action/"><button>
 			Take Action with Sunrise
