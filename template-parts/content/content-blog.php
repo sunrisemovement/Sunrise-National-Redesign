@@ -37,7 +37,7 @@
 			<div class="entry-meta">
 				<div class="entry-details">
 				<?php
-				echo get_field('post_author');
+				echo get_field('post_author'); |
 				sunrise_national_posted_on();
 
 				?>

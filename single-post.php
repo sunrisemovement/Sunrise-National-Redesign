@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -39,7 +39,7 @@ get_template_part( 'template-parts/blog-parts/blog-navigation' );
 		<h4 class="post-footer-text">
 			Want to start taking action to make a difference? Join one of upcoming campaigns and get involved
 		</h4>
-		<a href=""><button>
+		<a href="/take-action/"><button>
 			Take Action with Sunrise
 		</button></a>
 			</div>

@@ -142,7 +142,7 @@ embed,iframe,object{max-width:100%}
 .pum-theme-content-only .pum-content+.pum-close{top:15px}
 .pum-overlay.pum-overlay-disabled .pum-container{padding:13px;text-align:center;background-color:#ffde16;margin-bottom:0}
 .pum-overlay.pum-overlay-disabled .pum-container p{text-align:center}
-html.pum-open.pum-open-overlay,html.pum-open.pum-open-overlay.pum-open-fixed .pum-overlay{overflow:scroll}
+html.pum-open.pum-open-overlay,html.pum-open.pum-open-overlay.pum-open-fixed .pum-overlay{overflow:scroll !important}
 .card-type{color:#495057;font-size:14px;font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-style:italic}
 .card-img{height:250px;float:left;width:100%;overflow:hidden}
 .card-img img{width:100%;-o-object-fit:cover;object-fit:cover;height:100%}

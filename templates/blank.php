@@ -45,11 +45,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<!-- Google Tag Manager (noscript) -->
-<noscript>
-	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCQ8KLL" height="0" width="0" style="display:none;visibility:hidden">
- </iframe>
- </noscript>
+
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main base-page">
