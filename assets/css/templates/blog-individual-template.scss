@@ -1,10 +1,12 @@
-.single-post {
+.single-post,
+.page-template-blog-home-template {
 	.blog-header {
 		background-color: $yellow;
 		width: 100%;
 		display: flex;
+		margin-bottom: 60px;
 		.blog-menu {
-			margin: 0;
+			margin-bottom: 0;
 			li a {
 				color: $black;
 			}
@@ -41,6 +43,13 @@
 				background-repeat: no-repeat;
 				display: block;
 			}
+			.secondary-header {
+				font-size: 20px;
+				font-weight: 300;
+				font-style: italic;
+				font-family: "Source Serif Pro";
+				padding: 4px 0;
+			}
 		}
 
 		h1 {
@@ -51,24 +60,6 @@
 			@include media-breakpoint-down(md) {
 				font-size: 2.2rem;
 			}
-		}
-		h2 {
-			padding: 0.2rem 0 0 0;
-			font-size: 40px;
-			margin-bottom: 0.3em !important;
-			text-transform: none !important;
-		}
-
-		h3 {
-			padding: 0.2rem 0 0 0;
-			font-size: 30px;
-			margin-bottom: 0.3em !important;
-		}
-
-		h4 {
-			padding: 0.2rem 0 0 0;
-			font-size: 20px;
-			margin-bottom: 0.3em !important;
 		}
 
 		blockquote.wp-block-quote {
@@ -88,6 +79,24 @@
 
 		.entry-content {
 			margin-top: 2rem;
+			h2 {
+				padding: 0.2rem 0 0 0;
+				font-size: 40px;
+				margin-bottom: 0.3em;
+				text-transform: none;
+			}
+
+			h3 {
+				padding: 0.2rem 0 0 0;
+				font-size: 30px;
+				margin-bottom: 0.3em;
+			}
+
+			h4 {
+				padding: 0.2rem 0 0 0;
+				font-size: 20px;
+				margin-bottom: 0.3em;
+			}
 			p {
 				line-height: 1.5;
 				font-size: 20px;
@@ -135,7 +144,7 @@
 		}
 
 		.cat-links {
-			margin: 2rem 0 0.5rem 0;
+			margin: 0 0 0.5rem 0;
 			display: block;
 		}
 	}

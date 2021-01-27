@@ -22,9 +22,9 @@
 		endif;
 		?>
 		<?php if(get_field('secondary_header') ): ?>
-		<h3>
+		<h4 class="secondary-header">
 			<?php echo get_field('secondary_header'); ?>
-		</h3>
+		</h4>
 		<?php
 		endif;
 		if ( 'post' === get_post_type() ) :

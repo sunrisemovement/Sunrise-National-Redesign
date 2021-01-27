@@ -1,6 +1,9 @@
+article .entry-content .blog-header .container {
+	margin-bottom: 0;
+}
+
 .blog-header {
 	display: flex;
-	margin-bottom: 0 !important;
 	.blog-bar {
 		padding: inherit;
 		align-items: center;
@@ -8,6 +11,7 @@
 		padding-bottom: 20px;
 		display: flex;
 	}
+
 	.blog-title {
 		display: inline-block;
 		a {
