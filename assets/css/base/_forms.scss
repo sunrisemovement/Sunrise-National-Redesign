@@ -280,9 +280,13 @@ textarea {
 
 	p {
 		color: $white;
+		margin-left: 0;
 	}
 	.small {
 		color: $white;
+	}
+	.at input[type="checkbox"] + span:before {
+		border: 1px solid white;
 	}
 }
 .yellow .ngp-form,
@@ -312,6 +316,9 @@ textarea {
 	small {
 		color: $black;
 	}
+	input[type="checkbox"] + span:before {
+		border: 1px solid black;
+	}
 }
 
 .purple .ngp-form,
@@ -331,6 +338,9 @@ textarea {
 	}
 	.small {
 		color: $white;
+	}
+	input[type="checkbox"] + span:before {
+		border: 1px solid white;
 	}
 }
 
@@ -354,8 +364,8 @@ textarea {
 			color: $black;
 		}
 	}
-	.at input[type="checkbox"] + span:before {
-		border-color: black;
+	input[type="checkbox"] + span:before {
+		border: 1px solid black;
 	}
 }
 
@@ -379,8 +389,8 @@ textarea {
 			color: $black;
 		}
 	}
-	.at input[type="checkbox"] + span:before {
-		border-color: black;
+	input[type="checkbox"] + span:before {
+		border: 1px solid black;
 	}
 }
 

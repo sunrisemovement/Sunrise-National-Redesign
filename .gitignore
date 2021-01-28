@@ -59,6 +59,8 @@ assets/bower_components/*
 **.codekit-cache/*
 
 # Compiled Files and Build Dirs #
+dist/*
+exports/
 ##########
 /README.html
 

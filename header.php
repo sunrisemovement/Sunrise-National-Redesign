@@ -16,7 +16,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 	<!--tiktok pixel tracking code-->
@@ -28,12 +27,7 @@
 		s.parentNode.insertBefore(ta, s);
 	  })();
 	</script>
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PCQ8KLL');
-	</script>
+
 
 	<meta name="facebook-domain-verification" content="e4adyjw30pdtot2gm4mtm4vcpvimxc" />
 	<!-- The script tag needs to be included once per page where embeds appear. Putting it in the <head> tag will be fastest. -->
@@ -43,16 +37,10 @@
 	<style href="<?php bloginfo('template_url'); ?>/assets/css/actblue.css"></style>
 	<script>window.actBlueConfig = {styleSheetHref: "https://raw.githubusercontent.com/sunrisemovement/extra-files/main/actblue.css"};</script>
 	<?php wp_head(); ?>
-
 </head>
 
 <body <?php body_class(); ?>>
 	<!-- Google Tag Manager (noscript) -->
-<noscript>
-	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCQ8KLL" height="0" width="0" style="display:none;visibility:hidden">
- </iframe>
- </noscript>
-<!-- End Google Tag Manager (noscript) -->
 	<div id="page" class="site">
 		<a class="sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'sunrise-national' ); ?></a>
 

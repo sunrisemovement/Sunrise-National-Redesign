@@ -50,3 +50,37 @@
 		}
 	}
 }
+
+//popup customization
+
+.pum-theme-content-only {
+	.pum-container {
+		padding: 13px;
+		text-align: center;
+		background-color: $yellow !important;
+		margin-bottom: 0;
+		p {
+			text-align: center;
+			color: black;
+			font-size: 18px;
+		}
+	}
+	.pum-content + .pum-close {
+		top: 15px;
+	}
+}
+
+.pum-overlay.pum-overlay-disabled .pum-container {
+	padding: 13px;
+	text-align: center;
+	background-color: $yellow;
+	margin-bottom: 0;
+	p {
+		text-align: center;
+	}
+}
+
+html.pum-open.pum-open-overlay,
+html.pum-open.pum-open-overlay.pum-open-fixed .pum-overlay {
+	overflow: scroll !important;
+}

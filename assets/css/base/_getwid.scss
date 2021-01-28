@@ -94,10 +94,11 @@
 			}
 		}
 		.card-img {
-			@include media-breakpoint-up(md) {
+			@include media-breakpoint-up(lg) {
 				min-height: 100%;
 			}
 			height: unset;
+			min-height: 260px;
 			img {
 				min-height: 100%;
 			}
@@ -199,6 +200,7 @@
 			height: 100%;
 			display: flex;
 			flex-direction: column;
+			background-color: $sunrise-background-dark;
 		}
 		.event-timing {
 			float: left;
