@@ -136,3 +136,152 @@ html {
 		}
 	}
 }
+
+.jobs {
+	&-header {
+		padding-top: 180px;
+		@include media-breakpoint-down(sm) {
+			padding: 100px 10px 10px 0;
+		}
+		&__sunrise-logo {
+			text-align: center;
+			margin: 0 auto;
+			width: 30px;
+		}
+		&__background {
+			position: absolute;
+			left: 0;
+			top: 116px;
+			right: 0;
+			width: 100%;
+			display: block;
+			height: 100px;
+			z-index: -10;
+			@include media-breakpoint-down(sm) {
+				top: 60px;
+			}
+		}
+		&__logo {
+			margin: 0 auto;
+			@include media-breakpoint-up(sm) {
+				width: 400px;
+			}
+		}
+		&__text {
+			text-align: center;
+			margin: 0 auto;
+			@include media-breakpoint-up(sm) {
+				max-width: 960px;
+				font-size: 22px;
+			}
+			font-family: Konsole-Regular;
+		}
+		&__nav {
+			border-top: 3px solid black;
+			width: 960px;
+			font-family: Konsole-Semi, serif;
+			display: flex;
+			@include media-breakpoint-down(md) {
+				flex-flow: row wrap;
+				border-top: 0px solid;
+			}
+			justify-content: space-between;
+			align-items: center;
+			margin: 3em auto;
+			padding: 1em;
+			a {
+				color: black;
+				text-transform: uppercase;
+				@include media-breakpoint-down(md) {
+					width: 100%;
+					border-top: 1px solid black;
+					border-bottom: 1px solid black;
+					text-align: center;
+					padding: 1em;
+				}
+
+				&.cta-callout {
+					background-color: #ffde17;
+					@include media-breakpoint-up(md) {
+						padding: 5px 5px 0 5px;
+					}
+				}
+			}
+		}
+	}
+	.launch-video {
+		position: relative;
+		display: flex;
+		display: flex;
+		margin: 0 auto;
+		@include media-breakpoint-up(md) {
+			@include callout-background;
+			width: 880px;
+			&:after {
+				top: -26px;
+				bottom: 30px;
+				left: 25px;
+				right: 2px;
+			}
+			&:before {
+				position: absolute;
+				top: 0;
+				content: "";
+				top: -50px;
+				bottom: 70px;
+				left: 50px;
+				right: -25px;
+				z-index: -20;
+				border: 5px solid black;
+				background-color: #ffde17;
+			}
+		}
+
+		iframe {
+			display: flex;
+			height: 300px;
+			border: 5px solid black;
+			@include media-breakpoint-up(md) {
+				margin-right: 30px;
+				height: 458px;
+			}
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		font-family: Konsole-Bold;
+		text-transform: uppercase;
+	}
+}
+.callout-background {
+	padding: 20px;
+	margin: 0 auto;
+	display: flex;
+	position: relative;
+	@include media-breakpoint-up(md) {
+		width: 960px;
+		@include callout-background;
+		&:before {
+			top: -20px;
+			bottom: 70px;
+			left: 80px;
+		}
+	}
+}
+.callout-inner {
+	background-color: #fcfaf2;
+	border: 5px solid black;
+	padding: 20px 10px;
+	@include media-breakpoint-up(md) {
+		padding: 70px;
+	}
+	width: 100%;
+	text-align: center;
+	a {
+		text-decoration: none;
+	}
+}

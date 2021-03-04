@@ -4,6 +4,22 @@
 - @extend the `.btn` class instead of manually adding `.btn` classes to all form elements
 
 --------------------------------------------------------------*/
+@font-face {
+	font-family: "Konsole-Regular";
+	src: url("assets/fonts/Konsole-Regular.woff");
+}
+@font-face {
+	font-family: "Konsole-Bold";
+	src: url("assets/fonts/Konsole-Bold.woff");
+}
+@font-face {
+	font-family: "Konsole-Italic";
+	src: url("assets/fonts/Konsole-RegularItalic.woff");
+}
+@font-face {
+	font-family: "Konsole-Semi";
+	src: url("assets/fonts/Konsole-Semibold.woff");
+}
 
 button,
 input[type="button"],
@@ -85,6 +101,20 @@ body .site .entry-content {
 		font-family: $font-family-serif;
 		font-size: 2em;
 		font-weight: $font-weight-base;
+	}
+
+	h5 {
+		font-family: $font-family-serif;
+		font-size: 1.5em;
+		font-weight: $font-weight-base;
+		margin-bottom: 0.3rem;
+	}
+
+	h6 {
+		font-family: $font-family-serif;
+		font-size: 1em;
+		font-weight: $font-weight-base;
+		margin-bottom: 0.3rem;
 	}
 
 	p {

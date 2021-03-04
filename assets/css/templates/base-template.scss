@@ -1,9 +1,11 @@
 .base-page,
 .archive,
+.campaign-template .campaign-page,
+.campaign-template-default .campaign-page,
 .error-404,
 .search-results {
 	.post-header {
-		min-height: 440px;
+		min-height: 260px;
 		display: flex;
 		align-items: center;
 		position: relative;
