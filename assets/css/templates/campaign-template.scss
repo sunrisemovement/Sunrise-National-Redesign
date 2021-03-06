@@ -139,7 +139,9 @@ html {
 
 .jobs {
 	&-header {
-		padding-top: 180px;
+		padding-top: 95px;
+		float: left;
+		display: block;
 		@include media-breakpoint-down(sm) {
 			padding: 100px 10px 10px 0;
 		}
@@ -151,12 +153,11 @@ html {
 		&__background {
 			position: absolute;
 			left: 0;
-			top: 116px;
+			top: 0px;
 			right: 0;
 			width: 100%;
 			display: block;
 			height: 100px;
-			z-index: -10;
 			@include media-breakpoint-down(sm) {
 				top: 60px;
 			}
