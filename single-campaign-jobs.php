@@ -20,15 +20,15 @@ endwhile; // End of the loop.
 	<img class="jobs-header__sunrise-logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/sunrise-top-logo.png">
 	<img class="jobs-header__logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/sunrise-job-logo.png">
 	<div class="jobs-header__text">
-		Our movement demands a Green New Deal that guarantee a good job building a sustainable, just and people powered economy to anyone who wants one.
+		Our movement demands a Green New Deal that guarantees a good job building a sustainable, just and people powered economy to anyone who wants one.
 	</div>
 	<img class="jobs-header__background" src="<?php echo get_template_directory_uri(); ?>/assets/img/gradient-header.png">
 	<nav class="jobs-header__nav alignwide">
 		<a href="#live">Live Stream</a>
-		<a href="about">About</a>
+		<a href="#about">About</a>
 		<a class="cta-callout" id="involved-trig" href="#get-involved">Get Involved</a>
-		<a href="">Job FAQ</a>
-		<a href="Contact">Contact Us</a>
+		<a href="https://www.sunrisemovement.org/theory-of-change/what-is-a-federal-jobs-guarantee/">Job FAQ</a>
+		<a href="#contact">Contact Us</a>
 	</nav>
 
 </header>

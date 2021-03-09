@@ -223,6 +223,8 @@ body .site .entry-content h5{font-family:Source Serif Pro,serif,"Apple Color Emo
 body .site .entry-content h5{font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1.5em;font-weight:400;margin-bottom:.3rem}
 body .site .entry-content h6{font-family:Source Serif Pro,serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1em;font-weight:400;margin-bottom:.3rem}
 body .site .entry-content p{line-height:1.4;margin:0 auto 1rem auto}
+body .site .entry-content h1.alignwide,body .site .entry-content h2.alignwide,body .site .entry-content h3.alignwide,body .site .entry-content h4.alignwide,body .site .entry-content h5.alignwide,body .site .entry-content h6.alignwide,body .site .entry-content p.alignwide{max-width:1200px}
+body .site .entry-content h1.alignfull,body .site .entry-content h2.alignfull,body .site .entry-content h3.alignfull,body .site .entry-content h4.alignfull,body .site .entry-content h5.alignfull,body .site .entry-content h6.alignfull,body .site .entry-content p.alignfull{max-width:100%}
 body .site .entry-content ul{-webkit-padding-start:22px;padding-inline-start:22px}
 body .site .entry-content .has-text-align-center{width:100%}
 body .site .entry-content ul li,body .site .entry-content ol li,body .site .entry-content dl li{margin-bottom:.6rem}
@@ -592,9 +594,9 @@ html{height:100%;min-height:100%}
 .campaign-single .campaign-header .header-background-image::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.5;z-index:1;mix-blend-mode:unset}
 .campaign-single .campaign-header .header-background-image img{width:100%;-o-object-fit:cover;object-fit:cover;height:100%}
 .campaign-single .campaign-header .site-content::before{position:absolute;left:calc(50% - 21px);bottom:-36px;content:"";display:block;background-image:url("/wp-content/themes/sunrise-national-redesign/assets/img/Affordance.svg");z-index:200;display:block;width:40px;height:56px;background-repeat:no-repeat}
-.jobs-header{padding-top:180px}
+.jobs-header{padding-top:95px;float:left;display:block}
 .jobs-header__sunrise-logo{text-align:center;margin:0 auto;width:30px}
-.jobs-header__background{position:absolute;left:0;top:116px;right:0;width:100%;display:block;height:100px;z-index:-10}
+.jobs-header__background{position:absolute;left:0;top:0;right:0;width:100%;display:block;height:100px}
 .jobs-header__logo{margin:0 auto}
 .jobs-header__text{text-align:center;margin:0 auto;font-family:Konsole-Regular}
 .jobs-header__nav{border-top:3px solid black;width:960px;font-family:Konsole-Semi,serif;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:3em auto;padding:1em}

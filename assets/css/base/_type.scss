@@ -128,6 +128,30 @@ body .site .entry-content {
 			line-height: 1.6;
 		}
 	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		&.alignwide {
+			max-width: map-get($container-max-widths, "xl");
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		&.alignfull {
+			max-width: 100%;
+		}
+	}
+
 	ul {
 		padding-inline-start: 22px;
 	}
