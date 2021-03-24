@@ -42,18 +42,14 @@ article .entry-content .blog-header .container {
 		border-bottom: 1px solid $purple;
 		margin-bottom: 40px;
 		@include media-breakpoint-down(md) {
+			margin-bottom: 0;
 			border-bottom: 0 solid $purple;
 		}
 	}
 }
 .blog-featured-section {
 	@include media-breakpoint-down(md) {
-		text-align: left;
-		.cat-links {
-			text-align: left;
-		}
 		.entry-title {
-			text-align: left;
 			padding: 0 !important;
 		}
 	}
@@ -84,6 +80,18 @@ article .entry-content .blog-header .container {
 	}
 }
 
+.custom-post-type-post {
+	.blog-list {
+		.post-thumbnail {
+			img {
+				float: left;
+				object-fit: cover;
+				min-height: 180px;
+			}
+		}
+	}
+}
+
 .blog-list {
 	article {
 		float: left;
@@ -97,7 +105,6 @@ article .entry-content .blog-header .container {
 			cursor: pointer;
 		}
 		.post-thumbnail {
-			min-height: unset !important;
 			img {
 				float: left;
 				object-fit: cover;
@@ -242,7 +249,6 @@ article .entry-content .blog-header .container {
 
 .blog-featured-single {
 	width: 100%;
-	border-left: 1px solid $purple;
 	border-right: 1px solid $purple;
 	@include media-breakpoint-down(md) {
 		border-left: 0px solid $purple;
@@ -260,6 +266,7 @@ article .entry-content .blog-header .container {
 	.entry-header {
 		width: 100%;
 		text-align: center;
+
 		h3 {
 			font-style: italic;
 			font-size: 20px;

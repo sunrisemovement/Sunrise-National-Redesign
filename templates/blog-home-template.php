@@ -19,7 +19,10 @@ get_template_part( 'template-parts/blog-parts/blog-navigation' );
 			<?php
 			while ( have_posts() ) :
 				the_post();
-
+				$the_query = new WP_Query( array (
+				'post_type' => 'post',
+				'category__not_in' => array( 11 ),
+			 ) );
 				get_template_part( 'template-parts/content/content', 'page' );
 
 

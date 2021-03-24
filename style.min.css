@@ -512,9 +512,9 @@ article .entry-content .blog-header .container{margin-bottom:0}
 .post-footer .border-gradient-sunrise .post-footer-text{margin-bottom:1rem}
 .post-footer .post-next{-ms-flex-wrap:wrap;flex-wrap:wrap}
 .post-footer .post-next article{width:100%;-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%}
+.custom-post-type-post .blog-list .post-thumbnail img{float:left;-o-object-fit:cover;object-fit:cover;min-height:180px}
 .blog-list article{float:left;width:100%;text-align:left;-webkit-transition:.3s all;transition:.3s all;margin-bottom:1rem}
 .blog-list article:hover{opacity:.8;-webkit-transition:.3s all;transition:.3s all;cursor:pointer}
-.blog-list article .post-thumbnail{min-height:unset !important}
 .blog-list article .post-thumbnail img{float:left;-o-object-fit:cover;object-fit:cover}
 .blog-list article .entry-header{float:left;color:#000}
 .blog-list article .cat-links{width:100%;color:#8f0d56;font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:700}
@@ -536,7 +536,7 @@ article .entry-content .blog-header .container{margin-bottom:0}
 .content-sidebar article .cat-links,.blog-vertical-thumbnail-section article .cat-links,.post-footer article .cat-links{font-size:12px;width:100%}
 .content-sidebar article .entry-title,.blog-vertical-thumbnail-section article .entry-title,.post-footer article .entry-title{font-size:18px;color:#000;line-height:1.2}
 .content-sidebar article .entry-meta,.blog-vertical-thumbnail-section article .entry-meta,.post-footer article .entry-meta{font-size:12px;margin-top:5px}
-.blog-featured-single{width:100%;border-left:1px solid #8f0d56;border-right:1px solid #8f0d56}
+.blog-featured-single{width:100%;border-right:1px solid #8f0d56}
 .blog-featured-single .post-thumbnail{height:360px}
 .blog-featured-single .post-thumbnail img{-o-object-fit:cover;object-fit:cover;height:100%;width:100%}
 .blog-featured-single .entry-header{width:100%;text-align:center}
@@ -2664,10 +2664,8 @@ article .entry-content .wp-block-columns.alignwide,article .entry-content .wp-bl
 .post-single .post-header .container .header-row,.event-single .post-header .container .header-row{position:relative;bottom:unset}
 .post-single .post-header .container .header-row h1,.event-single .post-header .container .header-row h1{font-size:2.5rem}
 .post-single .post-header .container .header-row .header-blocks.header-content .entry-title,.event-single .post-header .container .header-row .header-blocks.header-content .entry-title{margin-bottom:20px}
-.blog-home .blog-featured-section{border-bottom:0 solid #8f0d56}
-.blog-featured-section{text-align:left}
-.blog-featured-section .cat-links{text-align:left}
-.blog-featured-section .entry-title{text-align:left;padding:0 !important}
+.blog-home .blog-featured-section{margin-bottom:0;border-bottom:0 solid #8f0d56}
+.blog-featured-section .entry-title{padding:0 !important}
 .content-sidebar article .post-thumbnail img,.blog-vertical-thumbnail-section article .post-thumbnail img,.post-footer article .post-thumbnail img{width:100px;height:100px;float:left;-o-object-fit:cover;object-fit:cover}
 .content-sidebar article .entry-header,.blog-vertical-thumbnail-section article .entry-header,.post-footer article .entry-header{width:calc(100% - 100px);float:left;padding-left:10px}
 .content-sidebar article .cat-links,.blog-vertical-thumbnail-section article .cat-links,.post-footer article .cat-links{font-size:16px;width:100%}
