@@ -594,20 +594,6 @@ html{height:100%;min-height:100%}
 .campaign-single .campaign-header .header-background-image::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.5;z-index:1;mix-blend-mode:unset}
 .campaign-single .campaign-header .header-background-image img{width:100%;-o-object-fit:cover;object-fit:cover;height:100%}
 .campaign-single .campaign-header .site-content::before{position:absolute;left:calc(50% - 21px);bottom:-36px;content:"";display:block;background-image:url("/wp-content/themes/sunrise-national-redesign/assets/img/Affordance.svg");z-index:200;display:block;width:40px;height:56px;background-repeat:no-repeat}
-.jobs-header{padding-top:95px;float:left;display:block}
-.jobs-header__sunrise-logo{text-align:center;margin:0 auto;width:30px}
-.jobs-header__background{position:absolute;left:0;top:0;right:0;width:100%;display:block;height:100px}
-.jobs-header__logo{margin:0 auto}
-.jobs-header__text{text-align:center;margin:0 auto;font-family:Konsole-Regular}
-.jobs-header__nav{border-top:3px solid black;width:960px;font-family:Konsole-Semi,serif;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:3em auto;padding:1em}
-.jobs-header__nav a{color:black;text-transform:uppercase}
-.jobs-header__nav a.cta-callout{background-color:#ffde17}
-.jobs .launch-video{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;display:flex;margin:0 auto}
-.jobs .launch-video iframe{display:-webkit-box;display:-ms-flexbox;display:flex;height:300px;border:5px solid black}
-.jobs h1,.jobs h2,.jobs h3,.jobs h4,.jobs h5{font-family:Konsole-Bold;text-transform:uppercase}
-.callout-background{padding:20px;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;position:relative}
-.callout-inner{background-color:#fcfaf2;border:5px solid black;padding:20px 10px;width:100%;text-align:center}
-.callout-inner a{text-decoration:none}
 .home-page .post-header{position:relative;width:100%;padding:120px;float:left}
 .home-page .post-header::before{position:absolute;left:calc(50% - 21px);bottom:-36px;content:"";display:block;background-image:url("/wp-content/themes/sunrise-national-redesign/assets/img/Affordance.svg");z-index:200;display:block;width:40px;height:56px;background-repeat:no-repeat}
 .home-page .post-header .alignwide{background-repeat:no-repeat;height:100%;width:100%}
@@ -658,6 +644,33 @@ html{height:100%;min-height:100%}
 .archive article .card-img img{-o-object-fit:cover;object-fit:cover;height:100%}
 .archive .post-header .header-background-image{background-color:#e3eddf}
 .archive .post-header .header-background-image::before{background-color:#e3eddf}
+.pledge-background .wp-block-getwid-section__background{background-attachment:initial}
+.pledge-back{background-color:white;-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.15);box-shadow:0 5px 10px rgba(0,0,0,0.15);max-width:960px}
+.pledge-back .wp-block-getwid-section__wrapper{padding:60px 1em 140px 1em}
+.pledge-back img{width:450px;margin-bottom:30px}
+.wp-block-getwid-image-box.has-image-left{-webkit-box-shadow:0 5px 10px #d8d8d8;box-shadow:0 5px 10px #d8d8d8;height:218px;width:100%}
+.wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container{height:100%;width:100%}
+.wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container .wp-block-getwid-image-box__image-wrapper{height:100%;width:100%}
+.wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container .wp-block-getwid-image-box__image-wrapper img{height:100%;width:100%;-o-object-fit:cover;object-fit:cover}
+.sign-line{border-bottom:2px solid black;position:relative;margin:60px auto 80px 0;width:100%}
+.sign-line:before{content:"X";font-size:36px;left:0;top:2px;position:absolute;font-family:"Source Sans Pro",sans-serif;font-weight:700}
+.pledge-header__nav{width:960px;font-family:Konsole-Semi,serif;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:55px auto;padding:1em}
+.pledge-header__nav a{color:black;text-transform:uppercase}
+.pledge-header__nav a.cta-callout{background-color:white}
+.jobs-header{padding-top:95px;float:left;display:block}
+.jobs-header__sunrise-logo{text-align:center;margin:0 auto;width:30px}
+.jobs-header__background{position:absolute;left:0;top:0;right:0;width:100%;display:block;height:100px}
+.jobs-header__logo{margin:0 auto}
+.jobs-header__text{text-align:center;margin:0 auto;font-family:Konsole-Regular}
+.jobs-header__nav{border-top:3px solid black;width:960px;font-family:Konsole-Semi,serif;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:3em auto;padding:1em}
+.jobs-header__nav a{color:black;text-transform:uppercase}
+.jobs-header__nav a.cta-callout{background-color:#ffde17}
+.jobs .launch-video{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;display:flex;margin:0 auto}
+.jobs .launch-video iframe{display:-webkit-box;display:-ms-flexbox;display:flex;height:300px;border:5px solid black}
+.jobs h1,.jobs h2,.jobs h3,.jobs h4,.jobs h5{font-family:Konsole-Bold;text-transform:uppercase}
+.callout-background{padding:20px;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;position:relative}
+.callout-inner{background-color:#fcfaf2;border:5px solid black;padding:20px 10px;width:100%;text-align:center}
+.callout-inner a{text-decoration:none}
 /*! Bootstrap v4.3.1 (https://getbootstrap.com/) Copyright 2011-2019 The Bootstrap Authors Copyright 2011-2019 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */:root{--blue:#007bff;--indigo:#6610f2;--purple:#8f0d56;--pink:#e83e8c;--red:#ef4c39;--orange:#fd9014;--yellow:#ffde16;--green:#e3eddf;--teal:#20c997;--cyan:#f7f5e8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#8f0d56;--secondary:#ffde16;--success:#e3eddf;--info:#f7f5e8;--warning:#ffde16;--danger:#ef4c39;--light:#f8f9fa;--dark:#33342e;--breakpoint-xxs:0;--breakpoint-xs:568;--breakpoint-sm:768px;--breakpoint-md:992px;--breakpoint-lg:1200px;--breakpoint-xl:1400px;--font-family-sans-serif:Source Sans Pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
 *,*::before,*::after{-webkit-box-sizing:border-box;box-sizing:border-box}
 html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0);scroll-behavior:smooth}
@@ -2006,6 +2019,12 @@ h3.has-text-align-middle,h2.has-text-align-middle{max-width:720px;width:720px}
 .post-single .post-header .container .header-row .header-blocks.header-media,.event-single .post-header .container .header-row .header-blocks.header-media{margin-bottom:42px}
 .post-single .post-header .container .header-row .header-blocks.header-content .header-button,.event-single .post-header .container .header-row .header-blocks.header-content .header-button{position:absolute;bottom:-30px;left:60px}
 .single-post .blog-header .blog-bar,.page-template-blog-home-template .blog-header .blog-bar{padding-left:0}
+.home-page .post-header .alignwide .no-photo .header-content{-webkit-box-flex:0;-ms-flex:0 0 66.6666666667%;flex:0 0 66.6666666667%;max-width:66.6666666667%}
+.home-page .page{margin:60px auto 0 0}
+.home-page .at-form .at-inner{margin-top:-13rem}
+.archive article .search-content{padding:1rem}
+.pledge-back p{font-size:30px}
+.pledge-header__nav a.cta-callout{padding:5px 5px 0 5px}
 .jobs-header__nav a.cta-callout{padding:5px 5px 0 5px}
 .jobs .launch-video{width:880px}
 .jobs .launch-video:after{display:block;position:absolute;top:0;content:"";bottom:50px;left:50px;z-index:-10;right:-5px;border:5px solid black;background-color:#ffde17}
@@ -2018,10 +2037,6 @@ h3.has-text-align-middle,h2.has-text-align-middle{max-width:720px;width:720px}
 .callout-background:before{position:absolute;top:0;content:"";top:-50px;bottom:70px;left:50px;right:-25px;z-index:-20;border:5px solid black;background-color:#ffde17}
 .callout-background:before{top:-20px;bottom:70px;left:80px}
 .callout-inner{padding:70px}
-.home-page .post-header .alignwide .no-photo .header-content{-webkit-box-flex:0;-ms-flex:0 0 66.6666666667%;flex:0 0 66.6666666667%;max-width:66.6666666667%}
-.home-page .page{margin:60px auto 0 0}
-.home-page .at-form .at-inner{margin-top:-13rem}
-.archive article .search-content{padding:1rem}
 .container{max-width:720px}
 .col-md{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
 .col-md-auto{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}
@@ -2687,8 +2702,6 @@ article .entry-content .wp-block-columns.alignwide,article .entry-content .wp-bl
 .campaign-single .campaign-header .header-background-image{height:100%}
 .campaign-single .campaign-header .header-background-image::before{height:100%;-o-object-fit:cover;object-fit:cover}
 .campaign-single .campaign-header .site-content::before{display:none}
-.jobs-header__nav{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;border-top:0 solid}
-.jobs-header__nav a{width:100%;border-top:1px solid black;border-bottom:1px solid black;text-align:center;padding:1em}
 .home-page .post-header::before{display:none}
 .home-page .post-header{background-image:none;overflow:initial;padding:150px 0}
 .home-page .post-header .alignwide{background-image:none}
@@ -2699,6 +2712,11 @@ article .entry-content .wp-block-columns.alignwide,article .entry-content .wp-bl
 .home-page .entry-content>.wp-block-getwid-section .wp-block-column:nth-of-type(2){display:none}
 .archive article .search-content .entry-header{padding:1rem 1rem 0 1rem}
 .archive article .search-content .entry-summary{padding:0 1rem 1rem 1rem}
+.has-image-right .wp-block-getwid-image-box__image-container{margin:0}
+.pledge-header__nav{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;border-top:0 solid}
+.pledge-header__nav a{width:100%;border-top:1px solid black;border-bottom:1px solid black;text-align:center;padding:1em}
+.jobs-header__nav{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;border-top:0 solid}
+.jobs-header__nav a{width:100%;border-top:1px solid black;border-bottom:1px solid black;text-align:center;padding:1em}
 .table-responsive-lg{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .table-responsive-lg>.table-bordered{border:0}
 .navbar-expand-lg>.container,.navbar-expand-lg>.container-fluid{padding-right:0;padding-left:0}
@@ -2714,9 +2732,9 @@ body footer .footer-right .social-menu{margin:auto;-webkit-box-pack:center;-ms-f
 .footer-nav-block .block span{-webkit-transition:.4s all;transition:.4s all}
 .footer-nav-block .block span:after{-webkit-transition:.4s all;transition:.4s all;width:100% !important}
 .campaign-single .campaign-header .container .header-row .header-blocks.header-text{margin-bottom:0}
+.archive article .card-img img{width:100%;height:150px}
 .jobs-header{padding:100px 10px 10px 0}
 .jobs-header__background{top:60px}
-.archive article .card-img img{width:100%;height:150px}
 .table-responsive-md{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .table-responsive-md>.table-bordered{border:0}
 .navbar-expand-md>.container,.navbar-expand-md>.container-fluid{padding-right:0;padding-left:0}
