@@ -1635,7 +1635,7 @@ html { height: 100%; min-height: 100%; }
 
 @media (max-width: 1199.98px) { .has-image-right .wp-block-getwid-image-box__image-container { margin: 0; } }
 
-.wp-block-getwid-image-box.has-image-left { -webkit-box-shadow: 0px 5px 10px #d8d8d8; box-shadow: 0px 5px 10px #d8d8d8; height: 218px; width: 100%; }
+.wp-block-getwid-image-box.has-image-left { -webkit-box-shadow: 0px 5px 10px #d8d8d8; box-shadow: 0px 5px 10px #d8d8d8; height: 308px; width: 100%; }
 
 .wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container { height: 100%; width: 100%; }
 

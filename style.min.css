@@ -648,7 +648,7 @@ html{height:100%;min-height:100%}
 .pledge-back{background-color:white;-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.15);box-shadow:0 5px 10px rgba(0,0,0,0.15);max-width:960px}
 .pledge-back .wp-block-getwid-section__wrapper{padding:60px 1em 140px 1em}
 .pledge-back img{width:450px;margin-bottom:30px}
-.wp-block-getwid-image-box.has-image-left{-webkit-box-shadow:0 5px 10px #d8d8d8;box-shadow:0 5px 10px #d8d8d8;height:218px;width:100%}
+.wp-block-getwid-image-box.has-image-left{-webkit-box-shadow:0 5px 10px #d8d8d8;box-shadow:0 5px 10px #d8d8d8;height:308px;width:100%}
 .wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container{height:100%;width:100%}
 .wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container .wp-block-getwid-image-box__image-wrapper{height:100%;width:100%}
 .wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container .wp-block-getwid-image-box__image-wrapper img{height:100%;width:100%;-o-object-fit:cover;object-fit:cover}
