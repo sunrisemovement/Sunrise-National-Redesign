@@ -47,11 +47,14 @@ article .entry-content .blog-header .container {
 		}
 	}
 }
-.blog-featured-section {
+article .blog-featured-section .entry-header {
 	@include media-breakpoint-down(md) {
 		.entry-title {
 			padding: 0 !important;
 		}
+	}
+	h3 {
+		margin: auto;
 	}
 }
 .post-footer {
@@ -256,7 +259,10 @@ article .entry-content .blog-header .container {
 		padding-bottom: 1rem;
 	}
 	.post-thumbnail {
-		height: 360px;
+		min-height: 360px;
+		@include media-breakpoint-down(md) {
+			min-height: unset;
+		}
 		img {
 			object-fit: cover;
 			height: 100%;

@@ -574,3 +574,5 @@ function exclude_category( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'exclude_category' );
+
+add_filter('doing_it_wrong_trigger_error', function () {return false;}, 10, 0);

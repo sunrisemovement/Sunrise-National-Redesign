@@ -49,11 +49,11 @@
 		</div>
 	</div>
 		<?php if(wp_is_mobile()): ?>
-				<div class="header-background-image">
 			<div class="header-background-image">
-			<img src="<?php echo get_field('header_image'); ?>" />
-		</div>
-		</div>
+				<div class="header-background-image">
+					<img src="<?php echo get_field('header_image'); ?>" />
+				</div>
+			</div>
 	<?php elseif(get_field('header_embed')): ?>
 				<div class="header-background-image video">
 				<div class="header-blocks header-media">
@@ -63,10 +63,18 @@
 			</div>
 		<?php elseif(get_field('header_image')): ?>
 				<div class="header-background-image">
+					<div class="header-background-image">
+						<img src="<?php echo get_field('header_image'); ?>" />
+					</div>
+				</div>
+	<?php else:?>
+		<div class="header-background-image">
 			<div class="header-background-image">
-			<img src="<?php echo get_field('header_image'); ?>" />
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Ken_Schles-5684.jpg" />
+
 		</div>
-		</div>
+	</div>
+
 		<?php endif?>
 
 </header><!-- .entry-header -->
