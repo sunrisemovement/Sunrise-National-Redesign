@@ -615,6 +615,7 @@ html{height:100%;min-height:100%}
 .home-page .post-header .header-background-image iframe{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
 .home-page .page{float:left;width:100%}
 .home-page .ngp-form{overflow:visible;padding:0;z-index:8;position:relative}
+.home-page .wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container{margin:0}
 .home-page .at-form .thankYou{display:block;z-index:100;background-color:#ffde16;text-align:center;font-weight:bold;margin:0 auto;width:100%;padding:3rem}
 .home-page .at-form .thankYou p{margin-right:0;width:100%}
 .home-page .at-form .at-markup p{font-size:.9rem}
@@ -649,15 +650,15 @@ html{height:100%;min-height:100%}
 .pledge-back{background-color:white;-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.15);box-shadow:0 5px 10px rgba(0,0,0,0.15);max-width:960px}
 .pledge-back .wp-block-getwid-section__wrapper{padding:60px 1em 140px 1em}
 .pledge-back img{width:450px;margin-bottom:30px}
-.wp-block-getwid-image-box.has-image-left{-webkit-box-shadow:0 5px 10px #d8d8d8;box-shadow:0 5px 10px #d8d8d8;height:308px;width:100%}
-.wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container{height:100%;width:100%}
-.wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container .wp-block-getwid-image-box__image-wrapper{height:100%;width:100%}
-.wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container .wp-block-getwid-image-box__image-wrapper img{height:100%;width:100%;-o-object-fit:cover;object-fit:cover}
 .sign-line{border-bottom:2px solid black;position:relative;margin:60px auto 80px 0;width:100%}
 .sign-line:before{content:"X";font-size:36px;left:0;top:2px;position:absolute;font-family:"Source Sans Pro",sans-serif;font-weight:700}
 .pledge-header__nav{width:960px;font-family:Konsole-Semi,serif;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:55px auto;padding:1em}
 .pledge-header__nav a{color:black;text-transform:uppercase}
 .pledge-header__nav a.cta-callout{background-color:white}
+.jobs .wp-block-getwid-image-box.has-image-left{-webkit-box-shadow:0 5px 10px #d8d8d8;box-shadow:0 5px 10px #d8d8d8;height:308px;width:100%}
+.jobs .wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container{height:100%;width:100%}
+.jobs .wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container .wp-block-getwid-image-box__image-wrapper{height:100%;width:100%}
+.jobs .wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container .wp-block-getwid-image-box__image-wrapper img{height:100%;width:100%;-o-object-fit:cover;object-fit:cover}
 .jobs-header{padding-top:95px;float:left;display:block}
 .jobs-header__sunrise-logo{text-align:center;margin:0 auto;width:30px}
 .jobs-header__background{position:absolute;left:0;top:0;right:0;width:100%;display:block;height:100px}
@@ -2022,6 +2023,7 @@ h3.has-text-align-middle,h2.has-text-align-middle{max-width:720px;width:720px}
 .single-post .blog-header .blog-bar,.page-template-blog-home-template .blog-header .blog-bar{padding-left:0}
 .home-page .post-header .alignwide .no-photo .header-content{-webkit-box-flex:0;-ms-flex:0 0 66.6666666667%;flex:0 0 66.6666666667%;max-width:66.6666666667%}
 .home-page .page{margin:60px auto 0 0}
+.home-page .wp-block-getwid-image-box.has-image-left .wp-block-getwid-image-box__image-container{max-width:20%;margin:0 2rem 0 0}
 .home-page .at-form .at-inner{margin-top:-13rem}
 .archive article .search-content{padding:1rem}
 .pledge-back p{font-size:30px}
