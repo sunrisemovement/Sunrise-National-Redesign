@@ -245,6 +245,9 @@
 
 .wp-block-getwid-section__wrapper {
 	padding: 120px 1rem;
+	@include media-breakpoint-down(sm) {
+		padding: 60px 1rem;
+	}
 	.wp-block-getwid-section__wrapper {
 		padding: 1em;
 	}

@@ -11,11 +11,12 @@
 <div class=" blog-featured-section container alignwide blog-list">
 		<div class="row">
 
-				<div class="col-lg-6 col-md-12 blog-featured-single order-lg-2">
+				<div class="col-lg-9 col-md-12 blog-featured-single order-lg-1">
 				<?php
 					$the_query = new WP_Query( array (
 					'post_type' => 'post',
-					'posts_per_page' => '1'
+					'posts_per_page' => '1',
+					'category__not_in' => array( 11 ),
 				 ) );
 					// output the random post
 					 if ( $the_query->have_posts() ) : ?>
@@ -31,11 +32,12 @@
 				<?php endif; ?>
 				</div>
 
-				<div class="col-lg-3 col-md-6 blog-vertical-thumbnail-section order-lg-1">
+				<div class="col-lg-3 col-md-8 blog-vertical-thumbnail-section order-lg-2">
 				<?php
 					$the_query = new WP_Query( array (
-						'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => '6',
+						'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => '5',
 						'post_type' => 'post', 'offset' => "1",
+						'category__not_in' => array( 11 ),
 					) );
 					// output the random post
 					 if ( $the_query->have_posts() ) : ?>
@@ -50,13 +52,6 @@
 				<p><?php __('No Posts'); ?></p>
 				<?php endif; ?>
 				</div>
-
-
-				<div class="col-lg-3 col-md-6 order-lg-3 ">
-					<h4> Twitter Updates </h4>
-					<?php
-				 echo do_shortcode( '[custom-twitter-feeds]' );
-				?>
 
 				</div>
 	</div>

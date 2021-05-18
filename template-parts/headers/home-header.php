@@ -49,12 +49,12 @@
 		</div>
 	</div>
 		<?php if(wp_is_mobile()): ?>
-				<div class="header-background-image">
 			<div class="header-background-image">
-			<img src="<?php echo get_field('header_image'); ?>" />
-		</div>
-		</div>
-	<?php elseif(get_field('header_embed')): ?>
+				<div class="header-background-image">
+					<img src="<?php echo get_field('header_image'); ?>" />
+				</div>
+			</div>
+		<?php elseif(/* get_field('header_embed') */1 == 2): ?>
 				<div class="header-background-image video">
 				<div class="header-blocks header-media">
 					<iframe src="<?php echo get_field('header_embed'); ?>?&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1&#t=001s" width="640" height="360" frameborder=“0” allowfullscreen allow=autoplay></iframe>
@@ -63,10 +63,18 @@
 			</div>
 		<?php elseif(get_field('header_image')): ?>
 				<div class="header-background-image">
+					<div class="header-background-image">
+						<img src="<?php echo get_field('header_image'); ?>" />
+					</div>
+				</div>
+	<?php else:?>
+		<div class="header-background-image">
 			<div class="header-background-image">
-			<img src="<?php echo get_field('header_image'); ?>" />
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Ken_Schles-5684.jpg" />
+
 		</div>
-		</div>
+	</div>
+
 		<?php endif?>
 
 </header><!-- .entry-header -->

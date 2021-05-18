@@ -563,5 +563,16 @@ function blog_shortcode() {
 	 			get_template_part( 'template-parts/blog-parts/blog-featured', '' );
 				return ob_get_clean();
 }
-
 add_shortcode('insert_blog', 'blog_shortcode');
+
+
+$caid = '-11';
+function exclude_category( $query ) {
+    global $caid;
+    if ( $query->is_home() || $query->is_page_template( 'blog-home-template.php' )) {
+        $query->set( 'cat', $caid );
+    }
+}
+add_action( 'pre_get_posts', 'exclude_category' );
+
+add_filter('doing_it_wrong_trigger_error', function () {return false;}, 10, 0);
