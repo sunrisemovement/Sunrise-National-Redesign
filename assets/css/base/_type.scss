@@ -4,6 +4,22 @@
 - @extend the `.btn` class instead of manually adding `.btn` classes to all form elements
 
 --------------------------------------------------------------*/
+@font-face {
+	font-family: "Konsole-Regular";
+	src: url("assets/fonts/Konsole-Regular.woff");
+}
+@font-face {
+	font-family: "Konsole-Bold";
+	src: url("assets/fonts/Konsole-Bold.woff");
+}
+@font-face {
+	font-family: "Konsole-Italic";
+	src: url("assets/fonts/Konsole-RegularItalic.woff");
+}
+@font-face {
+	font-family: "Konsole-Semi";
+	src: url("assets/fonts/Konsole-Semibold.woff");
+}
 
 button,
 input[type="button"],
@@ -87,6 +103,20 @@ body .site .entry-content {
 		font-weight: $font-weight-base;
 	}
 
+	h5 {
+		font-family: $font-family-serif;
+		font-size: 1.5em;
+		font-weight: $font-weight-base;
+		margin-bottom: 0.3rem;
+	}
+
+	h6 {
+		font-family: $font-family-serif;
+		font-size: 1em;
+		font-weight: $font-weight-base;
+		margin-bottom: 0.3rem;
+	}
+
 	p {
 		line-height: 1.4;
 		margin: 0 auto 1rem auto;
@@ -98,6 +128,30 @@ body .site .entry-content {
 			line-height: 1.6;
 		}
 	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		&.alignwide {
+			max-width: map-get($container-max-widths, "xl");
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		&.alignfull {
+			max-width: 100%;
+		}
+	}
+
 	ul {
 		padding-inline-start: 22px;
 	}

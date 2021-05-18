@@ -1,7 +1,6 @@
 <?php
 /**
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-* Template Name: Custom Post Type
  * @package Sunrise_National
  */
 

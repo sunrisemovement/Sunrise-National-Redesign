@@ -6,7 +6,7 @@
 }
 
 .entry-content
-	> *:not(.alignwide):not(.blog-header):not(.alignfull):not(.getwid-section-content-full-width):not(.insta-gallery-feed):not(.auto-created):not(.event-signup):not(.wp-block-columns):not(.has-text-align-center):not(.ngp-form):not(.wp-block-group):not(.wp-block-separator) {
+	> *:not(.alignwide):not(.blog-header):not(.alignfull):not(iframe):not(.custom):not(.getwid-section-content-full-width):not(.insta-gallery-feed):not(.auto-created):not(.event-signup):not(.wp-block-columns):not(.has-text-align-center):not(.ngp-form):not(.wp-block-group):not(.wp-block-separator) {
 	margin: 0 auto 1rem auto;
 	float: unset;
 
