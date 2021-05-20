@@ -174,7 +174,7 @@ html.pum-open.pum-open-overlay,html.pum-open.pum-open-overlay.pum-open-fixed .pu
 .wp-block-getwid-post-carousel .card .event-timing,.wp-block-getwid-custom-post-type.has-layout-grid .card .event-timing{float:left;width:100%;color:#8f0d56;font-weight:700;text-transform:uppercase;font-size:1.2rem;text-align:left;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;height:100%}
 .wp-block-getwid-post-carousel .card .excerpt,.wp-block-getwid-custom-post-type.has-layout-grid .card .excerpt{color:#000}
 .wp-block-getwid-post-carousel .card .event-title h4,.wp-block-getwid-custom-post-type.has-layout-grid .card .event-title h4{color:#000;float:left;font-size:1.7rem;text-align:left}
-.custom-post-type-our_endorsements.has-layout-grid .card-img{height:180px}
+.custom-post-type-our_endorsements.has-layout-grid .card-img{height:unset}
 .wp-block-getwid-section__background{background-attachment:fixed}
 .card{border:0 !important}
 .wp-block-getwid-section__wrapper{padding:120px 1rem}
@@ -207,6 +207,12 @@ html.pum-open.pum-open-overlay,html.pum-open.pum-open-overlay.pum-open-fixed .pu
 .getwid-padding-right-large{padding-top:150px}
 .getwid-padding-right-none{padding-left:0 !important}
 .entry-content .wp-block-getwid-accordion .wp-block-getwid-accordion__header{padding:20px 30px}
+.wp-block-getwid-banner{border-bottom:2px solid #ffde16}
+.wp-block-getwid-banner .wp-block-getwid-banner__caption{min-height:200px;padding:2rem !important}
+.wp-block-getwid-banner .has-animation-style6 .wp-block-getwid-banner__caption:before{left:10px;right:10px;top:10px;bottom:10px;border-color:#ffde16}
+.wp-block-getwid-banner .wp-block-getwid-banner__title{font-size:1.2em;font-family:"Source Sans Pro";text-decoration:underline;-webkit-text-decoration-color:#ffde16;text-decoration-color:#ffde16}
+.wp-block-getwid-banner .wp-block-getwid-banner__text{font-weight:400;font-size:1em}
+.wp-block-getwid-banner:hover .wp-block-getwid-banner__title{text-decoration:none}
 .wp-block-pullquote{border-top:10px solid;border-bottom:10px solid}
 .wp-block-pullquote cite{text-transform:uppercase}
 .search-form .search-field{border:1px solid black;border-radius:0}

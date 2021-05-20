@@ -227,7 +227,7 @@
 }
 
 .custom-post-type-our_endorsements.has-layout-grid .card-img {
-	height: 180px;
+	height: unset;
 }
 
 .wp-block-getwid-section__background {
@@ -349,4 +349,36 @@
 
 .entry-content .wp-block-getwid-accordion .wp-block-getwid-accordion__header {
 	padding: 20px 30px;
+}
+
+.wp-block-getwid-banner {
+	border-bottom: 2px solid $yellow;
+	.wp-block-getwid-banner__caption {
+		min-height: 200px;
+		padding: 2rem !important;
+	}
+
+	.has-animation-style6 .wp-block-getwid-banner__caption:before {
+		left: 10px;
+		right: 10px;
+		top: 10px;
+		bottom: 10px;
+		border-color: $yellow;
+	}
+
+	.wp-block-getwid-banner__title {
+		font-size: 1.2em;
+		font-family: "Source Sans Pro";
+		text-decoration: underline;
+		text-decoration-color: $yellow;
+	}
+	.wp-block-getwid-banner__text {
+		font-weight: 400;
+		font-size: 1em;
+	}
+	&:hover {
+		.wp-block-getwid-banner__title {
+			text-decoration: none;
+		}
+	}
 }
